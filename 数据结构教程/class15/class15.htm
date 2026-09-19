@@ -1,0 +1,339 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第十五课</b></p>
+<p><b><i>本课主题：</i></b> 串的表示和实现</p>
+<p><b><i>教学目的：</i></b> 掌握串的几种实现方法</p>
+<p><b><i>教学重点：</i></b> 定长顺序存储表示法 堆分配存储表示法</p>
+<p><b><i>教学难点：</i></b> 堆分配存储表示法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、复习串的定义</p>
+<blockquote>
+  <p><a href="../class14/class14.htm#1401">串的定义</a> </p>
+</blockquote>
+<p>二、定长顺序存储表示</p>
+<blockquote> 
+  <p>类似于线性表的顺序存储结构,用一组地址连续的存储单元存储串值的字符序列.</p>
+  <p>#define MAXSTRLEN 255</p>
+  <p>typedef unsigned char SString[MAXSTRLEN+1] //0号单元存放串长</p>
+  <p>串的实际长度可在这予定义长度的范围内随意,超过予定义长度的串值则被舍去</p>
+  <p>串长可用下标为0的数组元素存储,也可在串值后设特殊标记</p>
+  <table width="75%" border="0" cellspacing="1">
+    <tr> 
+      <td> 
+        <div align="center">a[0]</div>
+      </td>
+      <td> 
+        <div align="center">a[1]</div>
+      </td>
+      <td> 
+        <div align="center">a[2]</div>
+      </td>
+      <td> 
+        <div align="center">a[3]</div>
+      </td>
+      <td> 
+        <div align="center">a[4]</div>
+      </td>
+      <td> 
+        <div align="center">a[5]</div>
+      </td>
+      <td> 
+        <div align="center">...</div>
+      </td>
+      <td> 
+        <div align="center">a[n]</div>
+      </td>
+    </tr>
+  </table>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td width="13%"> 
+        <div align="center">3</div>
+      </td>
+      <td width="13%"> 
+        <div align="center">a</div>
+      </td>
+      <td width="13%"> 
+        <div align="center">b</div>
+      </td>
+      <td width="13%"> 
+        <div align="center">c</div>
+      </td>
+      <td width="13%"> 
+        <div align="center"></div>
+      </td>
+      <td width="12%"> 
+        <div align="center"></div>
+      </td>
+      <td width="10%"> 
+        <div align="center"></div>
+      </td>
+      <td width="13%" bgcolor="#CCFFCC"> 
+        <div align="center"><font color="#FF0000">pascal</font></div>
+      </td>
+    </tr>
+  </table>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td width="13%"> 
+        <div align="center">a</div>
+      </td>
+      <td width="13%"> 
+        <div align="center">b</div>
+      </td>
+      <td width="13%"> 
+        <div align="center">c</div>
+      </td>
+      <td width="13%"> 
+        <div align="center">\0</div>
+      </td>
+      <td width="13%"> 
+        <div align="center"></div>
+      </td>
+      <td width="12%"> 
+        <div align="center"></div>
+      </td>
+      <td width="10%"> 
+        <div align="center"></div>
+      </td>
+      <td width="13%" bgcolor="#CCFFCC"> 
+        <div align="center"><font color="#FF0033">c</font></div>
+      </td>
+    </tr>
+  </table>
+  <p>1串联接的实现Concat(&amp;T,S1,S2)</p>
+  <p>假设S1,S2和T都是SString型的串变量,且串T是由串S1联结串S2得到的,即串T的值的前一段和串S1的值相等,串T的值的后一段和串S2的值相等,则只要进行相应的&quot;串值复制&quot;操作即可,对超长部分实施&quot;截断&quot;操作</p>
+  <p>以下是串联接可能出现的三种情况:</p>
+  <table width="101%" border="0">
+    <tr> 
+      <td width="32%"> 
+        <table width="85%" border="1" cellspacing="0">
+          <tr bgcolor="#FFCCCC"> 
+            <td width="32%">S1</td>
+            <td width="33%">S2</td>
+            <td width="35%">T</td>
+          </tr>
+          <tr> 
+            <td width="32%">4</td>
+            <td width="33%">2</td>
+            <td width="35%">6</td>
+          </tr>
+          <tr> 
+            <td width="32%">a</td>
+            <td width="33%">d</td>
+            <td width="35%">a</td>
+          </tr>
+          <tr> 
+            <td width="32%">b</td>
+            <td width="33%">e</td>
+            <td width="35%">b</td>
+          </tr>
+          <tr> 
+            <td width="32%">c</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">c</td>
+          </tr>
+          <tr> 
+            <td width="32%">d</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">d</td>
+          </tr>
+          <tr> 
+            <td width="32%">&nbsp;</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">e</td>
+          </tr>
+          <tr> 
+            <td width="32%">&nbsp;</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">f</td>
+          </tr>
+          <tr> 
+            <td width="32%">&nbsp;</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="32%">&nbsp;</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">&nbsp;</td>
+          </tr>
+        </table>
+        <p>S1,S2串长和小于最大值</p>
+      </td>
+      <td width="37%"> 
+        <table width="89%" border="1" cellspacing="0">
+          <tr bgcolor="#FFCCCC"> 
+            <td width="32%">S1</td>
+            <td width="33%">S2</td>
+            <td width="35%">T</td>
+          </tr>
+          <tr> 
+            <td width="32%">6</td>
+            <td width="33%">6</td>
+            <td width="35%">8</td>
+          </tr>
+          <tr> 
+            <td width="32%">a</td>
+            <td width="33%">g</td>
+            <td width="35%">a</td>
+          </tr>
+          <tr> 
+            <td width="32%">b</td>
+            <td width="33%">h</td>
+            <td width="35%">b</td>
+          </tr>
+          <tr> 
+            <td width="32%">c</td>
+            <td width="33%">i</td>
+            <td width="35%">c</td>
+          </tr>
+          <tr> 
+            <td width="32%">d</td>
+            <td width="33%">j</td>
+            <td width="35%">d</td>
+          </tr>
+          <tr> 
+            <td width="32%">e</td>
+            <td width="33%">k</td>
+            <td width="35%">e</td>
+          </tr>
+          <tr> 
+            <td width="32%">f</td>
+            <td width="33%">l</td>
+            <td width="35%">f</td>
+          </tr>
+          <tr> 
+            <td width="32%">&nbsp;</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">g</td>
+          </tr>
+          <tr> 
+            <td width="32%">&nbsp;</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">h</td>
+          </tr>
+        </table>
+        <p>S1,S2串长和超过最大串长</p>
+      </td>
+      <td width="31%"> 
+        <table width="89%" border="1" cellspacing="0">
+          <tr bgcolor="#FFCCCC"> 
+            <td width="32%">S1</td>
+            <td width="33%">S2</td>
+            <td width="35%">T</td>
+          </tr>
+          <tr> 
+            <td width="32%">8</td>
+            <td width="33%">2</td>
+            <td width="35%">8</td>
+          </tr>
+          <tr> 
+            <td width="32%">a</td>
+            <td width="33%">i</td>
+            <td width="35%">a</td>
+          </tr>
+          <tr> 
+            <td width="32%">b</td>
+            <td width="33%">j</td>
+            <td width="35%">b</td>
+          </tr>
+          <tr> 
+            <td width="32%">c</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">c</td>
+          </tr>
+          <tr> 
+            <td width="32%">d</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">d</td>
+          </tr>
+          <tr> 
+            <td width="32%">e</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">e</td>
+          </tr>
+          <tr> 
+            <td width="32%">f</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">f</td>
+          </tr>
+          <tr> 
+            <td width="32%">g</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">g</td>
+          </tr>
+          <tr> 
+            <td width="32%">h</td>
+            <td width="33%">&nbsp;</td>
+            <td width="35%">h</td>
+          </tr>
+        </table>
+        <p>S1串长已等于最大串长</p>
+      </td>
+    </tr>
+  </table>
+  <p>算法描述如下:</p>
+  <p>Status Concat(SString &amp;T,SString S1,SString S2){</p>
+  <p>if(S1[0]+S2[0]&lt;=MAXSTRLEN){</p>
+  <blockquote> 
+    <p>T[1..S1[0]]=S1[1..S1[0]];</p>
+    <p>T[S1[0]+1..S1[0]+S2[0]]=S2[1..S2[0]];</p>
+    <p>T[0]=S1[0]+S2[0]uncut=TRUE;</p>
+  </blockquote>
+  <p>}</p>
+  <p>else if(S1[0]&lt;MAXSTRSIZE){</p>
+  <blockquote> 
+    <p>T[1..S1[0]]=S1[1..S1[0]];</p>
+    <p>T[S1[0]+1..MAXSTRLEN]=S2[1..MAXSTRLEN-S1[0]];</p>
+    <p>T[0]=MAXSTRLEN;uncut=FALSE;</p>
+    <p>}</p>
+    <p>else{</p>
+    <blockquote>
+      <p>T[0..MAXSTRLEN]=S1[0..MAXSTRLEN];</p>
+      <p>uncut=FALSE;</p>
+    </blockquote>
+    <p>}</p>
+  </blockquote>
+  <p>return uncut;</p>
+  <p>}</p>
+</blockquote>
+<p>三、<a name="#1503"></a>堆分配存储表示</p>
+<blockquote> 
+  <p>这种存储表示的特点是,仍以一组地址连续的存储单元存放串值字符序列,但它们的存储空间是在程序执行过程中动态分配而得</p>
+  <p>在C语言中,存在一个称之为堆的自由存储区,并由C语言的动态分配函数malloc()和free()来管理.利用函数malloc()为每个新产生的串分配一块实际串长所需存储空间,为处理方便,约定串长也作为存储结构的一部分</p>
+  <p>typedef struct{</p>
+  <p>char *ch;//若是非空串,则按串长分配存储区,否则ch为NULL</p>
+  <p>int length; //串长度</p>
+  <p>}HString</p>
+  <p>Status StrInsert(HString &amp;S,int pos,HString T){</p>
+  <p>if(pox&lt;1||pos&gt;S.length+1) return ERROR;</p>
+  <p>if(T.length){</p>
+  <blockquote> 
+    <p>if(!(S.ch=(char *)realloc(S.ch,(S.length+T.length)*sizeof(char))))</p>
+    <blockquote> 
+      <p>exit(OVERFLOW);</p>
+    </blockquote>
+    <p>for(i=S.length-1;i&gt;=pos-1;--i)</p>
+    <blockquote>
+      <p>S.ch[i+T.length]=S.ch[i];</p>
+    </blockquote>
+    <p>S.ch[pos-1..pos+T.lenght-2]=T.ch[0..T.length-1];</p>
+    <p>S.length+=T.length;</p>
+  </blockquote>
+  <p>}</p>
+  <p>return OK;</p>
+  <p>}</p>
+</blockquote>
+<p>四、总结</p>
+<blockquote>
+  <p>思考两种存储表示方法的优缺点</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class14/class14.htm">上一课</a> <a href="../class16/class16.htm">下一课</a></p>
+</body>
+</html>

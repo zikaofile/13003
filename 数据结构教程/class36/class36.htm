@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十六课</b></p>
+<p><b><i>本课主题：</i></b> 选择排序，归并排序</p>
+<p><b><i>教学目的：</i></b> 掌握选择排序，归并排序算法</p>
+<p><b><i>教学重点：</i></b> 选择排序之堆排序，归并排序算法</p>
+<p><b><i>教学难点：</i></b> 堆排序算法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、选择排序</p>
+<blockquote> 
+  <p>每一趟在n-i+1(i=1,2,...n-1)个记录中选取关键字最小的记录作为有序序列中第i个记录。</p>
+</blockquote>
+<p>二、简单选择排序</p>
+<blockquote> 
+  <p>算法：</p>
+  <p>Smp_Selecpass(ListType &amp;r,int i)</p>
+  <p>{</p>
+  <blockquote> 
+    <p>k=i;</p>
+    <p>for(j=i+1;j&lt;n;i++)</p>
+    <blockquote> 
+      <p> if (r[j].key&lt;r[k].key)</p>
+      <blockquote> 
+        <p> k=j;</p>
+      </blockquote>
+    </blockquote>
+    <p>if (k!=i) </p>
+    <blockquote> 
+      <p> { t=r[i];r[i]=r[k];r[k]=t;}</p>
+    </blockquote>
+  </blockquote>
+  <p>}</p>
+  <p>Smp_Sort(ListType &amp;r)</p>
+  <p>{</p>
+  <blockquote> 
+    <p> for(i=1;i&lt;n-1;i++)</p>
+    <blockquote> 
+      <p> Smp_Selecpass(r,i);</p>
+    </blockquote>
+  </blockquote>
+  <p>}</p>
+</blockquote>
+<p>三、树形选择排序</p>
+<blockquote> 
+  <p>又称锦标赛排序，首先对n个记录的关键字进行两两比较，然后在其中一半较小者之间再进行两两比较，如此重复，直到选出最小关键字的记录为止。</p>
+</blockquote>
+<p>四、堆排序</p>
+<blockquote>
+  <p>只需要一个记录大小的辅助空间，每个待排序的记录仅占有一个存储空间。</p>
+  <p>什么是堆？n个元素的序列{k1,k2,...,kn}当且仅当满足下列关系时，称之为堆。关系一：ki&lt;=k2i 关系二：ki&lt;=k2i+1（i=1,2,...,n/2)</p>
+  <p>堆排序要解决两个问题：1、如何由一个无序序列建成一个堆？2、如何在输出堆顶元素之后，调整剩余元素成为一个新的堆？</p>
+  <p>问题2的解决方法：</p>
+  <p><img src="class36-01.jpg" width="563" height="383">sift(ListType &amp;r,int 
+    k,int m)</p>
+  <p>{</p>
+  <blockquote> 
+    <p> i=k;j=2*i;x=r[k].key;finished=FALSE;</p>
+    <p>t=r[k];</p>
+    <p>while((j&lt;=m)&amp;&amp;(!finished))</p>
+    <blockquote> 
+      <blockquote> 
+        <p>{</p>
+        <p>if ((j&lt;m)&amp;&amp;(r[j].key&gt;r[j+1].key)) j++;</p>
+        <p>if (x&lt;=r[j].key)</p>
+        <blockquote> 
+          <p> finished:=TRUE;</p>
+        </blockquote>
+        <p>else {r[i]=r[j];i=j;j=2*i;}</p>
+      </blockquote>
+      <p>}</p>
+    </blockquote>
+    <p>r[i]=t;</p>
+  </blockquote>
+  <p>}</p>
+  <p>HeapSort(ListType &amp;r)</p>
+  <p>{</p>
+  <blockquote> 
+    <p>for(i=n/2;i&gt;0;i--) sift(r,i,n);</p>
+    <p>for(i=n;i&gt;1;i--){</p>
+    <blockquote> 
+      <p>r[1]&lt;-&gt;r[i];</p>
+      <p>sift(r,i,i-1)</p>
+    </blockquote>
+    <p>}</p>
+  </blockquote>
+  <p>}</p>
+</blockquote>
+<p>五、归并排序</p>
+<blockquote>
+  <p>将两个或两个以上的有序表组合成一个新的有序表的方法叫归并。</p>
+  <p>假设初始序列含有n个记录，则可看成是n个有序的子序列，每个子序列的长度为1，然后两两归并，得到n/2个长度为2或1的有序子序列；再两两归并，如此重复。</p>
+  <p align="center"><img src="class36-02.jpg" width="342" height="229"></p>
+  <p>merge(ListType r,int l,int m,int n,ListType &amp;r2)</p>
+  <p>{</p>
+  <blockquote> 
+    <p>i=l;j=m+1;k=l-1;</p>
+    <p>while(i&lt;=m) and(j&lt;n) do</p>
+    <p>{</p>
+    <blockquote> 
+      <p>k=k+1;</p>
+      <p>if (r[i].key&lt;=r[j].key) {r2[k]=r[i];i++;}</p>
+      <p>else {r2[i]=r[j];j++}</p>
+    </blockquote>
+    <p>}</p>
+    <p>if (i&lt;=m) r2[k+1..n]=r[i..m];</p>
+    <p>if (j&lt;=n) r2[k+1..n]=r[j..n];</p>
+  </blockquote>
+  <p>}</p>
+  <p>mergesort(ListType &amp;r,ListType &amp;r1,int s,int t)</p>
+  <p>{</p>
+  <p> if (s==t)</p>
+  <blockquote> 
+    <p> r1[s]=r[s];</p>
+  </blockquote>
+  <p>else</p>
+  <blockquote> 
+    <p>{</p>
+    <blockquote> 
+      <p>mergesort(r,r2,s,s+t/2);</p>
+      <p>mergesort(r,r2,s+t/2+1,t);</p>
+      <p>merge(r2,s,s+t/2,t,r1);</p>
+    </blockquote>
+    <p>}</p>
+  </blockquote>
+  <p>]</p>
+</blockquote>
+<p>六、总结</p>
+<p><a href="../index.htm">回目录</a> <a href="../class35/class35.htm">上一课</a> <a href="../class37/class37.htm">下一课</a></p>
+</body>
+</html>

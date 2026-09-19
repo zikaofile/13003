@@ -1,0 +1,928 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第六课</b></p>
+<p><b><i>本课主题：</i></b> 线性表的顺序表示和实现</p>
+<p><b><i>教学目的：</i></b> 掌握线性表的顺序表示和实现方法</p>
+<p><b><i>教学重点：</i></b> 线性表的顺序表示和实现方法</p>
+<p><b><i>教学难点：</i></b> 线性表的顺序存储的实现方法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>复习</p>
+<blockquote> 
+  <p>1、存储结构</p>
+  <table border="1" cellspacing="0" width="546">
+    <tr> 
+      <td>逻辑结构</td>
+      <td>&nbsp;</td>
+      <td width="334">“数据结构”定义中的“关系”指数据间的逻辑关系，故也称数据结构为逻辑结构。</td>
+    </tr>
+    <tr> 
+      <td height="4" width="79" rowspan="3">存储结构</td>
+      <td height="2" width="119">&nbsp;</td>
+      <td height="4" width="334" rowspan="3">数据结构在计算机中的表示称为物理结构。又称存储结构。</td>
+    </tr>
+    <tr> 
+      <td height="2" width="119">顺序存储结构</td>
+    </tr>
+    <tr> 
+      <td height="2" width="119">链式存储结构</td>
+    </tr>
+  </table>
+  <p><a href="../class05/class05.htm#02">2、线性表的类型定义</a></p>
+</blockquote>
+<p>一、<a name="#01"></a>线性表的顺序表示</p>
+<blockquote> 
+  <p>用一组地址连续的存储单元依次存储线性表的数据元素。C语言中的数组即采用顺序存储方式。</p>
+  <table width="473" border="0" height="46" cellspacing="0">
+    <tr> 
+      <td width="90" height="214"> 
+        <table width="87" border="1" cellspacing="0" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+          <tr> 
+            <td>2000:0001</td>
+          </tr>
+          <tr> 
+            <td>2000:0003</td>
+          </tr>
+          <tr> 
+            <td>2000:0005</td>
+          </tr>
+          <tr> 
+            <td>2000:0007</td>
+          </tr>
+          <tr> 
+            <td>2000:0009</td>
+          </tr>
+          <tr> 
+            <td>2000:0011</td>
+          </tr>
+          <tr> 
+            <td>2000:0013</td>
+          </tr>
+          <tr> 
+            <td>2000:0015</td>
+          </tr>
+          <tr> 
+            <td>2000:0017</td>
+          </tr>
+          <tr> 
+            <td>...</td>
+          </tr>
+          <tr> 
+            <td>2000:1001</td>
+          </tr>
+          <tr> 
+            <td>2000:1003</td>
+          </tr>
+        </table>
+      </td>
+      <td width="287" height="214"> 
+        <table width="275" border="1" cellspacing="0">
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">0</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">1</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">0</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">1</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+          </tr>
+          <tr> 
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td>0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">0</td>
+            <td bgcolor="#CCCCFF">1</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+            <td bgcolor="#CCCCFF">&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="47" height="214">a[9]</td>
+      <td width="41" height="214"> 
+        <table width="45" border="1" cellspacing="0">
+          <tr bgcolor="#FFCCCC"> 
+            <td>1</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>2</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>3</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>4</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>5</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>6</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>7</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>8</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td>9</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <p>假设线性表的每个元素需占用<i>l</i>个存储单元，并以所占的第一个单元的存储地址作为数据元素的存储位置。则存在如下关系：</p>
+  <blockquote> 
+    <p align="center">LOC(<font size="+2">a</font><font size="-1">i+1</font>)=LOC(<font size="+2">a</font><font size="-1">i</font>)+<i>l</i></p>
+    <p align="center">LOC(<font size="+2">a</font><font size="-1">i</font>)=LOC(<font size="+2">a</font><font size="-1">1</font>)+(<i>i</i>-1)*<i>l</i></p>
+  </blockquote>
+  <p>式中LOC(<font size="+2">a</font><font size="-1">1</font>)是线性表的第一个数据元素的存储位置，通常称做线性表的<font color="#FF0033">起始位置</font>或<font color="#FF0000">基地址</font>。常用<i>b</i>表示。</p>
+  <p>线性表的这种机内表示称做线性表的<font color="#FF0033">顺序存储结构</font>或顺序映象。</p>
+  <p>称顺序存储结构的线性表为<font color="#FF0033">顺序表</font>。顺序表的特点是以元素在计算机内物理位置相邻来表示线性表中数据元素之间的逻辑关系。</p>
+</blockquote>
+<p>二、顺序存储结构的线性表类C语言表示：</p>
+<blockquote> 
+  <table width="557" border="0" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td height="32"> 
+        <div align="center">线性表的动态分配顺序存储结构</div>
+      </td>
+    </tr>
+    <tr bgcolor="#0066FF"> 
+      <td> 
+        <p><font color="#FFFF33"><b>#define LIST_INIT_SIZE 100 <br>
+          #define LISTINCREMENT 10 <br>
+          <br>
+          typedef struct{</b></font></p>
+        <p><font color="#FFFF33"><b> ElemType *elem; //存储空间基址</b></font></p>
+        <p><font color="#FFFF33"><b> int length; //当前长度</b></font></p>
+        <p><font color="#FFFF33"><b> int listsize; //当前分配的存储容量以一数据元素存储长度为单位</b></font></p>
+        <p><font color="#FFFF33"><b>}SqList; </b></font></p>
+      </td>
+    </tr>
+  </table>
+</blockquote>
+<p>三、顺序存储结构的线性表操作及C语言实现：</p>
+<blockquote>
+  <p>顺序表的插入与删除操作：</p>
+  <table width="523" border="0" cellspacing="0">
+    <tr> 
+      <td width="33">序号</td>
+      <td colspan="2">数据元素</td>
+      <td width="33">序号</td>
+      <td width="64">数据元素</td>
+      <td width="62">&nbsp;</td>
+      <td width="33">序号</td>
+      <td colspan="2">数据元素</td>
+      <td width="34">序号</td>
+      <td width="87">数据元素</td>
+    </tr>
+    <tr> 
+      <td width="33" height="19"> 
+        <table width="33" border="1" cellspacing="0" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+          <tr> 
+            <td> 
+              <div align="center">1</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">2</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">3</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">4</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">5</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">6</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">7</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">8</div>
+            </td>
+          </tr>
+          <tr> 
+            <td height="2"> 
+              <div align="center">9</div>
+            </td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="33" height="19"> 
+        <table width="33" border="1" cellspacing="0">
+          <tr> 
+            <td bgcolor="#FFCCCC">12</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">13</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">21</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">24</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">28</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">30</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">42</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">77</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="40" height="19" valign="top"> 
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p><br>
+          &lt;-<font color="#FF0033">25</font> </p>
+        <p>&nbsp;</p>
+      </td>
+      <td width="33" height="19"> 
+        <table width="33" border="1" cellspacing="0" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">1</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">2</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">3</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">4</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">5</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">6</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">7</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">8</div>
+            </td>
+          </tr>
+          <tr bgcolor="#FFFFFF"> 
+            <td> 
+              <div align="center">9</div>
+            </td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="64" height="19"> 
+        <table width="33" border="1" cellspacing="0">
+          <tr> 
+            <td bgcolor="#FFCCCC">12</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">13</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">21</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">24</td>
+          </tr>
+          <tr> 
+            <td><font color="#FF0033">25</font></td>
+          </tr>
+          <tr bgcolor="#CCCCFF"> 
+            <td>28</td>
+          </tr>
+          <tr bgcolor="#CCCCFF"> 
+            <td>30</td>
+          </tr>
+          <tr bgcolor="#CCCCFF"> 
+            <td>42</td>
+          </tr>
+          <tr bgcolor="#CCCCFF"> 
+            <td>77</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="62" height="19">&nbsp;</td>
+      <td width="33" height="19"> 
+        <table width="33" border="1" cellspacing="0" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+          <tr> 
+            <td> 
+              <div align="center">1</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">2</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">3</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">4</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">5</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">6</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">7</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">8</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">9</div>
+            </td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="49" height="19"> 
+        <table width="40" border="1" cellspacing="0">
+          <tr> 
+            <td bgcolor="#FFCCCC">12</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">13</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">21</td>
+          </tr>
+          <tr> 
+            <td><font color="#FF0033">24</font></td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">28</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">30</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">42</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">77</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="33" height="19" valign="top"> 
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>-&gt;<font color="#FF0033">24</font></p>
+      </td>
+      <td width="34" height="19"> 
+        <table width="33" border="1" cellspacing="0" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+          <tr> 
+            <td> 
+              <div align="center">1</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">2</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">3</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">4</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">5</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">6</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">7</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">8</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="center">9</div>
+            </td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="87" height="19"> 
+        <table width="33" border="1" cellspacing="0">
+          <tr> 
+            <td bgcolor="#FFCCCC">12</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">13</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#FFCCCC">21</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">28</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">30</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">42</td>
+          </tr>
+          <tr> 
+            <td bgcolor="#CCCCFF">77</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td colspan="5" height="19">插入前n=8;插入后n=9;</td>
+      <td width="62" height="19">&nbsp;</td>
+      <td colspan="5" height="19">删除前n=8;删除后n=7;</td>
+    </tr>
+  </table>
+  <br>
+  <table width="537" border="0" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td height="30"> 
+        <div align="center"><a name="#02"></a>顺序表的插入算法</div>
+      </td>
+    </tr>
+    <tr bgcolor="#0066FF"> 
+      <td> 
+        <p><font color="#FFFF00"><b>status ListInsert(List *L,int i,ElemType e) 
+          {</b></font></p>
+        <p><b><font color="#FFFF00"> struct STU *p,*q; </font></b></p>
+        <p><b><font color="#FFFF00">if (i<1||i>L->length+1) return ERROR; </font></b></p>
+        <p><b><font color="#FFFF00">q=&(L->elem[i-1]); </font></b></p>
+        <p><b><font color="#FFFF00">for(p=&L->elem[L->length-1];p>=q;--p) </font></b></p>
+        <blockquote> 
+          <p><b><font color="#FFFF00">*(p+1)=*p; </font></b></p>
+        </blockquote>
+        <p><b><font color="#FFFF00">*q=e; </font></b></p>
+        <p><b><font color="#FFFF00">++L->length; </font></b></p>
+        <p><b><font color="#FFFF00">return OK; </font></b></p>
+        <p><b><font color="#FFFF00">}/*ListInsert Before i */ </font></b></p>
+      </td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td height="31"> 
+        <div align="center"><a name="#03"></a>顺序表的合并算法</div>
+      </td>
+    </tr>
+    <tr bgcolor="#0066FF"> 
+      <td> 
+        <p><b><font color="#FFFF00">void MergeList(List *La,List *Lb,List *Lc) 
+          {</font></b></p>
+        <p><b><font color="#FFFF00"> ElemType *pa,*pb,*pc,*pa_last,*pb_last; </font></b></p>
+        <p><b><font color="#FFFF00">pa=La->elem;pb=Lb->elem; </font></b></p>
+        <p><b><font color="#FFFF00">Lc->listsize = Lc->length = La->length + Lb->length; 
+          </font></b></p>
+        <p><b><font color="#FFFF00">pc = Lc->elem = </font></b></p>
+        <blockquote> 
+          <p><b><font color="#FFFF00">(ElemType *)malloc(Lc->listsize * sizeof(ElemType)); 
+            </font></b></p>
+        </blockquote>
+        <p><b><font color="#FFFF00">if(!Lc->elem) </font></b><b><font color="#FFFF00">exit(OVERFLOW); 
+          </font></b></p>
+        <p><b><font color="#FFFF00">pa_last = La->elem + La->length - 1; </font></b></p>
+        <p><b><font color="#FFFF00">pb_last = Lb->elem + Lb->length - 1; </font></b></p>
+        <p><b><font color="#FFFF00">while(pa<=pa_last && pb<=pb_last) { </font></b></p>
+        <blockquote> 
+          <p><b><font color="#FFFF00">if(Less_EqualList(pa,pb)) *pc++=*pa++; </font></b></p>
+          <p><b><font color="#FFFF00">else *pc++=*pb++; </font></b></p>
+        </blockquote>
+        <p><b><font color="#FFFF00">} </font></b></p>
+        <p><b><font color="#FFFF00">while(pa<=pa_last) *pc++=*pa++; </font></b></p>
+        <p><b><font color="#FFFF00">while(pb<=pb_last) *pc++=*pb++; </font></b></p>
+        <p><b><font color="#FFFF00">}</font></b></p>
+      </td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td height="28"> 
+        <div align="center">顺序表的查找算法</div>
+      </td>
+    </tr>
+    <tr bgcolor="#0066FF"> 
+      <td> 
+        <p><font color="#FFFF00"><b>int LocateElem(List *La,ElemType e,int type) 
+          { </b></font></p>
+        <p><font color="#FFFF00"><b>int i; </b></font></p>
+        <p><font color="#FFFF00"><b>switch (type) { </b></font></p>
+        <blockquote> 
+          <p><font color="#FFFF00"><b>case EQUAL: </b></font></p>
+          <blockquote> 
+            <p><font color="#FFFF00"><b>for(i=0;i&lt;</b></font><font color="#FFFF00"><b><la->length;i++) 
+              </b></font></p>
+            <p><font color="#FFFF00"><b> if(EqualList(&La->elem[i],&e)) </b></font></p>
+            <blockquote> 
+              <p><font color="#FFFF00"><b>return 1; </b></font></p>
+            </blockquote>
+            <p><font color="#FFFF00"><b>break; </b></font></p>
+          </blockquote>
+          <p><font color="#FFFF00"><b>default: </b></font></p>
+          <blockquote> 
+            <p><font color="#FFFF00"><b>break; </b></font></p>
+          </blockquote>
+          <p><font color="#FFFF00"><b>} </b></font></p>
+        </blockquote>
+        <p><font color="#FFFF00"><b>return 0; </b></font></p>
+        <p><font color="#FFFF00"><b>}</b></font></p>
+      </td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td height="32"> 
+        <div align="center">顺序表的联合算法</div>
+      </td>
+    </tr>
+    <tr bgcolor="#0066FF"> 
+      <td> 
+        <p><b><font color="#FFFF00">void UnionList(List *La, List *Lb) {</font></b></p>
+        <p><b><font color="#FFFF00"> int La_len,Lb_len; int i; ElemType e; </font></b></p>
+        <p><b><font color="#FFFF00">La_len=ListLength(La); Lb_len=ListLength(Lb); 
+          </font></b></p>
+        <p><b><font color="#FFFF00"> for(i=0;i&lt;Lb_len;i++) { </font></b></p>
+        <blockquote> 
+          <p><b><font color="#FFFF00">GetElem(*Lb,i,&e); </font></b></p>
+          <p><b><font color="#FFFF00">if(!LocateElem(La,e,EQUAL))</font></b></p>
+          <blockquote> 
+            <p><b><font color="#FFFF00"> ListInsert(La,++La_len,e); </font></b></p>
+          </blockquote>
+          <p><b><font color="#FFFF00">}</font></b></p>
+        </blockquote>
+        <p><b><font color="#FFFF00"> }</font></b></p>
+      </td>
+    </tr>
+  </table>
+</blockquote>
+<p>三、<a href="Listdemo06.txt">C语言源程序范例</a></p>
+<p>四、总结</p>
+<blockquote> 
+  <p><a href="#01">线性表的顺序表示</a></p>
+  <a href="#02">顺序表的插入算法</a> 
+  <p><a href="#03">顺序表的合并算法</a></p>
+  <p>&nbsp;</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class05/class05.htm">上一课</a> <a href="../class07/class07.htm">下一课</a></p>
+</body>
+</html>

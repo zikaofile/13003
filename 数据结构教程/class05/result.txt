@@ -1,0 +1,49 @@
+
+
+-------------------List Demo is running...----------------
+
+First is InsertList function.
+name       stuno        age     score
+stu1       100001	80	1000
+stu2       100002	80	1000
+
+List A length now is  2.
+
+name       stuno        age     score
+stu1       100001	80	1000
+stu2       100002	80	1000
+stu3       100003	80	1000
+
+List A length now is  3.
+
+name       stuno        age     score
+zmofun     100001	80	1000
+bobjin     100002	80	1000
+stu1       100001	80	1000
+
+List B length now is  3.
+
+Second is UnionList function.
+Now union List A and List B.....
+name       stuno        age     score
+stu1       100001	80	1000
+stu2       100002	80	1000
+stu3       100003	80	1000
+zmofun     100001	80	1000
+bobjin     100002	80	1000
+
+List A length now is  5.
+
+
+
+
+
+
+
+Welcome to visit http://zmofun.heha.net !
+
+
+
+
+
+

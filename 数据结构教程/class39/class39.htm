@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十九课</b></p>
+<p><b><i>本课主题：</i></b> 索引文件</p>
+<p><b><i>教学目的：</i></b> 掌握索引文件的有关概念</p>
+<p><b><i>教学重点：</i></b> 索引文件的基本概念，索引文件的重要意义</p>
+<p><b><i>教学难点：</i></b> 索引文件的建立</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、索引文件的基本概念</p>
+<blockquote> 
+  <p>除了文件本身（称作数据区）之外，别建立一张指示逻辑记录和物理记录之间一一对应关系的表--<font color="#FF0066">索引表</font>。</p>
+  <p>索引表中的每一项称作索引项。不论主文件是否按关键字有序，索引表中的索引项总是按关键字（或逻辑记录号）顺序排列。</p>
+  <p>若数据区中的记录也按关键字顺序排列，则称<font color="#FF0066">索引顺序文件</font>。反之，若数据区中记录不按关键字顺序排列，则称<font color="#FF0066">非顺序文件</font>。</p>
+  <p>数据区：</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td width="26%">物理记录号</td>
+      <td width="26%">姓名</td>
+      <td width="25%">年龄</td>
+      <td width="15%">体重（关键字）</td>
+    </tr>
+    <tr> 
+      <td width="26%">1</td>
+      <td width="26%">李由</td>
+      <td width="25%">57</td>
+      <td width="15%">62</td>
+    </tr>
+    <tr> 
+      <td width="26%">2</td>
+      <td width="26%">王天</td>
+      <td width="25%">54</td>
+      <td width="15%">76</td>
+    </tr>
+    <tr> 
+      <td height="21" width="26%">3</td>
+      <td height="21" width="26%">七大</td>
+      <td height="21" width="25%" bgcolor="#FFCCCC">24</td>
+      <td height="21" width="15%">75</td>
+    </tr>
+    <tr> 
+      <td width="26%">4</td>
+      <td width="26%">张强</td>
+      <td width="25%" bgcolor="#FFCCCC">24</td>
+      <td width="15%">72</td>
+    </tr>
+    <tr> 
+      <td width="26%">5</td>
+      <td width="26%">陈华</td>
+      <td width="25%" bgcolor="#FFCCCC">24</td>
+      <td width="15%">53</td>
+    </tr>
+  </table>
+  <br>
+  <p>索引表：</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td width="28%">体重（关键字）</td>
+      <td width="72%">物理记录号</td>
+    </tr>
+    <tr> 
+      <td width="28%">53</td>
+      <td width="72%">5</td>
+    </tr>
+    <tr> 
+      <td width="28%">62</td>
+      <td width="72%">1</td>
+    </tr>
+    <tr> 
+      <td width="28%">72</td>
+      <td width="72%">4</td>
+    </tr>
+    <tr> 
+      <td height="21" width="28%">75</td>
+      <td height="21" width="72%">3</td>
+    </tr>
+    <tr> 
+      <td width="28%">76</td>
+      <td width="72%">2</td>
+    </tr>
+  </table>
+  <p>有了按体重索引的索引表后，按体重查找学生可先在索引表中查找（因索引表中按体重有序，所以可用效率高的查找算法）然后得到对应的物理记录号后到数据区取出对应物理记录。</p>
+  <p><font color="#FF0066">索引文件可以大大提高表查找的速度。因为索引表容量小，且索引表按关键字有序。</font></p>
+</blockquote>
+<p>二、索引文件的建立</p>
+<blockquote>
+  <p>在记录输入建立数据区的同时建立一个索引表，表中的索引项按记录输入的先后次序排列，待全部记录输入完毕后再对索引表进行排序。</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class38/class38.htm">上一课</a> <a href="../class40/class40.htm">下一课</a></p>
+</body>
+</html>

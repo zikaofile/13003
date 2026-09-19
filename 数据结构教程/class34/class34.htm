@@ -1,0 +1,733 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十四课</b></p>
+<p><b><i>本课主题：</i></b> 插入排序，快速排序</p>
+<p><b><i>教学目的：</i></b> 掌握排序的基本概念，插入排序、快速排序的算法</p>
+<p><b><i>教学重点：</i></b> 插入排序、快速排序的算法</p>
+<p><b><i>教学难点：</i></b> 快速排序算法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、排序概述</p>
+<blockquote> 
+  <p><font color="#FF0033">排序</font>：将一个数据元素的无序序列重新排列成一个按关键字有序的序列。</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td width="26%">姓名</td>
+      <td width="25%">年龄</td>
+      <td width="15%">体重</td>
+    </tr>
+    <tr> 
+      <td width="26%">1李由</td>
+      <td width="25%">57</td>
+      <td width="15%">62</td>
+    </tr>
+    <tr> 
+      <td width="26%">2王天</td>
+      <td width="25%">54</td>
+      <td width="15%">76</td>
+    </tr>
+    <tr> 
+      <td height="21" width="26%">3七大</td>
+      <td height="21" width="25%" bgcolor="#FFCCCC">24</td>
+      <td height="21" width="15%">75</td>
+    </tr>
+    <tr> 
+      <td width="26%">4张强</td>
+      <td width="25%" bgcolor="#FFCCCC">24</td>
+      <td width="15%">72</td>
+    </tr>
+    <tr> 
+      <td width="26%">5陈华</td>
+      <td width="25%" bgcolor="#FFCCCC">24</td>
+      <td width="15%">53</td>
+    </tr>
+  </table>
+  <p>上表按年龄无序，如果按关键字年龄用某方法排序后得到下表：</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td width="26%">姓名</td>
+      <td width="25%">年龄</td>
+      <td width="15%">体重</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td height="21" width="26%">3七大</td>
+      <td height="21" width="25%">24</td>
+      <td height="21" width="15%">75</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="26%">4张强</td>
+      <td width="25%">24</td>
+      <td width="15%">72</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="26%">5陈华</td>
+      <td width="25%">24</td>
+      <td width="15%">53</td>
+    </tr>
+    <tr> 
+      <td width="26%">2王天</td>
+      <td width="25%">54</td>
+      <td width="15%">76</td>
+    </tr>
+    <tr> 
+      <td width="26%">1李由</td>
+      <td width="25%">57</td>
+      <td width="15%">62</td>
+    </tr>
+  </table>
+  <p>注意反色的三条记录保持原有排列顺序，则称该排序方法是<font color="#FF0033">稳定的</font>！</p>
+  <p>如果另一方法排序后得到下表：</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td width="26%">姓名</td>
+      <td width="25%">年龄</td>
+      <td width="15%">体重</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="26%">4张强</td>
+      <td width="25%">24</td>
+      <td width="15%">72</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td height="21" width="26%">3七大</td>
+      <td height="21" width="25%">24</td>
+      <td height="21" width="15%">75</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="26%">5陈华</td>
+      <td width="25%">24</td>
+      <td width="15%">53</td>
+    </tr>
+    <tr> 
+      <td width="26%">2王天</td>
+      <td width="25%">54</td>
+      <td width="15%">76</td>
+    </tr>
+    <tr> 
+      <td width="26%">1李由</td>
+      <td width="25%">57</td>
+      <td width="15%">62</td>
+    </tr>
+  </table>
+  <p>原3,4,5记录顺序改变，则称该排序方法是<font color="#FF0033">不稳定的</font>！</p>
+  <p>内部排序：待排序记录存放在计算机随机存储器中进行的排序过程；</p>
+  <p>外部排序：待排序记录的数量很大，以致内存一次不能容纳全部记录，在排序过程中尚需对外存进行访问的排序过程。</p>
+</blockquote>
+<p>二、插入排序</p>
+<blockquote> 
+  <p>1、直接插入排序</p>
+  <blockquote> 
+    <p>基本操作是将一个记录插入到已排好序的有序表中，从而得到一个新的、记录数增1的有序表。排序过程：</p>
+    <table width="75%" border="1" cellspacing="0">
+      <tr>
+        <td bgcolor="#FFCCCC" height="33" width="9%">38</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">49</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">65</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">97</td>
+        <td height="33" width="9%" bgcolor="#CCFFCC">76</td>
+        <td height="33" width="9%">13</td>
+        <td height="33" width="9%">27</td>
+        <td height="33" width="9%">49</td>
+        <td height="33" width="17%">...</td>
+        <td height="33" width="11%">&nbsp;</td>
+      </tr>
+    </table>
+    <br>
+    <table width="75%" border="1" cellspacing="0">
+      <tr> 
+        <td bgcolor="#FFCCCC" height="33" width="9%">38</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">49</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">65</td>
+        <td bgcolor="#CCFFCC" height="33" width="9%">76</td>
+        <td height="33" width="9%" bgcolor="#FFCCCC">97</td>
+        <td height="33" width="9%" bgcolor="#FFFFCC">13</td>
+        <td height="33" width="9%">27</td>
+        <td height="33" width="9%">49</td>
+        <td height="33" width="17%">...</td>
+        <td height="33" width="11%">&nbsp;</td>
+      </tr>
+    </table>
+    <br>
+    <table width="75%" border="1" cellspacing="0">
+      <tr> 
+        <td height="33" width="9%" bgcolor="#FFFFCC">13</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">38</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">49</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">65</td>
+        <td height="33" width="9%" bgcolor="#FFCCCC">76</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">97</td>
+        <td height="33" width="9%" bgcolor="#CCFFCC">27</td>
+        <td height="33" width="9%">49</td>
+        <td height="33" width="17%">...</td>
+        <td height="33" width="11%">&nbsp;</td>
+      </tr>
+    </table>
+    <br>
+    <table width="75%" border="1" cellspacing="0">
+      <tr> 
+        <td height="33" width="9%" bgcolor="#FFCCCC">13</td>
+        <td height="33" width="9%" bgcolor="#CCFFCC">27</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">38</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">49</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">65</td>
+        <td height="33" width="9%" bgcolor="#FFCCCC">76</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">97</td>
+        <td height="33" width="9%" bgcolor="#CCFFCC">49</td>
+        <td height="33" width="17%">...</td>
+        <td height="33" width="11%">&nbsp;</td>
+      </tr>
+    </table>
+    <br>
+    <table width="75%" border="1" cellspacing="0">
+      <tr> 
+        <td height="33" width="9%" bgcolor="#FFCCCC">13</td>
+        <td height="33" width="9%" bgcolor="#FFCCCC">27</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">38</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">49</td>
+        <td height="33" width="9%" bgcolor="#CCFFCC">49</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">65</td>
+        <td height="33" width="9%" bgcolor="#FFCCCC">76</td>
+        <td bgcolor="#FFCCCC" height="33" width="9%">97</td>
+        <td height="33" width="17%">...</td>
+        <td height="33" width="11%">&nbsp;</td>
+      </tr>
+    </table>
+    
+  </blockquote>
+  <p>2、折半插入排序</p>
+  <blockquote> 
+    <p>在直接插入排序中，为了找到插入位置，采用了顺序查找的方法。为了提高查找速度，可以采用折半查找，这种排序称折半插入排序。</p>
+  </blockquote>
+  <p>3、2－路插入排序</p>
+  <blockquote>
+    <p>为减少排序过程中移动记录的次数，在折半插入排序的基础上加以改进：</p>
+    <table width="75%" border="1" cellspacing="0">
+      <tr>
+        <td>49</td>
+        <td>38</td>
+        <td>65</td>
+        <td>97</td>
+        <td>78</td>
+        <td>13</td>
+        <td>27</td>
+        <td>49</td>
+        <td>...</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+    <br>
+    <table width="75%" border="0" cellspacing="0">
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=1</td>
+        <td width="10%">49</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">first</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=2</td>
+        <td width="10%">49</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">38</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">final</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">first</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=3</td>
+        <td width="10%">49</td>
+        <td width="10%">65</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">38</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">final</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">first</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=4</td>
+        <td width="10%">49</td>
+        <td width="10%">65</td>
+        <td width="9%">97</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">38</td>
+      </tr>
+      <tr> 
+        <td width="10%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">final</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">first</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=5</td>
+        <td width="10%">49</td>
+        <td width="10%">65</td>
+        <td width="9%">76</td>
+        <td width="9%">97</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">38</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">final</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">first</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=6</td>
+        <td width="10%">49</td>
+        <td width="10%">65</td>
+        <td width="9%">76</td>
+        <td width="9%">97</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">13</td>
+        <td width="12%">38</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">final</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">first</td>
+        <td width="12%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=7</td>
+        <td width="10%">49</td>
+        <td width="10%">65</td>
+        <td width="9%">76</td>
+        <td width="9%">97</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">13</td>
+        <td width="10%">27</td>
+        <td width="12%">38</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">final</td>
+        <td width="9%">&nbsp;</td>
+        <td width="10%">first</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">i=8</td>
+        <td width="10%">49</td>
+        <td width="10%">49</td>
+        <td width="9%">65</td>
+        <td width="9%">76</td>
+        <td width="9%">97</td>
+        <td width="10%">13</td>
+        <td width="10%">27</td>
+        <td width="12%">38</td>
+      </tr>
+      <tr> 
+        <td width="21%" bgcolor="#FFCCCC">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="10%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">&nbsp;</td>
+        <td width="9%">final</td>
+        <td width="10%">first</td>
+        <td width="10%">&nbsp;</td>
+        <td width="12%">&nbsp;</td>
+      </tr>
+    </table>
+    
+  </blockquote>
+</blockquote>
+<p>三、快速排序</p>
+<blockquote> 
+  <p>1、起泡排序</p>
+  <blockquote> 
+    <p>首先将第一个记录的关键字和第二个记录的关键字进行比较，若为逆序，则将两个记录交换之，然后比较第二个记录和第三个记录的关键字。直至第n-1个记录和第n个记录的关键字进行过比较为止。</p>
+    <p>然后进行第二趟起泡排序，对前n-1个记录进行同样操作。</p>
+    <p>...直到在某趟排序过程中没有进行过交换记录的操作为止。</p>
+    <table width="84%" border="0" cellspacing="0">
+      <tr> 
+        <td width="12%">49</td>
+        <td width="14%">38</td>
+        <td width="14%">38</td>
+        <td width="15%">38</td>
+        <td width="14%">38</td>
+        <td width="14%">13</td>
+        <td width="17%">13</td>
+      </tr>
+      <tr> 
+        <td width="12%">38</td>
+        <td width="14%">49</td>
+        <td width="14%">49</td>
+        <td width="15%">49</td>
+        <td width="14%">13</td>
+        <td width="14%">27</td>
+        <td width="17%">27</td>
+      </tr>
+      <tr> 
+        <td width="12%">65</td>
+        <td width="14%">65</td>
+        <td width="14%">65</td>
+        <td width="15%">13</td>
+        <td width="14%">27</td>
+        <td width="14%">38</td>
+        <td width="17%" bgcolor="#FFCCCC">38</td>
+      </tr>
+      <tr> 
+        <td width="12%">97</td>
+        <td width="14%">76</td>
+        <td width="14%">13</td>
+        <td width="15%">27</td>
+        <td width="14%">49</td>
+        <td width="14%" bgcolor="#FFCCCC">49</td>
+        <td width="17%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="12%">76</td>
+        <td width="14%">13</td>
+        <td width="14%">27</td>
+        <td width="15%">49</td>
+        <td width="14%" bgcolor="#FFCCCC">49</td>
+        <td width="14%">&nbsp;</td>
+        <td width="17%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="12%">13</td>
+        <td width="14%">27</td>
+        <td width="14%">49</td>
+        <td width="15%" bgcolor="#FFCCCC">65</td>
+        <td width="14%">&nbsp;</td>
+        <td width="14%">&nbsp;</td>
+        <td width="17%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="12%">27</td>
+        <td width="14%">49</td>
+        <td width="14%" bgcolor="#FFCCCC">78</td>
+        <td width="15%">&nbsp;</td>
+        <td width="14%">&nbsp;</td>
+        <td width="14%">&nbsp;</td>
+        <td width="17%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="12%">49</td>
+        <td width="14%" bgcolor="#FFCCCC">97</td>
+        <td width="14%">&nbsp;</td>
+        <td width="15%">&nbsp;</td>
+        <td width="14%">&nbsp;</td>
+        <td width="14%">&nbsp;</td>
+        <td width="17%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="12%">初始</td>
+        <td width="14%">第一趟</td>
+        <td width="14%">第二趟</td>
+        <td width="15%">第三趟</td>
+        <td width="14%">第四趟</td>
+        <td width="14%">第五趟</td>
+        <td width="17%">第六趟</td>
+      </tr>
+    </table>
+  </blockquote>
+  <p>2、快速排序</p>
+  <blockquote>
+    <p>通过一趟排序将待排记录分割成独立的两部分，其中一部分记录的关键字均比另一部分记录的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序。</p>
+    <table width="480" border="0" cellspacing="0" vspace="8">
+      <tr> 
+        <td width="96">初始关键字</td>
+        <td width="44">49</td>
+        <td width="40">38</td>
+        <td width="47">65</td>
+        <td width="45">97</td>
+        <td width="46">76</td>
+        <td width="47">13</td>
+        <td width="48">27</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td bgcolor="#CCCCFF">i</td>
+        <td bgcolor="#CCCCFF">&nbsp;</td>
+        <td bgcolor="#CCCCFF">&nbsp;</td>
+        <td bgcolor="#CCCCFF">&nbsp;</td>
+        <td bgcolor="#CCCCFF">&nbsp;</td>
+        <td bgcolor="#CCCCFF">&nbsp;</td>
+        <td bgcolor="#CCCCFF">j</td>
+        <td bgcolor="#CCCCFF">j</td>
+      </tr>
+      <tr> 
+        <td width="96">1次交换之后</td>
+        <td width="44">27</td>
+        <td width="40">38</td>
+        <td width="47">65</td>
+        <td width="45">97</td>
+        <td width="46">76</td>
+        <td width="47">13</td>
+        <td width="48">&nbsp;</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44" bgcolor="#CCCCFF">i</td>
+        <td width="40" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">i</td>
+        <td width="45" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="46" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="48" bgcolor="#CCCCFF">j</td>
+        <td width="49" bgcolor="#CCCCFF">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="96">2次交换之后</td>
+        <td width="44">27</td>
+        <td width="40">38</td>
+        <td width="47">&nbsp;</td>
+        <td width="45">97</td>
+        <td width="46">76</td>
+        <td width="47">13</td>
+        <td width="48">65</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="40" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">i</td>
+        <td width="45" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="46" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">j</td>
+        <td width="48" bgcolor="#CCCCFF">j</td>
+        <td width="49" bgcolor="#CCCCFF">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="96">3次交换之后</td>
+        <td width="44">27</td>
+        <td width="40">38</td>
+        <td width="47">13</td>
+        <td width="45">97</td>
+        <td width="46">76</td>
+        <td width="47">&nbsp;</td>
+        <td width="48">65</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="40" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">i</td>
+        <td width="45" bgcolor="#CCCCFF">i</td>
+        <td width="46" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">j</td>
+        <td width="48" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="49" bgcolor="#CCCCFF">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="96">4次交换之后</td>
+        <td width="44">27</td>
+        <td width="40">38</td>
+        <td width="47">13</td>
+        <td width="45">&nbsp;</td>
+        <td width="46">76</td>
+        <td width="47">97</td>
+        <td width="48">65</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="40" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="45" bgcolor="#CCCCFF">ij</td>
+        <td width="46" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="47" bgcolor="#CCCCFF">j</td>
+        <td width="48" bgcolor="#CCCCFF">&nbsp;</td>
+        <td width="49" bgcolor="#CCCCFF">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="96">完成一趟排序</td>
+        <td width="44">27</td>
+        <td width="40">38</td>
+        <td width="47">13</td>
+        <td width="45">49</td>
+        <td width="46">76</td>
+        <td width="47">97</td>
+        <td width="48">65</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44">&nbsp;</td>
+        <td width="40">&nbsp;</td>
+        <td width="47">&nbsp;</td>
+        <td width="45">&nbsp;</td>
+        <td width="46">&nbsp;</td>
+        <td width="47">&nbsp;</td>
+        <td width="48">&nbsp;</td>
+        <td width="49">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="96">初始状态</td>
+        <td width="44">49</td>
+        <td width="40">38</td>
+        <td width="47">65</td>
+        <td width="45">97</td>
+        <td width="46">76</td>
+        <td width="47">13</td>
+        <td width="48">27</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">一次划分</td>
+        <td width="44">27</td>
+        <td width="40">38</td>
+        <td width="47">13</td>
+        <td width="45" bgcolor="#FFCCCC">49</td>
+        <td width="46">76</td>
+        <td width="47">97</td>
+        <td width="48">65</td>
+        <td width="49">49</td>
+      </tr>
+      <tr> 
+        <td width="96">分别进行</td>
+        <td width="44">13</td>
+        <td width="40">27</td>
+        <td width="47">38</td>
+        <td width="45">&nbsp;</td>
+        <td width="46">&nbsp;</td>
+        <td width="47">&nbsp;</td>
+        <td width="48">&nbsp;</td>
+        <td width="49">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44">结束</td>
+        <td width="40">&nbsp;</td>
+        <td width="47">结束</td>
+        <td width="45">&nbsp;</td>
+        <td width="46">49</td>
+        <td width="47">65</td>
+        <td width="48" bgcolor="#FFCCCC">76</td>
+        <td width="49">97</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44">&nbsp;</td>
+        <td width="40">&nbsp;</td>
+        <td width="47">&nbsp;</td>
+        <td width="45">&nbsp;</td>
+        <td width="46">49</td>
+        <td width="47">65</td>
+        <td width="48">&nbsp;</td>
+        <td width="49">结束</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44">&nbsp;</td>
+        <td width="40">&nbsp;</td>
+        <td width="47">&nbsp;</td>
+        <td width="45">&nbsp;</td>
+        <td width="46">&nbsp;</td>
+        <td width="47">结束</td>
+        <td width="48">&nbsp;</td>
+        <td width="49">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="96">有序序列</td>
+        <td width="44">13</td>
+        <td width="40">27</td>
+        <td width="47">38</td>
+        <td width="45">49</td>
+        <td width="46">49</td>
+        <td width="47">65</td>
+        <td width="48">76</td>
+        <td width="49">97</td>
+      </tr>
+      <tr> 
+        <td width="96">&nbsp;</td>
+        <td width="44">&nbsp;</td>
+        <td width="40">&nbsp;</td>
+        <td width="47">&nbsp;</td>
+        <td width="45">&nbsp;</td>
+        <td width="46">&nbsp;</td>
+        <td width="47">&nbsp;</td>
+        <td width="48">&nbsp;</td>
+        <td width="49">&nbsp;</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </blockquote>
+</blockquote>
+<p>四、总结</p>
+<blockquote> 
+  <p>几种排序的简单分析与比较。（时间、空间复杂度）</p>
+  </blockquote>
+<p>五、作业</p>
+<blockquote> 
+  <p>实现直接插入排序、起泡排序、快速排序算法。</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class33/class33.htm">上一课</a> <a href="../class35/class35.htm">下一课</a></p>
+</body>
+</html>

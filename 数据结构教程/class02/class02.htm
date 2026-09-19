@@ -1,0 +1,301 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二课</b></p>
+<p><b><i>本课主题：</i></b> 抽象数据类型的表示与实现</p>
+<p><b><i>教学目的：</i></b> 了解抽象数据类型的定义、表示和实现方法</p>
+<p><b><i>教学重点：</i></b> 抽象数据类型表示法、类C语言语法</p>
+<p><b><i>教学难点：</i></b> 抽象数据类型表示法</p>
+<p><b><i>授课内容：</i></b></p>
+<p><b>一、抽象数据类型定义（ADT）</b></p>
+<blockquote> 
+  <p>作用：抽象数据类型可以使我们更容易描述现实世界。例：用线性表描述学生成绩表，用树或图描述遗传关系。</p>
+  <p>定义：一个数学模型以及定义在该模型上的一组操作。</p>
+  <p>关键：使用它的人可以只关心它的逻辑特征，不需要了解它的存储方式。定义它的人同样不必要关心它如何存储。</p>
+  <p>例：线性表这样的抽象数据类型，其数学模型是：数据元素的集合，该集合内的元素有这样的关系：除第一个和最后一个外，每个元素有唯一的前趋和唯一的后继。可以有这样一些操作：插入一个元素、删除一个元素等。</p>
+  <table width="474" border="1" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td colspan="2"> 
+        <div align="center">抽象数据类型分类</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="143">原子类型</td>
+      <td width="321">值不可分解，如int</td>
+    </tr>
+    <tr> 
+      <td width="143">固定聚合类型</td>
+      <td width="321">值由确定数目的成分按某种结构组成，如复数</td>
+    </tr>
+    <tr> 
+      <td width="143">可变聚合类型</td>
+      <td width="321">值的成分数目不确定如学生基本情况</td>
+    </tr>
+  </table>
+  <p>抽象数据类型表示法：</p>
+  <p>一、<b><a name="#ADT"></a></b></p>
+  <p align="center"><b>三元组表示：（D，S，P）</b></p>
+  <p align="center"><b>其中D是数据对象，S是D上的关系集，P是对D的基本操作集。</b></p>
+  <p align="left">二、书中的定义格式：</p>
+  <p align="left"><b>ADT 抽象数据类型名{</b></p>
+  <blockquote> 
+    <p><b>数据对象：&lt;数据对象的定义&gt;</b></p>
+    <p><b>数据关系：&lt;数据关系的定义&gt;</b></p>
+    <p><b>基本操作：&lt;基本操作的定义&gt;</b></p>
+  </blockquote>
+  <p><b>}ADT 抽象数据类型名</b></p>
+  <p align="left">例：线性表的表示</p>
+  <table width="538" border="1" cellspacing="0">
+    <tr bgcolor="#99FFFF"> 
+      <td width="70" height="49">名称</td>
+      <td width="285" height="49">线性表</td>
+      <td width="169" height="49">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="70" bgcolor="#FFCCCC">数据对象</td>
+      <td width="285">D={a<font size="-2">i</font>| a<font size="-2">i</font>(-ElemSet,i=1,2,...,n,n&gt;=0}</td>
+      <td width="169">任意数据元素的集合</td>
+    </tr>
+    <tr> 
+      <td width="70" bgcolor="#FFCCCC">数据关系</td>
+      <td width="285">R1={&lt;a<font size="-3">i-1</font>,a<font size="-2">i</font>&gt;| 
+        a<font size="-2">i-1</font>,a<font size="-2">i</font>(- D,i=2,...,n}</td>
+      <td width="169">除第一个和最后一个外，每个元素有唯一的直接前趋和唯一的直接后继</td>
+    </tr>
+    <tr> 
+      <td width="70" bgcolor="#FFCCCC" rowspan="3">基本操作</td>
+      <td width="285">ListInsert(&amp;L,i,e)</td>
+      <td width="169" rowspan="3">L为线性表，i为位置，e为数据元素。</td>
+    </tr>
+    <tr> 
+      <td width="285">ListDelete(&amp;L,i,e)</td>
+    </tr>
+    <tr> 
+      <td width="285">...</td>
+    </tr>
+  </table>
+</blockquote>
+<p>二、类C语言语法</p>
+<blockquote> 
+  <table width="569" border="1" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td colspan="3"> 
+        <div align="center">类C语言语法示例</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="39">1、预定义常量和类型</td>
+      <td height="39" colspan="2">#define TRUE 1<br>
+        #define FALSE 0<br>
+        #define OK 1<br>
+        #define ERROR 0<br>
+        #define INFEASIBLE -1<br>
+        #define OVERFLOW -2<br>
+        typedef in Status; //Status是函数的类型，其值是函数结果状态代码。</td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="47">2、数据结构的存储结构</td>
+      <td height="47" colspan="2">typedef ElemType first;</td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="71">3、基本操作的算法</td>
+      <td height="71" colspan="2"> 
+        <p>函数类型 函数名（函数参数表）{<br>
+          //算法说明<br>
+          语句序列<br>
+          }//函数名 </p>
+      </td>
+    </tr>
+    <tr> 
+      <td bgcolor="#CCFFCC" height="321" rowspan="6">4、赋值语句</td>
+      <td width="80" height="27">简单赋值：</td>
+      <td width="383" height="27">变量名=表达式； </td>
+    </tr>
+    <tr> 
+      <td rowspan="2" height="42">串联赋值：</td>
+      <td rowspan="2" height="42">变量名1=变量名2=...=变量名k=表达式； </td>
+    </tr>
+    <tr> </tr>
+    <tr> 
+      <td width="80" height="128">成组赋值: </td>
+      <td width="383" height="128">（变量名1，...,变量名k）=（表达式1，...,表达式k);<br>
+        结构名=结构名；<br>
+        结构名=（值1，...，值k);<br>
+        变量名[]=表达式；<br>
+        变量名[起始下标..终止下标]=变量名[起始下标..终止下标]； <br>
+      </td>
+    </tr>
+    <tr> 
+      <td width="80" height="2">交换赋值：</td>
+      <td width="383" height="2">变量名&lt;--&gt;变量名；</td>
+    </tr>
+    <tr> 
+      <td width="80" height="31">条件赋值：</td>
+      <td width="383" height="31">变量名=条件表达式？表达式？表达式T：表达式F</td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC">5、选择语句</td>
+      <td colspan="2"> 
+        <p>1、if（表达式） 语句；<br>
+          2、if（表达式） 语句；<br>
+          else 语句；<br>
+          3、switch(表达式）{<br>
+          case 值1：语句序列1；break;</p>
+        <p>...<br>
+          case 值n：语句序列n；break; <br>
+          default:语句序列n+1；break; <br>
+          }<br>
+          4、switch{<br>
+          case 条件1：语句序列1；break;</p>
+        <p>...<br>
+          case 条件n：语句序列n；break; <br>
+          default:语句序列n+1；break; <br>
+          }</p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="33">6、循环语句</td>
+      <td height="33" colspan="2">for（赋初值表达式；条件；修改表达式序列）语句；<br>
+        while（条件）语句；<br>
+        do{ 语句序列}while（条件）；</td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="40">7、结束语句</td>
+      <td height="40" colspan="2"> 
+        <p>return [表达式]；<br>
+          return; //函数结束语句<br>
+          break; //case结束语句<br>
+          exit(异常代码); //异常结束语句</p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="39">8、输入和输出语句</td>
+      <td height="39" colspan="2">scanf（[格式串]，变量1，...,变量n）；</td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="35">9、注释</td>
+      <td height="35" colspan="2">//文字序列</td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="48">10、基本函数</td>
+      <td height="48" colspan="2">max（表达式1，...，表达式n）<br>
+        min,abs,floor,ceil,eof,eoln </td>
+    </tr>
+    <tr> 
+      <td width="92" bgcolor="#CCFFCC" height="40">11、逻辑运算</td>
+      <td height="40" colspan="2">&amp;&amp;与运算；||或运算</td>
+    </tr>
+  </table>
+  <p>例：线性表的实现：<br>
+    <a name="#likec"></a>ADT List{</p>
+  <p>数据对象: D={a<font size="-2">i</font>| a<font size="-2">i</font>(-ElemSet,i=1,2,...,n,n&gt;=0} 
+  </p>
+  <p>数据关系: R1={&lt;a<font size="-3">i-1</font>,a<font size="-2">i</font>&gt;| 
+    a<font size="-2">i-1</font>,a<font size="-2">i</font>(- D,i=2,...,n} </p>
+  <p>基本操作：</p>
+  <p>InitList(&amp;L)<br>
+    DestroyList(&amp;L)<br>
+    ListInsert(&amp;L,i,e)<br>
+    ListDelete(&amp;L,i,&amp;e)</p>
+  <p>}ADT List</p>
+  <p>ListInsert(List &amp;L,int i,ElemType e)</p>
+  <p> {if(i&lt;1||i&gt;L.length+) return ERROR;</p>
+  <p> q=&amp;(L.elem[i-1]);</p>
+  <p>for(p=&amp;(L.elem[L.length-1]);p&gt;=q;--p) *(p+1)=*p;</p>
+  <p>*q=e;</p>
+  <p>++L.length;</p>
+  <p>return OK;</p>
+  <p>}</p>
+  <p><a name="#c"></a>下面是<a href="Listdemo.txt">C语言编译通过的示例</a>： </p>
+  <table width="544" border="0" cellspacing="0" height="19">
+    <tr bgcolor="#0000CC"> 
+      <td height="978"> 
+        <p><font color="#FFFF33" face="Arial, Helvetica, sans-serif"><b><font size="+1">#define 
+          ERROR 0 <br>
+          #define OK 1 <br>
+          struct STU<br>
+          { char name[20];<br>
+          char stuno[10]; <br>
+          int age; int score; <br>
+          }stu[50]; <br>
+          struct LIST <br>
+          { struct STU stu[50]; <br>
+          int length; <br>
+          }L; <br>
+          <br>
+          </font></b></font><font color="#FFFF33" face="Arial, Helvetica, sans-serif" size="+1"><b>int 
+          printlist(struct LIST L)<br>
+          { int i;<br>
+          printf("name stuno age score\n"); <br>
+          for(i=0;i&lt;L.length;i++) <br>
+          printf("%s %s\t%d\t%d\n", L.stu[i].name, L.stu[i].stuno, L.stu[i].age, 
+          L.stu[i].score); <br>
+          printf("\n"); <br>
+          }<br>
+          <br>
+          int listinsert(struct LIST *L,int i,struct STU e) <br>
+          { struct STU *p,*q; <br>
+          if (i<1||i>L->length+1) <br>
+          return ERROR; <br>
+          q=&(L->stu[i-1]); <br>
+          for(p=&L->stu[L->length-1];p>=q;--p) <br>
+          *(p+1)=*p; *q=e; ++L->length; <br>
+          return OK; <br>
+          }/*ListInsert Before i */<br>
+          <br>
+          main() <br>
+          { struct STU e; <br>
+          L.length=0; <br>
+          strcpy(e.name,"zmofun"); <br>
+          strcpy(e.stuno,"100001"); <br>
+          e.age=80; <br>
+          e.score=1000; <br>
+          listinsert(&L,1,e); <br>
+          printlist(L); <br>
+          printf("List length now is %d.\n\n",L.length); </b></font></p>
+        <p><font size="+1"><b><font color="#FFFF33" face="Arial, Helvetica, sans-serif"> 
+          strcpy(e.name,"bobjin"); <br>
+          strcpy(e.stuno,"100002"); <br>
+          e.age=80; <br>
+          e.score=1000; <br>
+          listinsert(&L,1,e); <br>
+          printlist(L); <br>
+          printf("List length now is %d.\n\n",L.length); <br>
+          } </font></b></font></p>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp; </p>
+  <table width="444" border="0" height="66" cellspacing="0">
+    <tr bgcolor="#333333"> 
+      <td> 
+        <p><font color="#FFFFFF" size="+1">E:\ZM\Zmdoc\datastru\class02>listdemo 
+          </font></p>
+        <p><font color="#FFFFFF" size="+1">name stuno age score </font></p>
+        <p><font color="#FFFFFF" size="+1">zmofun 100001 80 1000 </font></p>
+        <p><font color="#FFFFFF" size="+1">List length now is 1. </font></p>
+        <p><font color="#FFFFFF" size="+1">name stuno age score </font></p>
+        <p><font color="#FFFFFF" size="+1">bobjin 100002 80 1000 </font></p>
+        <p><font color="#FFFFFF" size="+1">zmofun 100001 80 1000 </font></p>
+        <font color="#FFFFFF" size="+1">List length now is 2. </font></td>
+    </tr>
+  </table>
+  <p><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"  width="550" height="400">
+      <param name=movie value="class02-01.swf">
+      <param name=quality value=high>
+      <embed src="class02-01.swf" quality=high type="application/x-shockwave-flash" width="550" height="400">
+      </embed> 
+    </object></p>
+  </blockquote>
+<p>三、总结</p>
+<blockquote>
+  <p> <a href="#ADT">抽象数据类型定义</a>；</p>
+  <p>抽象数据类型实现方法：一、<a href="#likec">类C语言实现</a> 二、<a href="#c">C语言实现</a></p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class01/class01.htm">上一课</a> <a href="../class03/class03.htm">下一课</a></p>
+</body>
+</html>

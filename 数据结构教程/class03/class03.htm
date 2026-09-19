@@ -1,0 +1,222 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三课</b></p>
+<p><b><i>本课主题：</i></b> 算法及算法设计要求</p>
+<p><b><i>教学目的：</i></b> 掌握算法的定义及特性，算法设计的要求</p>
+<p><b><i>教学重点：</i></b> 算法的特性，算法设计要求</p>
+<p><b><i>教学难点：</i></b> 算法设计的要求</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、算法的定义及特性</p>
+<blockquote> 
+  <p>1、定义：</p>
+  <blockquote> 
+    <p>ispass(int num[4][4]) </p>
+    <p> { int i,j; <br>
+      for(i=0;i<4;i++)</p>
+    <blockquote> 
+      <p> for(j=0;j<4;j++) </p>
+      <blockquote> 
+        <p> if(num[i][j]!=i*4+j+1)/*一条指令，多个操作*/</p>
+        <blockquote> 
+          <p> return 0; </p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+    <p> return 1; <br>
+      }/*上面是一个<a href="Puzzle.txt">类似华容道游戏</a>中判断游戏是否结束的算法*/</p>
+    <p>算法是对特定问题求解步骤的一种描述，它是指令的有限序列，其中每一条指令表示一个或多个操作；此外，一个算法还具有下列五个重要特性：</p>
+  </blockquote>
+  <p>2、<a name="#001"></a>算法的五个特性：</p>
+  <table width="541" border="1" cellspacing="0">
+    <tr> 
+      <td width="75" height="55"><b> 有穷性</b></td>
+      <td width="456" height="55">一个算法必须总是（对任何合法的输入值）在执行有穷步之后结束，且每一步都可在有穷时间内完成；</td>
+    </tr>
+    <tr> 
+      <td width="75" height="66"><b>确定性</b></td>
+      <td width="456" height="66">算法中每一条指令必须有确切的含义，读者理解时不会产生二义性。有任何条件下，算法只有唯一的一条执行路径，即对于相同的输入只能得出相同的输出。</td>
+    </tr>
+    <tr> 
+      <td width="75" height="58"><b>可行性</b></td>
+      <td width="456" height="58">一个算法是能行的，即算法中描述的操作都是可以通过已经实现的基本运算执行有限次来实现的。</td>
+    </tr>
+    <tr> 
+      <td width="75" height="44"><b>输入</b></td>
+      <td width="456" height="44">一个算法有零个或多个的输入，这些输入取自于某个特定的对象的集合。</td>
+    </tr>
+    <tr> 
+      <td width="75" height="44"><b>输出</b></td>
+      <td width="456" height="44">一个算法有一个或多个的输出。这些输出是同输入有着某些特定关系的量。</td>
+    </tr>
+  </table>
+  <p>例：</p>
+  <table width="548" border="1" cellspacing="0">
+    <tr> 
+      <td width="75" height="55"><b> 有穷性</b></td>
+      <td> 
+        <p>haha()<br>
+          {/*only a joke,do nothing.*/<br>
+          } <br>
+          main()<br>
+          {printf(&quot;请稍等...您将知道世界的未日...&quot;);<br>
+          while(1)<br>
+          haha(); <br>
+          } </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="75" height="66"><b>确定性</b></td>
+      <td> 
+        <p>float average(int *a,int num)<br>
+          {int i;long sum=0;<br>
+          for(i=0;i&lt;num;i++)<br>
+          sum+=*(a++);<br>
+          return sum/num;<br>
+          }<br>
+          main()<br>
+          {int score[10]={1,2,3,4,5,6,7,8,9,0};<br>
+          printf(&quot;%f&quot;,average(score,10);<br>
+          } <br>
+        </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="75" height="17"><b>可行性</b></td>
+      <td height="17">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="75" height="20"><b>输入</b></td>
+      <td height="20">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="75" height="44"><b>输出</b></td>
+      <td> 
+        <p>getsum(int num)<br>
+          {<br>
+          int i,sum=0;<br>
+          for(i=1;i&lt;=num;i++)<br>
+          sum+=i; <br>
+          } /*无输出的算法没有任何意义，</p>
+      </td>
+    </tr>
+  </table>
+</blockquote>
+<p>二、算法设计的要求</p>
+<blockquote> 
+  <p>1、正确性</p>
+  <table width="541" border="1" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td colspan="2"> 
+        <div align="center">算法正确性的四个层次</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="163">程序不含语法错误。</td>
+      <td width="368"> 
+        <p>max(int a,int b,int c)<br>
+          {<br>
+          if (a&gt;b)<br>
+          {if(<font color="#FF3333">a&gt;c</font>) return <font color="#FF0000">c</font>;<br>
+          else return <font color="#FF0000">a</font>;<br>
+          } <br>
+          } </p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="163">程序对于几组输入数据能够得出满足规格说明要求的结果。</td>
+      <td width="368">max(int a,int b,int c)<br>
+        {<br>
+        if (a&gt;b)<br>
+        {if(a&gt;c) return a;<br>
+        else return c;<br>
+        } <br>
+        } /* <font color="#FF3333">8,6,7</font> */ /* <font color="#FF0033">9,3,2</font> 
+        */<br>
+      </td>
+    </tr>
+    <tr> 
+      <td width="163">程序对于精心选择的典型、苛刻而带有刁难性的几组输入数据能够得出满足规格说明要求的结果。</td>
+      <td width="368"> 
+        <p>max(int a,int b,int c)<br>
+          {<br>
+          if (a&gt;b)<br>
+          {if(a&gt;c) return a;<br>
+          else return c;<br>
+          } <br>
+          else<br>
+          {if(b&gt;c) return b;<br>
+          else return c;<br>
+          } <br>
+          }</p>
+      </td>
+    </tr>
+    <tr> 
+      <td width="163">程序对于一切合法的输入数据都能产生满足规格说明要求的结果。</td>
+      <td width="368">&nbsp;</td>
+    </tr>
+  </table>
+  <p>2、可读性</p>
+  <p>3、健壮性</p>
+  <p>4、效率与低存储量需求</p>
+  <blockquote> 
+    <p>效率指的是算法执行时间。对于解决同一问题的多个算法，执行时间短的算法效率高。</p>
+    <p>存储量需求指算法执行过程中所需要的最大存储空间。</p>
+    <p><a name="#0401"></a>两者都与问题的规模有关。</p>
+    <table width="469" border="1" cellspacing="0">
+      <tr bgcolor="#FFCCCC"> 
+        <td width="210">&nbsp;</td>
+        <td width="210">算法一</td>
+        <td width="249">算法二</td>
+      </tr>
+      <tr> 
+        <td width="210">在三个整数中求最大者</td>
+        <td width="210">max(int a,int b,int c)<br>
+          {if (a&gt;b)<br>
+          {if(a&gt;c) return a;<br>
+          else return c;<br>
+          } <br>
+          else<br>
+          {if(b&gt;c) return b;<br>
+          else return c; <br>
+          }/*无需额外存储空间，只需两次比较*/</td>
+        <td width="249">max(int a[3])<br>
+          {int c,int i;<br>
+          c=a[0]; <br>
+          for(i=1;i&lt;3;i++)<br>
+          if (a[i]&gt;c) c=a[i];<br>
+          return c;<br>
+          } <br>
+          /*需要两个额外的存储空间，两次比较，至少一次赋值*/<br>
+          <br>
+          <font color="#FF00CC">/*共需5个整型数空间*/ </font></td>
+      </tr>
+      <tr> 
+        <td width="210">求100个整数中最大者</td>
+        <td width="210">同上的算法难写，难读</td>
+        <td width="249">max(int a[<font color="#FF0000">100</font>])<br>
+          {int c,int i;<br>
+          c=a[0]; <br>
+          for(i=1;i&lt;<font color="#FF3333">100</font>;i++)<br>
+          if (a[i]&gt;c) c=a[i];<br>
+          return c;<br>
+          }<br>
+          <font color="#FF00CC">/*共需102个整型数空间*/</font> </td>
+      </tr>
+    </table>
+    
+  </blockquote>
+</blockquote>
+<p>三、总结</p>
+<blockquote> 
+  <p>1、<a href="#001">算法的特性</a></p>
+  <p>2、算法设计要求：正确性、可读性、健壮性、效率与低存储量需求。<br>
+  </p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class02/class02.htm">上一课</a> <a href="../class04/class04.htm">下一课</a></p>
+</body>
+</html>

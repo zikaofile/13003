@@ -1,0 +1,228 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第八课</b></p>
+<p><b><i>本课主题：</i></b> 线性表的链式表示与实现</p>
+<p><b><i>教学目的：</i></b> 掌握线性链表、单链表、静态链表的概念、表示及实现方法</p>
+<p><b><i>教学重点：</i></b> 线性链表之单链表的表示及实现方法。</p>
+<p><b><i>教学难点：</i></b> 线性链表的概念。</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、复习顺序表的定义。</p>
+<p>二、线性链表的概念：</p>
+<blockquote> 
+  <p>以链式结构存储的线性表称之为线性链表。</p>
+  <p>特点是该线性表中的数据元素可以用任意的存储单元来存储。线性表中逻辑相邻的两元素的存储空间可以是不连续的。为表示逻辑上的顺序关系，对表的每个数据元素除存储本身的信息之外，还需存储一个指示其直接衙继的信息。这两部分信息组成数据元素的存储映象，称为结点。</p>
+  <table width="90%" border="０" cellspacing="0" bordercolorlight="#FFFFFF" bordercolordark="#FFFFFF">
+    <tr> 
+      <td width="22%" valign="top" height="183"> 
+        <table width="100%" border="0" cellspacing="2">
+          <tr> 
+            <td> 
+              <div align="right">2000:1000</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">2000:1010</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">2000:1020</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">2000:1030</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">2000:1040</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">2000:1050</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">2000:1060</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">...</div>
+            </td>
+          </tr>
+          <tr> 
+            <td> 
+              <div align="right">2000:4000</div>
+            </td>
+          </tr>
+        </table>
+      </td>
+      <td valign="top" width="47%" height="183"> 
+        <table width="100%" border="1" cellspacing="0">
+          <tr> 
+            <td width="59%">头指针2000:1006</td>
+            <td width="41%">2000:1030</td>
+          </tr>
+          <tr> 
+            <td width="59%">a3</td>
+            <td width="41%">2000:1040</td>
+          </tr>
+          <tr> 
+            <td width="59%">a6</td>
+            <td width="41%">NULL</td>
+          </tr>
+          <tr> 
+            <td width="59%">a1</td>
+            <td width="41%">2000:1060</td>
+          </tr>
+          <tr> 
+            <td width="59%">a4</td>
+            <td width="41%">2000:1050</td>
+          </tr>
+          <tr> 
+            <td width="59%">a5</td>
+            <td width="41%">2000:1020</td>
+          </tr>
+          <tr> 
+            <td width="59%">a2</td>
+            <td width="41%">2000:1010</td>
+          </tr>
+          <tr> 
+            <td width="59%">数据域</td>
+            <td width="41%">指针域</td>
+          </tr>
+          <tr> 
+            <td width="59%">&nbsp;</td>
+            <td width="41%">&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+      <td width="31%" height="183" valign="top"> 
+        <table width="99%" border="0" cellspacing="1">
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&lt;-数据域+指针域</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+          <tr> 
+            <td>&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <p>例:下图是若干抽屉，每个抽屉中放一个数据元素和一个指向后继元素的指针，一号抽屉中放线性表的第一个元素，它的下一个即第二个元素的位置标为5，即放在第5个抽屉中，而第三个放在2号抽屉中。第三个元素即为最后一个，它的下一个元素的指针标为空，用0表示。</p>
+  <p><img src="class08-02.jpg" width="381" height="209"></p>
+  <p>用线性链表表示线性表时,数据元素之间的逻辑关系是由结点中的指针指示的</p>
+  <p><img src="class08-01.jpg" width="300" height="40"></p>
+</blockquote>
+<p>二、线性链表的存储实现</p>
+<blockquote> 
+  <p>struct LNODE{</p>
+  <p>ElemType data;</p>
+  <p>struct LNODE *next;</p>
+  <p>};</p>
+  <p>typedef struct LNODE LNode;</p>
+  <p>typedef struct LNODE * LinkList;</p>
+  <p>头指针与头结点的区别：</p>
+  <p>头指针只相当于结点的指针域，头结点即整个线性链表的第一个结点，它的数据域可以放数据元素，也可以放线性表的长度等附加信息，也可以不存储任何信息。</p>
+</blockquote>
+<p>三、线性表的操作实现(类C语言)</p>
+<blockquote> 
+  <p>1初始化操作</p>
+  <p>Status Init_L(LinkList L){</p>
+  <p>if (L=(LinkList *)malloc(sizeof(LNode)))</p>
+  <blockquote> 
+    <p>{L-&gt;next=NULL;return 1;}</p>
+  </blockquote>
+  <p>else return 0;</p>
+  <p>}</p>
+  <p>2插入操作</p>
+  <p>Status ListInsert_L(LinkList &amp;L,int i,ElemType e){</p>
+  <p>p=L,j=0;</p>
+  <p>while(p&amp;&amp;j&lt;i-1){p=p-&gt;next;++j;}</p>
+  <p>if(!p||j&gt;i-1) return ERROR;</p>
+  <p>s=(LinkList)malloc(sizeof(LNode));</p>
+  <p>s-&gt;data=e;s-&gt;next=p-&gt;next;</p>
+  <p>p-&gt;next=s;</p>
+  <p>return OK;</p>
+  <p>}//ListInsert_L</p>
+  <p><img src="class08-03.jpg" width="376" height="390"></p>
+  <p>3删除操作</p>
+  <p>Status ListDelete_L(LinkList &amp;L,int i,ElemType &amp;e){</p>
+  <p>p=L,j=0;</p>
+  <p>while(p&amp;&amp;j&lt;i-1){p=p-&gt;next;++j;}</p>
+  <p>if(!p-&gt;next||j&gt;i-1) return ERROR;</p>
+  <p>q=p-&gt;next;p-&gt;next=q-&gt;next;</p>
+  <p>e=q-&gt;data;free(q);</p>
+  <p>return OK;</p>
+  <p>}//ListDelete_L</p>
+  <p><img src="class08-04.jpg" width="381" height="398"></p>
+  <p></p>
+  <p>4取某序号元素的操作</p>
+  <p>Status GetElem_L(LinkList &amp;L,int i,ElemType &amp;e){</p>
+  <p>p=L-&gt;next,j=1;</p>
+  <p>while(p&amp;&amp;j&lt;i){p=p-&gt;next;++j;}</p>
+  <p>if(!p||j&gt;i) return ERROR;</p>
+  <p>e=p-&gt;data;</p>
+  <p>return OK;</p>
+  <p>}//GetElem_L</p>
+  <p>5归并两个单链表的算法</p>
+  <p>void MergeList_L(LinkList &amp;La,LinkList &amp;Lb,LinkList &amp;Lc){</p>
+  <p>//已知单链线性表La和Lb的元素按值非递减排列</p>
+  <p>//归并后得到新的单链线性表Lc,元素也按值非递减排列</p>
+  <p>pa=La-&gt;next;pb=Lb-&gt;next;</p>
+  <p>Lc=pc=La;</p>
+  <p>while(pa&amp;&amp;pb){</p>
+  <blockquote> 
+    <p>if(pa-&gt;data&lt;=pb-&gt;data){</p>
+    <blockquote> 
+      <p>pc-&gt;next=pa;pc=pa;pa=pa-&gt;next;</p>
+    </blockquote>
+    <p>}else{pc-&gt;next=pb;pc=pb;pb=pb-&gt;next;}</p>
+  </blockquote>
+  <p>}</p>
+  <p>pc-&gt;next=pa?pa:pb;</p>
+  <p>free(Lb);</p>
+  <p>}//MergeList_L</p>
+  <p><a href="linklist.txt">C语言实现的例子</a>。</p>
+</blockquote>
+<p>四、总结</p>
+<blockquote>
+  <p>1、线性链表的概念。</p>
+  <p>2、线性链表的存储</p>
+  <p>3、线性链表的操作</p>
+  <p></p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class07/class07.htm">上一课</a> <a href="../class09/class09.htm">下一课</a></p>
+</body>
+</html>

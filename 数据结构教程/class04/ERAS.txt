@@ -1,0 +1,530 @@
+/*
+  Copyright zmofun           All rights reserved!
+       http://zmofun.topcool.net
+			     2000.1.14        */
+
+#include <iostream.h>
+#include <graphics.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <conio.h>
+#include <bios.h>
+#include <time.h>
+
+#define ESC 0x11b
+#define RETURN 0x1c0d
+#define ALT 0x08
+#define ALTX 0x2d00
+#define RIGHTS 0x01
+#define LEFTA 0x4b00
+#define UPA   0x4800
+#define DOWNA 0x5000
+#define RIGHTA 0x4d00
+#define KEYK 0x256b
+#define KEYKK 0x254b
+#define KEYJ 0x246a
+#define KEYJJ 0x244a
+#define KEYL 0x266c
+#define KEYLL 0x264c
+#define KEYI 0x1769
+#define KEYII 0x1749
+
+class shape
+{
+  int px,py,width;
+public:
+  int l,c;
+  int s[5][5];
+  int b[5][5];
+  void getnextsh(int x,int y,int il,int ic,int level);
+  void init(int x,int y,int w,int il,int ic,int level);
+  void rotate();
+  void paint();
+  void paintnext(int x,int y);
+  void erase();
+  void move(int direct);
+};
+class gamebox
+{
+  int px,py,boxwidth,boxperline,boxpercolumn,keyup,keydown,keyleft,keyright;
+  int pxmess;
+  int score,level,speed,layer;
+  int begin;
+  int controlkey[4];
+  clock_t inter;
+  shape curshape;
+private:
+  void gamebegin();
+  int gameconfiged(int key);
+  void showmessage();
+  void showscore();
+  void addscore();
+  void paint();
+  void paintstick();
+  int gameover();
+  int canmove(int direct);
+  int canrotate();
+  void newshape();
+public:
+  int stick[41][22];
+  void init(int x,int y,int boxw,int w,int h,int messx,int keyin[4]);
+  void play(int key);
+};
+
+class game
+{
+  gamebox box[2];
+public:
+  void run();
+};
+int gamebox::canrotate()
+{
+  int i,j;
+  int t[5][5];
+  for(i=0;i<5;i++)
+    for(j=0;j<5;j++)
+      {
+	t[i][j]=curshape.s[4-j][i];
+	if(t[i][j]&&stick[curshape.l+i][curshape.c+j])
+	  return 0;
+      }
+  return 1;
+}
+int gamebox::gameover()
+{
+  int i,j;
+  if (curshape.l<1)
+    return 1;
+  else
+    {
+      for(i=0;i<5;i++)
+	for(j=0;j<5;j++)
+	  if(curshape.s[i][j])
+	    stick[i+curshape.l][curshape.c+j]=curshape.s[i][j];
+    }
+  addscore();
+  return 0;
+}
+void gamebox::addscore()
+{
+  int i,j,line,ln,high,addspeed;
+  int t[40];
+  line=0;
+  for (i=boxpercolumn-1;i>=0;i--)
+    { t[i]=0;
+      for(j=1;j<boxperline+1;j++)
+	t[i]+=stick[i][j];
+      if(t[i])
+	high=i;
+      if (t[i]==boxperline)
+	 {
+	   line++;
+	   t[i]=1;
+	 }
+      else
+	t[i]=0;
+    }
+  for(i=boxpercolumn-1;i>=high;i--)
+    {
+      if(t[i])
+	{
+	  ln=i-1;
+	  while(t[ln])
+	   ln--;
+	  for(j=1;j<boxperline+1;j++)
+	   { stick[i][j]=stick[ln][j];
+	     stick[ln][j]=0;
+	   }
+	  t[ln]=1;
+	}
+    }
+  paintstick();
+  addspeed=score/1000;
+  if (line>3)
+    score+=2*line*100;
+  else
+    score+=line*100;
+  if(addspeed!=score/1000)
+    speed=(speed+1)%10;
+  showscore();
+}
+
+void gamebox::paintstick()
+{
+  int i,j;
+  setbkcolor(BLUE);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,BLUE);
+  for (i=0;i<boxpercolumn;i++)
+    for(j=1;j<boxperline+1;j++)
+       if (stick[i][j])
+	 bar3d(px+boxwidth*(j-1)+1,py+boxwidth*i+1,
+	       px+boxwidth*j-1,py+boxwidth*(i+1)-1,0,1);
+       else
+	 bar(px+boxwidth*(j-1)+1,py+boxwidth*i+1,
+	       px+boxwidth*j-1,py+boxwidth*(i+1)-1);
+}
+void gamebox::gamebegin()
+{
+  int i,j,b;
+  int randnum[400]={1,1,0,1,0,1,0,1,0,1,
+		    1,1,0,1,0,0,1,0,1,0,
+		    0,0,1,0,1,0,1,0,1,0,
+		    0,1,0,0,1,0,1,0,0,1,
+		    0,1,0,1,0,1,0,1,0,1,
+		    1,0,0,1,0,1,0,1,0,1,
+		    1,1,0,0,1,0,1,0,1,0,
+		    0,1,0,0,1,0,0,1,0,0,
+		    1,0,0,1,0,0,1,0,1,0,
+		    1,0,0,1,0,1,0,1,0,1,
+		    1,1,0,0,1,0,1,0,1,0,
+		    0,1,0,0,1,0,0,1,0,0,
+		    1,1,0,1,0,1,0,1,0,1,
+		    1,1,0,1,0,0,1,0,1,0,
+		    0,0,1,0,1,0,1,0,1,0,
+		    1,1,0,1,0,1,0,1,0,1,
+		    1,1,0,1,0,0,1,0,1,0,
+		    0,0,1,0,1,0,1,0,1,0,
+		    0,1,0,0,1,0,1,0,0,1,
+		    0,1,0,1,0,1,0,1,0,1,
+		    1,0,0,1,0,1,0,1,0,1,
+		    1,1,0,0,1,0,1,0,1,0,
+		    0,1,0,0,1,0,0,1,0,0,
+		    1,0,0,1,0,0,1,0,1,0,
+		    0,1,0,0,1,0,1,0,0,1,
+		    0,1,0,1,0,1,0,1,0,1,
+		    1,0,0,1,0,1,0,1,0,1,
+		    1,1,0,0,1,0,1,0,1,0,
+		    0,1,0,0,1,0,0,1,0,0,
+		    1,0,0,1,0,0,1,0,1,0,
+		    1,0,1,0,1,0,1,0,1,0};
+
+  for(i=0;i<boxpercolumn-1;i++)    //clear game box's stick
+    for(j=1;j<boxperline+1;j++)
+      stick[i][j]=0;
+
+  for (i=0;i<layer;i++)
+    for(j=1;j<boxperline+1;j++)
+       {
+	 b=random(20)+i;
+	 stick[boxpercolumn-1-i][j]=randnum[b+j];
+       }
+  paintstick();
+  curshape.getnextsh(px+boxwidth*(boxperline/2-3),py,0,boxperline/2-2,level);
+  curshape.paint();
+  curshape.paintnext(pxmess-15,py+200);
+  score=0;
+  showscore();
+  begin=1;
+}
+void shape::getnextsh(int x,int y,int il,int ic,int level)
+{
+  int no,i;
+  int shapeall[9][25]={
+	{0,0,0,0,0, 0,0,1,0,0, 0,1,1,1,0, 0,0,0,0,0, 0,0,0,0,0},
+	{0,0,0,0,0, 0,1,1,1,0, 0,0,1,0,0, 0,0,0,0,0, 0,0,0,0,0},
+	{0,0,0,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0},
+	{0,0,0,0,0, 0,1,0,0,0, 0,1,1,1,0, 0,0,0,0,0, 0,0,0,0,0},
+	{0,0,0,0,0, 0,0,0,1,0, 0,1,1,1,0, 0,0,0,0,0, 0,0,0,0,0},
+	{0,0,0,0,0, 0,1,1,0,0, 0,1,1,0,0, 0,0,0,0,0, 0,0,0,0,0},
+	{0,0,0,0,0, 0,1,0,1,0, 0,1,1,1,0, 0,0,0,0,0, 0,0,0,0,0},
+	{0,0,0,0,0, 0,1,1,0,0, 0,0,1,0,0, 0,0,1,1,0, 0,0,0,0,0},
+	{0,1,1,0,0, 0,0,1,0,0, 0,0,1,1,0, 0,1,1,0,0, 0,0,0,0,0}
+	};
+  randomize();
+  no=random(6)+level;
+  px=x;
+  py=y;
+  l=il;
+  c=ic;
+  for(i=0;i<25;i++)
+    {
+      s[i/5][i%5]=b[i/5][i%5];
+      b[i/5][i%5]=shapeall[no][i];
+    }
+}
+
+void gamebox::showscore()
+{
+  char mess[8];
+  setbkcolor(BLUE);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,BLUE);
+  settextstyle(0,0,1);
+  sprintf(mess,"%d",score);
+  bar(px+30,py-20,px+80,py-20+10);
+  outtextxy(px+30,py-20,mess);
+}
+void gamebox::showmessage()
+{
+  char mess[5];
+  setbkcolor(BLUE);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,BLUE);
+  settextstyle(0,0,1);
+  outtextxy(10,460,"Source code can download from http://zmofun.topcool.net!");
+  outtextxy(pxmess,py+20,"LEVEL");
+  sprintf(mess,"%d",level);
+  bar(pxmess+20,py+40,pxmess+20+40,py+50);
+  outtextxy(pxmess+20,py+40,mess);
+
+  outtextxy(pxmess,py+60,"SPEED");
+  sprintf(mess,"%d",speed);
+  bar(pxmess+20,py+80,pxmess+20+40,py+90);
+  outtextxy(pxmess+20,py+80,mess);
+
+  outtextxy(pxmess,py+100,"LAYER");
+  sprintf(mess,"%d",layer);
+  bar(pxmess+20,py+120,pxmess+20+40,py+130);
+  outtextxy(pxmess+20,py+120,mess);
+  showscore();
+}
+void gamebox::init(int x,int y,int boxw,int w,int h,int messx,int *keyin)
+{
+  int i,j;
+  px=x;
+  py=y;
+  boxwidth=boxw;
+  boxperline=w;
+  boxpercolumn=h;
+  pxmess=messx;
+  level=1;
+  score=0;
+  speed=1;
+  layer=3;
+  inter=clock();
+  begin=0;
+  for(i=0;i<boxpercolumn;i++)
+    for(j=1;j<boxperline+1;j++)
+      stick[i][j]=0;
+  for(i=0;i<boxpercolumn+1;i++)
+    {
+      stick[i][0]=1;
+      stick[i][boxperline+1]=1;
+    }
+  for(j=0;j<boxperline+2;j++)
+      stick[boxpercolumn][j]=1;
+  for(i=0;i<4;i++)
+    controlkey[i]=keyin[i];
+  paint();
+  curshape.init(px+boxwidth*(boxperline/2-2),py,5*boxwidth,0,boxperline/2-2,level);
+}
+
+void gamebox::paint()
+{
+  setbkcolor(BLUE);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,BLUE);
+  bar3d(px,py,px+boxperline*boxwidth,py+boxpercolumn*boxwidth+1,0,1);
+  showmessage();
+}
+
+int gamebox::canmove(int direct)
+{
+  int i,j;
+  switch(direct)
+   {
+     case 1:
+       for(j=0;j<5;j++)
+	 for(i=0;i<5;i++)
+	   if(curshape.s[i][j]&&stick[curshape.l+i][curshape.c-1+j])
+	     return 0;
+       break;
+     case 2:
+       for(j=4;j>=0;j--)
+	 for(i=0;i<5;i++)
+	   if(curshape.s[i][j]&&stick[curshape.l+i][curshape.c+1+j])
+	     return 0;
+       break;
+     case 3:
+       for(i=4;i>=0;i--)
+	 for(j=0;j<5;j++)
+	   if(curshape.s[i][j]&&stick[curshape.l+1+i][curshape.c+j])
+	     return 0;
+       break;
+     default:
+       break;
+   }
+  return 1;
+}
+void shape::move(int d)
+{
+  erase();
+  switch(d)
+  {
+    case 1:
+      px=px-width/5;
+      c--;
+      break;
+    case 2:
+      px=px+width/5;
+      c++;
+      break;
+    default:
+      py=py+width/5;
+      l++;
+      break;
+  }
+  paint();
+}
+void shape::erase()
+{
+  int i,j;
+  setbkcolor(BLUE);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,BLUE);
+  for(i=0;i<5;i++)
+    for(j=0;j<5;j++)
+      if (s[i][j])
+	bar(px+j*(width/5)+1,py+i*(width/5)+1,
+	      px+(j+1)*(width/5)-1,py+(i+1)*(width/5)-1);
+}
+void shape::paint()
+{
+  int i,j;
+  setbkcolor(BLUE);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,BLUE);
+  for(i=0;i<5;i++)
+    for(j=0;j<5;j++)
+      if (s[i][j])
+	bar3d(px+j*(width/5)+1,py+i*(width/5)+1,
+	      px+(j+1)*(width/5)-1,py+(i+1)*(width/5)-1,0,1);
+}
+void shape::paintnext(int x,int y)
+{
+  int i,j;
+  setbkcolor(BLUE);
+  setcolor(YELLOW);
+  setfillstyle(SOLID_FILL,BLUE);
+  bar(x,y,x+width,y+width);
+  for(i=0;i<5;i++)
+    for(j=0;j<5;j++)
+      if (b[i][j])
+	bar3d(x+j*(width/5)+1,y+i*(width/5)+1,
+	      x+(j+1)*(width/5)-1,y+(i+1)*(width/5)-1,0,1);
+}
+
+void shape::rotate()
+{
+  int i,j;
+  int t[5][5];
+  for(i=0;i<5;i++)
+    for(j=0;j<5;j++)
+	t[i][j]=s[i][j];
+/*        for(i=0;i<5;i++)
+	  for(j=0;j<5;j++)
+	    s[i][j]=t[j][4-i];  */
+  erase();
+  for(i=0;i<5;i++)
+    for(j=0;j<5;j++)
+      s[i][j]=t[4-j][i];
+  paint();
+}
+
+void shape::init(int x,int y,int w,int il,int ic,int level)
+{
+  px=x;
+  py=y;
+  l=il;
+  c=ic;
+  width=w;
+  getnextsh(x,y,il,ic,level);
+}
+
+int gamebox::gameconfiged(int key)
+{
+  if(!key)
+    return 0;
+  if (key==controlkey[0])
+    {
+      level=(level+1)%4;
+    }
+  if (key==controlkey[1])
+    return 1;
+  if (key==controlkey[2])
+    {
+      speed=(speed+1)%10;
+    }
+  if (key==controlkey[3])
+    {
+      layer=(layer+1)%10;
+    }
+  showmessage();
+  return 0;
+}
+
+void gamebox::play(int key)
+{
+  if (!begin)
+    {
+     if (gameconfiged(key))
+       gamebegin();
+     return;
+    }
+  if (key==controlkey[0])
+    if(canrotate())
+      curshape.rotate();
+  if (key==controlkey[2])
+    if(canmove(1))
+      curshape.move(1);
+  if (key==controlkey[3])
+    if(canmove(2))
+      curshape.move(2);
+  if (key==controlkey[1])
+    if(canmove(3))
+      curshape.move(3);
+  if(clock()-inter>19-2*speed)
+    {
+      if(canmove(3))
+	{
+	  inter=clock();
+	  curshape.move(3);
+	}
+      else
+	{
+	  if(gameover())
+	    begin=0;
+	  else
+	   {
+	     curshape.getnextsh(px+boxwidth*(boxperline/2-3),py,0,
+				  boxperline/2-2,level);
+	     curshape.paintnext(pxmess-10,py+200);
+	   }
+	}
+    }
+}
+void game::run()
+{
+  int key;
+  int gdriver = DETECT, gmode, errorcode;
+  int keya[8]={UPA,DOWNA,LEFTA,RIGHTA,KEYI,KEYK,KEYJ,KEYL};
+  initgraph(&gdriver, &gmode, "e:\\tc3\\bgi");
+  errorcode = graphresult();
+  if (errorcode != grOk)  /* an error occurred */
+    {
+      printf("Graphics error: %s\n", grapherrormsg(errorcode));
+      printf("Press any key to halt:");
+      getch();
+      exit(1);             /* return with error code */
+    }
+  box[0].init(105,50,13,16,30,40,keya+4);
+  box[1].init(322,50,13,16,30,560,keya);
+  while(1)
+  {
+    if(bioskey(1))
+      key=bioskey(0);
+    else key=0;
+    if (key==ESC)
+      break;
+    box[0].play(key);
+    box[1].play(key);
+  }
+  closegraph();
+}
+main()
+{
+  game mygame;
+  mygame.run();
+  return 1;
+}

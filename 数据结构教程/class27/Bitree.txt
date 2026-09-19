@@ -1,0 +1,63 @@
+#include <alloc.h>
+
+#define ERROR 0;
+#define OK 1;
+
+
+typedef int ElemType;
+
+typedef struct BinaryTree
+
+{
+  ElemType data;
+  struct BinaryTree *l;
+  struct BinaryTree *r;
+}*BiTree,BiNode;
+
+BiNode * new()
+{
+  return( (BiNode *)malloc(sizeof(BiNode)) );
+}
+
+CreateSubTree(BiTree *T,ElemType *all,int i)
+{
+  if ((all[i]==0)||i>16)
+    {
+      *T=NULL;
+      return OK;
+    }
+  *T=new();
+  if(*T==NULL) return ERROR;
+  (*T)->data=all[i];
+  CreateSubTree(&((*T)->l),all,2*i);
+  CreateSubTree(&((*T)->r),all,2*i+1);
+}
+
+CreateBiTree(BiTree *T)
+{
+  ElemType all[16]={0,1,2,3,0,0,4,5,0,0,0,0,6,0,0,0,};
+  CreateSubTree(T,all,1);
+}
+
+printelem(ElemType d)
+{
+  printf("%d\n",d);
+}
+
+PreOrderTraverse(BiTree T,int (*Visit)(ElemType d))
+{
+  if(T){
+    if(Visit(T->data))
+      if(PreOrderTraverse(T->l,Visit))
+	if(PreOrderTraverse(T->r,Visit)) return OK;
+    return ERROR;
+  } else  return OK;
+}
+main()
+{
+  BiTree root;
+  CreateBiTree(&root);
+  PreOrderTraverse(root,printelem);
+
+}
+

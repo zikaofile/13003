@@ -1,0 +1,39 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十七课</b></p>
+<p><b><i>本课主题：</i></b> 实验六 二叉树实验</p>
+<p><b><i>教学目的：</i></b> 掌握二叉树的链式存储结构</p>
+<p><b><i>教学重点：</i></b> 二叉树的链式存储实现方法</p>
+<p><b><i>教学难点：</i></b> </p>
+<p><b><i>授课内容：</i></b></p>
+<p>生成如下二叉树，并得出三种遍历结果：</p>
+<p><img src="class27-01.jpg" width="158" height="220"></p>
+<p>一、二叉树的链式存储结构表示</p>
+<blockquote> 
+  <p>typedef struct BiTNode{</p>
+  <p> TElemType data;</p>
+  <p>struct BitNode *lchild,*rchild;</p>
+  <p>}BiTNode,*BiTree;</p>
+  </blockquote>
+<p>二、二叉树的链式存储算法实现</p>
+<blockquote>
+  <p>CreateBiTree(&amp;T,definition);</p>
+  <p>InsertChild(T,p,LR,c);</p>
+</blockquote>
+<p>三、二叉树的递归法遍历</p>
+<blockquote>
+  <p>PreOrderTraverse(T,Visit());</p>
+  <p>InOrderTraverse(T,Visit());</p>
+  <p>PostOrderTraverse(T,Visit());</p>
+  <p>&nbsp;</p>
+  <p><a href="Bitree.txt">示例源程序</a></p>
+  <p>&nbsp;</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class26/class26.htm">上一课</a> <a href="../class28/class28.htm">下一课</a></p>
+</body>
+</html>

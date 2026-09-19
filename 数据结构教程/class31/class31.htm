@@ -1,0 +1,125 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十一课</b></p>
+<p><b><i>本课主题：</i></b> 动态查找表</p>
+<p><b><i>教学目的：</i></b> 掌握二叉排序树的实现方法</p>
+<p><b><i>教学重点：</i></b> 二叉排序树的实现</p>
+<p><b><i>教学难点：</i></b> 构造二叉排序树的方法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、动态查找表的定义</p>
+<blockquote>
+  <p>动态查找表的特点是：</p>
+  <p>表结构本身是在查找过程中动态生成的，即对于给定值key,若表中存在其关键字等于key的记录，则查找成功返回，否则插入关键字等于key的记录。以政是动态查找表的定义：</p>
+  <p>ADT DymanicSearchTable{</p>
+  <p> 数据对象Ｄ：Ｄ是具有相同特性的数据元素的集合。各个数据元素均含有类型相同，可唯一标识数据元素的关键字。</p>
+  <p>数据关系Ｒ：数据元素同属一个集合。</p>
+  <p>基本操作Ｐ：</p>
+  <p>InitDSTable(&amp;DT);</p>
+  <p>DestroyDSTable(&amp;DT);</p>
+  <p>SearchDSTable(DT,key);</p>
+  <p>InsertDSTable(&amp;DT,e);</p>
+  <p>DeleteDSTable(&amp;DT,key);</p>
+  <p>TraverseDSTable(DT,Visit());</p>
+  <p>}ADT DynamicSearchTable</p>
+</blockquote>
+<p>二、二叉排序树及其查找过程</p>
+<blockquote> 
+  <p>二叉排序树或者是一棵空树；或者是具有下列性质的二叉树：</p>
+  <p>１、若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；</p>
+  <p>２、若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；</p>
+  <p>３、它的左、右子树了分别为二叉排序树。</p>
+  <p>如果取二叉链表作为二叉排序树的存储结构，则上述查找过程如下：</p>
+  <p>BiTree SearchBST(BiTree T,KeyType key){</p>
+  <blockquote> 
+    <p>if(!T)||EQ(key,T-&gt;data.key)) return (T);</p>
+    <p>else if LT(key,T-&gt;data.key) return (SearchBST(T-&gt;lchild,key));</p>
+    <p>else return (SearchBST(T-&gt;rchild.key));</p>
+  </blockquote>
+  <p>}//SearchBST</p>
+</blockquote>
+<p>三、二叉排序树的插入和删除</p>
+<blockquote> 
+  <p>二叉排序树是一种动态树表，其特点是，树的结构通常不是一资生成的，面是在查找过程中，当树中不存在关键字等于给定值的结点时再进行插入。新插入的结点一定是一个新添加的叶子结点，并且是查找不成功时查找路径上访问的最后一个结点的左孩子或右孩子结点。</p>
+  <p>Status SearchBST(BiTree T,KeyType key,BiTree f,BiTree &amp;p){</p>
+  <blockquote> 
+    <p>if(!T) {p=f;return FALSE;}</p>
+    <p>else if EQ(key,T-&gt;data.key){ p=T;return TRUE;}</p>
+    <blockquote> 
+      <p>else if LT(key,T-&gt;data.key) SearchBsT(T-&gt;lchild,key,T,p);</p>
+      <blockquote> 
+        <p>else SearchBST(T-&gt;rchild,key,T,p);</p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+  <p>}//SearchBST</p>
+  <p>插入算法：</p>
+  <p>Status InsertBST(BiTree &amp;T,ElemType e){</p>
+  <blockquote> 
+    <p>if(!SearchBST(T,e.key,NULL,p){</p>
+    <blockquote> 
+      <p>s=(BiTree)malloc(sizeof(BiTNode));</p>
+      <p>s-&gt;data=e;s-&gt;lchild=s-&gt;rchild=NULL;</p>
+      <p>if(!p) T=s;</p>
+      <p>else if (LT(e.key,p-&gt;data.key) p-&gt;lchild=s;</p>
+      <p>else p-&gt;rchild=s;</p>
+      <p>return TRUE;</p>
+    </blockquote>
+    <p>}</p>
+    <p>else return FALSE;</p>
+  </blockquote>
+  <p>}//InsertBST</p>
+  <p>在二叉排序树中删除一个节点的算法：</p>
+  <p>&nbsp;</p>
+  <p>Status DeleteBST(BiTree &amp;T,KeyType key){</p>
+  <blockquote> 
+    <p>if(!T) return FALSE;</p>
+    <p>else{</p>
+    <blockquote> 
+      <p>if EQ(key,T-&gt;data.key) Delete(T);</p>
+      <p>else if LT(key,T-&gt;data.key) DeleteBST(T-&gt;lchild,key);</p>
+      <p>else DeleteBST(T-&gt;rchild,key);</p>
+      <p>return TRUE;</p>
+    </blockquote>
+    <p>}</p>
+  </blockquote>
+  <p>}</p>
+  <p>void Delete(BiTree &amp;p){</p>
+  <p>if(!p-&gt;rchild){</p>
+  <blockquote> 
+    <p> q=p; p=p-&gt;lchild; free(q);</p>
+  </blockquote>
+  <p>}</p>
+  <p>else if(!p-&gt;lchild){</p>
+  <blockquote> 
+    <p>q=p;p=p-&gt;rchild; free(q);</p>
+  </blockquote>
+  <p>}</p>
+  <p>else{</p>
+  <p> //方法一：如图示<img src="class31-02.jpg" width="474" height="390"></p>
+  <blockquote> 
+    <p> q=p;s=p-&gt;lchild;</p>
+    <p>while(s-&gt;rchild){q=s;s=s-&gt;rchild}//转左，然后向右到尽头</p>
+    <p>p-&gt;data=s-&gt;data; //s指向被删结点的&quot;前驱&quot;</p>
+    <p>if(q!=p)q-&gt;rchild=s-&gt;lchild; //重接*q的右子树</p>
+    <p>else q-&gt;lchild=s-&gt;lchild;//重接*q的左子树 （方法一结束）</p>
+    <p>//或可用方法二：</p>
+    <p> //q=s=(*p)->l; </p>
+    <p>//while(s->r) s=s->r; </p>
+    <p>//s->r=(*p)->r; </p>
+    <p>//free(*p); </p>
+    <p>//(*p)=q; </p>
+    <p><img src="class31-01.jpg" width="453" height="224"></p>
+    <p>}</p>
+  </blockquote>
+  <p>}</p>
+  <p><a href="bst.txt">请看一个示例源程序。</a></p>
+</blockquote>
+<p>四、总结</p>
+<p><a href="../index.htm">回目录</a> <a href="../class30/class30.htm">上一课</a> <a href="../class32/class32.htm">下一课</a></p>
+</body>
+</html>

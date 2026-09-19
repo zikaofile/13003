@@ -1,0 +1,357 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第十三课</b></p>
+<p><b><i>本课主题：</i></b> 队列</p>
+<p><b><i>教学目的：</i></b> 掌握队列的类型定义,掌握链队列的表示与实现方法</p>
+<p><b><i>教学重点：</i></b> 链队列的表示与实现</p>
+<p><b><i>教学难点：</i></b> 链队列的表示与实现</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、队列的定义:</p>
+<blockquote> 
+  <p><font color="#FF0033">队列</font>是一种先进先出的线性表。它只允许在表的一端进行插入，而在另一端删除元素。象日常生活中的排队，最早入队的最早离开。</p>
+  <p>在队列中，允许插入的的一端叫<font color="#FF0033">队尾</font>，允许删除的一端则称为<font color="#FF0033">队头</font>。</p>
+  <p>抽象数据类型队列:</p>
+  <p>ADT Queue{</p>
+  <p>数据对象: D={ai| ai(-ElemSet,i=1,2,...,n,n>=0} </p>
+  <p>数据关系: R1={&lt;ai-1,ai&gt; | ai-1,ai(- D,i=2,...,n} </p>
+  <p>基本操作： </p>
+  <blockquote> 
+    <p>InitQueue(&amp;Q) 构造一个空队列Q</p>
+    <p>Destroyqueue(&amp;Q) 队列Q存在则销毁Q</p>
+    <p>ClearQueue(&amp;Q) 队列Q存在则将Q清为空队列</p>
+    <p>QueueEmpty(Q) 队列Q存在,若Q为空队列则返回TRUE,否则返回FALSE</p>
+    <p>QueueLenght(Q) 队列Q存在,返回Q的元素个数,即队列的长度</p>
+    <p>GetHead(Q,&amp;e) Q为非空队列,用e返回Q的队头元素</p>
+    <p>EnQueue(&amp;Q,e) 队列Q存在,插入元素e为Q的队尾元素</p>
+    <p>DeQueue(&amp;Q,&amp;e) Q为非空队列,删除Q的队头元素,并用e返回其值</p>
+    <p>QueueTraverse(Q,vivsit()) Q存在且非空,从队头到队尾,依次对Q的每个数据元素调用函数visit()。一旦visit()失败，则操作失败</p>
+  </blockquote>
+  <p>}ADT Queue</p>
+</blockquote>
+<p>二、链队列－队列的链式表示和实现</p>
+<blockquote> 
+  <p>用链表表示的队列简称为<font color="#FF0033">链队列</font>。一个链队列显然需要两个分别指示队头和队尾的指针。</p>
+  <table width="99%" border="1">
+    <tr> 
+      <td width="50%" height="220"> 
+        <table width="100%" border="0" cellspacing="0">
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%"> 
+              <div align="center"></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">Q.front -&gt;</td>
+            <td width="27%" bgcolor="#666666"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%"> 
+              <div align="center"><font size="-3">\|/</font></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%" bgcolor="#FFCCCC"> 
+              <div align="center">1</div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">队头</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%"> 
+              <div align="center"><font size="-3">\|/</font></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%" bgcolor="#FFCCCC"> 
+              <div align="center">2</div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%"> 
+              <div align="center"><font size="-3">\|/</font></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%" bgcolor="#FFCCCC"> 
+              <div align="center">3</div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%" height="45">&nbsp;</td>
+            <td width="27%" height="45"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%" height="45"> 
+              <div align="center"> 
+                <p><font size="-3">\|/</font></p>
+                <p><font size="-3">\|/</font></p>
+              </div>
+            </td>
+            <td width="29%" height="45">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">Q.rear -&gt;</td>
+            <td width="27%" bgcolor="#FFCCCC"> 
+              <div align="center">9</div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">/\</div>
+            </td>
+            <td width="29%">队尾</td>
+          </tr>
+        </table>
+      </td>
+      <td width="50%" height="220"> 
+        <table width="100%" border="0" cellspacing="0">
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%"> 
+              <div align="center"></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">Q.front -&gt;</td>
+            <td width="27%" bgcolor="#666666"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%" bgcolor="#33CCCC"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%" bgcolor="#33CCCC"> 
+              <div align="center"><font size="-3">\|/</font></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr bgcolor="#CCFFCC"> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center">1</div>
+            </td>
+            <td width="11%" bgcolor="#33CCCC"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">队头</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%" bgcolor="#33CCCC"> 
+              <div align="center"><font size="-3">\|/</font></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%" bgcolor="#FFCCCC"> 
+              <div align="center">2</div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%"> 
+              <div align="center"><font size="-3">\|/</font></div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">&nbsp;</td>
+            <td width="27%" bgcolor="#FFCCCC"> 
+              <div align="center">3</div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">|</div>
+            </td>
+            <td width="29%">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%" height="45">&nbsp;</td>
+            <td width="27%" height="45"> 
+              <div align="center"></div>
+            </td>
+            <td width="11%" height="45"> 
+              <div align="center"> 
+                <p><font size="-3">\|/</font></p>
+                <p><font size="-3">\|/</font></p>
+              </div>
+            </td>
+            <td width="29%" height="45">&nbsp;</td>
+          </tr>
+          <tr> 
+            <td width="33%">Q.rear -&gt;</td>
+            <td width="27%" bgcolor="#FFCCCC"> 
+              <div align="center">9</div>
+            </td>
+            <td width="11%" bgcolor="#FF6666"> 
+              <div align="center">/\</div>
+            </td>
+            <td width="29%">队尾</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <p>链队列表示和实现：</p>
+  <p>//存储表示</p>
+  <p>typedef struct QNode{</p>
+  <blockquote> 
+    <p>QElemType data;</p>
+    <p>struct QNode *next;</p>
+  </blockquote>
+  <p>}QNode,*QueuePtr;</p>
+  <p>typedef struct{</p>
+  <blockquote> 
+    <p> QueuePtr front;</p>
+    <p>QueuePtr rear;</p>
+  </blockquote>
+  <p>}LinkQueue;</p>
+  <p>//操作说明</p>
+  <p>Status InitQueue(LinkQueue &amp;Q) </p>
+  <blockquote> 
+    <p>//构造一个空队列Q</p>
+  </blockquote>
+  <p>Status Destroyqueue(LinkQueue &amp;Q) </p>
+  <blockquote> 
+    <p>//队列Q存在则销毁Q</p>
+  </blockquote>
+  <p>Status ClearQueue(LinkQueue &amp;Q) </p>
+  <blockquote> 
+    <p>//队列Q存在则将Q清为空队列</p>
+  </blockquote>
+  <p>Status QueueEmpty(LinkQueue Q)</p>
+  <blockquote> 
+    <p>// 队列Q存在,若Q为空队列则返回TRUE,否则返回FALSE</p>
+  </blockquote>
+  <p>Status QueueLenght(LinkQueue Q)</p>
+  <blockquote> 
+    <p>// 队列Q存在,返回Q的元素个数,即队列的长度</p>
+  </blockquote>
+  <p>Status GetHead(LinkQueue Q,QElemType &amp;e) </p>
+  <blockquote> 
+    <p>//Q为非空队列,用e返回Q的队头元素</p>
+  </blockquote>
+  <p>Status EnQueue(LinkQueue &amp;Q,QElemType e) </p>
+  <blockquote> 
+    <p>//队列Q存在,插入元素e为Q的队尾元素</p>
+  </blockquote>
+  <p>Status DeQueue(LinkQueue &amp;Q,QElemType &amp;e) </p>
+  <blockquote> 
+    <p>//Q为非空队列,删除Q的队头元素,并用e返回其值</p>
+  </blockquote>
+  <p>Status QueueTraverse(LinkQueue Q,QElemType vivsit()) </p>
+  <blockquote> 
+    <p>//Q存在且非空,从队头到队尾,依次对Q的每个数据元素调用函数visit()。一旦visit()失败，则操作失败</p>
+  </blockquote>
+  <p>//操作的实现</p>
+  <p>Status InitQueue(LinkQueue &amp;Q) {</p>
+  <blockquote> 
+    <p>//构造一个空队列Q</p>
+    <p>Q.front=Q.rear=(QueuePtr)malloc(sizeof(QNode));</p>
+    <p>if(!Q.front)exit(OVERFLOW);</p>
+    <p>Q.front-&gt;next=NULL;</p>
+    <p>return OK;}</p>
+  </blockquote>
+  <p>Status Destroyqueue(LinkQueue &amp;Q) {</p>
+  <blockquote> 
+    <p>//队列Q存在则销毁Q</p>
+    <p>while(Q.front){</p>
+    <p>Q.rear=Q.front-&gt;next;</p>
+    <p>free(Q.front);</p>
+    <p>Q.front=Q.rear;</p>
+    <p>}</p>
+    <p>return OK;}</p>
+  </blockquote>
+  <p>Status EnQueue(LinkQueue &amp;Q,QElemType e) {</p>
+  <blockquote> 
+    <p>//队列Q存在,插入元素e为Q的队尾元素</p>
+    <p>p=(QueuePtr)malloc(sizeof(QNode));</p>
+    <p>if(!p) exit(OVERFLOW);</p>
+    <p>p-&gt;data=e;p-&gt;next=NULL;</p>
+    <p>Q.rear-&gt;next=p;</p>
+    <p>Q.rear=p;</p>
+    <p>return OK;}</p>
+  </blockquote>
+  <p>Status DeQueue(LinkQueue &amp;Q,QElemType &amp;e) {</p>
+  <blockquote> 
+    <p>//Q为非空队列,删除Q的队头元素,并用e返回其值</p>
+    <p>if(Q.front==Q.rear)return ERROR;</p>
+    <p>p=Q.front-&gt;next;</p>
+    <p>e=p-&gt;data;</p>
+    <p>Q.front-&gt;next=p-&gt;next;</p>
+    <p>if(Q.rear==p)Q.rear=Q.front;</p>
+    <p>free(p);</p>
+    <p>return OK;}</p>
+  </blockquote>
+</blockquote>
+<p>三、总结</p>
+<blockquote>
+  <p>链队列的存储表示</p>
+  <p>链队列的操作及实现</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class12/class12.htm">上一课</a> <a href="../class14/class14.htm">下一课</a></p>
+</body>
+</html>

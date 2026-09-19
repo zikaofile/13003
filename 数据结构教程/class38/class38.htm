@@ -1,0 +1,157 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十八课</b></p>
+<p><b><i>本课主题：</i></b> 文件概念，顺序文件</p>
+<p><b><i>教学目的：</i></b> 掌握文件基本概念，顺序文件的概念。</p>
+<p><b><i>教学重点：</i></b> 文件基本概念</p>
+<p><b><i>教学难点：</i></b> 逻辑结构与物理结构的关系。</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、表与文件</p>
+<blockquote>
+  <p>和表类似，文件是大量记录的集合。习惯上称存储在主存储器（内存储器）中的记录集合为表，称存储在二级存储器（外存储器）中的记录集合为文件。</p>
+</blockquote>
+<p>二、文件基本概念</p>
+<blockquote>
+  <p><font color="#FF0066">文件</font>：是由大量性质相同的记录组成的集合。</p>
+  <table width="90%" border="1" cellspacing="0">
+    <tr> 
+      <td rowspan="2" width="16%">文件按记录类型不同分类</td>
+      <td width="23%"><font color="#FF0066">操作系统的文件</font></td>
+      <td width="61%">一维的连续的字符序列</td>
+    </tr>
+    <tr> 
+      <td width="23%" height="173"><font color="#FF0066">数据库文件</font></td>
+      <td width="61%" height="173" valign="top" align="left"> 
+        <p>带有结构的记录的集合,每条记录是由一个或多个数据项组成的集合。</p>
+        <table width="98%" border="1" cellspacing="0">
+          <tr bgcolor="#FFCCCC"> 
+            <td width="20%">姓名</td>
+            <td width="25%">准考证号</td>
+            <td width="14%">政治</td>
+            <td width="14%">语文</td>
+            <td width="13%">数学</td>
+            <td width="14%">外语</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td width="20%">刘青</td>
+            <td width="25%">1501</td>
+            <td width="14%">78</td>
+            <td width="14%">90</td>
+            <td width="13%">100</td>
+            <td width="14%">95</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td width="20%">张朋</td>
+            <td width="25%">1502</td>
+            <td width="14%">64</td>
+            <td width="14%">88</td>
+            <td width="13%">90</td>
+            <td width="14%">74</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td width="20%">崔永</td>
+            <td width="25%">1503</td>
+            <td width="14%">90</td>
+            <td width="14%">100</td>
+            <td width="13%">85</td>
+            <td width="14%">89</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td width="20%">郑琳</td>
+            <td width="25%">1504</td>
+            <td width="14%">85</td>
+            <td width="14%">73</td>
+            <td width="13%">90</td>
+            <td width="14%">91</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td width="20%"> ...</td>
+            <td width="25%">&nbsp;</td>
+            <td width="14%">&nbsp;</td>
+            <td width="14%">&nbsp;</td>
+            <td width="13%">&nbsp;</td>
+            <td width="14%">&nbsp;</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <br>
+  <table width="90%" border="1" cellspacing="0">
+    <tr> 
+      <td rowspan="2">文件按记录长度是否相同分类</td>
+      <td width="22%" height="26"><font color="#FF0066">定长记录文件</font></td>
+      <td width="61%" height="26">文件中每个记录含有信息长度相同。</td>
+    </tr>
+    <tr> 
+      <td width="22%" height="17"><font color="#FF0066">不定长记录文件</font></td>
+      <td width="61%" height="17">文件中每个记录含有信息长度不等。</td>
+    </tr>
+  </table>
+  <p>记录的<font color="#FF0066">逻辑结构</font>是指记录在用户或应用程序员面前呈现的方式，是用户对数据的表示和存取方式。</p>
+  <table width="90%" border="1" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td width="20%">姓名</td>
+      <td width="25%">准考证号</td>
+      <td width="14%">政治</td>
+      <td width="14%">语文</td>
+      <td width="13%">数学</td>
+      <td width="14%">外语</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="20%">刘青</td>
+      <td width="25%">1501</td>
+      <td width="14%">78</td>
+      <td width="14%">90</td>
+      <td width="13%">100</td>
+      <td width="14%">95</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="20%">张朋</td>
+      <td width="25%">1502</td>
+      <td width="14%">64</td>
+      <td width="14%">88</td>
+      <td width="13%">90</td>
+      <td width="14%">74</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="20%">崔永</td>
+      <td width="25%">1503</td>
+      <td width="14%">90</td>
+      <td width="14%">100</td>
+      <td width="13%">85</td>
+      <td width="14%">89</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="20%">郑琳</td>
+      <td width="25%">1504</td>
+      <td width="14%">85</td>
+      <td width="14%">73</td>
+      <td width="13%">90</td>
+      <td width="14%">91</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td width="20%"> ...</td>
+      <td width="25%">&nbsp;</td>
+      <td width="14%">&nbsp;</td>
+      <td width="14%">&nbsp;</td>
+      <td width="13%">&nbsp;</td>
+      <td width="14%">&nbsp;</td>
+    </tr>
+  </table>
+  <p>这张成绩表呈现的结构即是逻辑结构。</p>
+  <p>记录的<font color="#FF0066">物理结构</font>是数据在物理存储器上存储的方式。一条物理记录指的是计算机用一条I/O命令进行读写的基本数据单位。</p>
+</blockquote>
+<p>三、顺序文件</p>
+<blockquote>
+  <p>顺序文件中的物理记录的顺序和逻辑记录的顺序是一致的。</p>
+</blockquote>
+<p>四、总结</p>
+<p><a href="../index.htm">回目录</a> <a href="../class37/class37.htm">上一课</a> <a href="../class39/class39.htm">下一课</a></p>
+</body>
+</html>

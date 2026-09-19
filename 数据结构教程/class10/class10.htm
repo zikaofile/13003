@@ -1,0 +1,130 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第十课</b></p>
+<p><b><i>本课主题：</i></b> 栈的表示与实现</p>
+<p><b><i>教学目的：</i></b> 栈的数据类型定义、栈的顺序存储表示与实现</p>
+<p><b><i>教学重点：</i></b> 栈的顺序存储表示与实现方法</p>
+<p><b><i>教学难点：</i></b> 栈的定义</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、栈的定义</p>
+<blockquote> 
+  <p><font color="#FF0033">栈</font>是限定仅在<b>表尾</b>进行插入或删除操作的线性表。</p>
+  <p>栈的表尾称为<font color="#FF0033">栈顶</font>，表头称为<font color="#FF0000">栈底</font>，不含元素的空表称为<font color="#FF0033">空栈</font>。</p>
+  <p>栈的抽象数据类型定义：</p>
+  <p> ADT Stack{</p>
+  <blockquote> 
+    <p> 数据对象:D={<font size="+3">a</font>i|<font size="+3">a</font>i<font size="-1">(-</font> 
+      ElemSet,i=1,2,...,n,n&gt;=0}</p>
+    <p> 数据关系:R1={&lt;<font size="+3">a</font>i-1,<font size="+3">a</font>i&gt;|<font size="+3">a</font>i-1,<font size="+3">a</font>i<font size="-1">(-</font> 
+      D,i=2,...,n}</p>
+    <p>基本操作:</p>
+    <blockquote> 
+      <p>InitStack(&amp;S) 构造一个空栈S</p>
+      <p>DestroyStack(&amp;S) 栈S存在则栈S被销毁</p>
+      <p>ClearStack(&amp;S) 栈S存在则清为空栈</p>
+      <p>StackEmpty(S) 栈S存在则返回TRUE,否则FALSE</p>
+      <p>StackLength(S) 栈S存在则返回S的元素个数,即栈的长度</p>
+      <p>GetTop(S,&amp;e) 栈S存在且非空则返回S的栈顶元素</p>
+      <p>Push(&amp;S,e) 栈S存在则插入元素e为新的栈顶元素</p>
+      <p>Pop(&amp;S,&amp;e) 栈S存在且非空则删除S的栈顶元素并用e返回其值</p>
+      <p>StackTraverse(S,visit())栈S存在且非空则从栈底到栈顶依次对S的每个数据元素调用函数visit()一旦visit()失败,则操作失败</p>
+    </blockquote>
+  </blockquote>
+  <p>}ADT Stack</p>
+</blockquote>
+<p>二、栈的表示和实现</p>
+<blockquote> 
+  <p>栈的存储方式：</p>
+  <p>1、顺序栈:利用一组地址连续的存储单元依次存放自栈底到栈顶的数据元素,同时附设指针top指示栈顶元素在顺序栈中的位置</p>
+  <p>2、链栈:利用链表实现</p>
+  <p>顺序栈的类C语言定义:</p>
+  <p>typedef struct{</p>
+  <blockquote> 
+    <p>SElemType *base;</p>
+    <p>SElemType *top; //设栈顶栈底两指针的目的是便于判断栈是否为空</p>
+    <p>int StackSize; //栈的当前可使用的最大容量.</p>
+  </blockquote>
+  <p>}SqStack;</p>
+  <p>顺序栈的的模块说明:</p>
+  <p>struct STACK { </p>
+  <blockquote> 
+    <p>SElemType *base; </p>
+    <p>SElemType *top; </p>
+    <p>int stacksize; </p>
+    <p>}; </p>
+  </blockquote>
+  <p>typedef struct STACK Sqstack; </p>
+  <p>Status InitStack(SqStack &S); </p>
+  <p>Status DestroyStack(SqStack &S); </p>
+  <p>Status ClearStack(SqStack &S); </p>
+  <p>Status StackEmpty(SqStack S); </p>
+  <p>int StackLength(SqStack S); </p>
+  <p>Status GetTop(SqStack S,SElemType &e); </p>
+  <p>Status Push(SqStack &S,SElemType e); </p>
+  <p>Status Pop(SqStack &S,SElemType &e);</p>
+  <p> Status StackTraverse(SqStack S,Status (*visit)()); </p>
+  <p>&nbsp;</p>
+  <p>Status InitStack(SqStack &S) { </p>
+  <p>S.base=(SelemType *)malloc(STACK_INIT_SIZE *sizeof(ElemType));</p>
+  <p> if(!S.base)exit(OVERFLOW); </p>
+  <p>S.top=S.base; </p>
+  <p>S.stacksize=STACK_INI_SIZE; </p>
+  <p>return OK; </p>
+  <p>}//IniStack </p>
+  <p>Status DestroyStack(SqStack &S); { </p>
+  <p>}//DestroyStack </p>
+  <p>Status ClearStack(SqStack &S); {</p>
+  <p> S.top=S.base; </p>
+  <p>} //ClearStack</p>
+  <p>Status StackEmpty(SqStack S); {</p>
+  <p> if(S.top==S.base) return TRUE; </p>
+  <p>else return FALSE; </p>
+  <p>} //StackEmpty</p>
+  <p>int StackLength(SqStack S); {</p>
+  <p> int i; SElemType *p; </p>
+  <p>i=0; </p>
+  <p>p=S.top;</p>
+  <p> while(p!=S.base) {p++; i++; }</p>
+  <p> } //stackLength</p>
+  <p>Status GetTop(SqStack S,SElemType &e); {</p>
+  <p> if(S.top==S.base) return ERROR; </p>
+  <p>e=*(S.top-1); </p>
+  <p>return OK; </p>
+  <p>} //GetTop</p>
+  <p>Status Push(SqStack &S,SElemType e); { </p>
+  <p>if(S.top - s.base>=S.stacksize) {</p>
+  <p> S.base=(ElemType *) realloc(S.base, </p>
+  <blockquote> 
+    <p>(S.stacksize + STACKINCREMENT) * sizeof(ElemType)); </p>
+  </blockquote>
+  <p>if(!S.base)exit(OVERFLOW);</p>
+  <p> S.top=S.base+S.stacksize; </p>
+  <p>S.stacksize+=STACKINCREMENT; </p>
+  <p>} </p>
+  <p>*S.top++=e; </p>
+  <p>return OK;</p>
+  <p> } //Push</p>
+  <p>Status Pop(SqStack &S,SElemType &e); {</p>
+  <p> if(S.top==S.base) </p>
+  <blockquote> 
+    <p>return ERROR; </p>
+  </blockquote>
+  <p>e=*--S.top; </p>
+  <p>return OK; </p>
+  <p>}//Pop </p>
+  <p>Status StackTraverse(SqStack S,Status (*visit)()); { </p>
+  <p>}//StackTraverse</p>
+  <a href="stack.txt">以上伪代码的C语言源码</a></blockquote>
+<p>三、总结</p>
+<blockquote>
+  <p>栈的定义</p>
+  <p>栈的顺序存储实现</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class09/class09.htm">上一课</a> <a href="../class11/class11.htm">下一课</a></p>
+</body>
+</html>

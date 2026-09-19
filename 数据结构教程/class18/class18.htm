@@ -1,0 +1,269 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第十八课</b></p>
+<p><b><i>本课主题：</i></b> 数组的顺序表示与实现</p>
+<p><b><i>教学目的：</i></b> 掌握数组的定义,数组的顺序表示方法</p>
+<p><b><i>教学重点：</i></b> 数组的定义,数组的顺序表示方法</p>
+<p><b><i>教学难点：</i></b> 数组的顺序表示方法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、数组的定义</p>
+<blockquote> 
+  <p>几乎所有的程序设计语言都把数组类型设定为固有类型。</p>
+  <p>以抽象数据类型的形式讨论数组的定义和实现，可以让我们加深对数组类型的理解。</p>
+  <p>数组的定义：</p>
+  <p>ADT Array{</p>
+  <p>数据对象:j<font size="-2">i</font>=0,...,b<font size="-2">i</font>-1,i=1,2,...,n;</p>
+  <blockquote> 
+    <blockquote> 
+      <p>D={<font size="+1">a</font><font size="-2">j1j2...jn</font>|n(&gt;0)称为数组的维数,b<font size="-2">i</font>是数组第i维的长度,j<font size="-2">i</font>是数组元素的第i维下标,<font size="+1">a</font><font size="-2">j1j2...jn</font> 
+        (-ElemSet}</p>
+    </blockquote>
+  </blockquote>
+  <p>数据关系:R={R<font size="-2">1</font>,R<font size="-2">2</font>,...R<font size="-2">n</font>|</p>
+  <blockquote> 
+    <blockquote> 
+      <p>Ri={&lt;a<font size="-2">j1...ji...jn</font>,a<font size="-2">j1...ji+1 
+        ...jn</font>&gt;|</p>
+      <blockquote> 
+        <blockquote> 
+          <p>0&lt;=j<font size="-2">k</font>&lt;=b<font size="-2">k-1</font>,1&lt;=k&lt;=n且k&lt;&gt;i,</p>
+          <p>0&lt;=j<font size="-2">i</font>&lt;=b<font size="-2">i-2</font>,a<font size="-2">j1...ji...jn</font>,</p>
+          <p>a<font size="-2">j1...ji+1 ...jn</font>(-D,i=2,...n}</p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+  <p>基本操作:</p>
+  <p>InitArray(&amp;A,n,bound1,...,boundn)</p>
+  <p>若维数和各维长度合法,则构造相应的数组A,并返回OK.</p>
+  <p>DestroyArray(&amp;A)</p>
+  <p>操作结果:销毁数组A.</p>
+  <p>Value(A,&amp;e,index1,...,indexn)</p>
+  <p>初始条件:A是n维数组,e为元素变量,随后是n个下标值.</p>
+  <p>操作结果:若各下标不超界,则e赋值为所指定的A的元素值,并返回OK.</p>
+  <p>Assign(&amp;A,e,index1,...,indexn)</p>
+  <p>初始条件:A是n维数组,e为元素变量,随后是n个下标值.</p>
+  <p>操作结果:若下标不超界,则将e的值赋给 所指定的A的元素,并返回OK.</p>
+  <p>}ADT Array</p>
+  <p>列向量的一维数组:</p>
+  <table width="75%" border="1" cellspacing="0" height="209">
+    <tr> 
+      <td width="21%" bgcolor="#FFCCCC"><font size="+4">a</font>00</td>
+      <td width="21%"><font size="+4">a</font>01</td>
+      <td width="21%" bgcolor="#FFCCCC"><font size="+4">a</font>02</td>
+      <td width="12%">...</td>
+      <td width="25%" bgcolor="#FFCCCC"><font size="+4">a</font>0,n-1</td>
+    </tr>
+    <tr> 
+      <td width="21%" bgcolor="#FFCCCC"><font size="+4">a</font>10</td>
+      <td width="21%"><font size="+4">a</font>11</td>
+      <td width="21%" bgcolor="#FFCCCC"><font size="+4">a</font>12</td>
+      <td width="12%">...</td>
+      <td width="25%" bgcolor="#FFCCCC"><font size="+4">a</font>1,n-1</td>
+    </tr>
+    <tr> 
+      <td width="21%" height="46" bgcolor="#FFCCCC">...</td>
+      <td width="21%" height="46">...</td>
+      <td width="21%" height="46" bgcolor="#FFCCCC">...</td>
+      <td width="12%" height="46">...</td>
+      <td width="25%" height="46" bgcolor="#FFCCCC">...</td>
+    </tr>
+    <tr> 
+      <td width="21%" bgcolor="#FFCCCC"><font size="+4">a</font>m-1,0</td>
+      <td width="21%"><font size="+4">a</font>m-1,1</td>
+      <td width="21%" bgcolor="#FFCCCC"><font size="+4">a</font>m-1,2</td>
+      <td width="12%">...</td>
+      <td width="25%" bgcolor="#FFCCCC"><font size="+4">a</font>m-1,n-1</td>
+    </tr>
+  </table>
+  <p> 行向量的一维数组:</p>
+  <p>把二维数组中的每一行看成是一个数据元素,这些数据元素组成了一个一维数组A.</p>
+  <table width="81%" border="1" cellspacing="0">
+    <tr> 
+      <td width="18%" height="78" bgcolor="#CCFFCC"><font size="+4">A</font>0</td>
+      <td rowspan="4" width="82%" valign="top" align="right"> 
+        <table width="94%" border="1" cellspacing="0" height="271">
+          <tr bgcolor="#FFCCCC"> 
+            <td width="21%"><font size="+4">a</font>00</td>
+            <td width="21%"><font size="+4">a</font>01</td>
+            <td width="21%"><font size="+4">a</font>02</td>
+            <td width="11%">...</td>
+            <td width="26%"><font size="+4">a</font>0,n-1</td>
+          </tr>
+          <tr> 
+            <td width="21%"><font size="+4">a</font>10</td>
+            <td width="21%"><font size="+4">a</font>11</td>
+            <td width="21%"><font size="+4">a</font>12</td>
+            <td width="11%">...</td>
+            <td width="26%"><font size="+4">a</font>1,n-1</td>
+          </tr>
+          <tr> 
+            <td width="21%" height="53">...</td>
+            <td width="21%" height="53">...</td>
+            <td width="21%" height="53">...</td>
+            <td width="11%" height="53">...</td>
+            <td width="26%" height="53">...</td>
+          </tr>
+          <tr bgcolor="#FFCCCC"> 
+            <td width="21%"><font size="+4">a</font>m-1,0</td>
+            <td width="21%"><font size="+4">a</font>m-1,1</td>
+            <td width="21%"><font size="+4">a</font>m-1,2</td>
+            <td width="11%">...</td>
+            <td width="26%"><font size="+4">a</font>m-1,n-1</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td width="18%" height="68" bgcolor="#CCFFCC"><font size="+4">A</font>1</td>
+    </tr>
+    <tr> 
+      <td width="18%" height="54" bgcolor="#CCFFCC">...</td>
+    </tr>
+    <tr> 
+      <td width="18%" bgcolor="#CCFFCC"><font size="+4">A</font>m</td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</blockquote>
+<p>二、数组的顺序表示和实现</p>
+<blockquote> 
+  <p>以行序为主序的存储方式:</p>
+  <table width="93%" border="1" cellspacing="0">
+    <tr> 
+      <td width="4%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">00</font></div>
+      </td>
+      <td width="4%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">01</font></div>
+      </td>
+      <td width="4%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">02</font></div>
+      </td>
+      <td width="5%" bgcolor="#FFCCCC"> 
+        <div align="center">...</div>
+      </td>
+      <td width="9%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">0,n-1</font></div>
+      </td>
+      <td width="4%"> 
+        <div align="center">a<font size="-2">10</font></div>
+      </td>
+      <td width="4%"> 
+        <div align="center">a<font size="-2">11</font></div>
+      </td>
+      <td width="4%"> 
+        <div align="center">a<font size="-2">12</font></div>
+      </td>
+      <td width="6%"> 
+        <div align="center">...</div>
+      </td>
+      <td width="8%"> 
+        <div align="center">a<font size="-2">1,n-1</font></div>
+      </td>
+      <td width="6%" bgcolor="#CCFFCC"> 
+        <div align="center">...</div>
+      </td>
+      <td width="8%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">m-1,0</font></div>
+      </td>
+      <td width="8%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">m-1,1</font></div>
+      </td>
+      <td width="9%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">m-1,2</font></div>
+      </td>
+      <td width="6%" bgcolor="#FFCCCC"> 
+        <div align="center">...</div>
+      </td>
+      <td width="11%" bgcolor="#FFCCCC"> 
+        <div align="center">a<font size="-2">m-1,n-1</font></div>
+      </td>
+    </tr>
+  </table>
+  <p>数组的顺序存储表示和实现:</p>
+  <p>#include&lt;stdarg.h&gt;</p>
+  <p>#define MAX_ARRAY_DIM 8</p>
+  <p>typedef struct {</p>
+  <p> ElemType *base;</p>
+  <p>int dim;</p>
+  <p>int *bounds;</p>
+  <p>int *constants;</p>
+  <p>}Array;</p>
+  <p>Status InitArray(Array &amp;A,int dim,...);</p>
+  <p>Status DestroyArray(Array &amp;A);</p>
+  <p>Status Value(Array A,ElemType &amp;e,...);</p>
+  <p>Status Assign(Array &amp;A,ElemType e,...);</p>
+  <p>基本操作的算法描述:</p>
+  <p>Status InitArray(Array &amp;A,int dim,...){</p>
+  <p>if(dim&lt;1||dim&gt;MAX_ARRAY_DIM) return ERROR;</p>
+  <p>A.dim=dim;</p>
+  <p>A.bounds=(int *)malloc(dim *sizeof(int));</p>
+  <p>if(!A.bounds) exit(OVERFLOW);</p>
+  <p>elemtotal=1;</p>
+  <p>va_start(ap,dim);</p>
+  <p>for(i=1;i&lt;dim;++i){</p>
+  <blockquote> 
+    <p>A.bounds[i]=va_arg(ap,int);</p>
+    <p>if(A.bounds[i]&lt;0) return UNDERFLOW;</p>
+    <p>elemtotal*=A.bounds[i];</p>
+  </blockquote>
+  <p>}</p>
+  <p>va_end(ap);</p>
+  <p>A.base=(ElemType *)malloc(elemtotal*sizeof(ElemType));</p>
+  <p>if(!A.base) exit(OVERFLOW);</p>
+  <p>A.constants=(int *)malloc(dim*sizeof(int));</p>
+  <p>if(!A.constants) exit(OVERFLOW);</p>
+  <p>A.constants[dim-1]=1;</p>
+  <p>for(i=dim-2;i&gt;=0;--i)</p>
+  <blockquote> 
+    <p>A.constants[i]=A.bounds[i+1]*A.constants[i+1];</p>
+  </blockquote>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status DestoyArray(Array &amp;A){</p>
+  <p>if(!A.base) return ERROR;</p>
+  <p>free(A.base); A.base=NULL;</p>
+  <p>if !(A.bounds) return ERROR;</p>
+  <p>free(A.bounds); A.bounds=NULL;</p>
+  <p>if!(A.constatns) return ERROR;</p>
+  <p>free(A.constants); A.constants=NULL;</p>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status Locate(Array A,va_list ap,int &amp;off){</p>
+  <p>off=0;</p>
+  <p>for(i=0;i&lt;A.dim;++i){</p>
+  <blockquote> 
+    <p>ind=va_arg(ap,int);</p>
+    <p>if(ind&lt;0||ind&gt;=A.bounds[i]) return OVERFLOW;</p>
+    <p>off+=A.constants[i]*ind;</p>
+  </blockquote>
+  <p>}</p>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status Value(Array A,ElemType &amp;e,...){</p>
+  <p>va_start(ap,e);</p>
+  <p>if((result=Locate(A,ap,off))&lt;=0 return result;</p>
+  <p>e=*(A.base+off);</p>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status Assign(Array &amp;A,ElemType e,...){</p>
+  <p>va_start(ap,e);</p>
+  <p>if((result=Locate(A,ap,off))&lt;=0) return result;</p>
+  <p>*(A.base+off)=e;</p>
+  <p>return OK;</p>
+  <p>}</p>
+</blockquote>
+<p>三、小结</p>
+<blockquote> 
+  <p>数组的存储方式。</p>
+  <p>数组的基本操作种类。</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class17/class17.htm">上一课</a> <a href="../class19/class19.htm">下一课</a></p>
+</body>
+</html>

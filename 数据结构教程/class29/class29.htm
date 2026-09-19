@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十九课</b></p>
+<b><i>本课主题：</i></b> 静态查找表（一）顺序表的查找 
+<p><b><i>教学目的：</i></b> 掌握查找的基本概念，顺序表查找的性能分析</p>
+<p><b><i>教学重点：</i></b> 查找的基本概念</p>
+<p><b><i>教学难点：</i></b> 顺序表查找的性能分析</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、查找的基本概念<a name="#example"></a></p>
+<blockquote> 
+  <p><img src="class29-01.jpg" width="464" height="300" usemap="#Map" border="0"><map name="Map"><area shape="poly" coords="19,259,90,250,220,248,354,252,431,260,352,272,222,273,89,272" href="#record"><area shape="rect" coords="243,225,326,243" href="#mainkey"><area shape="rect" coords="332,195,398,217" href="#item"></map> 
+  </p>
+  <p>&nbsp; </p>
+  <table width="89%" border="1" cellspacing="0">
+    <tr> 
+      <td width="28%">查找表：</td>
+      <td width="72%">是由同一类型的数据元素（或<a name="#record"></a><a href="#example">记录</a>）构成的集合。</td>
+    </tr>
+    <tr> 
+      <td width="28%">查找表的操作：</td>
+      <td width="72%"> 1、查询某个“特定的”数据元素是否在查找表中。<br>
+        2、检索某个“特定的”数据元素的各种属性。<br>
+        3、在查找表中插入一个数据元素；<br>
+        4、从查找表中刪去某个数据元素。 </td>
+    </tr>
+    <tr> 
+      <td width="28%">静态查找表</td>
+      <td width="72%">对查找表只作前两种操作</td>
+    </tr>
+    <tr> 
+      <td width="28%">动态查找表</td>
+      <td width="72%">在查找过程中查找表元素集合动态改变</td>
+    </tr>
+    <tr> 
+      <td width="28%">关键字</td>
+      <td width="72%">是数据元素（或记录）中某个<a name="#item"></a><a href="#example">数据项</a>的值</td>
+    </tr>
+    <tr> 
+      <td width="28%"><a name="#mainkey"></a><a href="#example">主关键字</a></td>
+      <td width="72%">可以唯一的地标识一个记录</td>
+    </tr>
+    <tr> 
+      <td width="28%">次关键字</td>
+      <td width="72%">用以识别若干记录</td>
+    </tr>
+    <tr> 
+      <td width="28%">查找</td>
+      <td width="72%">根据给定的某个值，在查找表中确定一个其关键字等于给定的记录或数据元素。若表中存在这样的一个记录，则称<font color="#FF0000">查找是成功的</font>，此时查找的结果为给出整个记录的信息，或指示该记录在查找表中的位置；若表中不存在关键字等于给定值的记录，则称<font color="#FF0000">查找不成功</font>。</td>
+    </tr>
+  </table>
+  <p>一些约定：</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr bgcolor="#CCFFCC"> 
+      <td>典型的关键字类型说明：</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td height="90"> 
+        <p>typedef float KeyType;//实型<br>
+          typedef int KeyType;//整型<br>
+          typedef char *KeyType;//字符串型</p>
+      </td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td>数据元素类型定义为：</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td height="88"> 
+        <p>typedef struct{<br>
+          KeyType key; // 关键字域<br>
+          ...<br>
+          }ElemType; </p>
+      </td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td>对两个关键字的比较约定为如下的宏定义：</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td height="178"> 
+        <p>对数值型关键字<br>
+          #define EQ(a,b) ((a)==(b))<br>
+          #define LT(a,b) ((a)&lt;(b))<br>
+          #define LQ(a,b) ((a)&lt;=(b))</p>
+        <p>对字符串型关键字<br>
+          #define EQ(a,b) (!strcmp((a),(b)))<br>
+          #define LT(a,b) (strcmp((a),(b))&lt;0)<br>
+          #define LQ(a,b) (strcmp((a),(b))&lt;=0)</p>
+      </td>
+    </tr>
+  </table>
+  
+</blockquote>
+<p>二、静态查找表</p>
+<blockquote>
+  <p>静态查找表的类型定义：</p>
+  <table width="90%" border="1" cellspacing="0">
+    <tr> 
+      <td> 
+        <p>ADT StaticSearchTable{</p>
+        <p>数据对象D：D是具有相同特性的数据元素的集合。各个数据元素均含有类型相同，可唯一标识数据元素的关键字。</p>
+        <p>数据关系R：数据元素同属一个集合。</p>
+        <p>基本操作P：</p>
+        <p>Create(&amp;ST,n);</p>
+        <blockquote> 
+          <p>操作结果：构造一个含n个数据元素的静态查找表ST。</p>
+        </blockquote>
+        <p>Destroy(&amp;ST);</p>
+        <blockquote> 
+          <p>初始条件：静态查找表ST存在。</p>
+          <p>操作结果：销毁表ST。</p>
+        </blockquote>
+        <p></p>
+        <p>Search(ST,key);</p>
+        <blockquote> 
+          <p>初始条件：静态查找表ST存在，key为和关键字类型相同的给定值。</p>
+          <p>操作结果：若ST中在在其关键字等于key的数据元素，则函数值为该元素的值或在表中的位置，否则为“空”。</p>
+        </blockquote>
+        <p></p>
+        <p>Traverse(ST,Visit());</p>
+        <blockquote>
+          <p>初始条件：静态查找表ST存在，Visit是对元素操作的应用函数。</p>
+          <p>操作结果：按某种次序对ST的每个元素调用函数visit()一次且仅一次。一旦visit()失败，则操作失败。</p>
+        </blockquote>
+        <p></p>
+        <p>}ADT StaticSearchTable</p>
+      </td>
+    </tr>
+  </table>
+  
+</blockquote>
+<p>三、顺序表的查找</p>
+<blockquote> 
+  <p>静态查找表的顺序存储结构</p>
+  <p>typedef struct {</p>
+  <p>ElemType *elem;</p>
+  <p>int length;</p>
+  <p>}SSTable;</p>
+  <p>顺序查找：从表中最后一个记录开始，逐个进行记录的关键字和给定值的比较，若某个记录的关键字和给定值比较相等，则查找成功，找到所查记录；反之，查找不成功。</p>
+  <p>int Search_Seq(SSTable ST,KeyType key){</p>
+  <p>ST.elme[0].key=key;</p>
+  <p>for(i=ST.length; !EQ(ST.elem[i].key,key); --i);</p>
+  <p>return i;</p>
+  <p>}</p>
+  <p>查找操作的性能分析：</p>
+  <blockquote> 
+    <p>查找算法中的基本操作是将记录的关键字和给定值进行比较，，通常以“其关键字和给定值进行过比较的记录个数的平均值”作为衡量依据。</p>
+  </blockquote>
+  <p><font color="#FF3333">平均查找长度：</font></p>
+  <blockquote> 
+    <p>为确定记录在查找表中的位置，需用和给定值进行比较的关键字个数的期望值称为查找算法在查找成功时的平均查找长度。</p>
+    <blockquote> 
+      <table width="99%" border="1" cellspacing="0">
+        <tr> 
+          <td width="28%"><img src="class29-02.jpg" width="77" height="32"></td>
+          <td width="72%"> 
+            <p>其中：Pi为查找表中第i个记录的概率，且<img src="class29-03.jpg" width="47" height="33">；</p>
+            <p>Ci为找到表中其关键字与给定值相等的第i个记录时，和给定值已进行过比较的关键字个数。</p>
+          </td>
+        </tr>
+        <tr>
+          <td width="28%"><img src="class29-04.jpg" width="93" height="30"></td>
+          <td width="72%">
+            <p>等概率条件下有：</p>
+            <p><img src="class29-05.jpg" width="111" height="106"></p>
+          </td>
+        </tr>
+        <tr>
+          <td width="28%">假设查找成功与不成功的概率相同：</td>
+          <td width="72%"><img src="class29-06.jpg" width="159" height="69"></td>
+        </tr>
+      </table>
+      
+    </blockquote>
+  </blockquote>
+</blockquote>
+<p>四、总结</p>
+<blockquote> 
+  <p>什么是查找表</p>
+  <p>顺序表的查找过程</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class28/class28.htm">上一课</a> <a href="../class30/class30.htm">下一课</a></p>
+</body>
+</html>

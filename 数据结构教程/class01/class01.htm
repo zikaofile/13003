@@ -1,0 +1,196 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<link rel="stylesheet" href="../main.css">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"> <b>第一课</b></p>
+<p><b><i>本课主题：</i></b>数据结构的基本概念和术语</p>
+<p><b><i>教学目的：</i></b>了解数据结构的基本概念，理解常用术语</p>
+<p><b><i>教学重点：</i></b>基本概念：数据与数据元素</p>
+<p><b><i>教学难点：</i></b>数据元素间的四种结构关系。</p>
+<p><b><i>授课内容：</i></b></p>
+<p><b>一、数据、数据元素、数据对象、数据结构的定义</b></p>
+<p>1、数据的定义</p>
+<blockquote> 
+  <p>定义一：数据是客观事物的符号表示。</p>
+  <table width="468" border="1" cellspacing="0">
+    <tr> 
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">学号</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">姓名</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">语文</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">数学</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">C语言</div>
+      </td>
+    </tr>
+    <tr> 
+      <td>6201001</td>
+      <td>张三</td>
+      <td>85</td>
+      <td><font color="#FF0000">54</font></td>
+      <td>92</td>
+    </tr>
+    <tr> 
+      <td>6201002</td>
+      <td>李四</td>
+      <td>92</td>
+      <td>84</td>
+      <td>64</td>
+    </tr>
+    <tr> 
+      <td>6201003</td>
+      <td>王五</td>
+      <td>87</td>
+      <td>74</td>
+      <td>73</td>
+    </tr>
+    <tr> 
+      <td>6201004</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td>...</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <blockquote> 
+    <p>例：张三的C语言考试成绩为92分，92就是该同学的成绩数据。</p>
+  </blockquote>
+  <p>定义二：能输入到计算机中并被计算机程序处理的符号的总称。</p>
+  <blockquote> 
+    <p align="left">例：图像、声音等。</p>
+    <p align="center"> <img src="class01-01.jpg" width="183" height="182"><img src="class01-06.gif" width="250" height="70"></p>
+  </blockquote>
+  <p>总结：现实世界信息的分析、复制、传播首先要符号化，这样才便于处理，尤其是便于计算机的处理。家长、社会要了解一个学生的学习成绩和能力，要看他的学习档案，而学习档案即是说明该学生学习情况的数据。</p>
+</blockquote>
+<p>2、数据元素、数据项</p>
+<blockquote> 
+  <p>数据元素是数据的基本单位，它也可以再由不可分割的数据项组成。如图示：</p>
+</blockquote>
+<p><img src="class01-02.jpg" width="620" height="200"></p>
+<p>3、数据对象</p>
+<blockquote>
+  <p>是性质相同的数据元素的集合。如上例：一个班级的成绩表可以看作一个数据对象。</p>
+</blockquote>
+<p>4、数据结构</p>
+<blockquote> 
+  <p>定义一、数据元素集合（也可称数据对象）中各元素的关系。</p>
+  <p>定义二、相互之间存在特定关系的数据元素集合。</p>
+  <p><a name="#0501"></a>数据结构的种类：</p>
+  <table width="473" border="1" cellspacing="0">
+    <tr> 
+      <td width="102">&nbsp;</td>
+      <td width="186"> 
+        <div align="center">特征</div>
+      </td>
+      <td width="171"> 
+        <div align="center">示例</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="102">集合</td>
+      <td width="186">元素间为松散的关系</td>
+      <td width="171"><img src="class01-03.jpg" width="215" height="148"></td>
+    </tr>
+    <tr> 
+      <td width="102">线性结构</td>
+      <td width="186">元素间为严格的一对一关系</td>
+      <td width="171">如上面的成绩表中各元素</td>
+    </tr>
+    <tr> 
+      <td width="102">树形结构</td>
+      <td width="186">元素间为严格的一对多关系</td>
+      <td width="171"><img src="class01-04.jpg" width="215" height="148"></td>
+    </tr>
+    <tr> 
+      <td width="102">图状结构（或网状结构）</td>
+      <td width="186">元素间为多对多关系</td>
+      <td width="171"><img src="class01-05.jpg" width="215" height="148"></td>
+    </tr>
+  </table>
+  <p>数据结构的形式定义：</p>
+  <p align="center">数据结构名称=（D，S）</p>
+  <p align="center"> 其中D为数据元素的有限集，S是D上关系的有限集</p>
+  <table border="1" cellspacing="0" width="546">
+    <tr> 
+      <td>逻辑结构</td>
+      <td>&nbsp;</td>
+      <td width="334">“数据结构”定义中的“关系”指数据间的逻辑关系，故也称数据结构为逻辑结构。</td>
+    </tr>
+    <tr> 
+      <td height="4" width="79" rowspan="3">存储结构</td>
+      <td height="2" width="119">&nbsp;</td>
+      <td height="4" width="334" rowspan="3">数据结构在计算机中的表示称为物理结构。又称存储结构。</td>
+    </tr>
+    <tr> 
+      <td height="2" width="119">顺序存储结构</td>
+    </tr>
+    <tr> 
+      <td height="2" width="119">链式存储结构</td>
+    </tr>
+  </table>
+  <p align="left">存储结构详解：</p>
+  <p align="left">计算机中存储信息的最小单位：<font color="#FF0000"><b>位</b></font>，8位为一字节，两个字节为一字，字节、字或更多的二进制位可称为<b><font color="#FF0000">位串。</font></b>在逻辑描述中，把位串称为元素或<b><font color="#FF0000">结点</font></b>。</p>
+  <p align="left">当数据元素由若干数据项组成时，位串中对应于各个数据项的子位串称为<font color="#FF0033"><b>数据域</b></font>(Data 
+    Field)。</p>
+  <p align="left">例：上述成绩表数据用C语言的结构体数组classonestu[50]来存储：</p>
+  <p align="left">struct stu {<br>
+    int stuno;/*数据项，也称stu位串中的一个子位串，或叫做数据域*/ <br>
+    char name[20];<br>
+    int maths;<br>
+    int language;<br>
+    int c_language;<br>
+    } classonestu[50];</p>
+</blockquote>
+<p><b>二、数据类型</b></p>
+<blockquote> 
+  <p>1、定义：数据类型是一个值的集合和定义在这个值集上的一组操作的总称。</p>
+  <p>例：C语言中的整型，其内涵为一定范围的自然数集合，及定义在该集合上的加减乘除及取模、比较大小操作。而实型则无取模操作。当然整型也不需四舍五入。</p>
+  <p>2、数据类型的种类：</p>
+  <table width="472" border="1" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td width="67">&nbsp;</td>
+      <td width="236">特征</td>
+      <td width="155">例</td>
+    </tr>
+    <tr> 
+      <td width="67">原子类型</td>
+      <td width="236">值在逻辑上不可分解</td>
+      <td width="155">int float</td>
+    </tr>
+    <tr> 
+      <td width="67">结构类型</td>
+      <td width="236">值由若干成分按某种结构组成</td>
+      <td width="155">struct stu</td>
+    </tr>
+  </table>
+  <p>数据类型封装了数据存储与操作的具体细节。</p>
+</blockquote>
+<p><b>三、总结</b></p>
+<blockquote> 
+  <p>数据-&gt;数据元素</p>
+  <p>具有特定关系的数据元素集合-&gt;数据结构</p>
+  <p>数据结构的逻辑表示与物理存储-&gt;逻辑结构与存储结构</p>
+  <p>人们不仅关心数据的逻辑结构、存储结构，还关心数据的<font color="#FF0000">处理方法（算法）</font>与处理结果-&gt;数据类型</p>
+  <p>数据类型-&gt;分类</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class02/class02.htm">下一课</a></p>
+</body>
+</html>

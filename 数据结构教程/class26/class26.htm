@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十六课</b></p>
+<p><b><i>本课主题：</i></b> 图的定义与术语</p>
+<p><b><i>教学目的：</i></b> 掌握图的定义及常用术语</p>
+<p><b><i>教学重点：</i></b> 图的常用术语</p>
+<p><b><i>教学难点：</i></b> 图的常用术语</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、图的定义</p>
+<blockquote> 
+  <p>图是一种数据元素间为多对多关系的数据结构，加上一组基本操作构成的抽象数据类型。</p>
+  <p align="center"><img src="../class01/class01-05.jpg" width="215" height="148" border="1"></p>
+  <p>ADT Graph{</p>
+  <p>数据对象V ：V是具有相同特性的数据元素的集合，称为顶点集。</p>
+  <p>数据关系R：</p>
+  <blockquote> 
+    <p>R={VR}</p>
+    <p>VR={&lt;v,w&gt;|v,w(-V且P(v,w),&lt;v,w&gt;表示从v到w的弧，谓词P(v,w)定义了弧&lt;v,w&gt;的意义或信息}</p>
+  </blockquote>
+  <p>基本操作P：</p>
+  <blockquote>
+    <p>CreateGraph(&amp;G,V,VR);</p>
+    <p>初始条件：V是图的顶点集，VR是图中弧的集合。</p>
+    <p>操作结果：按V和VR的定义构造图G</p>
+    <p>DestroyGraph(&amp;G);</p>
+    <p>初始条件：图G存在</p>
+    <p>操作结果：销毁图G</p>
+    <p>LocateVex(G,u);</p>
+    <p>初始条件：图G存在，u一G中顶点有相同特征</p>
+    <p>操作结果：若G中存在顶点u, 则返回该顶点在图中位置；否则返回其它信息。</p>
+    <p>GetVex(G,v);</p>
+    <p>初始条件：图G存在，v是G中某个顶点</p>
+    <p>操作结果：返回v的值。</p>
+    <p>PutVex(&amp;G,v,value);</p>
+    <p>初始条件：图G存在，v是G中某个顶点</p>
+    <p>操作结果：对v赋值value</p>
+    <p>FirstAdjVex(G,v);</p>
+    <p>初始条件：图G存在，v是G中某个顶点</p>
+    <p>操作结果：返回v的第一个邻接顶点。若顶点在G中没有邻接顶点，则返回“空”</p>
+    <p>NextAdjVex(G,v,w);</p>
+    <p>初始条件：图G存在,v是G中某个顶点,w是v的邻接顶点。</p>
+    <p>操作结果：返回v的（相对于w的）下一个邻接顶点。若w是v的最后一个邻接点，则返回“空”</p>
+    <p>InsertVex(&amp;G,v);</p>
+    <p>初始条件：图G存在，v和图中顶点有相同特征</p>
+    <p>操作结果：在图G中增添新顶点v</p>
+    <p>DeleteVex(&amp;G,v);</p>
+    <p>初始条件：图G存在，v是G中某个顶点</p>
+    <p>操作结果：删除G中顶点v及其相关的弧</p>
+    <p>InsertAcr(&amp;G,v,w);</p>
+    <p>初始条件：图G存在，v和w是G中两个顶点</p>
+    <p>操作结果：在G中增添弧&lt;v,w&gt;,若G是无向的，则还增添对称弧&lt;w,v&gt;</p>
+    <p>DeleteArc(&amp;G,v,w);</p>
+    <p>初始条件：图G存在，v和w是G中两个顶点</p>
+    <p>操作结果：在G中删除弧&lt;v,w&gt;,若G是无向的，则还删除对称弧&lt;w,v&gt;</p>
+    <p>DFSTraverser(G,v,Visit());</p>
+    <p>初始条件：图G存在，v是G中某个顶点，Visit是顶点的应用函数</p>
+    <p>操作结果：从顶点v起深度优先遍历图G，并对每个顶点调用函数Visit一次。一旦Visit()失败，则操作失败。</p>
+    <p>BFSTRaverse(G,v,Visit());</p>
+    <p>初始条件：图G存在，v是G中某个顶点，Visit是顶点的应用函数</p>
+    <p>操作结果：从顶点v起广度优先遍历图G，并对每个顶点调用函数Visit一次。一旦Visit()失败，则操作失败。</p>
+  </blockquote>
+  <p>}ADT Graph</p>
+</blockquote>
+<p>二、图的常用术语 </p>
+<blockquote> 
+  <p align="center"><img src="class26-01.jpg" width="297" height="176" border="1"></p>
+  <p align="left">对上图有：G1=(V1,{A1})</p>
+  <p align="left">其中：V1={v1,v2,v3,v4} A1={&lt;v1,v2&gt;,&lt;v1,v3&gt;,&lt;v3,v4&gt;,&lt;v4,v1&gt;}</p>
+  <p align="left">如果用n表示图中顶点数目，用e表示边或弧的数目，则有：</p>
+  <p align="left">对于无向图，e的取值范围是0到n(n-1)/2,有n(n-1)/2条边的无向图称为<font color="#FF0033">完全图</font>。</p>
+  <p align="left">对于有向图，e有取值范围是0到n(n-1)。具有n(n-1)条弧的有向图称为<font color="#FF0000">有向完全图</font>。</p>
+  <p align="left">有很少条边或弧的图称为<font color="#FF0033">稀疏图</font>，反之称为<font color="#FF0033">稠密图</font>。</p>
+  <p align="center"><img src="class26-02.jpg" width="440" height="270"></p>
+  <p align="center"><img src="class26-03.jpg" width="496" height="175"></p>
+  <table width="75%" border="0">
+    <tr> 
+      <td width="35%"><img src="class26-04.jpg" width="134" height="110"></td>
+      <td width="65%" valign="bottom"> 
+        <p>v1与v2互为邻接点<br>
+          e1依附于顶点v1和v2<br>
+          v1和v2相关联<br>
+          v1的度为3 </p>
+      </td>
+    </tr>
+  </table>
+  <p align="left">对有向图，如果每一对顶点之间都有通路，则称该图为强连通图。</p>
+  <p align="left"><img src="class26-05.jpg" width="251" height="131"></p>
+</blockquote>
+<p>三、总结</p>
+<blockquote>
+  <p>图的特征</p>
+  <p>有向图与无向图的主要区别</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class25/class25.htm">上一课</a> <a href="../class27/class27.htm">下一课</a></p>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第四课</b></p>
+<p><b><i>本课主题：</i></b> 算法效率的度量和存储空间需求</p>
+<p><b><i>教学目的：</i></b> 掌握算法的渐近时间复杂度和空间复杂度的意义与作用</p>
+<p><b><i>教学重点：</i></b> 渐近时间复杂度的意义与作用及计算方法</p>
+<p><b><i>教学难点：</i></b> 渐近时间复杂度的意义</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、算法效率的度量</p>
+<blockquote> 
+  <p>算法执行的时间是算法优劣和问题规模的函数。评价一个算法的优劣，可以在相同的规模下，考察算法执行时间的长短来进行判断。而一个程序的执行时间通常有两种方法：</p>
+  <p>1、事后统计的方法。</p>
+  <blockquote> 
+    <p>缺点：不利于较大范围内的算法比较。（异地，异时，异境） </p>
+  </blockquote>
+  <p>2、事前分析估算的方法。</p>
+  <blockquote> 
+    <table width="500" border="1" cellspacing="0">
+      <tr bgcolor="#FFCCCC"> 
+        <td colspan="2"> 
+          <div align="center">程序在计算机上运行所需时间的影响因素</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="215"> 算法本身选用的策略</td>
+        <td width="275">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="215">问题的规模</td>
+        <td width="275">规模越大，消耗时间越多</td>
+      </tr>
+      <tr> 
+        <td width="215">书写程序的语言</td>
+        <td width="275">语言越高级，消耗时间越多</td>
+      </tr>
+      <tr> 
+        <td width="215">编译产生的机器代码质量</td>
+        <td width="275">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="215">机器执行指令的速度</td>
+        <td width="275">&nbsp;</td>
+      </tr>
+    </table>
+    <p>综上所述，为便于比较算法本身的优劣，应排除其它影响算法效率的因素。</p>
+    <p>从算法中选取一种对于所研究的问题来说是基本操作的<font color="#CC00CC">原操作</font>，以该基本操作重复执行的次数作为算法的时间量度。 
+      （原操作在所有该问题的算法中都相同）</p>
+    <p align="center"><font size="+1"><i>T</i></font>(n)=<i><font size="+1">O</font></i>(f(<font size="-1">n</font>))</p>
+    <p>上示表示<a href="../class03/class03.htm#0401">随问题规模n的增大，算法执行时间的增长</a>率和f(n)的增长率相同，称作算法的<font color="#FF3333"><b>渐近时间复杂度</b></font>，简称<font color="#FF3333"><b>时间复杂度</b></font>。</p>
+  </blockquote>
+  <blockquote> 
+    <table width="481" border="1" cellspacing="0">
+      <tr> 
+        <td width="131"> 
+          <p>求4*4矩阵元素和，T(4)=O(f(4))</p>
+          <p>f=n*n;</p>
+        </td>
+        <td width="340" bgcolor="#CCCCFF"> 
+          <p>sum(int num[4][4]) </p>
+          <p> { int i,j,r=0; <br>
+            for(i=0;i<4;i++)</p>
+          <blockquote> 
+            <p> for(j=0;j<4;j++) </p>
+            <blockquote> 
+              <p> r+=num[i][j]; /*<font color="#CC00CC">原操作</font>*/</p>
+            </blockquote>
+          </blockquote>
+          <p>return r; <br>
+            }</p>
+        </td>
+      </tr>
+      <tr> 
+        <td width="131"> 
+          <p>最好情况：<br>
+            T（4）=O（0）</p>
+          <p>最坏情况：<br>
+            T（4）=O（n*n）</p>
+        </td>
+        <td width="340" bgcolor="#009999"> 
+          <p>ispass(int num[4][4]) </p>
+          <p> { int i,j; <br>
+            for(i=0;i<4;i++)</p>
+          <blockquote> 
+            <p> for(j=0;j<4;j++) </p>
+            <blockquote> 
+              <p> if(num[i][j]!=i*4+j+1)</p>
+              <blockquote> 
+                <p> return 0; </p>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+          <p> return 1; <br>
+            }</p>
+        </td>
+      </tr>
+    </table>
+    <p>原操作执行次数和包含它的语句的<font color="#FF0000">频度</font>相同。语句的<font color="#FF0033">频度</font>指的是该语句重复执行的次数。</p>
+    <table width="478" border="1" cellspacing="0">
+      <tr bgcolor="#FFCCCC"> 
+        <td width="252"> 
+          <div align="center">语句</div>
+        </td>
+        <td width="60"> 
+          <div align="center">频度</div>
+        </td>
+        <td width="152"> 
+          <div align="center">时间复杂度</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="252">{++x;s=0;}</td>
+        <td width="60"> 
+          <div align="center">1</div>
+        </td>
+        <td width="152"> 
+          <div align="center">O(1)</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="252"> 
+          <p>for(i=1;i&lt;=n;++i)</p>
+          <blockquote> 
+            <p>{++x;s+=x;}</p>
+          </blockquote>
+        </td>
+        <td width="60"> 
+          <div align="center">n</div>
+        </td>
+        <td width="152"> 
+          <div align="center">O(n)</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="252" height="63"> 
+          <p>for(j=1;j&lt;=n;++j)</p>
+          <blockquote> 
+            <p>for(k=1;k&lt;=n;++k)</p>
+            <blockquote> 
+              <p>{++x;s+=x;}</p>
+            </blockquote>
+          </blockquote>
+        </td>
+        <td width="60" height="63"> 
+          <div align="center">n*n</div>
+        </td>
+        <td width="152" height="63"> 
+          <div align="center">O(n*n)</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="252">&nbsp;</td>
+        <td width="60"> 
+          <div align="center"></div>
+        </td>
+        <td width="152"> 
+          <div align="center">O(log n)</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="252" height="37">&nbsp;</td>
+        <td width="60" height="37"> 
+          <div align="center"></div>
+        </td>
+        <td width="152" height="37"> 
+          <div align="center"><br>
+            <font size="+1"><img src="class04-01.jpg" width="39" height="21"></font></div>
+        </td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <table width="481" border="1" cellspacing="0">
+      <tr bgcolor="#FFCCCC"> 
+        <td colspan="2" height="28"> 
+          <div align="center">基本操作的执行次数不确定时的时间复杂度</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="211" bgcolor="#CCCCFF" height="30">平均时间复杂度</td>
+        <td width="260" height="30">依基本操作执行次数概率计算平均</td>
+      </tr>
+      <tr> 
+        <td width="211" bgcolor="#CCCCFF" height="31">最坏情况下时间复杂度</td>
+        <td width="260" height="31">在最坏情况下基本操作执行次数</td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+  </blockquote>
+</blockquote>
+<p>二、算法的存储空间需求</p>
+<blockquote> 
+  <p>类似于算法的时间复杂度，空间复杂度可以作为算法所需存储空间的量度。</p>
+  <p>记作：</p>
+  <p align="center"><font size="+1"><i>S</i></font>(n)=<font size="+1"><i>O</i></font>(<i>f</i><font size="-1">(n)</font>)</p>
+  <p>若额外空间相<a href="../class03/class03.htm#0401">对于输入数据量来说是常数</a>，则称此算法为<b>原地工作</b>。</p>
+  <p>如果所占空间量依赖于特定的输入，则除特别指明外，均按最坏情况来分析。</p>
+</blockquote>
+<p>三、总结</p>
+<blockquote> 
+  <p>渐近时间复杂度</p>
+  <p>空间复杂度</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class03/class03.htm">上一课</a> <a href="../class05/class05.htm">下一课</a></p>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十课</b></p>
+<p><b><i>本课主题：</i></b> 静态查找表（二）有序表的查找</p>
+<p><b><i>教学目的：</i></b> 掌握有序表的折半查找法</p>
+<p><b><i>教学重点：</i></b> 折半查找</p>
+<p><b><i>教学难点：</i></b> 折半查找</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、折半查找的查找过程</p>
+<blockquote> 
+  <p>以有序表表示静态查找表时，Search函数可用折半查找来实现。</p>
+  <p>先确定待查记录所在的范围（区间），然后逐步缩小范围直到找到或找不到该记录为止。</p>
+  <p><img src="class30-01.jpg" width="309" height="293"></p>
+  <p><img src="class30-02.jpg" width="300" height="233"></p>
+</blockquote>
+<p>二、折半查找的查找实现</p>
+<blockquote> 
+  <p>int Search_Bin(SSTable ST,KeyType key){</p>
+  <p> low=1;high=ST.length;</p>
+  <p>while(low&lt;=high){</p>
+  <blockquote> 
+    <p>mid=(low+high)/2;</p>
+    <p>if EQ(key,ST.elem[mid].key) return mid;</p>
+    <p>else if LT(key,ST.elem[mid].key) high=mid -1;</p>
+    <p>else low=mid +1 ;</p>
+    <p>}</p>
+    <p>return 0;</p>
+  </blockquote>
+  <p>}//Search_Bin;</p>
+</blockquote>
+<p>三、折半查找的性能分析</p>
+<blockquote> 
+  <p>折半查找在查找成功时和给定值进行比较的关键字个数至多为<img src="class30-03.jpg" width="56" height="22"></p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class29/class29.htm">上一课</a> <a href="../class31/class31.htm">下一课</a></p>
+</body>
+</html>

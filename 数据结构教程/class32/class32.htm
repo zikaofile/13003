@@ -1,0 +1,425 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十二课</b></p>
+<p><b><i>本课主题：</i></b> 哈希表（一）</p>
+<p><b><i>教学目的：</i></b> 掌握哈希表的概念作用及意义，哈希表的构造方法</p>
+<p><b><i>教学重点：</i></b> 哈希表的构造方法</p>
+<p><b><i>教学难点：</i></b> 哈希表的构造方法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、哈希表的概念及作用</p>
+<blockquote> 
+  <p> 一般的线性表，树中，记录在结构中的相对位置是随机的，即和记录的关键字之间不存在确定的关系，因此，在结构中查找记录时需进行一系列和关键字的比较。这一类查找方法建立在“比较“的基础上，查找的效率依赖于查找过程中所进行的比较次数。 
+  </p>
+  <p> 理想的情况是能直接找到需要的记录，因此必须在记录的存储位置和它的关键字之间建立一个确定的对应关系f，使每个关键字和结构中一个唯一的存储位置相对应。</p>
+  <p>哈希表最常见的例子是<font color="#FF00CC">以学生学号为关键字</font>的成绩表，１号学生的记录位置在第一条，１０号学生的记录位置在第１０条...</p>
+  <p>如果我们以学生姓名为关键字，如何建立查找表，使得根据姓名可以直接找到相应记录呢？</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr>
+      <td>a</td>
+      <td>b</td>
+      <td>c</td>
+      <td>d</td>
+      <td>e</td>
+      <td>f</td>
+      <td>g</td>
+      <td>h</td>
+      <td>i</td>
+      <td>j</td>
+      <td>k</td>
+      <td>l</td>
+      <td>m</td>
+      <td>n</td>
+      <td>o</td>
+      <td>p</td>
+      <td>q</td>
+      <td>r</td>
+      <td>s</td>
+      <td>t</td>
+      <td>u</td>
+      <td>v</td>
+      <td>w</td>
+      <td>x</td>
+      <td>y</td>
+      <td>z</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>13</td>
+      <td>14</td>
+      <td>15</td>
+      <td>16</td>
+      <td>17</td>
+      <td>18</td>
+      <td>19</td>
+      <td>20</td>
+      <td>21</td>
+      <td>22</td>
+      <td>23</td>
+      <td>24</td>
+      <td>25</td>
+      <td>26</td>
+    </tr>
+  </table>
+  <br>
+  <table width="90%" border="1" cellspacing="0">
+    <tr> 
+      <td height="21" width="31%">&nbsp;</td>
+      <td height="21" width="11%">刘丽</td>
+      <td height="21" width="13%">刘宏英</td>
+      <td height="21" width="12%">吴军</td>
+      <td height="21" width="11%">吴小艳</td>
+      <td height="21" width="12%">李秋梅</td>
+      <td height="21" width="10%">陈伟</td>
+      <td height="21" width="10%">...</td>
+    </tr>
+    <tr> 
+      <td width="31%">姓名中各字拼音首字母</td>
+      <td width="11%">ll</td>
+      <td width="13%">lhy</td>
+      <td width="12%">wj</td>
+      <td width="11%">wxy</td>
+      <td width="12%">lqm</td>
+      <td width="10%">cw</td>
+      <td width="10%">...</td>
+    </tr>
+    <tr> 
+      <td width="31%">用所有首字母编号值相加求和</td>
+      <td width="11%">24</td>
+      <td width="13%">46</td>
+      <td width="12%">33</td>
+      <td width="11%">72</td>
+      <td width="12%">42</td>
+      <td width="10%">26</td>
+      <td width="10%">...</td>
+    </tr>
+    <tr> 
+      <td colspan="8"> 
+        <p>最小值可能为3 最大值可能为78 可放75个学生</p>
+      </td>
+    </tr>
+  </table>
+  <p>用上述得到的数值作为对应记录在表中的位置，得到下表：<br>
+  </p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr bgcolor="#FFFFFF"> 
+      <td width="8%">&nbsp;</td>
+      <td width="15%">&nbsp;</td>
+      <td width="13%">成绩一</td>
+      <td width="64%">成绩二...</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">3</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%"><font color="#FFCCFF">...</font></td>
+      <td width="15%"><font color="#FFCCFF">...</font></td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%"><font color="#FFCCFF"></font></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">24</td>
+      <td width="15%">刘丽</td>
+      <td width="13%">82</td>
+      <td width="64%">95</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">25</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">26</td>
+      <td width="15%">陈伟</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">33</td>
+      <td width="15%">吴军</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">42</td>
+      <td width="15%">李秋梅</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">46</td>
+      <td width="15%">刘宏英</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">72</td>
+      <td width="15%">吴小艳</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">78</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+  </table>
+  <p>上面这张表即<font color="#FF3333">哈希表</font>。</p>
+  <p>如果将来要查李秋梅的成绩，可以用上述方法求出该记录所在位置：</p>
+  <p>李秋梅:lqm 12+17+13=42 取表中第42条记录即可。</p>
+  <p>问题：如果两个同学分别叫 刘丽 刘兰 该如何处理这两条记录？</p>
+  <p>这个问题是哈希表不可避免的，即<font color="#FF0033">冲突</font>现象：对不同的关键字可能得到同一哈希地址。</p>
+</blockquote>
+<p>二、哈希表的构造方法</p>
+<blockquote> 
+  <p>１、直接定址法</p>
+  <blockquote> 
+    <p>例如：有一个从1到100岁的人口数字统计表，其中，年龄作为关键字，哈希函数取关键字自身。</p>
+    <table width="75%" border="1" cellspacing="0">
+      <tr> 
+        <td> 地址</td>
+        <td>01</td>
+        <td>02</td>
+        <td>...</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>...</td>
+        <td>100</td>
+      </tr>
+      <tr> 
+        <td>年龄</td>
+        <td>1</td>
+        <td>2</td>
+        <td>...</td>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr> 
+        <td>人数</td>
+        <td>3000</td>
+        <td>2000</td>
+        <td>...</td>
+        <td>1050</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+        <td>...</td>
+      </tr>
+      <tr> 
+        <td>...</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </blockquote>
+  <p>２、数字分析法</p>
+  <blockquote> 
+    <p>有学生的生日数据如下：</p>
+    <p>年.月.日</p>
+    <p>75.10.03<br>
+      75.11.23<br>
+      76.03.02<br>
+      76.07.12<br>
+      75.04.21<br>
+      76.02.15<br>
+      ...</p>
+    <p>经分析,第一位，第二位，第三位重复的可能性大，取这三位造成冲突的机会增加，所以尽量不取前三位，取后三位比较好。</p>
+  </blockquote>
+  <p>３、平方取中法</p>
+  <blockquote> 
+    <p>取关键字平方后的中间几位为哈希地址。</p>
+  </blockquote>
+  <p>４、折叠法</p>
+  <blockquote> 
+    <p>将关键字分割成位数相同的几部分（最后一部分的位数可以不同），然后取这几部分的叠加和（舍去进位）作为哈希地址，这方法称为折叠法。</p>
+    <p>例如：每一种西文图书都有一个国际标准图书编号，它是一个10位的十进制数字，若要以它作关键字建立一个哈希表，当馆藏书种类不到10,000时，可采用此法构造一个四位数的哈希函数。如果一本书的编号为0-442-20586-4,则：</p>
+    <table width="75%" border="0" cellspacing="0">
+      <tr> 
+        <td width="18%"> 
+          <div align="right"></div>
+        </td>
+        <td width="26%"> 
+          <div align="right">5864</div>
+        </td>
+        <td width="27%"> 
+          <div align="right"></div>
+        </td>
+        <td width="29%"> 
+          <div align="right">5864</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%"> 
+          <div align="right"></div>
+        </td>
+        <td width="26%"> 
+          <div align="right">4220</div>
+        </td>
+        <td width="27%"> 
+          <div align="right"></div>
+        </td>
+        <td width="29%"> 
+          <div align="right">0224</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%"> 
+          <div align="right">+)</div>
+        </td>
+        <td width="26%"> 
+          <div align="right">04</div>
+        </td>
+        <td width="27%"> 
+          <div align="right">+)</div>
+        </td>
+        <td width="29%"> 
+          <div align="right">04</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%"> 
+          <div align="right"></div>
+        </td>
+        <td width="26%"> 
+          <div align="right">-----------</div>
+        </td>
+        <td width="27%"> 
+          <div align="right"></div>
+        </td>
+        <td width="29%"> 
+          <div align="right">-----------</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%"> 
+          <div align="right"></div>
+        </td>
+        <td width="26%"> 
+          <div align="right">10088</div>
+        </td>
+        <td width="27%"> 
+          <div align="right"></div>
+        </td>
+        <td width="29%"> 
+          <div align="right">6092</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%"> 
+          <div align="right"></div>
+        </td>
+        <td width="26%"> 
+          <div align="right">H(key)=0088</div>
+        </td>
+        <td width="27%"> 
+          <div align="right"></div>
+        </td>
+        <td width="29%"> 
+          <div align="right">H(key)=6092</div>
+        </td>
+      </tr>
+      <tr> 
+        <td width="18%">&nbsp;</td>
+        <td width="26%">&nbsp;</td>
+        <td width="27%">&nbsp;</td>
+        <td width="29%">&nbsp;</td>
+      </tr>
+      <tr> 
+        <td width="18%"> 
+          <div align="right"></div>
+        </td>
+        <td width="26%"> 
+          <div align="right">(a)移位叠加</div>
+        </td>
+        <td width="27%"> 
+          <div align="right"></div>
+        </td>
+        <td width="29%"> 
+          <div align="right">(b)间界叠加</div>
+        </td>
+      </tr>
+    </table>
+  </blockquote>
+  <p>５、除留余数法</p>
+  <blockquote> 
+    <p>取关键字被某个不大于哈希表表长m的数p除后所得余数为哈希地址。</p>
+    <p>H(key)=key MOD p (p&lt;=m)</p>
+  </blockquote>
+  <p>６、随机数法</p>
+  <blockquote>
+    <p>选择一个随机函数，取关键字的随机函数值为它的哈希地址，即</p>
+    <p>H(key)=random(key) ,其中random为随机函数。通常用于关键字长度不等时采用此法。</p>
+  </blockquote>
+</blockquote>
+<p>三、总结</p>
+<blockquote> 
+  <p>哈希表的优缺点</p>
+</blockquote>
+<p>四、作业</p>
+<blockquote>
+  <p>&nbsp;</p>
+  <p>预习如何处理冲突及哈希表的查找。</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class31/class31.htm">上一课</a> <a href="../class33/class33.htm">下一课</a></p>
+</body>
+</html>

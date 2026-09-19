@@ -1,0 +1,101 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十五课</b></p>
+<p><b><i>本课主题：</i></b> 单元测验</p>
+<p><b><i>教学目的：</i></b> 复习前面所学的内容,检验学习效果,拾遗补缺</p>
+<p><b><i>教学重点：</i></b> </p>
+<p><b><i>教学难点：</i></b> </p>
+<p><b><i>授课内容：</i></b></p>
+<blockquote> 
+  <p>测验题: </p>
+  </blockquote>
+<p>一，<font face="宋体" lang="ZH-CN" size="3">填空：</font></p>
+<blockquote> 
+  <ol>
+    <li><font face="宋体" lang="ZH-CN" size="3">基本数据结构有＿＿＿＿，＿＿＿＿，＿＿＿＿，＿＿＿＿四种。</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">存储结构可根据数据元素在机器中的位置是否连续分为＿＿＿＿，＿＿＿＿。</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">算法的基本要求有＿＿＿＿＿，＿＿＿＿＿，＿＿＿＿，＿＿＿＿。</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">度量算法效率可通过＿＿＿＿＿＿＿，＿＿＿＿＿＿＿两方面进行。</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">栈的定义：＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿。</font></li>
+  </ol>
+</blockquote>
+<p><font face="宋体" lang="ZH-CN" size="3">二，简答：</font></p>
+<blockquote> 
+  <ol>
+    <li><font face="宋体" lang="ZH-CN" size="3">举例说明数据对象、数据元素、数据项的定义。</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">类Ｃ语言和Ｃ语言有哪些主要区别？</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">线性表的基本操作有哪些？</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">写出类Ｃ语言定义的线性表的静态分配顺序存储结构。</font></li>
+  </ol>
+</blockquote>
+<p>三，<font face="宋体" lang="ZH-CN" size="3">算法设计：</font></p>
+<blockquote> 
+  <ol>
+    <li><font face="宋体" lang="ZH-CN" size="3">下面是线性表的存储结构和插入算法，请补充算法中空缺部分。</font></li>
+    <p><font size="3">#define LIST_INIT_SIZE 100 </font></p>
+    <p><font size="3">#define LISTINCREMENT 10 </font></p>
+    <p><font size="3">typedef struct{</font></p>
+    <p><font size=3>ElemType *elem; //</font><font face="宋体" lang="ZH-CN" size=3>存储空间基址</font></p>
+    <p><font size=3>int length; //</font><font face="宋体" lang="ZH-CN" size=3>当前长度</font></p>
+    <p><font size=3>int listsize; //</font><font face="宋体" lang="ZH-CN" size=3>当前分配的存储容量以一数据元素存储长度为单位</font></p>
+    <p> <font face="宋体" lang="ZH-CN" size=3>}</font><font size=3>SqList; </font></p>
+    <p><font size="3">status ListInsert(List *L,int i,ElemType e) {</font></p>
+    <p><font size="3">____________ *p,*q; </font></p>
+    <p><font size="3">if (i&lt;1||i&gt;L-&gt;length+1) return ERROR; </font></p>
+    <p><font size="3">q=&amp;(L-&gt;elem[i-1]); </font></p>
+    <p><font size="3">for(p=&amp;L-&gt;elem[L-&gt;length-1];p&gt;=q;--p) </font></p>
+    <p><font size="3"> ________________; </font></p>
+    <p><font size="3">*q=e; </font></p>
+    <p><font size="3">__________________; </font></p>
+    <p><font size="3">return OK; </font></p>
+    <p><font size="3">}/*ListInsert Before i */ </font></p>
+    <li><font face="宋体" lang="ZH-CN" size="3">下面是栈的顺序存储结构和入栈、出栈算法，请补充算法中空缺部分。</font></li>
+  </ol>
+  <dir> <font face="宋体" lang="ZH-CN" size=3> </font> 
+    <p><font size="3">typedef struct{</font></p>
+    <p><font size="3">SElemType *base;</font></p>
+    <p><font size=3>SElemType *top; //</font><font face="宋体" lang="ZH-CN" size=3>设栈顶栈底两指针的目的是便于判断栈是否为空</font></p>
+    <p><font size=3>int StackSize; //</font><font face="宋体" lang="ZH-CN" size=3>栈的当前可使用的最大容量</font><font size=3>.</font></p>
+    <p><font face="宋体" lang="ZH-CN" size=3>}</font><font size=3>SqStack;</font></p>
+    <p><font size="3">Status Push(SqStack &amp;S,SElemType e); { </font></p>
+    <p><font size="3">if(S.top - s.base&gt;=S.stacksize) {</font></p>
+    <p><font size="3"> S.base=(ElemType *) realloc(S.base, </font></p>
+    <p><font size="3"> (S.stacksize + STACKINCREMENT) * sizeof(ElemType)); </font></p>
+    <p><font size="3">if(!S.base)exit(OVERFLOW);</font></p>
+    <p><font size="3">S.top=S.base+S.stacksize; </font></p>
+    <p><font size="3">S.stacksize+=STACKINCREMENT; </font></p>
+    <p><font size="3">} </font></p>
+    <p><font size=3>*S.top++=</font><font face="宋体" lang="ZH-CN" size=3>＿＿＿＿＿</font><font size=3>; 
+      </font></p>
+    <p><font size="3">return OK;</font></p>
+    <p><font size="3">} //Push</font></p>
+    <p><font size="3">Status Pop(SqStack &amp;S,SElemType &amp;e); {</font></p>
+    <p><font size=3>if(</font><font face="宋体" lang="ZH-CN" size=3>＿＿＿＿＿＿＿＿</font><font size=3>) 
+      </font></p>
+    <p><font size="3">return ERROR; </font></p>
+    <p><font face="宋体" lang="ZH-CN" size=3>＿＿＿＿＿</font><font size=3>=*--S.top; 
+      </font></p>
+    <p><font size="3">return OK; </font></p>
+    <p><font size="3">}//Pop </font></p>
+  </dir>
+  <ol>
+    <font size=3> </font> 
+  </ol>
+</blockquote>
+<p>四，<font face="宋体" lang="ZH-CN" size="3">问答：</font></p>
+<blockquote>
+  <ol>
+    <li><font face="宋体" lang="ZH-CN" size="3">用图示法说明在单向线性链表中插入结点的过程。</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">有一学生成绩单，画出用链式存储结构时的成绩单数据的存储映像。</font></li>
+    <li><font face="宋体" lang="ZH-CN" size="3">用Ｃ语言实现单向线性链表。写出存储结构定义及基本算法。</font></li>
+  </ol>
+  <p>&nbsp;</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class24/class24.htm">上一课</a> <a href="../class26/class26.htm">下一课</a></p>
+</body>
+</html>

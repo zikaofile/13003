@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十二课</b></p>
+<p><b><i>本课主题：</i></b> 实验五 数组实验</p>
+<p><b><i>教学目的：</i></b> 掌握二维数组的实现方法</p>
+<p><b><i>教学重点：</i></b> 二维数组的存储表示,二维数组的基本操作</p>
+<p><b><i>教学难点：</i></b> 二维数组的基本操作</p>
+<p><b><i>授课内容：</i></b></p>
+<blockquote> 
+  <p>数组的顺序存储表示和实现:</p>
+  <p>#include&lt;stdarg.h&gt;</p>
+  <p>#define MAX_ARRAY_DIM 8</p>
+  <p>typedef struct {</p>
+  <p> ElemType *base;</p>
+  <p>int dim;</p>
+  <p>int *bounds;</p>
+  <p>int *constants;</p>
+  <p>}Array;</p>
+  <p>Status InitArray(Array &amp;A,int dim,...);</p>
+  <p>Status DestroyArray(Array &amp;A);</p>
+  <p>Status Value(Array A,ElemType &amp;e,...);</p>
+  <p>Status Assign(Array &amp;A,ElemType e,...);</p>
+  <p>基本操作的算法描述:</p>
+  <p>Status InitArray(Array &amp;A,int dim,...){</p>
+  <p>if(dim&lt;1||dim&gt;MAX_ARRAY_DIM) return ERROR;</p>
+  <p>A.dim=dim;</p>
+  <p>A.bounds=(int *)malloc(dim *sizeof(int));</p>
+  <p>if(!A.bounds) exit(OVERFLOW);</p>
+  <p>elemtotal=1;</p>
+  <p>va_start(ap,dim);</p>
+  <p>for(i=1;i&lt;dim;++i){</p>
+  <blockquote> 
+    <p>A.bounds[i]=va_arg(ap,int);</p>
+    <p>if(A.bounds[i]&lt;0) return UNDERFLOW;</p>
+    <p>elemtotal*=A.bounds[i];</p>
+  </blockquote>
+  <p>}</p>
+  <p>va_end(ap);</p>
+  <p>A.base=(ElemType *)malloc(elemtotal*sizeof(ElemType));</p>
+  <p>if(!A.base) exit(OVERFLOW);</p>
+  <p>A.constants=(int *)malloc(dim*sizeof(int));</p>
+  <p>if(!A.constants) exit(OVERFLOW);</p>
+  <p>A.constants[dim-1]=1;</p>
+  <p>for(i=dim-2;i&gt;=0;--i)</p>
+  <blockquote> 
+    <p>A.constants[i]=A.bounds[i+1]*A.constants[i+1];</p>
+  </blockquote>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status DestoyArray(Array &amp;A){</p>
+  <p>if(!A.base) return ERROR;</p>
+  <p>free(A.base); A.base=NULL;</p>
+  <p>if !(A.bounds) return ERROR;</p>
+  <p>free(A.bounds); A.bounds=NULL;</p>
+  <p>if!(A.constatns) return ERROR;</p>
+  <p>free(A.constants); A.constants=NULL;</p>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status Locate(Array A,va_list ap,int &amp;off){</p>
+  <p>off=0;</p>
+  <p>for(i=0;i&lt;A.dim;++i){</p>
+  <blockquote> 
+    <p>ind=va_arg(ap,int);</p>
+    <p>if(ind&lt;0||ind&gt;=A.bounds[i]) return OVERFLOW;</p>
+    <p>off+=A.constants[i]*ind;</p>
+  </blockquote>
+  <p>}</p>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status Value(Array A,ElemType &amp;e,...){</p>
+  <p>va_start(ap,e);</p>
+  <p>if((result=Locate(A,ap,off))&lt;=0 return result;</p>
+  <p>e=*(A.base+off);</p>
+  <p>return OK;</p>
+  <p>}</p>
+  <p>Status Assign(Array &amp;A,ElemType e,...){</p>
+  <p>va_start(ap,e);</p>
+  <p>if((result=Locate(A,ap,off))&lt;=0) return result;</p>
+  <p>*(A.base+off)=e;</p>
+  <p>return OK;</p>
+  <p>}</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class21/class21.htm">上一课</a> <a href="../class23/class23.htm">下一课</a></p>
+</body>
+</html>

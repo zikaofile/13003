@@ -1,0 +1,320 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第三十三课</b></p>
+<p><b><i>本课主题：</i></b> 哈希表（二）</p>
+<p><b><i>教学目的：</i></b> 掌握哈希表处理冲突的方法及哈希表的查找算法</p>
+<p><b><i>教学重点：</i></b> 哈希表处理冲突的方法</p>
+<p><b><i>教学难点：</i></b> 开放定址法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、复习上次课内容</p>
+<blockquote> 
+  <p>什么是哈希表？如何构造哈希表？</p>
+  <p>提出问题：如何处理冲突？</p>
+</blockquote>
+<p>二、处理冲突的方法</p>
+<blockquote> 
+  <table width="75%" border="1" cellspacing="0">
+    <tr bgcolor="#FFFFFF"> 
+      <td width="8%">&nbsp;</td>
+      <td width="15%">&nbsp;</td>
+      <td width="13%">成绩一</td>
+      <td width="64%">成绩二...</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">3</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%"><font color="#FFCCFF">...</font></td>
+      <td width="15%"><font color="#FFCCFF">...</font></td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%"><font color="#FFCCFF"></font></td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">24</td>
+      <td width="15%">刘丽</td>
+      <td width="13%">82</td>
+      <td width="64%">95</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">25</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">26</td>
+      <td width="15%">陈伟</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">33</td>
+      <td width="15%">吴军</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">42</td>
+      <td width="15%">李秋梅</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">46</td>
+      <td width="15%">刘宏英</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td bgcolor="#FFCCCC" width="8%">72</td>
+      <td width="15%">吴小艳</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">...</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td width="8%">78</td>
+      <td width="15%">...</td>
+      <td width="13%">&nbsp;</td>
+      <td width="64%">&nbsp;</td>
+    </tr>
+  </table>
+  <p>如果两个同学分别叫 刘丽 刘兰，当加入刘兰时，地址24发生了冲突，我们可以以某种规律使用其它的存储位置，如果选择的一个其它位置仍有冲突，则再选下一个，直到找到没有冲突的位置。选择其它位置的方法有：</p>
+  <p>１、开放定址法</p>
+  <blockquote> 
+    <p>Hi=(H(key)+di) MOD m i=1,2,...,k(k&lt;=m-1)</p>
+    <p>其中m为表长，di为增量序列</p>
+    <p>如果di值可能为1,2,3,...m-1，称<font color="#FF0033">线性探测再散列</font>。</p>
+    <p>如果di取值可能为1,-1,2,-2,4,-4,9,-9,16,-16,...k*k,-k*k(k&lt;=m/2)</p>
+    <p>称<font color="#FF0033">二次探测再散列</font>。</p>
+    <p>如果di取值可能为<font color="#FF0033">伪随机数列</font>。称<font color="#FF0033">伪随机探测再散列</font>。</p>
+    <p>例：在长度为11的哈希表中已填有关键字分别为17,60,29的记录，现有第四个记录，其关键字为38，由哈希函数得到地址为5，若用线性探测再散列，如下：</p>
+    <div align="center"> 
+      <table width="75%" border="1" cellspacing="0">
+        <tr> 
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+        </tr>
+        <tr bgcolor="#FFCCCC"> 
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>60</td>
+          <td>17</td>
+          <td>29</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <p align="center">(a)插入前</p>
+    <div align="center"> 
+      <table width="75%" border="1" cellspacing="0">
+        <tr> 
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+        </tr>
+        <tr bgcolor="#FFCCCC"> 
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>60</td>
+          <td>17</td>
+          <td>29</td>
+          <td>38</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <p align="center">(b)线性探测再散列</p>
+    <div align="center"> 
+      <table width="75%" border="1" cellspacing="0">
+        <tr> 
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+        </tr>
+        <tr bgcolor="#FFCCCC"> 
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>60</td>
+          <td>17</td>
+          <td>29</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <p align="center">(c)二次探测再散列</p>
+    <div align="center"> 
+      <table width="75%" border="1" cellspacing="0">
+        <tr> 
+          <td>0</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>4</td>
+          <td>5</td>
+          <td>6</td>
+          <td>7</td>
+          <td>8</td>
+          <td>9</td>
+          <td>10</td>
+        </tr>
+        <tr bgcolor="#FFCCCC"> 
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>38</td>
+          <td>&nbsp;</td>
+          <td>60</td>
+          <td>17</td>
+          <td>29</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <p align="center">(d)伪随机探测再散列</p>
+    <p align="center">伪随机数列为9,5,3,8,1...</p>
+  </blockquote>
+  <p>２、再哈希法</p>
+  <blockquote> 
+    <p> 当发生冲突时，使用第二个、第三个、哈希函数计算地址，直到无冲突时。缺点：计算时间增加。</p>
+  </blockquote>
+  <p>３、链地址法</p>
+  <blockquote> 
+    <p>将所有关键字为同义词的记录存储在同一线性链表中。</p>
+    <p><img src="class33-01.jpg" width="314" height="294"></p>
+  </blockquote>
+  <p>４、建立一个公共溢出区</p>
+  <blockquote>
+    <p>假设哈希函数的值域为[0,m-1],则设向量HashTable[0..m-1]为基本表，另外设立存储空间向量OverTable[0..v]用以存储发生冲突的记录。</p>
+  </blockquote>
+</blockquote>
+<p>三、哈希表的查找</p>
+<blockquote> 
+  <p>//开放定址哈希表的存储结构</p>
+  <p>int hashsize[]={997,...};</p>
+  <p>typedef struct{</p>
+  <blockquote>
+    <p> ElemType *elem;</p>
+    <p>int count;</p>
+    <p>int sizeindex;</p>
+  </blockquote>
+  <p>}HashTable;</p>
+  <p>#define SUCCESS 1</p>
+  <p>#define UNSUCCESS 0</p>
+  <p>#define DUPLICATE -1</p>
+  <p>Status SearchHash(HashTable H,KeyType K,int &amp;p,int &amp;c){</p>
+  <blockquote> 
+    <p>p=Hash(K);</p>
+    <p>while(H.elem[p].key!=NULLKEY &amp;&amp; !EQ(K,H.elem[p].key))</p>
+    <blockquote> 
+      <p> collision(p,++c);</p>
+    </blockquote>
+    <p>if(EQ(K,H.elem[p].key)</p>
+    <blockquote> 
+      <p> return SUCCESS;</p>
+    </blockquote>
+    <p>else return UNSUCCESS;</p>
+  </blockquote>
+  <p>}</p>
+  <p>Status InsertHash(HashTable &amp;H,EleType e){</p>
+  <blockquote> 
+    <p>c=0;</p>
+    <p>if(SearchHash(H,e.key,p,c))</p>
+    <blockquote> 
+      <p>return DUPLICATE;</p>
+    </blockquote>
+    <p>else if(c&lt;hashsize[H.sizeindex]/2){</p>
+    <blockquote> 
+      <p>H.elem[p]=e; ++H.count; return OK;</p>
+      <p>}</p>
+    </blockquote>
+    <p>else RecreateHashTable(H);</p>
+  </blockquote>
+  <p>}</p>
+</blockquote>
+<p>四、总结</p>
+<blockquote>
+  <p>处理冲突的要求是什么？</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class32/class32.htm">上一课</a> <a href="../class34/class34.htm">下一课</a> 
+</p>
+</body>
+</html>

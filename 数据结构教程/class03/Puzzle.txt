@@ -1,0 +1,260 @@
+/*       puzzle.c
+  Author: zmofun 1999.12.7
+  All rights is reserved.    */
+#include <conio.h>
+#include <dos.h>
+#include <stdio.h>
+#include<stdlib.h>
+#define PSTARTX 30
+#define PSTARTY  6
+#define PWIDTH   20
+#define PHEIGHT  11
+puzzlemain()
+{
+  char scrbuff[1000];
+  gettext(PSTARTX,PSTARTY,PSTARTX+PWIDTH,PSTARTY+PHEIGHT,scrbuff);
+  play();
+  puttext(PSTARTX,PSTARTY,PSTARTX+PWIDTH,PSTARTY+PHEIGHT,scrbuff);
+
+}
+ispass(int num[4][4])
+{
+  int i,j;
+  for(i=0;i<4;i++)
+    for(j=0;j<4;j++)
+      if (num[i][j]!=i*4+j+1)
+	return 0;
+  return 1;
+}
+beep(int d)
+{
+  char originalbits,bits;
+  bits=originalbits=inportb(0x61);
+  outportb(0x61,bits&0xfc);
+  outportb(0x43,0xb6);
+
+  outportb(0x42,989);
+  outportb(0x42,5);
+  outportb(0x61,bits|3);
+  delay(d);
+  outportb(0x61,bits&0xfc);
+  outportb(0x61,originalbits);
+}
+move(int direct,int *l,int *c,int num[4][4])
+{
+  static char *str[16]={" 1"," 2"," 3"," 4"," 5"," 6"," 7"," 8"," 9",
+	   "10","11","12","13","14","15","  "};
+  int pass=0;
+  int t;
+  setscrcolor(BLUE,WHITE);
+  switch(direct)
+    {
+      case 1:
+	if ((*l>=0)&&(*l<=2))
+	 { *l=*l+1;
+	   t=num[*l][*c];
+	   num[*l][*c]=num[*l-1][*c];
+	   num[*l-1][*c]=t;
+	   putsxy(PSTARTX+3+(*c)*4,PSTARTY+2+(*l)*2,str[num[*l][*c]-1]);
+	   putsxy(PSTARTX+3+(*c)*4,PSTARTY+2+(*l-1)*2,str[num[*l-1][*c]-1]);
+	   beep(500);
+	   if (ispass(num))
+	     pass=1;
+	 }
+	else
+	  beep(5000);
+	break;
+      case 2:
+	if ((*c>=0)&&(*c<=2))
+	 { *c=*c+1;
+	   t=num[*l][*c];
+	   num[*l][*c]=num[*l][*c-1];
+	   num[*l][*c-1]=t;
+	   putsxy(PSTARTX+3+(*c)*4,PSTARTY+2+(*l)*2,str[num[*l][*c]-1]);
+	   putsxy(PSTARTX+3+(*c-1)*4,PSTARTY+2+(*l)*2,str[num[*l][*c-1]-1]);
+	   beep(500);
+	   if (ispass(num))
+	     pass=1;
+	 }
+	else
+	  beep(5000);
+	break;
+      case 3:
+	if ((*c<=3)&&(*c>0))
+	  {
+	    *c=*c-1;
+	    t=num[*l][*c];
+	    num[*l][*c]=num[*l][*c+1];
+	    num[*l][*c+1]=t;
+	    putsxy(PSTARTX+3+(*c)*4,PSTARTY+2+(*l)*2,str[num[*l][*c]-1]);
+	    putsxy(PSTARTX+3+(*c+1)*4,PSTARTY+2+(*l)*2,str[num[*l][*c+1]-1]);
+	    beep(500);
+	    if(ispass(num))
+	      pass=1;
+	  }
+	else beep(5000);
+	break;
+      case 4:
+	if ((*l<=3)&&(*l>0))
+	  {
+	    *l=*l-1;
+	    t=num[*l][*c];
+	    num[*l][*c]=num[*l+1][*c];
+	    num[*l+1][*c]=t;
+	    putsxy(PSTARTX+3+(*c)*4,PSTARTY+2+(*l)*2,str[num[*l][*c]-1]);
+	    putsxy(PSTARTX+3+(*c)*4,PSTARTY+2+(*l+1)*2,str[num[*l+1][*c]-1]);
+	    beep(500);
+	    if(ispass(num))
+	      pass=1;
+	  }
+	else beep(5000);
+	break;
+    }
+  return pass;
+}
+play()
+{
+  int key;
+  int exitgame=0;
+  int l,c;
+  static char *str[16]={" 1"," 2"," 3"," 4"," 5"," 6"," 7"," 8"," 9",
+	   "10","11","12","13","14","15","  "};
+  static int num[4][4];
+  drawframe(num,str,&l,&c);
+  while(!exitgame)
+  {
+    while(bioskey(1)==0);
+    key=bioskey(0);
+    switch(key)
+      {
+	case UPA:
+	  if(move(1,&l,&c,num))
+	   {
+	    if(!getyesno("    Passed! Play again?"))
+	      exitgame=1;
+	    else
+	      drawframe(num,str,&l,&c);
+	   }
+	  break;
+	case DOWNA:
+	  if(move(4,&l,&c,num))
+	   {
+	    if(!getyesno("    Passed! Play again?"))
+	      exitgame=1;
+	    else
+	      drawframe(num,str,&l,&c);
+	   }
+	  break;
+	case LEFTA:
+	  if(move(2,&l,&c,num))
+	   {
+	    if(!getyesno("    Passed! Play again?"))
+	      exitgame=1;
+	    else
+	      drawframe(num,str,&l,&c);
+	   }
+	  break;
+	case RIGHTA:
+	  if(move(3,&l,&c,num))
+	   {
+	    if(!getyesno("    Passed! Play again?"))
+	      exitgame=1;
+	    else
+	      drawframe(num,str,&l,&c);
+	   }
+	  break;
+	case RETURN:
+	  break;
+	case ESC:
+	  if(!getyesno("  Do you want play again?"))
+	    exitgame=1;
+	  else
+	    drawframe(num,str,&l,&c);
+	  break;
+	default:
+	  break;
+       }
+    }
+}
+getyesno(char *s)
+{
+   int key=0;
+   int yesno=1;
+   char buff[400];
+   gettext(25,8,55,13,buff);
+   setscrcolor(BLUE,WHITE);
+   box(25,8,30,5);
+   putsxy(27,9,s);
+   setscrcolor(RED,YELLOW);
+   putsxy(32,11,"Yes");
+   setscrcolor(LIGHTGRAY,WHITE);
+   putsxy(45,11,"No");
+   while(key!=RETURN)
+     {
+       while(bioskey(1)==0);
+       key=bioskey(0);
+       switch(key)
+	 {
+	   case LEFTA:
+	   case RIGHTA:
+	     if (yesno)
+	       {
+		 yesno=0;
+		 setscrcolor(LIGHTGRAY,WHITE);
+		 putsxy(32,11,"Yes");
+		 setscrcolor(RED,YELLOW);
+		 putsxy(45,11,"No");
+	       }
+	     else
+	       {
+		 yesno=1;
+		 setscrcolor(RED,YELLOW);
+		 putsxy(32,11,"Yes");
+		 setscrcolor(LIGHTGRAY,WHITE);
+		 putsxy(45,11,"No");
+	       }
+	     break;
+	   default:
+	     break;
+	 }
+     }
+   puttext(25,8,55,13,buff);
+   return yesno;
+}
+initnumber(int num[4][4],int *l,int *c)
+{
+  int i,j,t;
+  int n[20][16]={
+  {1,6,2,3,5,13,4,8,16,10,14,7,9,15,11,12},
+  {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16},
+  {1,16,2,3,5,6,7,4,9,10,11,8,13,14,15,12},
+  {2,3,7,16,6,11,14,4,1,10,13,8,5,9,15,12},
+  {10,16,15,7,8,2,3,4,1,6,11,12,9,5,13,14},
+  {8,3,15,2,13,6,1,14,10,5,11,7,4,9,16,12},
+  {9,10,5,6,15,14,1,3,11,13,2,4,16,7,12,8},
+  {5,6,1,2,10,4,14,3,9,13,12,8,15,11,16,7},
+  {13,6,14,2,1,5,7,4,10,15,12,3,16,9,11,8},
+  {6,2,3,8,1,14,13,12,9,4,11,16,5,10,7,15},
+  {2,3,8,7,6,9,15,4,1,13,10,12,5,14,16,11},
+  {3,2,8,12,1,11,13,15,5,6,16,7,9,10,14,4}
+  };
+  t=random(12);
+  for(i=0;i<4;i++)
+    for(j=0;j<4;j++)
+      {
+	num[i][j]=n[t][i*4+j];
+	if (num[i][j]==16)
+	  *l=i,*c=j;
+      }
+}
+drawframe(int num[4][4],char *str[16],int *l,int *c)
+{
+  int i,j;
+  setscrcolor(LIGHTGRAY,GREEN);
+  initnumber(num,l,c);
+  box(PSTARTX,PSTARTY,PWIDTH,PHEIGHT);
+  setscrcolor(BLUE,YELLOW);
+  for(i=0;i<4;i++)
+    for(j=0;j<4;j++)
+      putsxy(PSTARTX+3+j*4,PSTARTY+2+i*2,str[num[i][j]-1]);
+}

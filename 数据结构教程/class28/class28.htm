@@ -1,0 +1,105 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十八课</b></p>
+<p><b><i>本课主题：</i></b> 图的存储结构</p>
+<p><b><i>教学目的：</i></b> 掌握图的二种存储表示方法</p>
+<p><b><i>教学重点：</i></b> 图的数组表示及邻接表表示法</p>
+<p><b><i>教学难点：</i></b> 邻接表表示法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、数组表示法</p>
+<blockquote> 
+  <p>用两个数组分别存储数据元素（顶点）的信息和数据元素之间的关系（边或弧）的信息。</p>
+  <p>// 图的数组（邻接矩阵）存储表示<a name="#2801"></a></p>
+  <p>#define INFINITY INT_MAX //最大值无穷大</p>
+  <p>#define MAX_VERTEX_NUM 20 //最大顶点个数</p>
+  <p>typedef enum{DG,DN,AG,AN} GraphKind;//有向图，有向网，无向图，无向网</p>
+  <p>typedef struct ArcCell{</p>
+  <blockquote>
+    <p> VRType adj; //VRType是顶点关系类型。对无权图，用1或0表示相邻否，对带权图，则为权值类型</p>
+    <p>InfoType *info; //该弧相关停息的指针</p>
+  </blockquote>
+  <p>}ArcCell,AdjMatrix[max_vertex_num][max_vertex_num];</p>
+  <p>tpyedef struct{</p>
+  <blockquote> 
+    <p>VertexType vexs[MAX_VERTEX_NUM]; //顶点向量</p>
+    <p>AdjMatrix arcs; //邻接矩阵</p>
+    <p>int vexnum,arcnum; //图的当前顶点数和弧数</p>
+    <p>GraphKind kind; //图的种类标志</p>
+  </blockquote>
+  <p>}MGraph;</p>
+  <p align="center"><img src="class28-01.jpg" width="385" height="141" border="1" usemap="#Map"><map name="Map"><area shape="rect" coords="165,123,213,134" href="#2801"></map></p>
+</blockquote>
+<p>二、邻接表</p>
+<blockquote> 
+  <p>邻接表是图的一种链式存储结构。</p>
+  <p>在邻接表中，对图中每个顶点建立一个单链表，第i个单链表中的结点表示依附于顶点vi的边（对有向图是以顶点vi为尾的弧）。每个结点由三个域组成，其中邻接点域(adjvex)指示与顶点vi邻接的点在图中的位置，链域(nextarc)指示下一条边或弧的结点；数据域(info)存储和边或弧相关的信息，如权值等。每个链表上附设一个表头结点，包含链域(firstarc)指向链表中第一个结点，还设有存储顶点vi的名或其它有关信息的数据域(data)。如：</p>
+  <table width="75%" border="0">
+    <tr> 
+      <td width="24%">表结点</td>
+      <td width="76%"> 
+        <table width="75%" border="1" cellspacing="0">
+          <tr> 
+            <td> 
+              <div align="center">adjvex</div>
+            </td>
+            <td> 
+              <div align="center">nextarc</div>
+            </td>
+            <td> 
+              <div align="center">info</div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr> 
+      <td width="24%">头结点</td>
+      <td width="76%"> 
+        <table width="75%" border="1" cellspacing="0">
+          <tr> 
+            <td> 
+              <div align="center">data</div>
+            </td>
+            <td> 
+              <div align="center">firstarc</div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <p>#define MAX_VERTEX_NUM 20</p>
+  <p>typedef struct ArcNode{</p>
+  <blockquote> 
+    <p> int adjvex; //该弧所指向的顶点的位置</p>
+    <p>struct ArcNode *nextarc; //指向下一条弧的指针</p>
+    <p>InfoType *info; //该弧相关信息的指针</p>
+  </blockquote>
+  <p>}ArcNode;</p>
+  <p>typedef struct VNode{</p>
+  <blockquote> 
+    <p>VertexType data; //顶点信息</p>
+    <p>ArcNode *firstarc; //指向第一条依附该顶点的弧的指针</p>
+  </blockquote>
+  <p>}VNode,AdjList[MAX_VERTEX_NUM];</p>
+  <p>typedef struct {</p>
+  <blockquote> 
+    <p>AdjList vertices; //图的当前顶点数和弧数</p>
+    <p>int vexnum,arcnum; //图的种类标志</p>
+    <p>int kind;</p>
+  </blockquote>
+  <p>}ALGraph;</p>
+  <p>&nbsp;</p>
+</blockquote>
+<p>三、总结</p>
+<blockquote>
+  <p>图的存储包括哪些要素？</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class27/class27.htm">上一课</a> <a href="../class29/class29.htm">下一课</a></p>
+</body>
+</html>

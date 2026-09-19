@@ -1,0 +1,377 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第十六课</b></p>
+<p><b><i>本课主题：</i></b> 串操作应用举例</p>
+<p><b><i>教学目的：</i></b> 掌握文本编辑的基本原理及方法</p>
+<p><b><i>教学重点：</i></b> 简单文本编辑</p>
+<p><b><i>教学难点：</i></b> 串的存储管理</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、复习串的堆分配存储表示</p>
+<blockquote> 
+  <p><a href="../class15/class15.htm#1503">堆分配存储表示</a></p>
+</blockquote>
+<p>二、文本编辑基本原理</p>
+<blockquote> 
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td> 
+        <p><img src="class06-01.jpg" width="399" height="142"></p>
+        <p align="center">图一</p>
+      </td>
+    </tr>
+  </table>
+  <p>文本编辑可以用于源程序的输入和修改（如图一）,也可用于报刊和书籍的编辑排版以及办公室的公文书信的起草和润色（如图二）。</p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td> 
+        <p><img src="class06-02.jpg" width="532" height="228"></p>
+        <p align="center">图二</p>
+      </td>
+    </tr>
+  </table>
+  <p>可用于文本编辑的程序很多，功能强弱差别很大，但基本操作是一致的：都包括<font color="#FF0000">串的查找</font>，<font color="#FF0000">插入</font>和<font color="#FF0000">删除</font>等基本操作。</p>
+  <p>对用户来讲，一个文本（文件）可以包括若干页，每页包括若干行，每行包括若干文字。</p>
+  <p>对文本编辑程序来讲，可把整个文本看成一个长字符串，称文本串，页是文本串的子串，行又是页的子串。为简化程序复杂程度，可简单地把文本分成若干行。</p>
+  <p>例：下面的一段源程序可以看成一个文本串，</p>
+  <table width="75%" border="0" cellspacing="０">
+    <tr bgcolor="#0066FF"> 
+      <td> 
+        <p><b><font color="#FFFF33">main(){</font></b></p>
+        <blockquote> 
+          <p><font color="#FFFF33"><b>float a,b,max;</b></font></p>
+          <p><font color="#FFFF33"><b>scanf(&quot;%f,%f&quot;,&amp;a,&amp;b);</b></font></p>
+          <p><font color="#FFFF33"><b>if (a&gt;b) max=a;</b></font></p>
+          <p><font color="#FFFF33"><b>else max=b;</b></font></p>
+        </blockquote>
+        <p><font color="#FFFF33"><b>};</b></font></p>
+      </td>
+    </tr>
+  </table>
+  <p>这个文本串在内存中的存储映像可为：</p>
+  <table width="77%" border="1" cellspacing="0">
+    <tr> 
+      <td width="21" height="6"> 
+        <div align="center">m</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="21" height="6"> 
+        <div align="center">i</div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center">n</div>
+      </td>
+      <td width="20" height="6"> 
+        <div align="center">(</div>
+      </td>
+      <td width="19" height="6"> 
+        <div align="center">)</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">{</div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center">\n</div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">f</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">l</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">o</div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">t</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">,</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">b</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">,</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="21" height="6"> 
+        <div align="center">m</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="21" height="6"> 
+        <div align="center">x</div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center">;</div>
+      </td>
+      <td width="20" height="6"> 
+        <div align="center">\n</div>
+      </td>
+      <td width="19" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center">s</div>
+      </td>
+      <td width="16" height="9"> 
+        <div align="center">c</div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">n</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">f</div>
+      </td>
+      <td width="15" height="9"> 
+        <div align="center">(</div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center">&quot;</div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">%</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">f</div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center">,</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">%</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">f</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">&quot;</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="21" height="6"> 
+        <div align="center">,</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">&amp;</div>
+      </td>
+      <td width="21" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center">,</div>
+      </td>
+      <td width="20" height="6"> 
+        <div align="center">&amp;</div>
+      </td>
+      <td width="19" height="6"> 
+        <div align="center">b</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">)</div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center">;</div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">\n</div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">i</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">f</div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">&gt;</div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center">b</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">m</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="21" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">x</div>
+      </td>
+      <td width="21" height="6"> 
+        <div align="center">=</div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="20" height="6"> 
+        <div align="center">;</div>
+      </td>
+      <td width="19" height="6"> 
+        <div align="center">\n</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">e</div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">l</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">s</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">e</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center">m</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">a</div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center">x</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">=</div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center">b</div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center">;</div>
+      </td>
+    </tr>
+    <tr> 
+      <td width="21" height="6"> 
+        <div align="center">\n</div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center">}</div>
+      </td>
+      <td width="21" height="6"> 
+        <div align="center">\n</div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="20" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="19" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="17" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="22" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="16" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="13" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="14" height="6"> 
+        <div align="center"></div>
+      </td>
+      <td width="15" height="6"> 
+        <div align="center"></div>
+      </td>
+    </tr>
+  </table>
+  <p>在编辑时，为指示当前编辑位置，程序中要设立页指针、行指针、字符指针，分别指示当前页，当前行，当前字符。因此程序中要设立页表、行表便于查找。</p>
+</blockquote>
+<p>三、简单行编辑程序例</p>
+<blockquote>
+  <p><a href="simpedit.txt">源程序</a></p>
+  <p>&nbsp;</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class15/class15.htm">上一课</a> <a href="../class17/class17.htm">下一课</a></p>
+</body>
+</html>

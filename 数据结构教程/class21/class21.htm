@@ -1,0 +1,108 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十一课</b></p>
+<p><b><i>本课主题：</i></b> 树、二叉树定义及术语</p>
+<p><b><i>教学目的：</i></b> 掌握树、二叉树的基本概念和术语，二叉树的性质</p>
+<p><b><i>教学重点：</i></b> 二叉树的定义、二叉树的性质</p>
+<p><b><i>教学难点：</i></b> 二叉树的性质</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、树的定义：</p>
+<blockquote> 
+  <p>树是n(n&gt;=0)个结点的有限集。在任意一棵非空树中：</p>
+  <p>(1)有且仅有一个特定的称为根的结点；</p>
+  <p>(2)当n&gt;1时,其余结点可分为m(m&gt;0)个互不相交的有限集T1,T2,...Tm,其中每一个集合本身又是一棵树,并且称为根的子树.</p>
+</blockquote>
+<p>二、树的基本概念：</p>
+<blockquote> 
+  <p>树的<font color="#FF0033"><b>结点</b></font>包含一个数据元素及若干指向其子树的分支。</p>
+  <p>结点拥有的子树数称为结点的<font color="#FF0033"><b>度</b></font>。</p>
+  <p>度为0的结点称为<font color="#FF0000"><b>叶子</b></font>或<b><font color="#FF0033">终端结点</font></b>。</p>
+  <p>度不为0的结点称为<font color="#FF0033"><b>非终端结点</b></font>或<b><font color="#FF0033">分支结点</font></b>。</p>
+  <p><img src="class21-01.jpg" width="380" height="211"></p>
+  <p>树的度是树内各结点的度的最大值。</p>
+  <p>结点的子树的根称为该结点的<font color="#FF0033"><b>孩子</b></font>，相应地，该结点称为孩子的<b><font color="#FF0033">双亲</font></b>。</p>
+  <p>同一个双亲的孩子之间互称<font color="#FF0033"><b>兄弟</b></font>。</p>
+  <p>结点的<b><font color="#FF0033">祖先</font></b>是从根到该结点所经分支上的所有结点。</p>
+  <p>以某结点为根的子树中的任一结点都称为该结点的<font color="#FF0033"><b>子孙</b></font>。</p>
+  <p>结点的层次从根开始定义起，根为第一层，根的孩子为第二层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度，或高度。</p>
+  <p>如果将树中结点的各子树看成从左至右是有次序的，则称该树为有序树，否则称为无序树。</p>
+  <p>森林是m(m&gt;=0)棵互不相交的树的集合。</p>
+  <p><img src="class21-02.jpg" width="538" height="353"></p>
+  <p>&nbsp;</p>
+</blockquote>
+<p>三、二叉树的定义<a name="#2103"></a></p>
+<blockquote> 
+  <p>二叉树是另一种树型结构，它的特点是每个结点至多只有二棵子树（即二叉树中不存在度大于2的结点),并且,二叉树的子树有左右之分,其次序不能任意颠倒。</p>
+  <p>一棵深度为k且有2(k)-1个结点的二叉树称为<font color="#FF0033">满二叉树</font>，如图(a)，按图示给每个结点编号，如果有深度为k的，有n个结点的二叉树，当且仅当其每一个结点都与深度为k的满二叉树中编号从1至n的结点一一对应时，称之为<font color="#FF0033">完全二叉树</font>。</p>
+  <p>二叉树的定义如下：</p>
+  <p>ADT BinaryTree{</p>
+  <p>数据对象D:D是具有相同特性的数据元素的集合。</p>
+  <p>数据关系R:</p>
+  <p>基本操作P:</p>
+  <p>InitBiTree(&amp;T);</p>
+  <p>DestroyBiTree(&amp;T);</p>
+  <p>CreateBiTree(&amp;T,definition);</p>
+  <p>ClearBiTree(&amp;T);</p>
+  <p>BiTreeEmpty(T);</p>
+  <p>BiTreeDepth(T);</p>
+  <p>Root(T);</p>
+  <p>Value(T,e);</p>
+  <p>Assign(T,&amp;e,value);</p>
+  <p>Parent(T,e);</p>
+  <p>LeftChild(T,e);</p>
+  <p>RightChild(T,e);</p>
+  <p>LeftSibling(T,e);</p>
+  <p>RightSibling(T,e);</p>
+  <p>InsertChild(T,p,LR,c);</p>
+  <p>DeleteChild(T,p,LR);</p>
+  <p>PreOrderTraverse(T,visit());</p>
+  <p>InOrderTraverse(T,visit());</p>
+  <p>PostOrderTraverse(T,visit());</p>
+  <p>LevelOrderTraverse(T,Visit());</p>
+  <p>}ADT BinaryTree</p>
+</blockquote>
+<p>三、二叉树的性质</p>
+<p align="center"><img src="class21-03.jpg" width="253" height="168"></p>
+<blockquote>
+  <table width="100%" border="1" cellspacing="0">
+    <tr> 
+      <td width="17%">性质１：</td>
+      <td width="68%" valign="top">在二叉树的第i层上至多有2的i-1次方个结点(i&gt;=1)。</td>
+      <td width="15%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="17%">性质２：</td>
+      <td width="68%">深度为k的二叉树至多有2的k次方减1个结点(k&gt;=1)。</td>
+      <td width="15%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="17%">性质３：</td>
+      <td width="68%">对任何一棵二叉树T，如果其终端结点数为n<font size="-3">0</font>,度为2的结点数为n<font size="-3">2</font>,则n<font size="-3">0</font>=n<font size="-3">2</font>+1。</td>
+      <td width="15%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="17%">性质４：</td>
+      <td width="68%">具有n个结点的完全二叉树的深度为|log<font size="-3">2</font><font size="+2">n</font>|+1</td>
+      <td width="15%">&nbsp;</td>
+    </tr>
+    <tr> 
+      <td width="17%">性质５：</td>
+      <td width="68%"> 
+        <p>如果对一棵有n个结点的完全二叉树的结点按层序编号，则对任一结点i(1=&lt;i=&lt;n)有：<br>
+          (1)如果i=1,则结点i是二叉树的根,无双亲;如果i&gt;1,则双亲PARENT(i)是结点i/2<br>
+          (2)如果2i&gt;n,则结点i无左孩子(结点i为叶子结点);否则其左孩子LCHILD(i)是结点2i<br>
+          (3)如果2i+1&gt;n,则结点i无右孩子;否则其右孩子RCHILD(i)是结点2i+1</p>
+      </td>
+      <td width="15%">&nbsp;</td>
+    </tr>
+  </table>
+</blockquote>
+<p>四、总结</p>
+<p><a href="../index.htm">回目录</a> <a href="../class20/class20.htm">上一课</a> <a href="../class22/class22.htm">下一课</a></p>
+</body>
+</html>

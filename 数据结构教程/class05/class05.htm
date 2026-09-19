@@ -1,0 +1,305 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第五课</b></p>
+<p><b><i>本课主题：</i></b> 线性表的类型定义</p>
+<p><b><i>教学目的：</i></b> 掌握线性表的概念和类型定义</p>
+<p><b><i>教学重点：</i></b> 线性表的类型定义</p>
+<p><b><i>教学难点：</i></b> 线性表的类型定义</p>
+<p><b><i>授课内容：</i></b></p>
+<p>复习：<a href="../class01/class01.htm#0501">数据结构的种类</a></p>
+<p>线性结构的特点：</p>
+<blockquote> 
+  <table width="476" border="0" cellspacing="0" height="269">
+    <tr> 
+      <td rowspan="7" height="276" width="425"> 
+        <p>在数据元素的非空有限集中，</p>
+        <p>（1）存在唯一的一个被称做“第一个”的数据元素；</p>
+        <p>（2）存在唯一的一个被称做“最后一个”的数据元素；</p>
+        <p>（3）除第一个之外，集合中的每个数据元素均只有一个前驱；</p>
+        <p>（4）除最后一个之外，集合中每个数据元素均只有一个后继。</p>
+        <table width="274" border="1" cellspacing="0">
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+            <td><img src="gobly.gif" width="34" height="34"></td>
+            <td><img src="gobly.gif" width="34" height="34"></td>
+            <td><img src="gobly.gif" width="34" height="34"></td>
+            <td><img src="gobly.gif" width="34" height="34"></td>
+            <td><img src="gobly.gif" width="34" height="34"></td>
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+        </table>
+      </td>
+      <td rowspan="7" width="47"> 
+        <table width="75" border="1" height="212" cellspacing="0">
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+          <tr> 
+            <td><img src="gobly.gif" width="34" height="34"></td>
+          </tr>
+        </table>
+        
+      </td>
+    </tr>
+    <tr> </tr>
+    <tr> </tr>
+    <tr> </tr>
+    <tr> </tr>
+    <tr> </tr>
+    <tr> </tr>
+  </table>
+  
+</blockquote>
+<p>一、<a name="#01"></a>线性表的定义</p>
+<blockquote> 
+  <p>线性表是最常用且最简单的一种数据结构。</p>
+  <p>一个线性表是n个数据元素的有限序列。</p>
+  <p>数据元素可以是一个数、一个符号、也可以是一幅图、一页书或更复杂的信息。</p>
+  <p> 线性表例：</p>
+  <p>1、</p>
+  <table width="274" border="1" cellspacing="0">
+    <tr> 
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+  </table>
+  <p>2、</p>
+  <table width="274" border="1" cellspacing="0">
+    <tr> 
+      <td><img src="aniflowe.gif" width="41" height="37"></td>
+      <td><img src="gobly.gif" width="34" height="34"></td>
+      <td><img src="alien%207.GIF" width="32" height="32"></td>
+      <td><img src="alien%2016.GIF" width="32" height="32"></td>
+      <td><img src="gobly.gif" width="34" height="34"></td>
+      <td><img src="alien%2018.GIF" width="32" height="32"></td>
+      <td><img src="alien%2017.GIF" width="32" height="32"></td>
+    </tr>
+  </table>
+  <p>3、</p>
+  <table width="468" border="1" cellspacing="0">
+    <tr> 
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">学号</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">姓名</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">语文</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">数学</div>
+      </td>
+      <td bgcolor="#FFCCCC"> 
+        <div align="center">C语言</div>
+      </td>
+    </tr>
+    <tr> 
+      <td>6201001</td>
+      <td>张三</td>
+      <td>85</td>
+      <td><font color="#FF0000">54</font></td>
+      <td>92</td>
+    </tr>
+    <tr> 
+      <td>6201002</td>
+      <td>李四</td>
+      <td>92</td>
+      <td>84</td>
+      <td>64</td>
+    </tr>
+    <tr> 
+      <td>6201003</td>
+      <td>王五</td>
+      <td>87</td>
+      <td>74</td>
+      <td>73</td>
+    </tr>
+    <tr> 
+      <td>6201004</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr> 
+      <td>...</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+  </table>
+  <p>数据元素也可由若干个<font color="#FF3333"><b>数据项</b></font>组成（如上例3）。这时常把数据元素称为<b><font color="#FF0033">记录</font></b>。含有大量记录的线性表又称<b><font color="#FF0033">文件</font></b>。</p>
+  <p>线性表中的数据元素类型多种多样，但同一线性表中的元素必定具有相同特性，即属同一数据对象，相邻数据元素之间存在着序偶关系。</p>
+  <table width="475" border="1" cellspacing="0">
+    <tr> 
+      <td> 
+        <div align="center"><font size="+2">a</font><font size="-1">1</font></div>
+      </td>
+      <td> 
+        <div align="center">...</div>
+      </td>
+      <td> 
+        <div align="center"><font size="+2">a</font><font size="-1">i-1</font></div>
+      </td>
+      <td> 
+        <div align="center"><font size="+2">a</font><font size="-1">i</font></div>
+      </td>
+      <td> 
+        <div align="center"><font size="+2">a</font><font size="-1">i+1</font></div>
+      </td>
+      <td> 
+        <div align="center">...</div>
+      </td>
+      <td> 
+        <div align="center"><font size="+2">a</font><font size="-1">n</font></div>
+      </td>
+    </tr>
+  </table>
+  <p><font size="+2">a</font><font size="-1">i</font>是<font size="+2">a</font><font size="-1">i+1</font>的<font color="#FF0033"><b>直接前驱</b></font>元素，<font size="+2">a</font><font size="-1">i+1</font>是<font size="+2">a</font><font size="-1">i</font>的<font color="#FF0033"><b>直接后继</b></font>元素。</p>
+  <p>线性表中元素的个数n定义为线性表的长度，为0时称为空表。在非空表中的每个数据元素都有一个确定的位置。<font size="+2">a</font><font size="-1">i</font>是第i个元素，把i称为数据元素<font size="+2">a</font><font size="-1">i</font>在线性中的<b><font color="#FF0033">位序</font></b>。</p>
+</blockquote>
+<p>二、<a name="#02"></a>线性表的类型定义</p>
+<blockquote> 
+  <p>1、抽象数据类型线性表的定义如下：</p>
+  <p>ADT List{</p>
+  <p>数据对象: D={a<font size="-2">i</font>| a<font size="-2">i</font>(-ElemSet,i=1,2,...,n,n&gt;=0} 
+  </p>
+  <p>数据关系: R1={&lt;a<font size="-3">i-1</font>,a<font size="-2">i</font>&gt;| 
+    a<font size="-2">i-1</font>,a<font size="-2">i</font>(- D,i=2,...,n} </p>
+  <p>基本操作：</p>
+  <p>InitList(&amp;L)<br>
+    DestroyList(&amp;L)<br>
+    ClearList(&amp;L)<br>
+    ListEmpty(L)<br>
+    ListLength(L)<br>
+    GetElem(L,i,&amp;e)<br>
+    LocateElem(L,e,compare())<br>
+    PriorElem(L,cur_e,&amp;pre_e)<br>
+    NextElem(L,cur_e,&amp;next_e) <br>
+    ListInsert(&amp;L,i,e)<br>
+    ListDelete(&amp;L,i,&amp;e)<br>
+    ListTraverse(L,visit()) <br>
+    union(List &amp;La,List &amp;Lb)</p>
+  <p>}ADT List</p>
+  <p>2、部分操作的类C实现：</p>
+  <p><b>InitList(&amp;L)</b></p>
+  <p>{L.elem=(ElemType *)malloc(LIST_INIT_SIZE*sizeof(ElemType));</p>
+  <p>if(!L.elem)exit(OVERFLOW);</p>
+  <p>L.length=0;</p>
+  <p>L.listsize=LIST_INIT_SIZE;</p>
+  <p>return OK;</p>
+  <p>}<font color="#FF00FF">//InitList</font></p>
+  <p><b>GetElem(L,i,&amp;e)</b></p>
+  <p>{*e=L.lem[i]</p>
+  <p>}<font color="#FF00FF">//GetElem</font></p>
+  <p><b>ListInsert(List &amp;L,int i,ElemType e)</b></p>
+  <p> {if(i&lt;1||i&gt;L.length+) return ERROR;</p>
+  <p> q=&amp;(L.elem[i-1]);</p>
+  <p>for(p=&amp;(L.elem[L.length-1]);p&gt;=q;--p) *(p+1)=*p;</p>
+  <p>*q=e;</p>
+  <p>++L.length;</p>
+  <p>return OK;</p>
+  <p>}<font color="#FF33FF">//ListInsert</font></p>
+  <p><b>void union(List &amp;La,List &amp;Lb)</b></p>
+  <p>{La_len=ListLength(La);Lb_len=ListLength(Lb);</p>
+  <p>for(i=1;i&lt;=Lb_len;i++){</p>
+  <blockquote> 
+    <p>GetElem(Lb,i,e);</p>
+    <p>if(!LocateElem(La,e,equal))</p>
+    <blockquote> 
+      <p>ListInsert(La,++La_len,e);</p>
+    </blockquote>
+  </blockquote>
+  <p>}<font color="#FF00FF">//union</font></p>
+  <p><b>void MergeList(List La,List Lb,List &amp;Lc)</b></p>
+  <p>{InitList(Lc);</p>
+  <p>i=j=1;k=0;</p>
+  <p>La_len=ListLength(La);Lb_len=ListLength(Lb);</p>
+  <p>while((i&lt;=La_len)&amp;&amp;(j&lt;Lb_len)){</p>
+  <blockquote> 
+    <p>GetElem(La,i,ai);GetElem(Lb,j,bj);</p>
+    <p>if(ai&lt;=bj){ListInsert(Lc,++k,ai);++i;}</p>
+    <p>else{ListInsert(Lc,++k,bj);++j;}</p>
+  </blockquote>
+  <p>}</p>
+  <p>while(k&lt;=La_len){</p>
+  <blockquote> 
+    <p>GetElem(La,i++,ai);ListInsert(Lc,++k,ai);</p>
+  </blockquote>
+  <p>}</p>
+  <p>while(j&lt;=Lb_len){</p>
+  <blockquote> 
+    <p>GetElem(Lb,j++,bj);ListInsert(Lc,++k,bj);</p>
+  </blockquote>
+  <p>}</p>
+  <p>}<font color="#FF00FF">//MergeList</font></p>
+  <p>3、部分操作的<a href="Listdemo.txt">C语言实现</a>,下面是程序<a href="result.txt">运行的结果</a>：</p>
+  <table width="526" border="0" cellspacing="0" bgcolor="#000000">
+    <tr> 
+      <td> 
+        <p><font color="#FFFFFF">-------------------List Demo is running...---------------- 
+          <br>
+          First is InsertList function. <br>
+          name stuno age score <br>
+          stu1 100001 80 1000 <br>
+          stu2 100002 80 1000 <br>
+          List A length now is 2. <br>
+          name stuno age score <br>
+          stu1 100001 80 1000 <br>
+          stu2 100002 80 1000 <br>
+          stu3 100003 80 1000 <br>
+          List A length now is 3. <br>
+          name stuno age score <br>
+          zmofun 100001 80 1000 <br>
+          bobjin 100002 80 1000 <br>
+          stu1 100001 80 1000 <br>
+          List B length now is 3. </font></p>
+        <p><font color="#FFFFFF">Second is UnionList function. <br>
+          Now union List A and List B..... <br>
+          name stuno age score <br>
+          stu1 100001 80 1000 <br>
+          stu2 100002 80 1000 <br>
+          stu3 100003 80 1000 <br>
+          zmofun 100001 80 1000 <br>
+          bobjin 100002 80 1000 <br>
+          List A length now is 5. </font></p>
+        <p><font color="#FFFFFF">Welcome to visit http://zmofun.heha.net ! </font></p>
+      </td>
+    </tr>
+  </table>
+</blockquote>
+<p>三、总结</p>
+<blockquote> 
+  <p><a href="#01">线性表的定义</a></p>
+  <p><a href="#02">线性表的类型定义</a></p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class04/class04.htm">上一课</a> <a href="../class06/class06.htm">下一课</a></p>
+</body>
+</html>

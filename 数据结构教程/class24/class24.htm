@@ -1,0 +1,140 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十四课</b></p>
+<p><b><i>本课主题：</i></b> 遍历二叉树</p>
+<p><b><i>教学目的：</i></b> 掌握二叉树遍历的三种方法</p>
+<p><b><i>教学重点：</i></b> 二叉树的遍历算法</p>
+<p><b><i>教学难点：</i></b> 中序与后序遍历的非递归算法</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、复习二叉树的定义</p>
+<blockquote>
+  <p>二叉树由三个基本单元组成：根结点、左子树、右子树</p>
+  <p>问题：如何不重复地访问二叉树中每一个结点？</p>
+</blockquote>
+<p>二、遍历二叉树的三种方法：</p>
+<blockquote> 
+  <table width="75%" border="1" cellspacing="0">
+    <tr bgcolor="#FFCCCC"> 
+      <td rowspan="3" width="25%"> 
+        <div align="center">先序</div>
+      </td>
+      <td width="7%">1</td>
+      <td width="68%">访问根结点</td>
+    </tr>
+    <tr> 
+      <td width="7%" bgcolor="#FFCCCC">2</td>
+      <td width="68%" bgcolor="#FFCCCC">先序访问左子树</td>
+    </tr>
+    <tr> 
+      <td width="7%" bgcolor="#FFCCCC">3</td>
+      <td width="68%" bgcolor="#FFCCCC">先序访问右子树</td>
+    </tr>
+    <tr bgcolor="#CCFFCC"> 
+      <td rowspan="3" width="25%"> 
+        <div align="center">中序</div>
+      </td>
+      <td width="7%">1</td>
+      <td width="68%" bgcolor="#CCFFCC">中序访问左子树</td>
+    </tr>
+    <tr> 
+      <td width="7%" bgcolor="#CCFFCC">2</td>
+      <td width="68%" bgcolor="#CCFFCC">中序访问根结点</td>
+    </tr>
+    <tr> 
+      <td width="7%" bgcolor="#CCFFCC">3</td>
+      <td width="68%" bgcolor="#CCFFCC">中序访问右子树</td>
+    </tr>
+    <tr bgcolor="#FFCCCC"> 
+      <td rowspan="3" width="25%"> 
+        <div align="center">后序</div>
+      </td>
+      <td width="7%">1</td>
+      <td width="68%">后序访问左子树</td>
+    </tr>
+    <tr> 
+      <td width="7%" bgcolor="#FFCCCC">2</td>
+      <td width="68%" bgcolor="#FFCCCC">后序访问右子树</td>
+    </tr>
+    <tr> 
+      <td width="7%" bgcolor="#FFCCCC">3</td>
+      <td width="68%" bgcolor="#FFCCCC">访问根结点</td>
+    </tr>
+  </table>
+</blockquote>
+<p>三、递归法遍历二叉树</p>
+<blockquote> 
+  <p>先序：</p>
+  <p>Status(PreOrderTraverse(BiTree T,Status(*Visit)(TElemType e)){</p>
+  <blockquote> 
+    <p>if(T){</p>
+    <blockquote> 
+      <p> if(Visit(T-&gt;data))</p>
+      <blockquote> 
+        <p>if(PreOrderTraverse(t-&gt;lchild,Visit))</p>
+        <blockquote> 
+          <p>if(PreOrderTraverse(T-&gt;rchild,Visit)) return OK;</p>
+        </blockquote>
+      </blockquote>
+      <p>return ERROR;</p>
+    </blockquote>
+    <p>}else return OK;</p>
+  </blockquote>
+  <p>}</p>
+  <p><img src="../class23/class23-01.jpg" width="273" height="164">遍历结果：1,2,4,5,6,7,3</p>
+</blockquote>
+<p>四、非递归法遍历二叉树</p>
+<blockquote> 
+  <blockquote> 
+    <p><img src="../class23/class23-04.jpg" width="328" height="524"></p>
+  </blockquote>
+  <p>中序一：</p>
+  <p>Status InorderTraverse(BiTree T,Status(*Visit)(TElemType e)){</p>
+  <blockquote> 
+    <p>InitStack(S);Push(S,T);</p>
+    <p>while(!StackEmpty(S)){</p>
+    <blockquote> 
+      <p>while(GetTop(S,p)&amp;&amp;p)Push(S,p-&gt;lchild);</p>
+      <p>Pop(S,p);</p>
+      <p>if(!StackEmpty(S)){</p>
+      <blockquote> 
+        <p>Pop(S,p); if(!Visit(p-&gt;data)) return ERROR;</p>
+        <p>Push(S,p-&gt;rchild);</p>
+      </blockquote>
+      <p>}</p>
+    </blockquote>
+    <p>}</p>
+    <p>return OK;</p>
+  </blockquote>
+  <p>}</p>
+  <p>中序二：</p>
+  <p>Status InorderTraverse(BiTree T,Status(*Visit)(TElemType e)){</p>
+  <p>InitStack(S);p=T;</p>
+  <blockquote> 
+    <p>while(p||!StackEmpty(S)){</p>
+    <blockquote> 
+      <p>if(p){Push(S,p);p=p-&gt;lchild;}</p>
+      <p>else{</p>
+      <blockquote> 
+        <p>Pop(S,p); if(!Visit(p-&gt;data)) return ERROR;</p>
+        <p>p=p-&gt;rchild);</p>
+      </blockquote>
+      <p>}//else</p>
+    </blockquote>
+    <p>}//while</p>
+    <p>return OK;</p>
+  </blockquote>
+  <p>}</p>
+</blockquote>
+<p>五、总结</p>
+<blockquote>
+  <p> 二叉树遍历的意义</p>
+  <p></p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class23/class23.htm">上一课</a> <a href="../class25/class25.htm">下一课</a></p>
+</body>
+</html>

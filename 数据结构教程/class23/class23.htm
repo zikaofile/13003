@@ -1,0 +1,167 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第二十三课</b></p>
+<p><b><i>本课主题：</i></b> 二叉树的存储结构</p>
+<p><b><i>教学目的：</i></b> 掌握二叉树的两种存储结构</p>
+<p><b><i>教学重点：</i></b> 链式存储结构</p>
+<p><b><i>教学难点：</i></b> 链式存储二叉树的基本操作</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、复习<a href="../class21/class21.htm#2103">二叉树的定义</a></p>
+<blockquote> 
+  <p>二叉树的基本特征：每个结点的度不大于２。</p>
+</blockquote>
+<p>二、顺序存储结构</p>
+<blockquote> 
+  <p>#define MAX_TREE_SIZE 100</p>
+  <p>typedef TElemType SqBiTree[MAX_TREE_SIZE];</p>
+  <p>SqBiTree bt;</p>
+  <p><img src="class23-01.jpg"></p>
+  <table width="75%" border="1" cellspacing="0">
+    <tr> 
+      <td>结点编号</td>
+      <td> 
+        <div align="center"><font color="#FF0000">1</font></div>
+      </td>
+      <td> 
+        <div align="center"><font color="#0000FF">2</font></div>
+      </td>
+      <td> 
+        <div align="center"><font color="#0000FF">3</font></div>
+      </td>
+      <td> 
+        <div align="center"><font color="#FFCC99">4</font></div>
+      </td>
+      <td> 
+        <div align="center"><font color="#FF00FF">5</font></div>
+      </td>
+      <td> 
+        <div align="center">6</div>
+      </td>
+      <td> 
+        <div align="center">7</div>
+      </td>
+      <td> 
+        <div align="center">8</div>
+      </td>
+      <td> 
+        <div align="center">9</div>
+      </td>
+      <td bgcolor="#FFFFFF"> 
+        <div align="center">10</div>
+      </td>
+      <td bgcolor="#FFFFFF"> 
+        <div align="center">11</div>
+      </td>
+      <td> 
+        <div align="center">12</div>
+      </td>
+      <td> 
+        <div align="center">13</div>
+      </td>
+      <td> 
+        <div align="center">14</div>
+      </td>
+      <td> 
+        <div align="center">15</div>
+      </td>
+    </tr>
+    <tr> 
+      <td>结点值</td>
+      <td> 
+        <div align="center">1</div>
+      </td>
+      <td bgcolor="#FF0033"> 
+        <div align="center"><font color="#CCCCCC">2</font></div>
+      </td>
+      <td bgcolor="#FF0033"> 
+        <div align="center"><font color="#CCCCCC">3</font></div>
+      </td>
+      <td> 
+        <div align="center">4</div>
+      </td>
+      <td> 
+        <div align="center">5</div>
+      </td>
+      <td> 
+        <div align="center">0</div>
+      </td>
+      <td> 
+        <div align="center">0</div>
+      </td>
+      <td bgcolor="#FFCC99"> 
+        <div align="center">0</div>
+      </td>
+      <td bgcolor="#FFCC99"> 
+        <div align="center">0</div>
+      </td>
+      <td bgcolor="#FF00FF"> 
+        <div align="center">6</div>
+      </td>
+      <td bgcolor="#FF00FF"> 
+        <div align="center">7</div>
+      </td>
+      <td> 
+        <div align="center">0</div>
+      </td>
+      <td> 
+        <div align="center">0</div>
+      </td>
+      <td> 
+        <div align="center">0</div>
+      </td>
+      <td> 
+        <div align="center">0</div>
+      </td>
+    </tr>
+  </table>
+  <p>第i号结点的左右孩子一定保存在第2i及2i+1号单元中。</p>
+  <p>缺点：对非完全二叉树而言，浪费存储空间</p>
+</blockquote>
+<p>三、链式存储结构</p>
+<blockquote> 
+  <p>一个二叉树的结点至少保存三种信息：数据元素、左孩子位置、右孩子位置</p>
+  <p>对应地，链式存储二叉树的结点至少包含三个域：数据域、左、右指针域。</p>
+  <p><img src="class23-02.jpg" width="314" height="231"></p>
+  <p>也可以在结点中加上指向父结点的指针域P。</p>
+  <p><img src="class23-03.jpg" width="322" height="221"></p>
+  <p>对结点有二个指针域的存储方式有以下表示方法：</p>
+  <p>typedef struct BiTNode{</p>
+  <p> TElemType data;</p>
+  <p>struct BitNode *lchild,*rchild;</p>
+  <p>}BiTNode,*BiTree;</p>
+  <p>基于该存储结构的二叉树基本操作有：</p>
+  <p>Status CreteBiTree(BiTree &amp;T);</p>
+  <p>//按先序次序输入二叉树中结点的值（一个字符），空格字符表示空树，</p>
+  <p>//构造二叉链表表示的二叉树T。</p>
+  <p>Status PreOrderTraverse(BiTree T,Status(*Visit)(TElemType e));</p>
+  <p>//采用二叉链表存储结构,Visit是对结点操作的应用函数</p>
+  <p>//先序遍历二叉树T,对每个结点调用函数Visit一次且仅一次</p>
+  <p>//一旦visit()失败,则操作失败</p>
+  <p>Status InOrderTraverse(BiTree T,Status(*Visit)(TElemType e));</p>
+  <p>//采用二叉链表存储结构,Visit是对结点操作的应用函数</p>
+  <p>//中序遍历二叉树T,对每个结点调用函数Visit一次且仅一次</p>
+  <p>//一旦visit()失败,则操作失败</p>
+  <p></p>
+  <p>Status PostOrderTraverse(BiTree T,Status(*Visit)(TElemType e));</p>
+  <p>//采用二叉链表存储结构,Visit是对结点操作的应用函数</p>
+  <p>//后序遍历二叉树T,对每个结点调用函数Visit一次且仅一次</p>
+  <p>//一旦visit()失败,则操作失败</p>
+  <p></p>
+  <p>Status LevelOrderTraverse(BiTree T,Status(*Visit)(TElemType e));</p>
+  <p>//采用二叉链表存储结构,Visit是对结点操作的应用函数</p>
+  <p>//层序遍历二叉树T,对每个结点调用函数Visit一次且仅一次</p>
+  <p>//一旦visit()失败,则操作失败</p>
+</blockquote>
+<p>四、总结本课内容</p>
+<blockquote>
+  <p>顺序存储与链式存储的优缺点。</p>
+  <p></p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class22/class22.htm">上一课</a> <a href="../class24/class24.htm">下一课</a></p>
+</body>
+</html>

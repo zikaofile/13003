@@ -1,0 +1,80 @@
+#include<stdio.h>
+typedef struct node                   /*定义结点的存储结构*/
+{
+    int data;
+    struct node *next;
+}NODE;
+
+NODE *create()                        /*此函数采用后插入方式建立单链表，并返回一个指向链表表头的指针*/
+{
+    NODE *head,*q,*p;                 /*定义指针变量*/
+    int a,n;
+    head=(NODE*)malloc(sizeof(NODE)); /*申请新的存储空间，建立表头结点*/
+    q=head;
+    printf("\nInput number of the list: ");
+    scanf("%d",&n);                          /*输入单向链表结点个数*/
+    if(n>0)                                  /*若n<=0，建立仅含表头结点的空表*/
+    {
+	printf("Input the list :");
+        while(n>0)
+        {
+	    scanf("%d",&a);                  /*输入新元素*/
+            p=(NODE*)malloc(sizeof(NODE));
+            p->data=a;
+            q->next=p;
+            q=p;
+            n--;
+        }
+    }
+    q->next=NULL;
+    return(head);                           /*返回表头指针head*/
+}
+
+void delete(NODE *head,int x)       /*删除链表中的给定元素x*/
+{
+   NODE *p,*q;
+   q=head;
+   p=q->next;
+   while((p!=NULL)&&(p->data!=x))   /*查找要删除的元素*/
+   {
+       q=p;
+       p=p->next;
+   }
+   if(p==NULL)
+       printf("%d not found.\n",x); /*x结点未找到*/
+   else
+   {
+       q->next=p->next;             /*链接x直接后继结点*/
+       free(p);                     /*删除x结点，释放x结点空间*/
+   }
+}
+
+main()                              /*主程序*/
+{
+   int x;
+   NODE *a,*b;
+   a=create();
+   printf("Input x :");
+   scanf("%5d",&x);
+   delete(a,x);
+   b=a;
+   b=b->next;
+   printf("Output the list:");
+   while(b!=NULL)
+   {
+       printf("%5d",b->data);      /*输出删除x后的单向链表*/
+       b=b->next;
+   }
+}
+程序第一次运行结果（删除成功）：
+Input number of the list: 5（回车）
+Input the list : 1 2 3 4 5（回车）
+Input x : 4（回车）
+Output the list:  1  2  3  5
+
+程序第二次运行结果（删除元素未找到）：
+Input number of the list: 5（回车）
+Input the list : 1 2 3 4 5（回车）
+Input x : 6（回车）
+6 not found
+Output the list:  1  2  3  4  5

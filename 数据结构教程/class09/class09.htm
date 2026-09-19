@@ -1,0 +1,168 @@
+<html>
+<head>
+<title>数据结构--数据空间http://zmofun.topcool.net</title>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+</head>
+
+<body bgcolor="#FFFFFF">
+<p align="center"><b>第九课</b></p>
+<p><b><i>本课主题：</i></b> 循环链表与双向链表</p>
+<p><b><i>教学目的：</i></b> 掌握循环链表的概念，掌握双向链表的的表示与实现</p>
+<p><b><i>教学重点：</i></b> 双向链表的表示与实现</p>
+<p><b><i>教学难点：</i></b> 双向链表的存储表示</p>
+<p><b><i>授课内容：</i></b></p>
+<p>一、复习线性链表的存储结构</p>
+<blockquote> 
+  <p><img src="class09-02.jpg" width="431" height="62"></p>
+</blockquote>
+<p>二、循环链表的存储结构</p>
+<blockquote> 
+  <p>循环链表是加一种形式的链式存储结构。它的特点是表中最后一个结点的指针域指向头结点。</p>
+  <p><img src="class09-01.jpg" width="434" height="87"></p>
+  <p>循环链表的操作和线性链表基本一致，差别仅在于算法中的循环条件不是p或p-&gt;next是否为空，而是它们是否等于头指针。</p>
+</blockquote>
+<p>三、双向链表的存储结构</p>
+<blockquote> 
+  <p><img src="class09-03.jpg" width="429" height="108"></p>
+  <p>提问：单向链表的缺点是什么？</p>
+  <p>提示：如何寻找结点的直接前趋。</p>
+  <p>双向链表可以克服单链表的单向性的缺点。</p>
+  <p><font color="#FF0066">在双向链表的结点中有两个指针域，其一指向直接后继，另一指向直接前趋。</font></p>
+  <p>1、线性表的双向链表存储结构</p>
+  <p>typedef struct DulNode{</p>
+  <blockquote> 
+    <p>struct DulNode *prior;</p>
+    <p>ElemType data;</p>
+    <p>struct DulNode *next;</p>
+  </blockquote>
+  <p>}DulNode,*DuLinkList;</p>
+  <p>对指向双向链表任一结点的指针d，有下面的关系：</p>
+  <p><font color="#FF0000">d-&gt;next-&gt;priou=d-&gt;priou-&gt;next=d</font></p>
+  <p>即：当前结点后继的前趋是自身，当前结点前趋的后继也是自身。</p>
+  <p>2、双向链表的删除操作</p>
+  <p><img src="class09-04.jpg" width="426" height="131"></p>
+  <table width="100%" border="0" cellspacing="0">
+    <tr bgcolor="#3366FF"> 
+      <td> 
+        <p><font color="#FFFF33"><b>Status ListDelete_DuL(DuLinkList &amp;L,int 
+          i,ElemType &amp;e){</b></font></p>
+        <p><b><font color="#FFFF33">if(!(p=GetElemP_DuL(L,i)))</font></b></p>
+        <blockquote> 
+          <p><b><font color="#FFFF33">return ERROR;</font></b></p>
+        </blockquote>
+        <p><b><font color="#FFFF33">e=p-&gt;data;</font></b></p>
+        <p><b><font color="#FFFF33">p-&gt;prior-&gt;next=p-&gt;next;</font></b></p>
+        <p><b><font color="#FFFF33">p-&gt;next-&gt;prior=p-&gt;pror;</font></b></p>
+        <p><b><font color="#FFFF33">free(p);</font></b></p>
+        <p><b><font color="#FFFF33">return OK;</font></b></p>
+        <p><b><font color="#FFFF33">}//ListDelete_DuL</font></b></p>
+      </td>
+    </tr>
+  </table>
+  <p>3、双向链表的插入操作</p>
+  <p><img src="class09-05.jpg" width="429" height="196"></p>
+  <table width="100%" border="0" cellspacing="0">
+    <tr bgcolor="#3366FF"> 
+      <td> 
+        <p><font color="#FFFF33"><b>Status ListInsert_DuL(DuLinkList &amp;L,int 
+          i,ElemType &amp;e){</b></font></p>
+        <p><b><font color="#FFFF33">if(!(p=GetElemP_DuL(L,i)))</font></b></p>
+        <blockquote> 
+          <p><b><font color="#FFFF33">return ERROR;</font></b></p>
+        </blockquote>
+        <p><font color="#FFFF33"><b>if(!(s=(DuLinkList)malloc(sizeof(DuLNode)))) 
+          return ERROR;</b></font></p>
+        <p><b><font color="#FFFF33">s-&gt;data=e;</font></b></p>
+        <p><b><font color="#FFFF33">s-&gt;prior=p-&gt;prior;</font></b></p>
+        <p><b><font color="#FFFF33">p-&gt;prior-&gt;next=s;</font></b></p>
+        <p><b><font color="#FFFF33">s-&gt;next=p;</font></b></p>
+        <p><b><font color="#FFFF33">p-&gt;prior=s;</font></b></p>
+        <p><b><font color="#FFFF33">return OK;</font></b></p>
+        <p><b><font color="#FFFF33">}//ListInsert_DuL</font></b></p>
+      </td>
+    </tr>
+  </table>
+</blockquote>
+<p>四、一个完整的带头结点的线性边表类型定义：</p>
+<blockquote> 
+  <table width="101%" border="０" cellspacing="0">
+    <tr bgcolor="#CCCCFF"> 
+      <td> 
+        <p>typedef struct LNode{</p>
+        <blockquote> 
+          <p>ElemType data;</p>
+          <p>struct LNode *next;</p>
+        </blockquote>
+        <p>}*Link,*Position;</p>
+        <p>&nbsp;</p>
+        <p>typedef struct{</p>
+        <blockquote> 
+          <p>Link head,tail;</p>
+          <p>int len;</p>
+        </blockquote>
+        <p>}LinkList;</p>
+        <p>&nbsp;</p>
+        <p>Status MakeNode(Link &amp;p,ElemType e);</p>
+        <p>//分配由p指向的值为e的结点，并返回OK；若分配失败，则返回ERROR</p>
+        <p>void FreeNode(Link &amp;p);</p>
+        <p>//释放p所指结点</p>
+        <p>Status InitLinst(LinkList &amp;L);</p>
+        <p>//构造一个空的线性链表L</p>
+        <p>Status DestroyLinst(LinkList &amp;L);</p>
+        <p>//销毁线性链表L，L不再存在</p>
+        <p>Status ClearList(LinkList &amp;L);</p>
+        <p>//将线性链表L重置为空表，并释放原链表的结点空间</p>
+        <p>Status InsFirst(Link h,Link s);</p>
+        <p>//已知h指向线性链表的头结点，将s所指结点插入在第一个结点之前</p>
+        <p>Status DelFirst(Link h,Link &amp;q);</p>
+        <p>//已知h指向线性链表的头结点，删除链表中的第一个结点并以q返回</p>
+        <p>Status Append(LinkList &amp;L,Link s);</p>
+        <p>//将指针s所指(彼此以指针相链)的一串结点链接在线性链表L的最后一个结点</p>
+        <p>//之后，并改变链表L的尾指针指向新的尾结点</p>
+        <p>Status Remove(LinkList &amp;L,Link &amp;q);</p>
+        <p>//删除线性链表L中的尾结点并以q返回，改变链表L的尾指针指向新的尾结点</p>
+        <p>Status InsBefore(LinkList &amp;L,Link &amp;p,Link s);</p>
+        <p>//已知p指向线性链表L中的一个结点，将s所指结点插入在p所指结点之前，</p>
+        <p>//并修改指针p指向新插入的结点</p>
+        <p>Status InsAfter(LinkList &amp;L,Link &amp;p,Link s);</p>
+        <p>//已知p指向线性链表L中的一个结点，将s所指结点插入在p所指结点之后，</p>
+        <p>//并修改指针p指向新插入的结点</p>
+        <p></p>
+        <p>Status SetCurElem(Link &amp;p,ElemType e);</p>
+        <p>//已知p指向线性链表中的一个结点，用e更新p所指结点中数据元素的值</p>
+        <p>ElemType GetCurElem(Link p);</p>
+        <p>//已知p指向线性链表中的一个结点，返回p所指结点中数据元素的值</p>
+        <p>Status ListEmpty(LinkList L);</p>
+        <p>//若线性链表L为空表，则返回TRUE,否则返回FALSE</p>
+        <p>int ListLength(LinkList L);</p>
+        <p>//返回线性链表L中的元素个数</p>
+        <p>Position GetHead(LinkList L);</p>
+        <p>//返回线性链表L中头结点的位置</p>
+        <p>Position GetLast(LinkList L);</p>
+        <p>//返回线性链表L中最后一个结点的位置</p>
+        <p>Position PriorPos(LinkList L,Link p);</p>
+        <p>//已知p指向线性链表L中的一个结点，返回p所指结点的直接前趋的值</p>
+        <p>//若无前趋，返回NULL</p>
+        <p>Position NextPos(LinkList L,Link p);</p>
+        <p>//已知p指向线性链表L中的一个结点，返回p所指结点的直接后继的值</p>
+        <p>//若无后继，返回NULL</p>
+        <p>Status LocatePos(LinkList L,int i,Link &amp;p);</p>
+        <p>//返回p指示线性链表L中第i个结点的位置并返回OK,i值不合法时返回ERROR</p>
+        <p>Position LocateElem(LinkList L,ElemType e,<br>
+          Status(*compare)(ElemType,ElemType));</p>
+        <p>//返回线性链表L中第1个与e满足函数compare()判定关系的元素的位置，</p>
+        <p>//若下存在这样的元素，则返回NULL</p>
+        <p>Status ListTraverse(LinkList L,Status(*visit)());</p>
+        <p>//依次对L的每个元素调用函数visit()。一旦visit()失败，则操作失败。</p>
+      </td>
+    </tr>
+  </table>
+</blockquote>
+<p>五、总结本课内容</p>
+<blockquote> 
+  <p>循环链表的存储结构</p>
+  <p>双向链表的存储结构</p>
+</blockquote>
+<p><a href="../index.htm">回目录</a> <a href="../class08/class08.htm">上一课</a> <a href="../class10/class10.htm">下一课</a></p>
+</body>
+</html>
