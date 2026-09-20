@@ -1,0 +1,7482 @@
+[
+ {
+  "excel_row": 3,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "数据",
+  "desc": "数据 是指所有能输入计算机并被计算机程序处理的符号的集合",
+  "seq": 1,
+  "page": 32
+ },
+ {
+  "excel_row": 4,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "数据元素",
+  "desc": "数据元素还可以细分为数据项。例如，要保存1 0 0名学生的信息，每名学生的信息包括 学号、姓名、所学各科成绩等，可使用一条记录来保存。一条记录可以被看作一个数据元 素，而记录中的学号、姓名、各科成绩等都可以被看作数据项。全部学生的记录构成了 数据。逻辑上相关的、具有物理意义的\n若干数据项构成一个数据元素；数据元素作为一个完整的对象（整体）是构成数据的基本单位",
+  "seq": 2,
+  "page": 32
+ },
+ {
+  "excel_row": 5,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "数据项",
+  "desc": "在数据结构中，数据的最小不可分割的单位是数据项",
+  "seq": 3,
+  "page": 33
+ },
+ {
+  "excel_row": 6,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "数据结构",
+  "desc": "数据元素之间的相互关系构成结构，带有结构特性的数据元素集合构成数据结构。数据结构又分为逻辑结构和存储结构",
+  "seq": 4,
+  "page": 34
+ },
+ {
+  "excel_row": 7,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "逻辑结构",
+  "desc": "逻辑结构主要是指数据元素之间的逻辑关系",
+  "seq": 5,
+  "page": 34
+ },
+ {
+  "excel_row": 8,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "存储结构",
+  "desc": "存储结构主要是指数据元素在计算机中的表示及存储方式",
+  "seq": 6,
+  "page": 34
+ },
+ {
+  "excel_row": 9,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "基本操作",
+  "desc": "基本操作是指对数据结构可以进行的常用操作，如向数据结构中添加新元素、删除元素、查找元素、求长度、判断是否为空等。在抽象数据类型中，每个操作需规定操作名、前提条件、输入和输出，明确\"做什么\"。",
+  "seq": 7,
+  "page": 36
+ },
+ {
+  "excel_row": 10,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "集合",
+  "desc": "集合由元素构成，是数学中最基本的概念之一。集合中各元素之间没有次序关系，涉及 元素与集合的操作包括：将新元素加入集合、从集合中删除指定元素、判定某元素是否属于 集合等。还可以对集合进行操作，如判定集合是否为空、求两个集合的并集、求两个集合的 交集、求一个集合的补集等",
+  "seq": 8,
+  "page": 34
+ },
+ {
+  "excel_row": 11,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "线性结构",
+  "desc": "线性结构是数据元素之间存在着先后次序关系的结构，每个元素都对应着一个唯一的次 序，这个次序决定着元素的位置",
+  "seq": 9,
+  "page": 34
+ },
+ {
+  "excel_row": 12,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "树结构",
+  "desc": "树结构是一种层次结构，其中的数据元素按层排列。除了顶层的元素以外，每个数据元 素都对应一个上一层元素，同时可以有数目不等的下一层元素。",
+  "seq": 10,
+  "page": 34
+ },
+ {
+  "excel_row": 13,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "图结构",
+  "desc": "图结构是一种网状结构，其中的每个数据元素都可以与多个其他的数据元素相关。树结 构可以被看作图的特例。树结构和图结构都是比线性结构更复杂的结构，它们属于非线性 结构",
+  "seq": 11,
+  "page": 34
+ },
+ {
+  "excel_row": 14,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "基本概念和术语 ",
+  "knowledge": "抽象数据类型。 ",
+  "desc": "抽象数据类型的定义包括类型的名字及对各个操作的刻画，也就是要明确“做什么”。对于 每个操作，要规定操作的名字、操作执行的前提条件、输入和输出分别是什么等。每个操作 通常表示为一个函数或方法。 “抽象数据类型”是相对于程序设计语言中的“基本类型”来说的",
+  "seq": 12,
+  "page": 36
+ },
+ {
+  "excel_row": 15,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "数据项之间的关系",
+  "desc": "在数据结构中，数据的最小不可分割的单位是数据项；逻辑上相关的、具有物理意义的 若干数据项构成一个数据元素；数据元素作为一个完整的对象（整体）是构成数据的基本 单位",
+  "seq": 13,
+  "page": 33
+ },
+ {
+  "excel_row": 16,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "逻辑结构与存储结构之间的关系，存储结构对基本操作实现的影响",
+  "desc": "数据元素之间的相互关系构成结构，带有结构特性的数据元素集合构成数据结构。具体\n来说，数据结构又分为逻辑结构和存储结构。逻辑结构主要是指数据元素之间的逻辑关系，\n存储结构主要是指数据元素在计算机中的表示及存储方式。\n数据的逻辑结构从逻辑上描述数据，表明数据元素之间的关系，与数据的存储方式无关，既独立于计算机，又独立于程序设计语言。\n从逻辑角度来看，基本的数据结构包括4 类，分别是集合、线性结构、树结构和图\n结构",
+  "seq": 14,
+  "page": 34
+ },
+ {
+  "excel_row": 17,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "数据结构的4 种基本存储方法",
+  "desc": "顺序存储方法、链式存储方法、索引存储方法、散列存储方法；",
+  "seq": 15,
+  "page": 35
+ },
+ {
+  "excel_row": 18,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "顺序存储方法",
+  "desc": "逻辑上相邻的数据元素，存储到物理位置相邻的存储单元中，这 样的存储方法称为顺序存储方法。在使用程序设计语言中的一维数组保存线性结构中的数据 元素时，采用的就是顺序存储方法。相应的存储结构称为顺序存储结构",
+  "seq": null,
+  "page": 35
+ },
+ {
+  "excel_row": 19,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "链式存储方法",
+  "desc": "逻辑上相邻的数据元素，不要求其存储的物理位置也相邻，通常 借助于程序设计语言中的指针来指示数据元素间的逻辑关系。这样的存储结构称为链式存储 结构。",
+  "seq": null,
+  "page": 35
+ },
+ {
+  "excel_row": 20,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "索引存储方法",
+  "desc": "除了保存数据元素以外，索引存储方法还针对数据元素建立索引 表。索引表由索引项组成，索引项指示数据元素所在的物理位置。通过索引项，可以加快查 找数据元素的速度。这种方法是索引存储方法",
+  "seq": null,
+  "page": 35
+ },
+ {
+  "excel_row": 21,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "散 列 (哈 希 )存 储 方 法",
+  "desc": "散列存储方法是一种特殊方法，它根据数据元素的关键 字计算出该元素的物理存储位置。通常，使用称为散列表的一维数组作为保存元素的结构。",
+  "seq": null,
+  "page": 35
+ },
+ {
+  "excel_row": 22,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "基本概念和术语 ",
+  "knowledge": "线性结构与非线性结构的特性。 ",
+  "desc": "线性结构是数据元素之间存在着先后次序关系的结构，每个元素都对应着一个唯一的次序，这个次序决定着元素的位置；",
+  "seq": 16,
+  "page": 34
+ },
+ {
+  "excel_row": 23,
+  "chapter": "绪论",
+  "requirement": "简单应用",
+  "summary": "基本概念和术语 ",
+  "knowledge": "定义抽象数据类型。 ",
+  "desc": "抽象定义三角形ADT sanjiao {\n数据部分:\na,b,c;\n操作部分:\nmianji(a,b,c)\n输入：a,b,c\n输出：三角形面积\n前提条件：三条边满足构成三角形的条件\nzhouchang（a,b,c）//给定三条边，计算三角形的周长\n输入：a,b,c\n输出：三角形周长\n前提条件：三条边满足构成三角形的条件\n}\n",
+  "seq": 17,
+  "page": 36
+ },
+ {
+  "excel_row": 24,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "算法和算法分析 ",
+  "knowledge": "算法及其5 个特性",
+  "desc": "算法是一个由若干确定的(无二义性的)、可执行的步骤组成的肯定能够终\n止的有序步骤集合。算法必须满足如下5\n个重要特性。\n( 1 ) 输入：有 0 或多个输入值。\n( 2 ) 输出：有 1 或多个输出值。\n( 3 ) 有穷性：一个算法必须在执行有穷步骤之后结束。\n( 4 ) 确定性：算法的每一个步骤都必须有确切的含义。\n( 5 ) 可行性：算法中要做的运算都是相当基本的、能够精确进行的。\n算法可以没有输入，但必须有输出，通常输出的是算法的执行结果。实现算法的程序的\n运行时间是有限的。算法的每个执行步骤不能有歧义，且必须是能够执行的。",
+  "seq": 18,
+  "page": 37
+ },
+ {
+  "excel_row": 25,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "算法和算法分析 ",
+  "knowledge": "问题规模。 ",
+  "desc": "执行程序花费的时间与程序所处理的数据个数有很大的关系，这个数据个数称为 问题规模,也称为问题大小。算法花费的时间表示为问题规模的一个函数",
+  "seq": 19,
+  "page": 38
+ },
+ {
+  "excel_row": 26,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法和算法分析 ",
+  "knowledge": "时间复杂度",
+  "desc": "时间复杂度是将算法的时间效率表示为问题规模n的函数。通过统计算法执行的语句总数得到增长函数T(n)，再取其主项并用大O表示法表示渐近时间复杂度（即算法的阶）。只关心当n增大时函数的变化趋势，不考虑常数项和系数。常见阶有O(1)、O(logn)、O(n)、O(nlogn)、O(n²)、O(2ⁿ)等。",
+  "seq": 20,
+  "page": 40
+ },
+ {
+  "excel_row": 27,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法和算法分析 ",
+  "knowledge": "空间复杂度",
+  "desc": "空间复杂度是指算法在运行过程中临时占用的存储空间大小，一般也表示为问题规模的函数。在考虑空间存储量时，算法代码占用的空间和算法中初始数据占用的空间不包含在内。当算法需要的额外空间数量依赖于问题规模时，才考虑它的空间复杂度。",
+  "seq": 21,
+  "page": 42
+ },
+ {
+  "excel_row": 28,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法和算法分析 ",
+  "knowledge": "大O 表示法",
+  "desc": "大O表示法用于描述算法增长函数的上界。称函数T(n)是O(f(n))的，如果存在常数c>0和n0，当n>n0时，有T(n)≤c×f(n)。大O表示法只关注增长函数表达式中的主项，不考虑主项的系数。例如T(n)=3n²+4n+5=O(n²)。",
+  "seq": 22,
+  "page": 40
+ },
+ {
+  "excel_row": 29,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法和算法分析 ",
+  "knowledge": "增长函数。 ",
+  "desc": "增长函数是将算法的时间效率表示为问题规模n的一个解析式，对于规模为n的问题，解析式计算的值就是算法处理的步骤数。对于具体算法，其增长函数是一个近似表达式，关注的是当数据量增大若干倍时算法所花费时间增加的倍数关系，即函数的渐近性。",
+  "seq": 23,
+  "page": 39
+ },
+ {
+  "excel_row": 30,
+  "chapter": "绪论",
+  "requirement": "简单应用",
+  "summary": "算法和算法分析 ",
+  "knowledge": "描述算法，分析程序段的时间复杂度。 ",
+  "desc": "通过分析程序段中循环结构的执行次数来确定增长函数T(n)，进而得到时间复杂度。单层循环执行n次时T(n)=n，时间复杂度为O(n)；二重循环执行n²次时为O(n²)；while循环每次将x减半时执行logn次，时间复杂度为O(logn)。只取增长函数的主项，忽略常数和系数。",
+  "seq": 24,
+  "page": 39
+ },
+ {
+  "excel_row": 31,
+  "chapter": "绪论",
+  "requirement": "识记",
+  "summary": "算法设计策略简介 ",
+  "knowledge": "算法策略。 ",
+  "desc": "算法的设计策略有递推法、迭代法、递归\n法、贪心法、分治法、动态规划法等",
+  "seq": 25,
+  "page": 42
+ },
+ {
+  "excel_row": 32,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法设计策略简介",
+  "knowledge": "递推法",
+  "desc": "递推法是一种直接求解的算法设计策略，利用问题本身所具有的一种递推关系进行求\n解。找到问题本身的递推关系是问题求解的前提。\n递推法的思想是，根据递推关系，能从已求得的问题规模为1 ,2 ,・・・，洛 1 的一系列解，\n构造出问题规模为)的解。求解规模为，的解时，有时可能仅需规模为1 ,2 ,・・・,洛1 的系列解\n中的一部分，而不是全部。",
+  "seq": 26,
+  "page": 42
+ },
+ {
+  "excel_row": 33,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法设计策略简介",
+  "knowledge": "迭代法",
+  "desc": "迭代法是一种直接求解的方法，往往需要建立迭代关系式，即根据前一个值推出下一个\n值的公式。初始时设定初始值（原值），然后根据迭代关系式和原值，求出新值，并用新值\n替代原值。持续进行这个过程。\n迭代过程不能无限进行下去，或者设定一个迭代次数，当达到这个次数时，迭代过程停\n止 ；或者设定一个结束条件，当满足这个条件时，迭代过程停止。如果迭代过程正确，则迭\n代停止时可以得到理想的结果",
+  "seq": 27,
+  "page": 43
+ },
+ {
+  "excel_row": 34,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法设计策略简介",
+  "knowledge": "递归法",
+  "desc": "递归是数学和计算机科学中非常重要的一个概念。在定义某个概念时，直接或间接地又\n用到自身，就出现了递归。在递归定义中，需要一个递归出口作为递归结束的标志",
+  "seq": 28,
+  "page": 44
+ },
+ {
+  "excel_row": 35,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法设计策略简介",
+  "knowledge": "贪心法",
+  "desc": "贪心法也称贪婪算法，它是一种通过每一步选择局部最优解来达到整体最优解的算法,\n适用于求某些最优解问题。在求解过程中，一步步地进行求解，根据当前的情况选择最优的\n可能。实际上，这个最优是在当前条件下的最优，称为局部最优。在求解过程中，因为没有\n考虑各种可能的情况，有可能并不是全局最优。也正是因为贪心法仅考虑局部的情况，而没\n有穷尽所有的可能，所以避免了耗费大量时间。",
+  "seq": 29,
+  "page": 45
+ },
+ {
+  "excel_row": 36,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法设计策略简介",
+  "knowledge": "分治法",
+  "desc": "当求解一个输入规模为九并且几的取值又很大的问题时，直接求解往往非常困难。可以把\n这个大规模的问题分解为若干个规模更小且可以独立求解的问题，这些小问题与原问题相同,\n可以各自求解。然后把各个小问题的解进行合并，得到原问题的解。这就是分治法的思想。\n一般来说，分治法的求解过程分为三个阶段，即划分、求解小问题及小问题解的合并。\n如果小问题的规模仍然很大，不能直接求解，则再继续划分，直到小问题可以求解。然\n后将小问题的解合并为大问题的解。\n一次划分得到的若干个小问题是相互独立的，它们的求解可以独立完成，这是分治法的\n重要特点。并且这些小问题的求解次序也没有约束。",
+  "seq": 30,
+  "page": 45
+ },
+ {
+  "excel_row": 37,
+  "chapter": "绪论",
+  "requirement": "领会",
+  "summary": "算法设计策略简介",
+  "knowledge": "动态规划法的基本特点。 ",
+  "desc": "动态规划法是求多阶段决策过程最优化的一种方法，它将问题的整体按时间或空间的特\n征分成若干个前后衔接的阶段，把多阶段决策问题表示为前后有关的一系列单阶段决策问\n题 ，然后逐个求解，从而求出整个问题的最优决策。动态规划法强调了时间和空间的连续\n性 。所以，不同阶段的求解往往不是独立进行的，可能存在依赖关系。\n求 解 “最大子序列和”问题是采用动态规划法求解的典型示例。给定一个整数数组4\n找到一个具有最大和的连续子数组（至少含有一个元素），返回该最大和。如果数组中保存\n的全部数据均小于0 , 则最大和为0 , 这是特例。\n例如，A = （-2 ,l,-3 ,4 ,-l ,2 ,l ,-5 ,4 | , 得到的最大和是6 , 相应的子数组是{4 ,-1 ,2 ,1 } ,\n即从4 [ 3 ]到 4 [ 6 ]。教材P45",
+  "seq": 31,
+  "page": 45
+ },
+ {
+  "excel_row": 38,
+  "chapter": "绪论",
+  "requirement": "简单应用",
+  "summary": "算法设计策略简介",
+  "knowledge": "使用基本的算法策略实现简单程序。 ",
+  "desc": "根据问题特点选择合适的算法策略并用类C语言实现简单程序。如使用递推法求斐波那契数列前n项（利用递推公式F(n)=F(n-1)+F(n-2)）；使用迭代法实现辗转相除法求最大公约数；使用递归法求阶乘（fact(n)=n×fact(n-1)，递归出口n=0时返回1）。关键是找到递推关系或建立迭代公式。",
+  "seq": 32,
+  "page": 43
+ },
+ {
+  "excel_row": 39,
+  "chapter": "绪论",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "数据结构的逻辑结构",
+  "desc": "数据的逻辑结构从逻辑上描述数据元素之间的关系，与存储方式无关，既独立于计算机又独立于程序设计语言。基本逻辑结构包括4类：集合（元素间无次序关系）、线性结构（一对一关系，元素有唯一前驱和后继）、树结构（一对多层次关系）、图结构（多对多网状关系）。",
+  "seq": 33,
+  "page": 34
+ },
+ {
+  "excel_row": 40,
+  "chapter": "绪论",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "存储结构及相互关系",
+  "desc": "存储结构是数据元素在计算机中的表示及存储方式，常用4种方法：顺序存储、链式存储、索引存储、散列存储。逻辑结构独立于计算机和程序设计语言；算法设计基于逻辑结构，算法实现依赖于存储结构。逻辑结构与存储结构是数据结构的两个方面，相互联系又相互区别。",
+  "seq": 34,
+  "page": 34
+ },
+ {
+  "excel_row": 41,
+  "chapter": "绪论",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "线性结构与非线性结构",
+  "desc": "线性结构中元素之间是一对一关系，每个元素有唯一的直接前驱和直接后继（首尾元素除外），元素按次序排列。非线性结构包括树结构（一对多层次关系，每个元素可有多个后继）和图结构（多对多网状关系，每个元素可与多个其他元素相关）。",
+  "seq": 35,
+  "page": 34
+ },
+ {
+  "excel_row": 42,
+  "chapter": "绪论",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "数据结构的4 种基本存储方法",
+  "desc": "数据结构的4种基本存储方法：(1)顺序存储：逻辑相邻元素存到物理相邻单元；(2)链式存储：用指针指示逻辑关系，不要求物理相邻；(3)索引存储：建立索引表，索引项指示元素物理位置以加快查找；(4)散列存储：根据关键字直接计算元素的物理存储位置。",
+  "seq": 36,
+  "page": 35
+ },
+ {
+  "excel_row": 43,
+  "chapter": "绪论",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "算法复杂度的概念及分析方法。 ",
+  "desc": "算法复杂度包括时间复杂度和空间复杂度。时间复杂度通过统计算法执行的语句总数得到增长函数T(n)，用大O表示法表示渐近复杂度，只关注主项。空间复杂度考虑算法运行时额外占用的存储空间。分析方法：观察循环结构，单层循环O(n)，嵌套循环O(n²)，减半循环O(logn)。",
+  "seq": 37,
+  "page": 39
+ },
+ {
+  "excel_row": 44,
+  "chapter": "绪论",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "算法复杂度的概念",
+  "desc": "算法复杂度是衡量算法效率的指标。时间复杂度表示算法执行时间与问题规模的函数关系，用增长函数T(n)和大O表示法进行渐近分析；空间复杂度表示算法运行时临时占用存储空间与问题规模的函数关系。分析时需考虑最优、最坏和平均情况。",
+  "seq": 38,
+  "page": 39
+ },
+ {
+  "excel_row": 45,
+  "chapter": "绪论",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "描述算法",
+  "desc": "算法可以使用自然语言、类C语言（伪代码）或程序设计语言描述。算法描述需满足5个特性：输入（0或多个）、输出（1或多个）、有穷性、确定性、可行性。使用类C语言描述算法时需清晰表达每个步骤，确保无二义性且可执行。",
+  "seq": 39,
+  "page": 37
+ },
+ {
+  "excel_row": 46,
+  "chapter": "绪论",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "算法复杂度的分析",
+  "desc": "分析算法复杂度时，通过统计程序段中基本语句的执行次数确定增长函数T(n)。观察循环结构：单层循环O(n)，嵌套循环O(n²)，while循环每次减半O(logn)。取T(n)的主项，忽略常数项和系数，用大O表示法表示。需考虑最好、最坏和平均时间复杂度。",
+  "seq": 40,
+  "page": 39
+ },
+ {
+  "excel_row": 47,
+  "chapter": "绪论",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "使用基本的算法策略实现简单程序。",
+  "desc": "根据问题特点选择递推、迭代、递归、贪心、分治或动态规划等策略，将问题分解为可实现的算法步骤并用类C语言编写程序。关键是找到问题的递推关系或合适的分解策略，设置递归出口或迭代结束条件，确保算法满足有穷性和确定性。",
+  "seq": 41,
+  "page": 42
+ },
+ {
+  "excel_row": 48,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "课后简答题",
+  "knowledge": "计算机能处理哪些数据？举例说",
+  "desc": "在计算机科学中，数据是指所有能输入计算机并被计算机程序处理的符号的集合。数据不仅包括整数、实数等数值型数据，还包括源程序、文档、地图、照片、歌曲、视频等非数值型数据。例如，学生成绩表、图书信息记录、图片文件、音频视频文件等都可以被计算机处理为\"数据\"。随着技术发展，数据的范畴还在不断扩大。",
+  "seq": null,
+  "page": 32
+ },
+ {
+  "excel_row": 49,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "课后简答题",
+  "knowledge": "如何理解线性结构中元素之间是一对一的关系",
+  "desc": "在线性结构中，除第一个元素外，每个元素有且仅有一个直接前驱；除最后一个元素外，每个元素有且仅有一个直接后继。任意两个相邻元素之间是简单的一对一邻接关系，不存在分支或交叉。每个元素在序列中有唯一确定的位置和次序，元素间构成有序的序列，这就是一对一关系的含义。",
+  "seq": null,
+  "page": 34
+ },
+ {
+  "excel_row": 50,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "课后简答题",
+  "knowledge": "定义代表交通工具的抽象数据类型vehicle，并添加必要的数据和操作",
+  "desc": "ADT vehicle {\n数据部分:\n    名称、型号、颜色、载客量、当前速度；\n操作部分:\n    start()    //启动交通工具\n    stop()     //停止交通工具\n    accelerate(speed)  //加速到指定速度\n    brake()    //刹车减速\n    getInfo()  //获取交通工具信息\n}",
+  "seq": null,
+  "page": 36
+ },
+ {
+  "excel_row": 51,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "课后简答题",
+  "knowledge": "定义表示复数的抽象数据类",
+  "desc": "ADT Complex {\n数据部分:\n    real;  //实部\n    imag;  //虚部\n操作部分:\n    add(c1, c2)      //复数加法，返回c1+c2\n    subtract(c1, c2)  //复数减法，返回c1-c2\n    multiply(c1, c2)  //复数乘法\n    modulus(c)        //求复数的模，返回sqrt(real²+imag²)\n}",
+  "seq": null,
+  "page": 36
+ },
+ {
+  "excel_row": 52,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "课后简答题",
+  "knowledge": "为什么不使用算法的绝对运行时间来衡量算法的时间效率",
+  "desc": "因为执行程序所花费的时间与计算机硬件（主频、CPU芯片、操作系统等）密切相关，同一算法在不同计算机上运行时间各不相同。为了屏蔽计算机的差异性，突出算法自身的特点，不能使用程序运行的绝对时间作为衡量指标。而是选择算法执行的语句总数作为衡量指标，并约定一条基本语句执行时间为1个单位。",
+  "seq": null,
+  "page": 39
+ },
+ {
+  "excel_row": 53,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "课后简答题",
+  "knowledge": "在评估算法的空间效率时，需要考虑哪些占用的存储空间",
+  "desc": "在评估算法的空间效率时，算法代码占用的空间和算法中初始数据占用的存储空间都不包含在内。需要考虑的是算法在运行过程中临时占用的额外存储空间，即除数据本身占据的空间以外，算法需要额外分配的空间数量。只有当额外空间依赖于问题规模时，才考虑空间复杂度。",
+  "seq": null,
+  "page": 42
+ },
+ {
+  "excel_row": 54,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "算法设计题",
+  "knowledge": "试设计一个算法，使用最少的比较次数找出三个不同整数。、鼠 。的中值",
+  "desc": "算法思路：通过最多3次比较找出三个数的中值。\nmedian(a, b, c):\n    if a > b:\n        if b >= c: return b    // a≥b≥c，b为中值\n        elif a >= c: return c  // a≥c>b，c为中值\n        else: return a        // c≥a>b，a为中值\n    else:\n        if a >= c: return a    // b≥a≥c，a为中值\n        elif b >= c: return c  // b≥c>a，c为中值\n        else: return b        // c≥b>a，b为中值",
+  "seq": null,
+  "page": 39
+ },
+ {
+  "excel_row": 55,
+  "chapter": "绪论",
+  "requirement": "课后习题",
+  "summary": "算法设计题",
+  "knowledge": "试设计一个算法，对于给定的正整数匹 列出斐波那契数列的前R 项，要求该算法的\n空间复杂度为。(1)。",
+  "desc": "算法思路：使用迭代法，只需两个变量保存前两项值，递推计算下一项，不需数组存储全部结果，空间复杂度O(1)。\nfibonacci(n):\n    if n >= 1: print 1\n    if n >= 2: print 1\n    prev = 1, curr = 1\n    for i = 3 to n:\n        next = prev + curr\n        print next\n        prev = curr\n        curr = next",
+  "seq": null,
+  "page": 42
+ },
+ {
+  "excel_row": 56,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "线性表",
+  "desc": "线性表是一种线性结构，线性表中各个元素依次排列，一 个 线 性 表 （linear list） 是由同类型数据元素构成的有限序列；一般而言，由儿（八'0 ）个元素组成的线性表1 可以表示为：\nL- （a0,a1,,,,,an-i ）\n这里，ai(0<=i<=n-1)是线性表中的数据元素，也称为表项。",
+  "seq": 42,
+  "page": 51
+ },
+ {
+  "excel_row": 57,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "表长",
+  "desc": "元素的个数N称为表长",
+  "seq": 43,
+  "page": 51
+ },
+ {
+  "excel_row": 58,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "表头元素",
+  "desc": "线性表中的第一个元素",
+  "seq": 44,
+  "page": 51
+ },
+ {
+  "excel_row": 59,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "表尾元素",
+  "desc": "线性表中的最后一个元素",
+  "seq": 45,
+  "page": 51
+ },
+ {
+  "excel_row": 60,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "直接前驱",
+  "desc": "排在每个数据元素前面的元素是唯一的，称为直接 前驱",
+  "seq": 46,
+  "page": 51
+ },
+ {
+  "excel_row": 61,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "直接后继",
+  "desc": "排在每个数据元素后面的元素也是唯一的，称为直接后继",
+  "seq": 47,
+  "page": 51
+ },
+ {
+  "excel_row": 62,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "前驱",
+  "desc": "直接前驱的简称",
+  "seq": 48,
+  "page": 51
+ },
+ {
+  "excel_row": 63,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "后继",
+  "desc": "直接后继的简称",
+  "seq": 49,
+  "page": 51
+ },
+ {
+  "excel_row": 64,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "有序表",
+  "desc": "表中元素的值按位置顺序递增或递减排\n列 ，即 按 值 的 “大小”有序排列，则线性表称为有序表。这 个 “序”指的是大小有序",
+  "seq": 50,
+  "page": 51
+ },
+ {
+  "excel_row": 65,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "无序表。 ",
+  "desc": "表中元素的值不满足按位置顺序递增或递减关系的线性表则称为无序表",
+  "seq": 51,
+  "page": 51
+ },
+ {
+  "excel_row": 66,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "线性表的抽象数据类型定义",
+  "desc": "ADT LinearList{\n数据部分：\n      L；  //线性表\n操作部分：\n      int initList(LinearList *L);   //初始化线性表，创建一个空表L\n      int clear   (LinearList *L);   //将表L置空\n      int isEmpty (LinearList *L);   //如果表L为空，则返回1，否则返回0\n      int isFull (LinearList *L);    //如果表L为满，则返回1，否则返回0\n      int length (LinearList *L);    //返回表L的当前长度\n      int inserList (LinearList *L, Position pos, ElemType *x); //在表L的位置pos处插入元素x\n      int removelist (LinearList *L, Position pos, ElemType *x); //删除表L的位置pos处的元素,并通过x返回\n      int setValue  (LinearList *L, Position pos, ElemType *x); //给表L的位置pos处的元素赋值x\n      int getVllue  (LinearList *L, Position pos, ElemType *x); //返回表L的位置pos处的元素\n      Position find (LinearList *L, ElemType *x); //返回元素x在表L中第一次出现的位置\n}\n",
+  "seq": 52,
+  "page": 52
+ },
+ {
+  "excel_row": 67,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "线性表中元素之间的逻辑关系",
+  "desc": "一对一（1:1）的线性关系。\n具体特征如下：\n有序性\n元素之间具有严格的先后次序，构成一个有限的序列。每个元素在表中的位置反映了其逻辑次序。\n\n前驱与后继\n除第一个元素（表头）外，每个元素有且仅有一个直接前驱；\n除最后一个元素（表尾）外，每个元素有且仅有一个直接后继。\n邻接关系的唯一性\n任意两个相邻元素之间都是简单的一对一邻接，不存在分支或交叉。",
+  "seq": 53,
+  "page": 51
+ },
+ {
+  "excel_row": 68,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "线性表中位置的含 义",
+  "desc": "线性表中的位置本质上是逻辑位序，它描述了元素在序列中的先后顺序，与具体的存储方式无关。在顺序表中它恰好与数组下标重合，在链表中则完全是一个需要通过遍历实现的逻辑概念",
+  "seq": 54,
+  "page": 51
+ },
+ {
+  "excel_row": 69,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "线性表的特点",
+  "desc": "线性表有3 个特点，分别是：\n（1） 所有元素属于同一个类型。\n（2） 元素个数是有限的。\n（3） 各元素之间不一定有大小关系，但一定有次序关系",
+  "seq": 55,
+  "page": 51
+ },
+ {
+  "excel_row": 70,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "线性表各基本操作的含义。 ",
+  "desc": "向线性表中添加新元素、从线性表中删除某个元素、求线性表的表长、求线性表中某元素的直接前驱或直接后继、判断线性表是否为空、判断线性表是否为满、按位置查找元素、查找某元素所在位置等",
+  "seq": 56,
+  "page": 52
+ },
+ {
+  "excel_row": 71,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "线性表的定义和基本操作",
+  "knowledge": "基于线性表的逻辑定义，给出相关操作结果的逻辑表示。 ",
+  "desc": "操作 前置条件 (Precondition) 后置条件 / 结果 (Postcondition / Result) 返回值\ninitList(L) — (L=();\\land;n=0)（构造空表） 1\nclear(L) — (L=();\\land;n=0)（重置为空表） 1\nisEmpty(L) — ((n=0)\\to 1,;(n>0)\\to 0) 0 或 1\nisFull(L) — ((n=\\text{MaxSize})\\to 1,;(n<\\text{MaxSize})\\to 0) 0 或 1\nlength(L) — 返回当前表长 (n) (n)\ninserList(L,pos,x) (1\\le \\text{pos}\\le n+1;\\land;n<\\text{MaxSize}) 设原表 (L=(a_1,\\dots,a_{\\text{pos}-1},a_{\\text{pos}},\\dots,a_n))，则\n(L'=(a_1,\\dots,a_{\\text{pos}-1},,v,,a_{\\text{pos}},\\dots,a_n))\n且 (n'=n+1)。形式化：\n(\\forall j(1\\le j<\\text{pos}):a'_j=a_j)\n(a'_{\\text{pos}}=v)\n(\\forall j(\\text{pos}<j\\le n+1):a'j=a{j-1}) 条件满足为 1，否则为 0\nremovelist(L,pos,x) (1\\le \\text{pos}\\le n;\\land;n>0) (*x=a_{\\text{pos}})（通过 x 返回被删值），且\n(L'=(a_1,\\dots,a_{\\text{pos}-1},,a_{\\text{pos}+1},\\dots,a_n))\n且 (n'=n-1)。形式化：\n(\\forall j(1\\le j<\\text{pos}):a'_j=a_j)\n(\\forall j(\\text{pos}\\le j\\le n-1):a'j=a{j+1}) 条件满足为 1，否则为 0\nsetValue(L,pos,x) (1\\le \\text{pos}\\le n) (a'_{\\text{pos}}=v)，其余元素及长度不变：\n(\\forall j(1\\le j\\le n\\land j\\ne\\text{pos}):a'_j=a_j,;n'=n) 条件满足为 1，否则为 0\ngetVllue(L,pos,x) (1\\le \\text{pos}\\le n) (*x=a_{\\text{pos}})，表状态不变 (L'=L) 条件满足为 1，否则为 0\nfind(L,x) — 若 (\\exists i,(1\\le i\\le n\\land a_i=v))，返回满足条件的最小位置 (i)（作为 Position）；否则返回 0（表示未找到）。 Position",
+  "seq": 57,
+  "page": 53
+ },
+ {
+  "excel_row": 72,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "顺序表",
+  "desc": "使用顺序存储结构保存的线性表称为顺序表;顺序存储使用一组连续的存储单元依次存储各个元素",
+  "seq": 58,
+  "page": 53
+ },
+ {
+  "excel_row": 73,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "位置。 ",
+  "desc": "线性表中的位置使用从0开始的连续非负整数表示，表头元素a0的位置为0，ai的位置为i。位置本质上是逻辑位序，描述元素在序列中的先后顺序。位置值决定了元素在表中的逻辑次序。",
+  "seq": 59,
+  "page": 51
+ },
+ {
+  "excel_row": 74,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "顺序存储的基本思想",
+  "desc": "顺序存储结构就是将线性表中的各数据元素，按照其逻\n辑次序，依次保存到数组中",
+  "seq": 60,
+  "page": 53
+ },
+ {
+  "excel_row": 75,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "随机访问的含义",
+  "desc": "顺序表中的访问方式称为随机访问方\n式，其含义是，只要给定数组下标，就能立即计算出相应元素的存储地址，并据此访问该元素。",
+  "seq": 61,
+  "page": 54
+ },
+ {
+  "excel_row": 76,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "操作位置",
+  "desc": "在线性表操作中，操作位置是指进行插入或删除操作的位置值pos。对于顺序表，pos必须是合理非负整数：插入时pos介于0和n之间（n+1个合理值），删除时pos介于0和n-1之间。对于链表，操作位置也从0开始计数，但需从头遍历找到对应结点。",
+  "seq": 62,
+  "page": 57
+ },
+ {
+  "excel_row": 77,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "表空",
+  "desc": "所含的元素个数为零",
+  "seq": 63,
+  "page": 56
+ },
+ {
+  "excel_row": 78,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "表满",
+  "desc": "表满是指顺序表中数组元素个数已达到最大容量maxSize，无法再插入新元素。用整型变量n记录当前元素个数，当n等于maxSize时表为满。链表中只要系统能分配结点空间就不会满，分配失败即视为满。",
+  "seq": 64,
+  "page": 57
+ },
+ {
+  "excel_row": 79,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "长度。 ",
+  "desc": "元素的个数代表表的长度",
+  "seq": 65,
+  "page": 56
+ },
+ {
+  "excel_row": 80,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "下标地址计算",
+  "desc": "下标从0开始一直到n-1 代表n个元素",
+  "seq": 66,
+  "page": 54
+ },
+ {
+  "excel_row": 81,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "顺序表基本操作的实现",
+  "desc": "//顺序表的实现\n#define TURE 1\n#define FALSE 0\n#define ERROR -1\n#ifndef maxSize\n#define maxSize 100\n#endif\n\ntypedef int ElemType;\ntypedef struct {\nElemType element [maxSize];\nint n;\n} SeqList\ntypedef SeqList LinearList;\ntypedef int Position;\n\nint initList (SeqList *L)\n{\n  L->n = 0;\n  return TRUE;\n}\nint clear (SeqList *L)\n{\n  L->n = 0;\n  return TRUE;\n}\nint isEmpty (SeqList *L)\n{\n  if (L->n == 0) return TRUE;\n  else return FALSE;\n}\n\nint isFull (SeqList *L)\n{\n  if (L->n == maxSize) return TRUE;\n  else return FALSE;\n}\nint  length (SeqList *L)\n{\n  return L->n;\n}\nint insertList (SeqList *L, Position pos, ElemType x)\n{\n  //平均移动n/2次\n  int i = 0;\n  if (isFull(L) == TRUE) return FALSE; //表满\n  if (pos < 0 || pos > L->n) return FALSE; //位置错误\n  for (i = L->n;i >pos; i--)\n  {\n    L->element[i] = L->element[i-1]; //移动元素\n  }\n  L->element[i] = x;\n  l->n++\n  return TRUE;\n}\nint removeList (SeqList *L, Position pos, ElemType x)\n{\n  //平均移动(n-1)/2次\n  int i = 0;\n  int i = 0;\n  if (isFull(L) == TRUE) return FALSE; //表满\n  if (pos < 0 || pos > L->n) return FALSE; //位置错误\n  for (i = pos;i >L->n-1; i++)\n  {\n    L->element[i] = L->element[i+1]; //移动元素\n  }\n  l->n--\n  return TRUE;\n}\nint setValue (SeqList *L ,Position pos, ElemType x)\n{\n  if (pos < 0 || pos > L->n) return FALSE; //位置错误\n  L->element[pos]=x;\n  return TRUE;\n}\nint getVllue (SeqList *L, Position pos, ElemType *x)\n{\n  if (pos < 0 || pos > L->n) return FALSE; //位置错误\n  *x = L->element[pos];\n  return x;\n\n}\nPosition find (SeqList *L, ElemType x)\n{\n  int i = 0 ; \n  for (i=0; i<L->n;I++)\n  {\n    if (L->element[i] == x) return i;\n  }\n  return ERROR;\n}\n\nvoid displayList (SeqList *L)\n{\n  int i;\n  if (L->0 == 0) printf(\"this is Empty LIST\\n\");\n  else {\n  printf (\"这是包含%d 个元素算个数的顺序表。\\n\", L->n);\n  for (i = 0;i < L->n;i++){\n    printf( \"%d ,\", L->element[i]);\n    }\n    printf( \"\\n\");\n  }\n}\nvoid swap (ElemType *x, ElemType *y)\n{\n  ElemType tmp;\n  tmp = *x;\n  *x = *y;\n  *y = tmp;\n}\nint reverse (SeqList *L)  //将顺序表L逆置\n{\n  int i, len = L->n;\n  if (len == 0 ) return TRUE;\n  for (i = 0; i <len/2;i++) swap(&(L->element[i]),&(L->element[len-i-1]));\n  return TRUE;\n}\n",
+  "seq": 67,
+  "page": 56
+ },
+ {
+  "excel_row": 82,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "顺序表基本操作的前提条件及时间 复杂度分析。 ",
+  "desc": "判断表空和表满已经操作位置是否非法。",
+  "seq": 68,
+  "page": 57
+ },
+ {
+  "excel_row": 83,
+  "chapter": "线性表",
+  "requirement": "综合应用",
+  "summary": "线性表的顺序存储及实现",
+  "knowledge": "基于顺序表设计算法来解决具体的应用问题。 ",
+  "desc": "利用顺序表的随机访问特性，通过数组下标直接定位元素设计算法。如将顺序表逆置：将a[0]与a[n-1]交换，a[1]与a[n-2]交换，依此类推，共交换⌊n/2⌋次，时间复杂度O(n)。插入删除需移动元素，平均移动约一半元素。",
+  "seq": 69,
+  "page": 61
+ },
+ {
+  "excel_row": 84,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "单链表",
+  "desc": "是由一组动态分配的结点形成的链表，每个结点保存线性表中的一个元素及一个\n指针，指针指向保存其直接后继元素的结点",
+  "seq": 70,
+  "page": 62
+ },
+ {
+  "excel_row": 85,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "表头结点，首结点",
+  "desc": "表头元素所在的结点head称为表头结点，也称为首结点；表头节点没有前驱",
+  "seq": 71,
+  "page": 62
+ },
+ {
+  "excel_row": 86,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "表尾结点，终端结点",
+  "desc": "表尾元素所在的结点称为表尾结点，也称为终端结点；表尾节点没有后继",
+  "seq": 73,
+  "page": 62
+ },
+ {
+  "excel_row": 87,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "头结点",
+  "desc": "头结点是单链表中虚拟的第一个结点，不保存线性表中的任何元素。表头指针指向头结点。头结点的数据域可保存链表结点个数，指针域指向第一个数据结点。引入头结点使空表和非空表处理一致，统一了首位置的插入删除操作。",
+  "seq": 75,
+  "page": 64
+ },
+ {
+  "excel_row": 88,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "表头指针、头指 针",
+  "desc": "指针head指向单链表中的表头结点，head称为表头指针或头指针",
+  "seq": 76,
+  "page": 62
+ },
+ {
+  "excel_row": 89,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "",
+  "desc": "在单链表中，每个结点包含数据域data（保存元素值）和指针域next（指向后继结点）。表尾结点的指针域为空（NULL），表示链表结束。由表头指针沿next指针可以访问链表中所有结点。单链表中的\"单\"表示每个结点仅含一个指针。",
+  "seq": 77,
+  "page": 62
+ },
+ {
+  "excel_row": 90,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "单向循环链表",
+  "desc": "将表尾结点的指针指回头结点，从而形成一类新链表。在这样的链\n表中，从任何一个结点出发，沿着指针域的指示，可以再回到这个结点，好像转了一个圈,\n可形象地称这样的链表为循环链表，更准确地说，它是单向循环链表",
+  "seq": 78,
+  "page": 72
+ },
+ {
+  "excel_row": 91,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "双向链表",
+  "desc": "在表结点中，除保留指向后继结点的指针以外，再\n增加一个指向该结点的前驱结点的指针，即每个结点都含有两个指针，一个指向该结点的后\n继结点，另一个指向该结点的前驱结点。如果结点的前驱结点或后继结点不存在，则相应的\n指针为空。这样的链表称为双向链表，也称为双链表",
+  "seq": 79,
+  "page": 73
+ },
+ {
+  "excel_row": 92,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "双向循环链表。 ",
+  "desc": "在空双向链表中，头结点的nex t和 prev指针都为空。在非空双向链表中，头结点的\nprev指针为空，表尾结点的加&指针为空。也可以像单向循环链表那样，将这些空指针利\n用起来，由此得到双向循环链表。在双向循环链表中，通过头结点的prev指针，可以方便\n地找到表尾结点，所以可以不定义尾指针",
+  "seq": 80,
+  "page": 75
+ },
+ {
+  "excel_row": 93,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "链式存储的基本思想",
+  "desc": "动态且灵活的存储方式，它不要求预先分配一块连续的存储空间,\n而是按需分配，随时需要，随时分配。同时不要求分配的空间必须是相邻的，而是由系统决定分配的具体位置，既可以相邻，也可以不相邻",
+  "seq": 81,
+  "page": 62
+ },
+ {
+  "excel_row": 94,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "头结点的作用",
+  "desc": "头结点的作用：(1)使在第一个位置插入和删除操作与其他位置的处理统一，无需特殊判断；(2)使空表和非空表的处理一致，因为空表时头结点也存在；(3)头结点的数据域可用来保存链表长度，方便求表长操作。",
+  "seq": 82,
+  "page": 64
+ },
+ {
+  "excel_row": 95,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "操作位置",
+  "desc": "在链表中进行插入或删除操作时，需要通过setCurr函数从表头开始遍历找到操作位置对应的结点。位置值从0开始计数。插入时新结点作为当前指针curr所指结点的后继；删除时删除curr所指结点的后继。由于链表不能随机访问，定位操作需要O(n)时间。",
+  "seq": 83,
+  "page": 63
+ },
+ {
+  "excel_row": 96,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "顺序访问的含义。 ",
+  "desc": "在访问带头结点的单链表中的结点时，必须从头结点开始逐结点后移来寻找，这种访问方式是顺序访问方式",
+  "seq": 84,
+  "page": 71
+ },
+ {
+  "excel_row": 97,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "链表基本操作的实现及时间复杂度分析",
+  "desc": "若插入、删除的位置都在表的最前面，则时间复杂度均为O(1) , 这是最方便的位置。如果操作位置都在表尾，则时间复杂度均为O(n) , n是链表的长度。插入、删除操作的平均时间复杂度也均为O(n)",
+  "seq": 85,
+  "page": 71
+ },
+ {
+  "excel_row": 98,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "根据问题选择链表类型并实现相关 操作",
+  "desc": "根据问题需求选择合适的链表类型：单链表适用于只需向后遍历的场景；单向循环链表适用于需要从任意结点出发遍历全表的场景；双向链表适用于需要频繁查找前驱的场景，插入删除需修改4个指针。选择后调用相应的插入、删除、查找等基本操作。",
+  "seq": 86,
+  "page": 72
+ },
+ {
+  "excel_row": 99,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "能够计算结构性开销。 ",
+  "desc": "对于有N个元素的线性表，采用单链表存储时，占用的空间为\nN*（E + P ）, 其中E总是结点中数据域占用的空间量，P是结点中指针域占用的空间量，用于数据的部分是N*E，属于有效部分，用于额外开销的部分是N*P，属于结构性开销部分",
+  "seq": 87,
+  "page": 72
+ },
+ {
+  "excel_row": 100,
+  "chapter": "线性表",
+  "requirement": "综合应用",
+  "summary": "线性表的链式存储及实现",
+  "knowledge": "基于链表设计算法来解决具体的应用问题。",
+  "desc": "利用链表的动态分配和指针操作特性设计算法。如：使用双指针法查找倒数第k个结点（先让front走k步再同步走）；使用快慢指针查找中间结点；使用三指针法逆置单链表；将链表拆分为奇偶两个链表；合并两个有序链表等。链表插入删除不需移动元素但需遍历定位。",
+  "seq": 88,
+  "page": 87
+ },
+ {
+  "excel_row": 101,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "空闲单元链表",
+  "desc": "可以针对实际应用的每类链表，定义一个“伙伴链表”，表结点的结构与所使用链表的结构一致。伙伴链表用来管理\"暂时不用\"的结点，也可以将伙伴链表称为空闲单元链表; 将实际应用的的链表节点删除后只是将被删除的节点插入的空闲单元链表中。申请节点时优先取空闲单元链表的节点，减少频繁的malloc和free动作。",
+  "seq": 89,
+  "page": 78
+ },
+ {
+  "excel_row": 102,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "线性表有两种基本实现方式",
+  "desc": "分别是顺序实现和链式实现",
+  "seq": 89,
+  "page": 76
+ },
+ {
+  "excel_row": 103,
+  "chapter": "线性表",
+  "requirement": "识记",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "静态链表。 ",
+  "desc": "数据结构中的静态链表，即使用一维数组实现的链\n表，还可以实现静态双向链表及静态循环链表",
+  "seq": 90,
+  "page": 80
+ },
+ {
+  "excel_row": 104,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "顺序访问与随机访问方式的对比",
+  "desc": "随机访问（顺序表）：给定下标可直接计算存储地址并访问元素，时间复杂度O(1)，支持按序号直接存取。顺序访问（链表）：必须从头结点开始逐个后移查找目标，平均时间复杂度O(n)。顺序表既支持随机存取也支持顺序存取，链表只支持顺序存取。",
+  "seq": 91,
+  "page": 77
+ },
+ {
+  "excel_row": 105,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "顺序表",
+  "desc": "顺序表是使用顺序存储结构保存的线性表，用一组连续存储单元（一维数组）依次存储各元素。逻辑上相邻的元素存储在物理相邻的单元中，支持随机访问。存储每个元素时空间紧凑无额外开销，但插入删除需移动元素，且需预分配足够大的数组空间。",
+  "seq": 92,
+  "page": 53
+ },
+ {
+  "excel_row": 106,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "链表和静态链表的使用条件",
+  "desc": "当线性表元素个数变化较大或未知时使用链表；事先知道大致长度时使用顺序表，空间效率更高。链表在频繁插入删除时更优；顺序表在频繁随机访问时更优。静态链表适用于不支持指针的语言环境，兼具顺序表空间整体性和链表灵活性。",
+  "seq": 93,
+  "page": 77
+ },
+ {
+  "excel_row": 107,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "空闲单元链表的作用",
+  "desc": "将实际应用的的链表节点删除后只是将被删除的节点插入的空闲单元链表中。申请节点时优先取空闲单元链表的节点，减少频繁的malloc和free动作。",
+  "seq": 94,
+  "page": 78
+ },
+ {
+  "excel_row": 108,
+  "chapter": "线性表",
+  "requirement": "领会",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "静态链表的实现机制。 ",
+  "desc": "静态链表用一维数组实现链表，每个数组元素含数据域data和指针域next（存储下一个元素的数组下标，-1表示表尾）。数组首元素作为头结点，data域保存链表长度，next域保存第一个元素的下标。空闲单元分为从未使用的（用unused记录首位置）和曾用后释放的（用available链成空闲单元链表）。",
+  "seq": 95,
+  "page": 80
+ },
+ {
+  "excel_row": 109,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "静态链表基本操作的实现及时间复杂度分析",
+  "desc": "静态链表的本质是链表，初始化链表、清空链表、判空及判满操作的时间复杂度都是O（1），因为插入及删除都需要寻找操作位置，所以它们的时间复杂度都是O（n）",
+  "seq": 96,
+  "page": 85
+ },
+ {
+  "excel_row": 110,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "根据问题选择顺序表",
+  "desc": "当问题需要频繁按位置随机访问元素、元素个数已知且变化不大、插入删除操作较少时选择顺序表。顺序表支持O(1)随机访问，空间紧凑无结构性开销，存储效率高。",
+  "seq": 97,
+  "page": 77
+ },
+ {
+  "excel_row": 111,
+  "chapter": "线性表",
+  "requirement": "简单应用",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "链表或 静态链表并实现相关操作。 ",
+  "desc": "当问题需要频繁插入删除、元素个数变化较大或未知时，选择链表或静态链表。链表动态分配空间不需预分配；静态链表用数组模拟指针操作，适用于无指针环境。实现插入删除时需先遍历定位操作位置。",
+  "seq": 98,
+  "page": 77
+ },
+ {
+  "excel_row": 112,
+  "chapter": "线性表",
+  "requirement": "综合应用",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "根据问题选择顺序表",
+  "desc": "综合考虑操作类型、空间效率和已知条件选择存储结构。以随机访问为主且长度已知选顺序表；频繁增删且长度不确定选链表；需在无指针环境实现选静态链表。临界值n=c×E/(P+E)，超过临界值顺序表更省空间。",
+  "seq": 99,
+  "page": 77
+ },
+ {
+  "excel_row": 113,
+  "chapter": "线性表",
+  "requirement": "综合应用",
+  "summary": "进一步讨论两种基本实现方式 ",
+  "knowledge": "链表或静态链表，设计算法来解决具体的应用问题。 ",
+  "desc": "根据具体应用问题，利用链表或静态链表的操作特性设计算法。如：将链表拆分为奇偶两个子链表、合并两个有序链表、删除重复元素、判断是否递增有序、查找倒数第k个结点（双指针法）、链表逆置等。需灵活运用指针操作和遍历技巧。",
+  "seq": 100,
+  "page": 87
+ },
+ {
+  "excel_row": 114,
+  "chapter": "线性表",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "顺序表及链表的定义",
+  "desc": "顺序表是用数组连续存储线性表元素的结构，支持随机访问，插入删除需移动元素；链表是用动态分配结点和指针连接的存储结构，每个结点含数据域和指针域。线性表有两种基本实现方式：顺序实现和链式实现。",
+  "seq": 101,
+  "page": 53
+ },
+ {
+  "excel_row": 115,
+  "chapter": "线性表",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "存储特点",
+  "desc": "顺序表：空间连续紧凑、无结构性开销、支持随机访问O(1)、插入删除需移动元素O(n)、需预分配数组空间。链表：空间动态分配不要求连续、有指针域结构性开销、插入删除不需移动元素但需遍历定位O(n)、不支持随机访问。",
+  "seq": 102,
+  "page": 76
+ },
+ {
+  "excel_row": 116,
+  "chapter": "线性表",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "顺序表中地址计算",
+  "desc": "顺序表中元素ai的存储地址LOC(ai)=LOC(a0)+i×d，其中d为每个元素占用的存储单元数，LOC(a0)为数组首地址。通过下标可直接计算元素地址，实现随机访问。",
+  "seq": 103,
+  "page": 54
+ },
+ {
+  "excel_row": 117,
+  "chapter": "线性表",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "顺序表及链表基本 操作的实现",
+  "desc": "顺序表：插入时从pos位置开始到表尾元素依次后移一位，删除时从pos后继开始到表尾元素依次前移一位。链表：插入时修改指针（新结点next指向当前后继，当前结点next指向新结点）；删除时将前驱结点next指向被删结点的后继，再释放结点空间。",
+  "seq": 104,
+  "page": 56
+ },
+ {
+  "excel_row": 118,
+  "chapter": "线性表",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "空闲单元链表的实现",
+  "desc": "空闲单元链表（伙伴链表）管理暂时不用的结点。删除结点时将其插入空闲单元链表表头（操作在表头进行效率高）；申请结点时先从空闲单元链表取结点（表头取出），仅当空闲单元链表为空时才调用malloc分配新结点。",
+  "seq": 105,
+  "page": 78
+ },
+ {
+  "excel_row": 119,
+  "chapter": "线性表",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "静态链表基本操作的实现。 ",
+  "desc": "静态链表用一维数组实现，数组元素含data和next域。初始化时头结点data=0、next=-1，available=-1，unused=1。插入时从unused或available取空闲位置，沿next遍历定位后修改next指针。删除时沿next定位前驱，将被删结点链入空闲单元链表表头。",
+  "seq": 106,
+  "page": 80
+ },
+ {
+  "excel_row": 120,
+  "chapter": "线性表",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "运用顺序表",
+  "desc": "运用顺序表时需理解数组下标与逻辑位置的对应关系，掌握插入删除时元素移动的方向和次序（从表尾开始移动），理解随机访问原理。能基于顺序表设计算法解决逆置、查找、合并等问题，分析时间复杂度。",
+  "seq": 107,
+  "page": 53
+ },
+ {
+  "excel_row": 121,
+  "chapter": "线性表",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "链表和静态链表的基本操作",
+  "desc": "链表基本操作需掌握指针修改次序（先连接新结点后继再修改前驱指针），理解头结点的作用，区分表头结点/首结点/头指针/头结点。静态链表需理解用数组下标模拟指针的机制，掌握空闲单元管理（unused和available）。",
+  "seq": 108,
+  "page": 62
+ },
+ {
+  "excel_row": 122,
+  "chapter": "线性表",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "设计算法解决应用问题。",
+  "desc": "综合运用顺序表和链表的操作设计算法解决实际问题，如查找倒数第k个结点（双指针法）、查找中间结点（快慢指针）、链表逆置（三指针法）、两个有序链表合并、删除重复元素等。需灵活运用指针操作和遍历技巧分析复杂度。",
+  "seq": 109,
+  "page": 87
+ },
+ {
+  "excel_row": 123,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "1 . 下列选项中，不属于链表特点的是() .  A . 插入、删除时不需要移动元素 B . 可随机访问任一元素 C .不必事先估计存储空间 D .所需空间与元素个数成正比",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 124,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "2 . 下列关于线性表的叙述中，错误的是 () A . 线性表采用链式存储方式，便于进行插入和删除操作 B . 线性表采用顺序存储方式，便于进行插入和删除操作 C .线性表采用链式存储方式，不必占用一片连续的存储单元 D . 线性表采用顺序存储方式，必须占用一片连续的存储单元",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 125,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "3 . 若一个线性表分别采用下列存储结构进行存储，则读取一个指定位置（序号）的元素所花费时间最少的是 () A . 顺序表 B . 单向链表 C .双向链表 D .循环链表",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 126,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "4 . 下列关于线性表的叙述中，错误的是() A . 除第一个元素以外，均有唯一的前驱 B . 除最后一个元素以外，均有唯一的后继 C .元素的个数可以是0 , 此时表为空表 D . 若元素的个数为无穷，则表为无穷表",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 127,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "5 . 下列关于线性表L 的叙述中，正确的是 () A. L 是由N 个相同元素组成的离散数据序列 B. L 中任意一个元素有且仅有唯一直接前驱 C . 可以在L 中进行取元素、查找或排序等操作 D . 不能在L 的任意位置插入或删除一个元素",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 128,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "6 . 若线性表L的常用操作有访问任一位置的元素和在最后进行插入和删除操作，为使操作的时间复杂度好，则下列选项中，为1选择的存储结构为() 。 A. 顺序表 B . 双向链表 C . 带头结点的双向循环链表 D .单向循环链表",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 129,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "7 .  线性表L中常用的操作有在最后一个元素之后插入一个元素和删除第一个元素，为使操作的时间复杂度好，则下列选项中，为L选择的存储结构为() o A . 单链表 B . 仅有头指针的单向循环链表 C . 双向链表 D . 仅有尾指针的单向循环链表",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 130,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "8 .  为了提供全程对号入座的高速铁路售票系统，保证每一位旅客从上车到下车期间都有独立座位，并且在短途乘客下车后，该座位可以销售给其他乘客，铁路公司设计了基于内存的系统，系统中需要描述座位信息和每个座位的售票情况。保存座位信息和每个座位售票情况的数据结构分别是 () . A . 数组，数组 B . 数组，链表 C . 链表，数组 D . 链表，链表",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 131,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "9 . 若长度为N 的线性表采用顺序存储结构，则在其第i(0 <= i <= N)个位置插入一个新元素的算法的时间复杂度为 () .  A . O(1) B. O(i) C. O(n)  D. O(n2) ",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 132,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "10 . 对于含N个元素且采用顺序存储的线性表，访问位置i(0 <= i <= N)处的元素和在位置 i(0 <= i <= N)插入元素的时间复杂度分别为() .  A . O(n)和O(n)       B . O(n)和O(1)  C. O(1)和O(n)  D. O(1)和O(1) ",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 133,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "11 . 线性表(a0,a1,...,an-1)以链接方式存储时，访问位置i的元素的时间复杂度为() A. O(1) B. O(i-l) C . O(n) D. O(n2)",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 134,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "1 2 ,在带头结点的非空单向循环链表h e a d中，指向表尾结点的指针p 满足的条件是() .  A. p == NULL B. p == head C. p->next == head D. p->next == NULL",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 135,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "13 . 带头结点的单链表head为空的判定条件是() 。 A. head == NULL B. head!=NULL C. head->next == head D. head->next == NULL",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 136,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "14.在双向循环链表中，在指针p所指结点之后插入指针s所指结点的操作是() .  A. p->next = s;s->prev = p ；p->next->prev = s;s->next = p->next； B. p->next = s；p->next->prev = s；s->prev = p ；s->next = p->next ； C. s->prev = p; s->next = p->next ；p->next = s; p->next->prev = s; D. s->prev = p; s->next = p->next ;p->next->prev = s；p->next = s; ",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 137,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "15 . 在一个单链表中，已知q 所指结点是p 所指结点的前驱结点，若在q 和p之间插入S 所指结点，则执行的操作是 () .  A. s->next = p->next; p->next = s； B. p->next = s->next；s->next = p; C. q->next = s；s->next = p； D. p->next = s; s->next = q ；",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 138,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "16 . 在一个单链表中，若 P 所指结点不是终端结点，在 P 所指结点之后插入s 所指结点，则执行的操作是() .  A. s->next = p ；p->next = s； B. s->next = p->next；p->next = s; C. s->next= p->next；p = s； D. p->next= s；s->next= p ；",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 139,
+  "chapter": "线性表",
+  "requirement": "课后习题",
+  "summary": "选择题",
+  "knowledge": "17.下列关于带头结点的单向循环链表L 的叙述中，正确的是() .  A . L 中最后一个结点的指针域要指向头结点 B . 循环链表的长度为L 中数据元素个数加1 C . 因为L 是环形的，所以无法计算链表长度 D . L 中最后一个结点的指针域指向首个数据结点",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 140,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 141,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 142,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 143,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 144,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 145,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 146,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 147,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 148,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 149,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 150,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 151,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 152,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 153,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 154,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 155,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 156,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 157,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 158,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 159,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "栈 ",
+  "desc": "栈（stack）是限定仅在一端进行插入和删除操作的线性表。能进行插入和删除的一端称为栈顶，另一端称为栈底。栈是操作受限的线性表，入栈和出栈操作只能在栈顶进行，只能看到栈顶元素，不允许访问非栈顶元素。",
+  "seq": 110,
+  "page": 99
+ },
+ {
+  "excel_row": 160,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "栈的容量",
+  "desc": "栈中最多能保存的元素个数称为栈的容量。在顺序栈中，容量由数组大小maxSize决定；栈的容量必须大于等于入栈序列的元素个数n才能完成相应的入栈出栈操作。",
+  "seq": 111,
+  "page": 99
+ },
+ {
+  "excel_row": 161,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "顺序栈",
+  "desc": "顺序栈是栈的顺序存储实现方式，使用一维数组保存栈中元素。将栈底定义在数组下标为0的位置，同时用一个变量top标记栈顶位置（栈顶指针，实为数组下标）。空栈时top=0，入栈时元素放在element[top]处再top加1。",
+  "seq": 112,
+  "page": 102
+ },
+ {
+  "excel_row": 162,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "链式栈",
+  "desc": "链式栈是栈的链式存储实现方式，可以看作一个仅在表头位置进行操作的单链表。将头指针所指的一端作为栈顶，表尾一端作为栈底。入栈和出栈操作都通过头指针完成，可只定义头指针，不需要尾指针和头结点。",
+  "seq": 113,
+  "page": 106
+ },
+ {
+  "excel_row": 163,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "栈顶",
+  "desc": "栈顶（top）是栈中能进行插入和删除操作的一端。入栈和出栈操作均在栈顶进行，栈顶元素是当前唯一可见的元素。在顺序栈中用top变量标记栈顶位置，在链式栈中头指针指向栈顶。",
+  "seq": 114,
+  "page": 99
+ },
+ {
+  "excel_row": 164,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "栈底 ",
+  "desc": "栈底（bottom）是栈中不能进行插入和删除操作的另一端，即与栈顶相对的一端。在顺序栈中，栈底通常定义在数组下标为0的位置。",
+  "seq": 115,
+  "page": 99
+ },
+ {
+  "excel_row": 165,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "栈顶元素",
+  "desc": "栈顶元素是当前位于栈顶位置的元素，是栈中唯一可以直接访问和操作的元素。获取栈顶元素的操作类似于出栈，但操作后不修改栈顶指针，不会将元素从栈中移除。",
+  "seq": 116,
+  "page": 99
+ },
+ {
+  "excel_row": 166,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "入栈",
+  "desc": "入栈（push，也称进栈或压栈）是指在栈顶插入一个元素的操作。在顺序栈中，新元素放在element[top]处，然后top值加1；在链式栈中，创建新结点并插入在栈顶位置。入栈前需判定栈是否已满。",
+  "seq": 117,
+  "page": 99
+ },
+ {
+  "excel_row": 167,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "出栈",
+  "desc": "出栈（pop，也称退栈）是指从栈顶删除一个元素的操作。在顺序栈中，先将top值减1，然后取出element[top]处的值；在链式栈中，删除头结点并释放空间。出栈前需判定栈是否为空。",
+  "seq": 118,
+  "page": 99
+ },
+ {
+  "excel_row": 168,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "出栈序 列",
+  "desc": "出栈序列是指元素从栈中依次出栈所形成的排列次序。由于栈具有后进先出的特性，出栈序列一般与入栈序列相反。给定入栈序列，合理的出栈序列不止一种，其个数为卡特兰数C(2n,n)/(n+1)。",
+  "seq": 119,
+  "page": 99
+ },
+ {
+  "excel_row": 169,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "栈空 ",
+  "desc": "栈空是指栈中没有元素的状态。在顺序栈中，当top值等于0时表示栈空；在链式栈中，当栈顶指针为NULL时表示栈空。空栈时不能执行出栈操作。",
+  "seq": 120,
+  "page": 99
+ },
+ {
+  "excel_row": 170,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "栈 ",
+  "knowledge": "栈满。 ",
+  "desc": "栈满是指栈中元素个数已达到最大容量的状态。在顺序栈中，当top值等于maxSize时表示栈满；在链式栈中，通常不会出现栈满（内存足够时）。栈满时不能执行入栈操作。",
+  "seq": 121,
+  "page": 104
+ },
+ {
+  "excel_row": 171,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "栈 ",
+  "knowledge": "栈的先进后出特性",
+  "desc": "栈的先进后出（LIFO，Last In First Out）特性是指最先入栈的元素最后出栈，最后入栈的元素最先出栈。入栈时元素依次压入栈顶，出栈时从栈顶开始弹出，出栈次序与入栈次序相反。",
+  "seq": 122,
+  "page": 99
+ },
+ {
+  "excel_row": 172,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "栈 ",
+  "knowledge": "能够得到的合理出栈序列",
+  "desc": "对于给定的入栈序列，并非所有排列都是合理的出栈序列。合理出栈序列需满足：只要栈不空就允许出栈，只要栈不满就允许入栈。对于n个元素的入栈序列，合理出栈序列个数为卡特兰数C(2n,n)/(n+1)。判断方法是模拟入栈出栈过程，能写出完整操作序列的即为合理序列。",
+  "seq": 123,
+  "page": 99
+ },
+ {
+  "excel_row": 173,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "栈 ",
+  "knowledge": "顺序和链式实现方式下栈空",
+  "desc": "顺序栈栈空判定：当top值等于0时表示栈空（采用top指向紧邻栈顶元素下一个空位置的定义方式）。链式栈栈空判定：当栈顶指针（头指针）等于NULL时表示栈空。两种方式均通过检查指针/下标值来判定。",
+  "seq": 124,
+  "page": 104
+ },
+ {
+  "excel_row": 174,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "栈 ",
+  "knowledge": "栈满的判定条件",
+  "desc": "顺序栈栈满判定条件：当top值等于maxSize（数组最大容量）时表示栈满，即(top==maxSize)。链式栈通常不判断栈满，因为链表长度可变，只要内存足够就不会满。",
+  "seq": 125,
+  "page": 104
+ },
+ {
+  "excel_row": 175,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "栈 ",
+  "knowledge": "顺序和链式实现方式下栈基本操作的定义。 ",
+  "desc": "栈的基本操作包括：initStack初始化栈、clear清空栈、push入栈、pop出栈、gettop获取栈顶元素、isEmpty判空、isFull判满。顺序栈通过数组下标top的增减实现，链式栈通过链表头指针的修改实现，两种方式下操作的时间复杂度均为O(1)。",
+  "seq": 126,
+  "page": 99
+ },
+ {
+  "excel_row": 176,
+  "chapter": "栈和队列",
+  "requirement": "简单应用",
+  "summary": "栈 ",
+  "knowledge": "能够判定序列是否为栈的合理出栈序列",
+  "desc": "判定序列是否为合理出栈序列的方法：按入栈序列依次入栈，每当栈顶元素与目标出栈序列当前元素匹配时就出栈并移动到下一个目标元素。若能扫描完整个入栈序列且栈最终为空，则该序列合理；否则不合理。关键规律：对于升序入栈序列，任一元素之后小于它的所有元素必须构成降序序列。",
+  "seq": 127,
+  "page": 100
+ },
+ {
+  "excel_row": 177,
+  "chapter": "栈和队列",
+  "requirement": "简单应用",
+  "summary": "栈 ",
+  "knowledge": "顺序栈及链式栈基本操作的实现。 ",
+  "desc": "顺序栈实现：用数组element[]存储元素，top标记栈顶位置。入栈时先判满再element[top++]=x；出栈时先判空再x=element[--top]。链式栈实现：用单链表存储，头指针为栈顶。入栈时新建结点插在表头；出栈时删除头结点。两种方式的push、pop、gettop时间复杂度均为O(1)。",
+  "seq": 128,
+  "page": 102
+ },
+ {
+  "excel_row": 178,
+  "chapter": "栈和队列",
+  "requirement": "综合应用",
+  "summary": "栈 ",
+  "knowledge": "括号匹配算法的实现",
+  "desc": "括号匹配算法：从左至右扫描符号串，遇开括号（如'('、'['、'{'）则入栈；遇闭括号时，若栈空则不匹配，否则弹出栈顶开括号检查是否配对，不配对则表达式不平衡。扫描结束后栈必须为空才平衡。不平衡情况有：闭括号与栈顶开括号不匹配、扫描完栈不空、遇闭括号时栈为空。",
+  "seq": 129,
+  "page": 125
+ },
+ {
+  "excel_row": 179,
+  "chapter": "栈和队列",
+  "requirement": "综合应用",
+  "summary": "栈 ",
+  "knowledge": "中缀表达式转换为后缀表达式算法的实现",
+  "desc": "中缀转后缀算法：自左至右扫描中缀表达式，遇操作数直接输出；遇运算符时与栈顶运算符比较优先级。栈内优先级≥栈外则弹出输出，栈外优先级高则入栈；遇开括号'('入栈（栈内优先级最低），遇闭括号则弹出运算符直到遇'('。表达式读完后弹出栈中剩余运算符。需给每个运算符设定栈内和栈外两个优先级。",
+  "seq": 130,
+  "page": 129
+ },
+ {
+  "excel_row": 180,
+  "chapter": "栈和队列",
+  "requirement": "综合应用",
+  "summary": "栈 ",
+  "knowledge": "计算后缀表达式算法的实现",
+  "desc": "后缀表达式计算算法：从左至右扫描后缀表达式，使用栈保存操作数。遇操作数则入栈；遇运算符则弹出两个操作数（先弹的为右操作数，后弹的为左操作数），执行运算后结果入栈。扫描结束后栈中剩余的元素即为计算结果。",
+  "seq": 131,
+  "page": 132
+ },
+ {
+  "excel_row": 181,
+  "chapter": "栈和队列",
+  "requirement": "综合应用",
+  "summary": "栈 ",
+  "knowledge": "设计算法解决栈的应用问题。 ",
+  "desc": "栈的应用问题设计：利用栈的后进先出特性解决实际问题。常见应用包括：括号匹配检查、中缀表达式转后缀表达式、后缀表达式求值、函数调用栈（递归调用的断点保存与恢复）、杨辉三角输出等。核心思路是利用栈保存临时性数据，在需要时按后进先出的次序取出。",
+  "seq": 132,
+  "page": 124
+ },
+ {
+  "excel_row": 182,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队列",
+  "desc": "队列（queue）是只能在表的一端进行插入、在另一端进行删除的线性表。能进行插入的一端称为队尾，能进行删除的一端称为队头。队列具有先进先出（FIFO）的特性，先来先服务。给定入队序列仅能得到一个出队序列，且与入队序列完全相同。",
+  "seq": 133,
+  "page": 109
+ },
+ {
+  "excel_row": 183,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队头",
+  "desc": "队头（队列头）是队列中能进行删除操作（出队）的一端。队头元素是队列中最先进来的元素。在循环队列中用front变量指示队头位置，出队操作在队头进行。",
+  "seq": 134,
+  "page": 109
+ },
+ {
+  "excel_row": 184,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队尾",
+  "desc": "队尾（队列尾）是队列中能进行插入操作（入队）的一端。队尾元素是队列中最新加入的元素。在循环队列中用rear变量指示队尾位置（通常指向队尾元素后面的空位置），入队操作在队尾进行。",
+  "seq": 135,
+  "page": 109
+ },
+ {
+  "excel_row": 185,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队列长度",
+  "desc": "队列长度是指队列中当前所含元素的个数。在循环队列中，队列长度可根据队头指针front和队尾指针rear的相对位置计算：length=(rear-front+maxSize)%maxSize。",
+  "seq": 136,
+  "page": 109
+ },
+ {
+  "excel_row": 186,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队头元素",
+  "desc": "队头元素是队列中最先进来的元素，即位于队头一端的元素。在队列表示Q=(a0,a1,...,a_{n-1})中，a0称为队头元素。出队操作删除的就是队头元素。",
+  "seq": 137,
+  "page": 109
+ },
+ {
+  "excel_row": 187,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队尾元素",
+  "desc": "队尾元素是队列中最新加入的元素，即位于队尾一端的元素。在队列表示Q=(a0,a1,...,a_{n-1})中，a_{n-1}称为队尾元素。入队操作在队尾添加新元素。",
+  "seq": 138,
+  "page": 109
+ },
+ {
+  "excel_row": 188,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "人队",
+  "desc": "入队（enqueue）是指在队尾插入一个元素的操作。在循环队列中，新元素保存在rear指向的位置，然后rear=(rear+1)%n。入队前需判定队列是否已满。在链式队列中，入队操作在链表表尾插入新结点。",
+  "seq": 139,
+  "page": 109
+ },
+ {
+  "excel_row": 189,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "出队",
+  "desc": "出队（dequeue）是指从队头删除一个元素的操作。在循环队列中，取出front指向位置的元素，然后front=(front+1)%n。出队前需判定队列是否为空。在链式队列中，出队操作在链表表头删除结点。",
+  "seq": 140,
+  "page": 109
+ },
+ {
+  "excel_row": 190,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "循环队列",
+  "desc": "循环队列是使用循环存储思想实现的顺序队列。将数组想象成首尾相接的圆环，A[n-1]的后面是A[0]，通过取模运算实现下标循环：入队rear=(rear+1)%n，出队front=(front+1)%n。一般顺序队列均采用循环方式实现，以避免假溢出。",
+  "seq": 141,
+  "page": 111
+ },
+ {
+  "excel_row": 191,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "链式队列",
+  "desc": "链式队列是队列的链式存储实现，使用带队头指针front和队尾指针rear的单链表作为存储结构。入队相当于在链表表尾插入，出队相当于在链表表头删除。通常不需要头结点，第一个元素入队时需同时修改front和rear指针。",
+  "seq": 142,
+  "page": 114
+ },
+ {
+  "excel_row": 192,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队列空",
+  "desc": "队列空是指队列中没有元素的状态。在循环队列中，当front==rear时表示队列为空。在链式队列中，当front和rear均为NULL时表示队列为空。队空时不能执行出队操作。",
+  "seq": 143,
+  "page": 114
+ },
+ {
+  "excel_row": 193,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队列满",
+  "desc": "队列满是指队列中已无空闲单元保存新元素的状态。在循环队列中，采用预留一个空位置的方法，当(rear+1)%n==front时表示队列满。也可增设变量记录队列长度或标记入队/出队来区分空与满。",
+  "seq": 144,
+  "page": 114
+ },
+ {
+  "excel_row": 194,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队头指针",
+  "desc": "队头指针（front）是指示队列队头位置的整型变量（实为数组下标），在循环队列中标记队头元素所在位置。出队时front=(front+1)%n。在链式队列中，front是指向队头结点的指针。",
+  "seq": 145,
+  "page": 110
+ },
+ {
+  "excel_row": 195,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "队列 ",
+  "knowledge": "队尾指针。 ",
+  "desc": "队尾指针（rear）是指示队列队尾位置的整型变量（实为数组下标），在循环队列中通常指向队尾元素后面的空位置。入队时rear=(rear+1)%n。在链式队列中，rear是指向队尾结点的指针。",
+  "seq": 146,
+  "page": 110
+ },
+ {
+  "excel_row": 196,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "队列 ",
+  "knowledge": "循环队列的特点",
+  "desc": "循环队列的特点：用数组顺序存储但采用循环方式使用空间，通过取模运算实现下标首尾相接。入队时rear=(rear+1)%n，出队时front=(front+1)%n，不需要移动元素。为区分空与满，通常预留一个空位置，判满条件为(rear+1)%n==front。",
+  "seq": 147,
+  "page": 111
+ },
+ {
+  "excel_row": 197,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "队列 ",
+  "knowledge": "存储结构及实现机制",
+  "desc": "队列有两种存储结构：顺序存储（循环队列）和链式存储（链式队列）。循环队列用数组保存元素，front和rear两个下标标记两端；链式队列用单链表保存，front指向表头、rear指向表尾。两种方式的入队、出队操作时间复杂度均为O(1)。",
+  "seq": 148,
+  "page": 110
+ },
+ {
+  "excel_row": 198,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "队列 ",
+  "knowledge": "循环队列中空",
+  "desc": "循环队列为空的条件是front==rear，即队头指针和队尾指针指向同一位置。初始空队列时front=0且rear=0。当队列中唯一的元素出队后，也会出现front==rear的空队列状态。",
+  "seq": 149,
+  "page": 111
+ },
+ {
+  "excel_row": 199,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "队列 ",
+  "knowledge": "满的含义及判定",
+  "desc": "循环队列满的含义是数组中已无空闲单元保存新元素。判定方法：预留一个空位置，当(rear+1)%n==front时队列满。或增设标记变量lastOperation（入队/出队标记）或length变量来区分front==rear时空还是满。",
+  "seq": 150,
+  "page": 111
+ },
+ {
+  "excel_row": 200,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "队列 ",
+  "knowledge": "队头和队尾的不同设定方式",
+  "desc": "循环队列中队头和队尾指针有4种组合设定方式：front可指向队头元素本身或其前面的空位置，rear可指向队尾元素本身或其后面的空位置。不同的设定方式会影响判空、判满条件以及入队出队操作时指针的修改方式。",
+  "seq": 151,
+  "page": 112
+ },
+ {
+  "excel_row": 201,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "队列 ",
+  "knowledge": "链式队列的特点，在链式队列中实现空闲单元链表的机制。",
+  "desc": "链式队列采用带头尾指针的单链表实现，入队在表尾插入、出队在表头删除。特点是长度可变，不需预先分配空间。可配合空闲单元链表：将数据链表与空闲单元链表合并为一个循环链表，用front指向队列首元素、freeN指向空闲链表首结点，减少malloc/free调用。",
+  "seq": 152,
+  "page": 117
+ },
+ {
+  "excel_row": 202,
+  "chapter": "栈和队列",
+  "requirement": "简单应用",
+  "summary": "队列 ",
+  "knowledge": "循环队列和链式队列基本操作的实现。 ",
+  "desc": "循环队列实现：用数组element[maxSize]存储，front和rear标记两端。入队：先判满，element[rear]=x，rear=(rear+1)%maxSize；出队：先判空，x=element[front]，front=(front+1)%maxSize。链式队列实现：用单链表，front和rear指向首尾结点。入队在表尾插入，出队在表头删除并释放空间。",
+  "seq": 153,
+  "page": 113
+ },
+ {
+  "excel_row": 203,
+  "chapter": "栈和队列",
+  "requirement": "综合应用",
+  "summary": "队列 ",
+  "knowledge": "设计算法解决队列的应用问题。 ",
+  "desc": "队列的应用问题设计：利用队列的先进先出特性解决实际问题。常见应用包括：杨辉三角输出（用循环队列保存上一行数据，出队同时计算下一行并入队）、操作系统中的作业调度、消息缓冲等。核心思路是利用队列按到达顺序处理数据。",
+  "seq": 154,
+  "page": 134
+ },
+ {
+  "excel_row": 204,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "双端队列",
+  "desc": "双端队列（deque）是在队头和队尾两端均能够进行入队和出队操作的队列。两端不再分队头及队尾，可称为左端和右端。双端队列既有与队列一样的操作（一端入队另一端出队），又有与栈一样的操作（同一端入队和出队）。",
+  "seq": 155,
+  "page": 118
+ },
+ {
+  "excel_row": 205,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "对底栈",
+  "desc": "对底栈是从栈的角度看待双端队列的称谓。双端队列的两端都可以进行入栈和出栈操作，当将同一端的入队和出队看作一对操作时，双端队列就相当于一个栈。但与普通栈不同，双端队列的栈底是通的，从一个栈进入的元素可以从另一个栈中出栈。",
+  "seq": 156,
+  "page": 118
+ },
+ {
+  "excel_row": 206,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "输入受限的双端队列",
+  "desc": "输入受限的双端队列是指对双端队列两端操作加以限制后的形式：其中一端仅允许入队操作，另一端既允许入队又允许出队操作。限制的一端只能输入不能输出。",
+  "seq": 157,
+  "page": 118
+ },
+ {
+  "excel_row": 207,
+  "chapter": "栈和队列",
+  "requirement": "识记",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "输出受限的双端队列。 ",
+  "desc": "输出受限的双端队列是指对双端队列两端操作加以限制后的形式：其中一端仅允许出队操作，另一端既允许入队又允许出队操作。限制的一端只能输出不能输入。",
+  "seq": 158,
+  "page": 118
+ },
+ {
+  "excel_row": 208,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "双端队列操作的机制",
+  "desc": "双端队列的操作机制：两端均可进行入队和出队操作。当一端入队另一端出队时，行为同普通队列（先进先出）；当同一端入队和出队时，行为同栈（后进先出）。双端队列结合了栈和队列的操作特点。",
+  "seq": 159,
+  "page": 118
+ },
+ {
+  "excel_row": 209,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "双端队列空",
+  "desc": "双端队列为空的条件：当双端队列中没有任何元素时为空。对于循环实现的双端队列，空队列时两端指针指向同一位置（如end1==end2），类似于循环队列的front==rear。",
+  "seq": 160,
+  "page": 119
+ },
+ {
+  "excel_row": 210,
+  "chapter": "栈和队列",
+  "requirement": "领会",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "满的含义及判定。 ",
+  "desc": "双端队列满的含义：数组中已无空闲单元。对于循环双端队列，队列最多容纳M-1个元素，队满条件为end1==(end2+1) mod M。队空条件为end1==end2。两种情形通过指针关系判断。",
+  "seq": 161,
+  "page": 119
+ },
+ {
+  "excel_row": 211,
+  "chapter": "栈和队列",
+  "requirement": "简单应用",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "双端队列操作的实现。 ",
+  "desc": "双端队列操作的实现：可基于循环数组实现，使用两个指针end1和end2标记两端。两端均可进行入队和出队，通过模运算实现下标循环。队空判定end1==end2，队满判定(end2+1)%M==end1。也可基于链式结构实现。",
+  "seq": 162,
+  "page": 119
+ },
+ {
+  "excel_row": 212,
+  "chapter": "栈和队列",
+  "requirement": "综合应用",
+  "summary": "进一步讨论栈与队列 ",
+  "knowledge": "设计算法解决双端队列的应用问题。",
+  "desc": "双端队列应用问题设计：利用双端队列两端操作的灵活性解决问题。可分析输入受限和输出受限双端队列能得到和不能得到的输出序列。核心方法是模拟两端的入队出队过程，判断目标序列是否可达。",
+  "seq": 163,
+  "page": 119
+ },
+ {
+  "excel_row": 213,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "栈的概念及合理的出栈序列",
+  "desc": "本章重点：栈的概念是限定仅在一端进行插入和删除的线性表，具有后进先出（LIFO）特性。合理出栈序列的判断是重点内容：给定入栈序列，根据栈的操作规则模拟入栈出栈过程，判断目标序列是否可达。合理出栈序列个数为卡特兰数。",
+  "seq": 164,
+  "page": 136
+ },
+ {
+  "excel_row": 214,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "顺序栈",
+  "desc": "本章重点：顺序栈用一维数组保存栈元素，栈底在数组下标0处，top标记栈顶位置。入栈时element[top++]=x，出栈时x=element[--top]。判空条件top==0，判满条件top==maxSize。所有操作时间复杂度均为O(1)。",
+  "seq": 165,
+  "page": 136
+ },
+ {
+  "excel_row": 215,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "链式栈基本操作的实现",
+  "desc": "本章重点：链式栈用单链表保存栈元素，头指针为栈顶。入栈时新建结点插入表头，出栈时删除头结点并释放空间。初始化时头指针为NULL，判空条件头指针==NULL。所有操作时间复杂度均为O(1)。",
+  "seq": 166,
+  "page": 136
+ },
+ {
+  "excel_row": 216,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "循环队列的概念及基本操作的实现",
+  "desc": "本章重点：循环队列用数组循环存储元素，front和rear标记两端。入队rear=(rear+1)%n，出队front=(front+1)%n。基本操作包括initQueue、enqueue、dequeue、isEmpty、isFull、length等，时间复杂度均为O(1)。",
+  "seq": 167,
+  "page": 136
+ },
+ {
+  "excel_row": 217,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "循环队列空",
+  "desc": "本章重点：循环队列为空的判定条件是front==rear，即队头指针和队尾指针相等。初始空队列时front=rear=0。当队列中元素全部出队后也会出现此状态。",
+  "seq": 168,
+  "page": 136
+ },
+ {
+  "excel_row": 218,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "满的判定",
+  "desc": "本章重点：循环队列满的判定条件是(rear+1)%n==front，即通过预留一个空位置来区分空与满。也可增设变量记录队列长度或操作标记来区分，避免浪费一个存储单元。",
+  "seq": 169,
+  "page": 136
+ },
+ {
+  "excel_row": 219,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "链式队列基本操作的实现",
+  "desc": "本章重点：链式队列用带头尾指针的单链表实现。入队在表尾插入新结点，出队在表头删除结点。第一个元素入队时需同时修改front和rear，最后一个元素出队后两指针均置为NULL。操作时间复杂度为O(1)。",
+  "seq": 170,
+  "page": 136
+ },
+ {
+  "excel_row": 220,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "带空闲单元链表的链式队列的实现",
+  "desc": "本章重点：带空闲单元链表的链式队列将数据链表与空闲单元链表合并为一个循环链表。用front指向队列首元素，freeN指向空闲链表首结点。入队时优先从空闲链表取结点，空闲链表空时才分配新结点；出队时结点归还到空闲链表。",
+  "seq": 171,
+  "page": 117
+ },
+ {
+  "excel_row": 221,
+  "chapter": "栈和队列",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "双端队列的实现。 ",
+  "desc": "本章重点：双端队列在两端均可进行入队出队操作。可基于循环数组实现，用两个指针标记两端。队空end1==end2，队满(end2+1)%M==end1。也可对操作加以限制形成输入受限或输出受限的双端队列。",
+  "seq": 172,
+  "page": 118
+ },
+ {
+  "excel_row": 222,
+  "chapter": "栈和队列",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "设计算法解决与栈和队列相关的应用问题。",
+  "desc": "本章难点：设计算法解决与栈和队列相关的应用问题是本章难点。需要灵活运用栈的后进先出和队列的先进先出特性，包括括号匹配、表达式转换与求值、栈与队列相互模拟、杨辉三角输出等实际问题的算法设计与实现。",
+  "seq": 173,
+  "page": 136
+ },
+ {
+  "excel_row": 223,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 224,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 225,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 226,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 227,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 228,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 229,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 230,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 231,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 232,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 233,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 234,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 235,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 236,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 237,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 238,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "多维数组",
+  "desc": "多维数组是指数组元素本身又是数组的数组，一般将n(n≥2)维数组看作n-1维数组的数组。例如二维数组就是以一维数组为元素的线性表。多维数组在系统内部都对应一个隐含的一维数组，所以多维数组也是一种线性表。",
+  "seq": 174,
+  "page": 141
+ },
+ {
+  "excel_row": 239,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "数组首地址",
+  "desc": "数组首地址是指数组第一个元素（各维下标均为0的元素）在内存中的存储起始地址。对于按行主序存储的数组，LOC(a[0][0])即数组首地址，其他元素地址=首地址+映射值×每个元素占用单元数。",
+  "seq": 175,
+  "page": 143
+ },
+ {
+  "excel_row": 240,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "数组下标",
+  "desc": "数组下标是访问数组元素的索引，也称为index。数组的每个元素都是形如(index, value)的二元对，index是数组下标，value是对应下标的数值。任何两个元素的index值都不相同。在C语言中数组下标从0开始。",
+  "seq": 176,
+  "page": 141
+ },
+ {
+  "excel_row": 241,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "行主序",
+  "desc": "行主序（按行优先方式）是将二维数组按行优先进行连续编号，先排第一行，紧随其后排第二行，依此类推。映射函数map(i1,i2)=i1×u2+i2，其中u2是数组的列数。包括C语言在内的大多数程序设计语言均采用行主序的实现模式。",
+  "seq": 177,
+  "page": 143
+ },
+ {
+  "excel_row": 242,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "列主序",
+  "desc": "列主序（按列优先方式）是将二维数组按列优先进行连续编号，从第一列开始，从上到下进行连续编号，直到最后一列。映射函数map(i1,i2)=i2×u1+i1，其中u1是数组的行数。",
+  "seq": 178,
+  "page": 144
+ },
+ {
+  "excel_row": 243,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "地址映射函数",
+  "desc": "地址映射函数是将数组下标映射为存储位置偏移量的函数。行主序下二维数组map(i1,i2)=i1×u2+i2；三维数组map(i1,i2,i3)=i1×u2×u3+i2×u3+i3。元素存储地址=数组首地址+map(...)×每个元素占用字节数。",
+  "seq": 179,
+  "page": 143
+ },
+ {
+  "excel_row": 244,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "三元组",
+  "desc": "三元组是稀疏矩阵中非0元素的存储形式，由(i,j,v)组成，其中i表示非0元素所在的行号，j表示列号，v表示非0元素的值。存储非0元素时必须将其所在的行号和列号一起存储起来。",
+  "seq": 180,
+  "page": 147
+ },
+ {
+  "excel_row": 245,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "三元组表。 ",
+  "desc": "三元组表是稀疏矩阵中所有非0元素的三元组组成的线性表，用一维数组保存。通常按行主序次序排列，即先按行号大小排列，同一行再按列号大小排列。同时还需保存矩阵的行数、列数和非0元素个数。",
+  "seq": 181,
+  "page": 147
+ },
+ {
+  "excel_row": 246,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "数 组 ",
+  "knowledge": "多维数组地址计算方法",
+  "desc": "多维数组地址计算通过映射函数将下标映射为偏移量。行主序：map(i1,i2,...,ik)=i1×u2×...×uk+i2×u3×...×uk+...+ik。元素存储地址=数组首地址+map(...)×每个元素占用单元数。三维数组map(i1,i2,i3)=i1×u2×u3+i2×u3+i3。",
+  "seq": 182,
+  "page": 144
+ },
+ {
+  "excel_row": 247,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "数 组 ",
+  "knowledge": "特殊矩阵的定义",
+  "desc": "特殊矩阵是指具有特殊形式的矩阵，主要包括：对称矩阵（aij=aji，上下三角对称相等）、上三角矩阵（i>j时aij=0）、下三角矩阵（i<j时aij=0）。它们都是方阵（行数等于列数），可以只保存约一半元素以节省存储空间。",
+  "seq": 183,
+  "page": 145
+ },
+ {
+  "excel_row": 248,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "数 组 ",
+  "knowledge": "特点及对应的压缩存储方法。 ",
+  "desc": "对称矩阵：上下三角对称，只需保存下三角（含对角线）约n(n+1)/2个元素；上/下三角矩阵：仅保存非0元素部分。压缩存储用一维数组按行主序保存，映射函数map(i,j)=i(i+1)/2+j（下三角，i≥j）。对称矩阵需根据i,j大小关系互换后计算。",
+  "seq": 184,
+  "page": 145
+ },
+ {
+  "excel_row": 249,
+  "chapter": "数 组 ",
+  "requirement": "简单应用",
+  "summary": "数 组 ",
+  "knowledge": "构造地址映射函数",
+  "desc": "根据数组维数、各维大小u1,u2,...,uk和存储方式构造映射函数。行主序：二维map(i1,i2)=i1×u2+i2；三维map(i1,i2,i3)=i1×u2×u3+i2×u3+i3。特殊矩阵需根据压缩存储规则（如对称、三角）构造行列值到一维数组下标的映射。",
+  "seq": 185,
+  "page": 143
+ },
+ {
+  "excel_row": 250,
+  "chapter": "数 组 ",
+  "requirement": "简单应用",
+  "summary": "数 组 ",
+  "knowledge": "访问采用压缩方式存储的数组中的元素。 ",
+  "desc": "访问压缩存储的特殊矩阵元素时，需先判断行列值的合理性。对于对称矩阵，根据i和j大小决定存储位置：若i≥j则按下三角映射，若i<j则互换i,j后映射。当i<j时应返回元素值0（非三角矩阵的0元素）。再通过映射函数计算元素在一维数组中的位置。",
+  "seq": 186,
+  "page": 146
+ },
+ {
+  "excel_row": 251,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "数 组 ",
+  "knowledge": "综合应用：",
+  "desc": "综合运用数组存储和地址计算知识，解决多维数组地址计算、特殊矩阵压缩存储及地址映射、稀疏矩阵三元组表示与转置、迷宫求解等问题。需能够根据具体要求推导地址计算公式，而不仅仅是记忆公式。",
+  "seq": 187,
+  "page": 143
+ },
+ {
+  "excel_row": 252,
+  "chapter": "数 组 ",
+  "requirement": "综合应用",
+  "summary": "数 组 ",
+  "knowledge": "实现以数组作为存储结构的简单算法。 ",
+  "desc": "以数组为存储结构实现简单算法。如迷宫问题：用二维数组表示迷宫（0表示通路，1表示墙），通过栈记录走过的位置和方向，采用一步一探查加回溯的方法搜索通路。稀疏矩阵转置：用计数数组统计各列元素个数，辅助快速转置。",
+  "seq": 188,
+  "page": 150
+ },
+ {
+  "excel_row": 253,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "广义表 ",
+  "knowledge": "广义表",
+  "desc": "广义表是线性表的推广，也称为列表。它是由n(n≥0)个表元素组成的有限序列，记为LS=(a0,a1,...,an-1)。与线性表不同，广义表中元素的类型可以不完全一致，既可以是单个元素（原子），也可以是广义表（子表）。原子不可再分。",
+  "seq": 189,
+  "page": 153
+ },
+ {
+  "excel_row": 254,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "广义表 ",
+  "knowledge": "表头",
+  "desc": "当广义表LS非空时，第一个元素a0称为LS的表头（Head）。表头可以是原子，也可以是子表。空表没有定义表头。",
+  "seq": 190,
+  "page": 153
+ },
+ {
+  "excel_row": 255,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "广义表 ",
+  "knowledge": "表尾",
+  "desc": "当广义表LS非空时，其余元素组成的表(a1,a2,...,an-1)称为LS的表尾（Tail）。表尾一定是一个广义表。空表没有定义表尾。",
+  "seq": 191,
+  "page": 153
+ },
+ {
+  "excel_row": 256,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "广义表 ",
+  "knowledge": "原子",
+  "desc": "原子是广义表中不可再分的单个元素。在广义表中，元素既可以是原子（不可再分），也可以是子表（本身也是广义表）。习惯上用小写字母表示原子。",
+  "seq": 192,
+  "page": 153
+ },
+ {
+  "excel_row": 257,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "广义表 ",
+  "knowledge": "子表",
+  "desc": "子表是指广义表中作为元素出现的另一个广义表。当广义表的某个元素本身也是广义表时，该元素称为子表。习惯上用大写字母表示广义表的名称（子表名）。",
+  "seq": 193,
+  "page": 153
+ },
+ {
+  "excel_row": 258,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "广义表 ",
+  "knowledge": "广义表的长度",
+  "desc": "广义表的长度是指表中元素的个数n。当n=0时称为空表，长度为0。计算长度时，每个元素（无论是原子还是子表）只计为一个元素。",
+  "seq": 194,
+  "page": 153
+ },
+ {
+  "excel_row": 259,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "广义表 ",
+  "knowledge": "广义表的深度。 ",
+  "desc": "广义表中括号的最大嵌套层数定义为表的深度。空表的深度为1，原子的深度为0。非空广义表的深度等于各子表深度的最大值加1。递归表（如G=(d,G)）的深度为无穷大。",
+  "seq": 195,
+  "page": 153
+ },
+ {
+  "excel_row": 260,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "广义表 ",
+  "knowledge": "空表",
+  "desc": "空表是指长度为0的广义表，记为()。空表没有表头和表尾。空表的深度为1。",
+  "seq": 196,
+  "page": 153
+ },
+ {
+  "excel_row": 261,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "广义表 ",
+  "knowledge": "递归表的深度。 ",
+  "desc": "递归表是指包含自身作为元素的广义表，如G=(d,G)。递归表展开后为无穷嵌套形式G=(d,(d,(d,...)))，其深度为无穷大。",
+  "seq": 197,
+  "page": 154
+ },
+ {
+  "excel_row": 262,
+  "chapter": "数 组 ",
+  "requirement": "简单应用",
+  "summary": "数 组 ",
+  "knowledge": "广义表的基本操作。 ",
+  "desc": "广义表的基本操作包括：取表头Head(LS)（返回第一个元素）、取表尾Tail(LS)（返回除第一个元素外剩余元素组成的表）。此外还可以进行建表、求长度、求深度、复制等操作。空表不能求表头和表尾。",
+  "seq": 198,
+  "page": 153
+ },
+ {
+  "excel_row": 263,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "串",
+  "knowledge": "串",
+  "desc": "串（String）也称为字符串，是由零个或多个字符组成的有限序列，记为S=\"a0a1...an-1\"(n≥0)。串中的每个符号可以是字母、数字或其他字符，位置从0开始。C语言中用字符数组表示串，以'\\0'作为结束标志。",
+  "seq": 199,
+  "page": 154
+ },
+ {
+  "excel_row": 264,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "串",
+  "knowledge": "子串",
+  "desc": "串S中任意个连续字符组成的子序列称为串S的子串，相应地，S称为主串。子串在主串中首次出现时，子串首字符对应于主串的符号位置，定义为子串在主串中的位置。空串是任意串的子串，任意串是其自身的子串。",
+  "seq": 200,
+  "page": 154
+ },
+ {
+  "excel_row": 265,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "串",
+  "knowledge": "空串",
+  "desc": "空串是指长度为0的串，即不含任何字符的串。注意空串\"\"与空白串\" \"不同：空串长度为0，空白串长度为1。",
+  "seq": 201,
+  "page": 154
+ },
+ {
+  "excel_row": 266,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "串",
+  "knowledge": "串的长度",
+  "desc": "串的长度是指串中字符的个数n。n=0时称为空串。C语言中用strlen函数计算串长度，长度不包括结束符'\\0'。",
+  "seq": 202,
+  "page": 154
+ },
+ {
+  "excel_row": 267,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "串",
+  "knowledge": "主串",
+  "desc": "主串是指包含子串的串。在串的模式匹配中，主串又称为目标，是被搜索的串。子串在主串中首次出现时，子串首字符对应主串的位置即为子串在主串中的位置。",
+  "seq": 203,
+  "page": 154
+ },
+ {
+  "excel_row": 268,
+  "chapter": "数 组 ",
+  "requirement": "识记",
+  "summary": "串",
+  "knowledge": "模式串。 ",
+  "desc": "在串的模式匹配中，子串又称为模式或模式串，主串又称为目标。模式匹配就是在主串中寻找模式串首次出现位置的过程。",
+  "seq": 204,
+  "page": 155
+ },
+ {
+  "excel_row": 269,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "串",
+  "knowledge": "比较次数",
+  "desc": "比较次数是模式匹配过程中主串与模式串字符之间进行比较的总次数。BF算法最坏情况下总比较次数为(n-m+1)×m；KMP算法最坏情况下总比较次数为n。比较次数是衡量模式匹配算法效率的重要指标。",
+  "seq": 205,
+  "page": 156
+ },
+ {
+  "excel_row": 270,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "串",
+  "knowledge": "串模式匹配的含义",
+  "desc": "串的模式匹配是指在主串（目标串）中寻找子串（模式串）第一个字符在主串中的位置的过程。从主串与模式串首字符开始依次比较，匹配成功返回位置，匹配失败则模式串右移继续比较，直到完全匹配或到达主串末尾。",
+  "seq": 206,
+  "page": 155
+ },
+ {
+  "excel_row": 271,
+  "chapter": "数 组 ",
+  "requirement": "领会",
+  "summary": "串",
+  "knowledge": "特征向量。 ",
+  "desc": "特征向量next是KMP算法中的关键数组，用于确定失配时模式串右移的位数。next(j)仅依赖于模式串前j个字符的构成，与主串无关。next(0)=-1，next(1)=0。对于j>1，next(j)等于模式串前j个字符中最长相等前缀和后缀的长度加1。",
+  "seq": 207,
+  "page": 157
+ },
+ {
+  "excel_row": 272,
+  "chapter": "数 组 ",
+  "requirement": "简单应用",
+  "summary": "串",
+  "knowledge": "串的基本操作",
+  "desc": "串的基本操作包括：求串长度（strlen）、串复制（strcpy）、串连接（strcat）、串比较（strcmp）、求子串、串定位（模式匹配find/index）等。C语言提供了丰富的字符串操作函数。",
+  "seq": 208,
+  "page": 154
+ },
+ {
+  "excel_row": 273,
+  "chapter": "数 组 ",
+  "requirement": "简单应用",
+  "summary": "串",
+  "knowledge": "BF 算法",
+  "desc": "BF算法（朴素模式匹配算法）分别从主串与模式串各自首字符开始依次比较。如果相等则两串各自后移继续比较下一对；如果不等则模式串整体后移一个位置，从模式串首字符与主串下一个字符重新比较。最坏时间复杂度为O(n×m)。",
+  "seq": 209,
+  "page": 155
+ },
+ {
+  "excel_row": 274,
+  "chapter": "数 组 ",
+  "requirement": "简单应用",
+  "summary": "串",
+  "knowledge": "串的特征向量计算",
+  "desc": "特征向量next值采用递推方式计算：next(0)=-1，next(1)=0。对位置j，查找模式串前j个字符组成的子串的最长相等前缀和后缀，next(j)=该长度+1。递推公式：当p[j]=p[k]时next[j]=k+1，否则令k=next[k]回退直到满足条件或k=-1。",
+  "seq": 210,
+  "page": 157
+ },
+ {
+  "excel_row": 275,
+  "chapter": "数 组 ",
+  "requirement": "简单应用",
+  "summary": "串",
+  "knowledge": "KMP算法。 ",
+  "desc": "KMP算法在BF基础上改进，当失配时根据特征向量next的值确定模式串右移位数，主串指针不回溯。若失配位置j>0，则下一趟从模式串next(j)位置与主串当前位置比较；若j=0则主串指针右移一位。时间复杂度为O(n+m)。",
+  "seq": 211,
+  "page": 156
+ },
+ {
+  "excel_row": 276,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "数组行主序",
+  "desc": "行主序是将多维数组按行优先连续存储的方式，先存第一行再存第二行。二维数组映射map(i1,i2)=i1×u2+i2。C语言采用行主序。元素存储地址=首地址+映射值×每个元素占用单元数。",
+  "seq": 212,
+  "page": 143
+ },
+ {
+  "excel_row": 277,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "列主序的存储方法",
+  "desc": "列主序是将多维数组按列优先连续存储的方式，先从第一列开始从上到下编号，再排第二列。二维数组映射map(i1,i2)=i2×u1+i1，其中u1是行数。",
+  "seq": 213,
+  "page": 144
+ },
+ {
+  "excel_row": 278,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "多维数组元素存储地址计算",
+  "desc": "多维数组元素存储地址通过映射函数计算：行主序下LOC(a[i1][i2][...][ik])=LOC(a[0][0]...[0])+map(i1,...,ik)×d。二维数组map(i,j)=i×列数+j；三维数组map(i1,i2,i3)=i1×u2×u3+i2×u3+i3。",
+  "seq": 214,
+  "page": 144
+ },
+ {
+  "excel_row": 279,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "特殊矩阵 压缩存储方法",
+  "desc": "对称矩阵和三角矩阵只存储约一半元素。下三角矩阵按行主序存储映射map(i,j)=i(i+1)/2+j。对称矩阵根据i,j大小关系互换后映射。稀疏矩阵用三元组(i,j,v)形式存储非0元素，组成三元组表。",
+  "seq": 215,
+  "page": 145
+ },
+ {
+  "excel_row": 280,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "实现以数组作为存储结构的简单算法",
+  "desc": "以数组为存储结构实现迷宫求解等算法：用二维数组表示迷宫（0为通路1为墙），通过栈记录路径和方向，采用回溯法搜索从入口到出口的可行路径。用move矩阵定义4个探查方向。",
+  "seq": 216,
+  "page": 150
+ },
+ {
+  "excel_row": 281,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "BF算法",
+  "desc": "BF算法是朴素模式匹配算法，主串和模式串都从首字符开始逐字符比较，失配后模式串整体后移一位从首字符重新比较。算法简单但效率不高，最坏时间复杂度O(n×m)。",
+  "seq": 217,
+  "page": 155
+ },
+ {
+  "excel_row": 282,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "特征向量计算",
+  "desc": "特征向量next反映模式串前缀与后缀的最长相等长度。用递推方法计算：next(0)=-1；对j>0，在满足p0...pk-1=pj-k...pj-1的条件下找最大k，next(j)=k+1。计算时若不匹配则用k=next[k]回退。",
+  "seq": 218,
+  "page": 157
+ },
+ {
+  "excel_row": 283,
+  "chapter": "数 组 ",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "KMP算法。 ",
+  "desc": "KMP算法利用已匹配的前缀信息，失配时根据next值确定模式串右移位数，主串指针不回溯。next(j)>0时模式串从next(j)位置开始与主串当前位置比较；next(j)=0时模式串回到首位置，主串前进一步。时间复杂度O(n+m)。",
+  "seq": 219,
+  "page": 156
+ },
+ {
+  "excel_row": 284,
+  "chapter": "数 组 ",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "特殊矩阵存储地址计算",
+  "desc": "压缩存储后需根据行列关系判断元素存储位置。下三角矩阵map(i,j)=i(i+1)/2+j（i≥j）；对称矩阵需比较i,j大小，i<j时互换i,j后映射。计算前需判断行列值合理性，不合理位置返回0。",
+  "seq": 220,
+  "page": 146
+ },
+ {
+  "excel_row": 285,
+  "chapter": "数 组 ",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "实现以数组作为存储结构的简单算法",
+  "desc": "综合运用数组实现如迷宫回溯搜索等算法，需处理方向矩阵定义、栈操作（入栈记录路径、出栈回溯）、边界判断（扩大迷宫一圈设围墙）和标志矩阵（标记已走位置）等。",
+  "seq": 221,
+  "page": 150
+ },
+ {
+  "excel_row": 286,
+  "chapter": "数 组 ",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "特征向量计算",
+  "desc": "特征向量计算的难点在于理解前缀和后缀概念及递推回退机制。改进的next值：当失配位置字符与要移到的目标位置字符相等时，使用目标位置的next值替代，省略中间不必要的比较趟数。",
+  "seq": 222,
+  "page": 157
+ },
+ {
+  "excel_row": 287,
+  "chapter": "数 组 ",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "KMP算法。",
+  "desc": "KMP算法难点在于理解特征向量的含义和失配后模式串右移原理。主串不回溯，仅根据next值移动模式串。需掌握next值计算方法和KMP匹配过程中每趟的指针变化规律。",
+  "seq": 223,
+  "page": 156
+ },
+ {
+  "excel_row": 288,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "树 ",
+  "desc": "一棵树（tree）是由一个或一个以上的结点组成的有限集合，其中有一个特定的结点称为根结点。除根结点外，其余结点可划分为m个不相交的子集，每个子集都是树（子树）。树是一种层次结构、非线性结构。",
+  "seq": 224,
+  "page": 164
+ },
+ {
+  "excel_row": 289,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "子树",
+  "desc": "子树（subtree）是指树中根结点的各棵子树。去掉根结点后，其余结点分成的若干不相交的集合各自构成一棵树，称为根结点的子树。子树本身也是一棵树，可以继续划分为更小的子树。",
+  "seq": 225,
+  "page": 164
+ },
+ {
+  "excel_row": 290,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "结点 ",
+  "desc": "结点是树中的基本元素，用来表示树中的数据项。树由结点组成，结点之间通过边连接。每个结点包含数据信息以及与其他结点的关系（父子关系）。",
+  "seq": 226,
+  "page": 164
+ },
+ {
+  "excel_row": 291,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "边 ",
+  "desc": "边是连接树中结点的线段，也称为分支。边连接父结点与子结点。包含n个结点的树有且仅有n-1条边，这是树的重要特性。",
+  "seq": 227,
+  "page": 164
+ },
+ {
+  "excel_row": 292,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "根结点",
+  "desc": "根结点是一棵树中特定的、没有父结点的结点。一棵树有且仅有一个根结点，它是树的起点，位于树的最顶层（0层）。",
+  "seq": 228,
+  "page": 164
+ },
+ {
+  "excel_row": 293,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "父结点",
+  "desc": "父结点（双亲结点）是指某结点的直接上层结点。若子树T_i的根是R的子结点，则R称为T_i根结点的父结点。除根结点外，每个结点有且仅有一个父结点。",
+  "seq": 229,
+  "page": 164
+ },
+ {
+  "excel_row": 294,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "兄弟结点",
+  "desc": "兄弟结点是指具有同一父结点的各个结点之间互称为兄弟结点。例如结点B、C、D具有同一父结点A，则它们互为兄弟结点。",
+  "seq": 230,
+  "page": 165
+ },
+ {
+  "excel_row": 295,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "祖先结点",
+  "desc": "祖先结点是指从某一结点到根结点之间所经过的所有结点（包括根结点）。例如结点H的祖先结点为其父结点D及根结点A。",
+  "seq": 231,
+  "page": 165
+ },
+ {
+  "excel_row": 296,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "后代结点",
+  "desc": "后代结点（子孙结点）是指以某结点为根的子树中的所有结点。例如结点D的后代结点为H、I、J。",
+  "seq": 232,
+  "page": 165
+ },
+ {
+  "excel_row": 297,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "子结点",
+  "desc": "子结点（孩子结点/子女结点）是指某结点的直接下层结点。若子集T_i的根是R的子结点，则称该根为R的子结点。每个结点的子结点个数称为该结点的度。",
+  "seq": 233,
+  "page": 164
+ },
+ {
+  "excel_row": 298,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "层 ",
+  "desc": "层是树中结点所处的层次位置。规定根结点在0层，根的子结点在1层，依此类推。若某结点位于i层，则它的子结点位于i+1层。",
+  "seq": 234,
+  "page": 166
+ },
+ {
+  "excel_row": 299,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "深度",
+  "desc": "深度是树中结点的最大层数。设根为0层，则树的深度等于树中结点所在的最大层号。",
+  "seq": 235,
+  "page": 166
+ },
+ {
+  "excel_row": 300,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "高度",
+  "desc": "高度是树的深度加1。即树的高度=最大层数+1。例如最大层数为2的树，深度为2，高度为3。",
+  "seq": 236,
+  "page": 166
+ },
+ {
+  "excel_row": 301,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "结点的度",
+  "desc": "结点的度是指树中每个结点拥有的子树个数，实际上等于其子结点的个数。度为0的结点是叶结点，度不为0的结点是分支结点。",
+  "seq": 237,
+  "page": 165
+ },
+ {
+  "excel_row": 302,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "树的度",
+  "desc": "树的度是指树中所有结点的度的最大值。它表示这棵树中结点最多拥有的子结点个数。",
+  "seq": 238,
+  "page": 165
+ },
+ {
+  "excel_row": 303,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "路径",
+  "desc": "路径是指在树中从某一结点出发到达另一结点所经过的边组成的序列。通常以组成路径的结点序列来表示，如(A,B,F)表示从A到B到F的路径。",
+  "seq": 239,
+  "page": 166
+ },
+ {
+  "excel_row": 304,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "路径长度",
+  "desc": "路径长度是指一条路径中所包含的边的条数。例如路径(A,B,F)中经过了两条边，路径长度为2。",
+  "seq": 240,
+  "page": 166
+ },
+ {
+  "excel_row": 305,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "叶结点",
+  "desc": "叶结点（终端结点）是指度为0的结点，即没有子结点的结点。在树中，叶结点位于最底层。",
+  "seq": 241,
+  "page": 165
+ },
+ {
+  "excel_row": 306,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "分支结点",
+  "desc": "分支结点是指度不为0的结点，即拥有至少一个子结点的结点。分支结点位于树的中间各层，不包括根结点以外的上层结点中无子结点的情况。",
+  "seq": 242,
+  "page": 165
+ },
+ {
+  "excel_row": 307,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "有序树",
+  "desc": "有序树是指树中每个结点的子结点之间规定了次序的树。在有序树中，各子结点有第一、第二等先后之分。若未规定次序则称为无序树。",
+  "seq": 243,
+  "page": 165
+ },
+ {
+  "excel_row": 308,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树的基本概念",
+  "knowledge": "森林。 ",
+  "desc": "森林是由m（m≥0）棵互不相交的树构成的集合。对树中每个结点来说，其子树的集合就是一个森林。将一棵树的根去掉后，其各棵子树就构成一个森林。",
+  "seq": 244,
+  "page": 166
+ },
+ {
+  "excel_row": 309,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树的基本概念",
+  "knowledge": "层次结构的含义",
+  "desc": "层次结构的含义是指树中结点之间的层次关系：除根结点外每个结点只有一个前驱（父结点），除叶结点外每个结点有若干个后继（子结点）。树与线性结构不同，前驱个数不超过1个，后继个数可以是任意个。",
+  "seq": 245,
+  "page": 165
+ },
+ {
+  "excel_row": 310,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树的基本概念",
+  "knowledge": "层次结构中的前驱和后继",
+  "desc": "在树的层次结构中，将某结点的父结点看作它的前驱，将其子结点看作它的后继。除根结点外每个结点仅有一个前驱结点；除叶结点外每个结点有若干个后继结点。根的前驱个数为0，叶结点的后继个数为0。",
+  "seq": 246,
+  "page": 166
+ },
+ {
+  "excel_row": 311,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树的基本概念",
+  "knowledge": "树的递归定义",
+  "desc": "树的递归定义：一棵树由一个或以上结点组成有限集，有一个特定结点为根。除根外，其余结点划分为m个不相交子集，每个子集都是一棵树（子树）。这个定义是递归的，子树还可以继续划分为更小的子树，直到只含一个结点为止。",
+  "seq": 247,
+  "page": 164
+ },
+ {
+  "excel_row": 312,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树的基本概念",
+  "knowledge": "树的表示形式",
+  "desc": "树的表示形式主要有：图示法（用矩形框或圆表示结点，线段表示边）、广义表/集合表示法（如(A,(B,(E),(F)),...)）、缩进表示法（如文件目录树）。图示法最直观，广义表法接近树的定义。",
+  "seq": 248,
+  "page": 165
+ },
+ {
+  "excel_row": 313,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树的基本概念",
+  "knowledge": "树中结点个数与边数的关系。 ",
+  "desc": "树中结点个数与边数的关系：包含n个结点的树有且仅有n-1条边。这是因为除根结点外，每个结点都通过且仅通过一条边与其父结点相连。",
+  "seq": 249,
+  "page": 164
+ },
+ {
+  "excel_row": 314,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "树的基本概念",
+  "knowledge": "使用不同的方式表示树。 ",
+  "desc": "树的表示方法包括图示法（树形图）、广义表表示法（集合表示法）、缩进表示法（目录树形式）。可根据需要选择不同方式，图示法最直观，广义表法最严谨，缩进法适合文本显示。",
+  "seq": 250,
+  "page": 165
+ },
+ {
+  "excel_row": 315,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树",
+  "desc": "二叉树（binary tree）是结点的一个有限集合，该集合或者为空，或者由一个根结点以及两棵互不相交的、分别称为左子树和右子树的二叉树组成。二叉树中每个结点的子结点有左、右之分。",
+  "seq": 251,
+  "page": 166
+ },
+ {
+  "excel_row": 316,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "左子树",
+  "desc": "左子树是二叉树根结点的左分支所构成的子树。左子树本身也是一棵二叉树，可以为空。",
+  "seq": 252,
+  "page": 166
+ },
+ {
+  "excel_row": 317,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "右子树",
+  "desc": "右子树是二叉树根结点的右分支所构成的子树。右子树本身也是一棵二叉树，可以为空。",
+  "seq": 253,
+  "page": 166
+ },
+ {
+  "excel_row": 318,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "左子结点",
+  "desc": "左子结点是指二叉树中某结点的左子树的根结点。在二叉链表中，左子结点通过左指针（left）指向。",
+  "seq": 254,
+  "page": 166
+ },
+ {
+  "excel_row": 319,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "右手结点",
+  "desc": "右子结点是指二叉树中某结点的右子树的根结点。在二叉链表中，右子结点通过右指针（right）指向。",
+  "seq": 255,
+  "page": 166
+ },
+ {
+  "excel_row": 320,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "左指针",
+  "desc": "左指针是二叉链表结点中用于指向该结点左子结点的指针域。每个二叉链表结点包含数据域、左指针域和右指针域三个部分。",
+  "seq": 256,
+  "page": 171
+ },
+ {
+  "excel_row": 321,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "右指针",
+  "desc": "右指针是二叉链表结点中用于指向该结点右子结点的指针域。",
+  "seq": 257,
+  "page": 171
+ },
+ {
+  "excel_row": 322,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "满二叉树 ",
+  "desc": "满二叉树是指高度为h且有2^h-1个结点的二叉树。除叶结点外每个结点都有两个子结点，每一层的结点都是满的，不存在度为1的结点。",
+  "seq": 258,
+  "page": 167
+ },
+ {
+  "excel_row": 323,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "完全二叉树",
+  "desc": "完全二叉树是指对满二叉树按层自上而下、同层自左至右连续编号后，由编号为0到n-1的结点组成的二叉树。叶结点只出现在最下层或次下层，且最下层叶结点从左至右连续排列，最多有一个度为1的结点。",
+  "seq": 259,
+  "page": 167
+ },
+ {
+  "excel_row": 324,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉链表",
+  "desc": "二叉链表是二叉树的链式存储结构，每个结点包含数据域、左指针域和右指针域三个部分。左指针指向左子结点，右指针指向右子结点。n个结点的二叉链表共有2n个指针域，其中n-1个非空，n+1个为空。",
+  "seq": 260,
+  "page": 171
+ },
+ {
+  "excel_row": 325,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树的遍历。 ",
+  "desc": "二叉树的遍历是指依次访问二叉树中的每个结点一次且仅访问一次。常用遍历方式有先序遍历（根-左-右）、中序遍历（左-根-右）、后序遍历（左-右-根）和层序遍历。遍历是许多二叉树操作的基础。",
+  "seq": 261,
+  "page": 174
+ },
+ {
+  "excel_row": 326,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树的递归定义",
+  "desc": "二叉树的递归定义：二叉树是结点的有限集合，或为空，或由一个根结点加上两棵互不相交的左子树和右子树组成。左、右子树本身也是二叉树（可以为空）。这个递归定义是实现二叉树操作的基础。",
+  "seq": 262,
+  "page": 166
+ },
+ {
+  "excel_row": 327,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树的性质及证明",
+  "desc": "二叉树的四个重要性质：(1)第i层最多有2^i个结点；(2)高度为h的二叉树最多有2^h-1个结点；(3)叶结点数n0=度为2的结点数n2+1；(4)n个结点的完全二叉树高度为⌊log2(n)⌋+1。",
+  "seq": 263,
+  "page": 168
+ },
+ {
+  "excel_row": 328,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树的顺序存储方式",
+  "desc": "二叉树的顺序存储方式是使用一维数组，按完全二叉树的编号规则自上而下、自左至右将结点依次存入数组。对于完全二叉树既不浪费空间又便于操作；对于一般二叉树需在空位保存特殊标记，可能造成空间浪费。",
+  "seq": 264,
+  "page": 169
+ },
+ {
+  "excel_row": 329,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树顺序 存储时保存结点的下标位置",
+  "desc": "二叉树顺序存储时，编号为i的结点存储在数组下标i处。其左子结点下标为2i+1，右子结点下标为2i+2，父结点下标为⌊(i-1)/2⌋。通过下标计算可直接定位父子结点位置。",
+  "seq": 265,
+  "page": 169
+ },
+ {
+  "excel_row": 330,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树的链式存储方式",
+  "desc": "二叉树的链式存储方式（二叉链表）：每个结点包含数据域和左、右两个指针域。左指针指向左子结点，右指针指向右子结点。与顺序存储相比，链式存储更适合一般二叉树，不浪费空间。",
+  "seq": 266,
+  "page": 171
+ },
+ {
+  "excel_row": 331,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树的遍历过程",
+  "desc": "二叉树的遍历过程：先序遍历为先访问根、再遍历左子树、最后遍历右子树；中序遍历为先遍历左子树、再访问根、最后遍历右子树；后序遍历为先遍历左子树、再遍历右子树、最后访问根。三种遍历都是递归过程。",
+  "seq": 267,
+  "page": 174
+ },
+ {
+  "excel_row": 332,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树遍历时使 用的辅助数据结构",
+  "desc": "二叉树非递归遍历时使用栈作为辅助数据结构，保存待访问的结点信息。层序遍历使用队列作为辅助结构。后序遍历的非递归实现中，结点入栈两次、出栈两次，需要标记位区分第一次和第二次访问。",
+  "seq": 268,
+  "page": 180
+ },
+ {
+  "excel_row": 333,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "二叉树及其操作",
+  "knowledge": "表达式树与表达式的关系。 ",
+  "desc": "表达式树用二叉树表示表达式：分支结点存放运算符，叶结点存放操作数。对表达式树进行中序遍历得到中缀表达式，先序遍历得到前缀表达式，后序遍历得到后缀表达式。",
+  "seq": 269,
+  "page": 182
+ },
+ {
+  "excel_row": 334,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树顺序存储结构与链式存储结构下基本操作的实现",
+  "desc": "顺序存储下，利用数组下标关系实现基本操作（查找父子结点等）。链式存储下，通过递归实现创建二叉树、遍历等操作。两种方式各有优劣，顺序存储适合完全二叉树，链式存储更通用。",
+  "seq": 270,
+  "page": 172
+ },
+ {
+  "excel_row": 335,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "二叉树及其操作",
+  "knowledge": "二叉树遍历算法的 递归实现及非递归实现",
+  "desc": "递归实现：先序/中序/后序遍历分别按根左右/左根右/左右根的次序递归调用自身。非递归实现：用栈保存待访问结点，先序遍历保存右子树根，中序遍历保存根，后序遍历需入栈两次并带标记。",
+  "seq": 271,
+  "page": 176
+ },
+ {
+  "excel_row": 336,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "二叉树及其操作",
+  "knowledge": "根据二叉树的遍历序列还原二叉树",
+  "desc": "根据遍历序列还原二叉树：仅一种遍历序列不能唯一确定二叉树。已知先序+中序或后序+中序可以唯一确定二叉树。方法：先序第一个元素为根，在中序中找到根，划分左右子树，递归还原。先序+后序不能唯一确定。",
+  "seq": 272,
+  "page": 177
+ },
+ {
+  "excel_row": 337,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "二叉树及其操作",
+  "knowledge": "表达式树。 ",
+  "desc": "表达式树用二叉树表示算术表达式，分支结点存运算符，叶结点存操作数。中序遍历得到中缀表达式，先序遍历得到前缀（波兰式），后序遍历得到后缀（逆波兰式）。",
+  "seq": 273,
+  "page": 182
+ },
+ {
+  "excel_row": 338,
+  "chapter": "树与二叉树",
+  "requirement": "综合应用",
+  "summary": "二叉树及其操作",
+  "knowledge": "实现与二叉树相关的算法",
+  "desc": "基于二叉链表的递归算法设计：利用二叉树的递归结构，将问题分解为对左子树和右子树的子问题。如统计叶结点数（左子树叶数+右子树叶数）、求树高（max(左高,右高)+1）等。",
+  "seq": 274,
+  "page": 178
+ },
+ {
+  "excel_row": 339,
+  "chapter": "树与二叉树",
+  "requirement": "综合应用",
+  "summary": "二叉树及其操作",
+  "knowledge": "基于二叉树遍历思想实现相关算法来解决应用问题。 ",
+  "desc": "基于遍历思想设计算法：将遍历过程中对结点的访问操作替换为所需功能。如统计结点数、求叶结点数、求高度、交换左右子树等。核心是递归分解，基础情况为空树返回0。",
+  "seq": 275,
+  "page": 178
+ },
+ {
+  "excel_row": 340,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆 ",
+  "desc": "堆（heap）是一种数据序列，当任何一个分支结点的值都不大于（或不小于）其左、右子结点的值时称为堆。将其数组看作完全二叉树的顺序存储结构，父结点与子结点之间满足有序性。",
+  "seq": 276,
+  "page": 183
+ },
+ {
+  "excel_row": 341,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "堆及优先队列 ",
+  "knowledge": "最大堆",
+  "desc": "最大堆（大根堆）是指堆中任何一个分支结点的值都不小于其子结点的值，即父结点值≥子结点值。树的根结点值是全部结点中的最大值。",
+  "seq": 277,
+  "page": 184
+ },
+ {
+  "excel_row": 342,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "堆及优先队列 ",
+  "knowledge": "最小堆",
+  "desc": "最小堆（小根堆）是指堆中任何一个分支结点的值都不大于其子结点的值，即父结点值≤子结点值。树的根结点值是全部结点中的最小值。",
+  "seq": 278,
+  "page": 184
+ },
+ {
+  "excel_row": 343,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆顶",
+  "desc": "堆顶是堆（完全二叉树）的根结点，是堆中优先级最高的元素。最大堆的堆顶是最大值，最小堆的堆顶是最小值。",
+  "seq": 279,
+  "page": 184
+ },
+ {
+  "excel_row": 344,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "堆及优先队列 ",
+  "knowledge": "子堆",
+  "desc": "子堆是指堆中任意一棵子树也构成堆，且保持与原堆相同的性质。即最大堆的任何子树仍是最大堆，最小堆的任何子树仍是最小堆。这是堆的递归性质。",
+  "seq": 280,
+  "page": 184
+ },
+ {
+  "excel_row": 345,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "堆及优先队列 ",
+  "knowledge": "优先队列。 ",
+  "desc": "优先队列是保存具有优先值的各元素的结构，输出时选择最优先的元素输出。可以使用堆作为优先队列的存储结构：建最大堆，每次输出堆顶元素后重新整理堆。",
+  "seq": 281,
+  "page": 189
+ },
+ {
+  "excel_row": 346,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆的存储方式",
+  "desc": "堆使用一维数组存储元素，数组中下标i处元素的左子结点在2i+1处，右子结点在2i+2处，父结点在⌊(i-1)/2⌋处。同时保存当前堆中元素个数n。",
+  "seq": 282,
+  "page": 184
+ },
+ {
+  "excel_row": 347,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆与完全二叉树的关系",
+  "desc": "堆对应于一棵完全二叉树。将堆的数据序列依次存入一维数组，该数组就是完全二叉树的顺序存储结构。堆的定义中的大小关系对应完全二叉树中父子结点间的大小关系。",
+  "seq": 283,
+  "page": 184
+ },
+ {
+  "excel_row": 348,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆的有序性",
+  "desc": "堆的有序性仅在具有祖先和后代关系的元素间保持。任何结点到堆顶的路径上各结点之间有序：最小堆为降序，最大堆为升序。但同一层或不同层的兄弟结点之间未必有序。",
+  "seq": 284,
+  "page": 184
+ },
+ {
+  "excel_row": 349,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆的建立过程。 ",
+  "desc": "堆的建立过程：从最后一个分支结点开始，自下而上、从后向前逐个将以该结点为根的子树整理成堆（ShiftDown）。叶结点本身已是堆，只需处理分支结点。直到处理完根结点，整棵树即成为堆。",
+  "seq": 285,
+  "page": 186
+ },
+ {
+  "excel_row": 350,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆的建立",
+  "desc": "堆的建立：将n个元素依次放入数组构成完全二叉树，从最后一个分支结点（下标⌊(n-1)/2⌋）开始向前逐个调用ShiftDown调整，将每个子树整理成堆，最终得到整个堆。",
+  "seq": 286,
+  "page": 186
+ },
+ {
+  "excel_row": 351,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆的插入",
+  "desc": "堆的插入：先将新元素放在数组末尾，然后与父结点比较。若违反堆性质则交换，继续向上比较，直到满足堆性质或到达堆顶。时间复杂度O(log n)。",
+  "seq": 287,
+  "page": 187
+ },
+ {
+  "excel_row": 352,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "堆及优先队列 ",
+  "knowledge": "删除堆顶",
+  "desc": "删除堆顶：用数组最后一个元素替换堆顶，堆元素数减1，然后将新堆顶元素向下调整（与较大子结点比较交换），直到满足堆性质或到达叶结点。时间复杂度O(log n)。",
+  "seq": 288,
+  "page": 187
+ },
+ {
+  "excel_row": 353,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "堆及优先队列 ",
+  "knowledge": "堆的整理。 ",
+  "desc": "堆的整理（整堆/ShiftDown）：以某结点为根，将其与左右子结点比较，若违反堆性质则与较大（最大堆）或较小（最小堆）的子结点交换，继续向下调整直到满足堆性质或到达叶结点。",
+  "seq": 289,
+  "page": 186
+ },
+ {
+  "excel_row": 354,
+  "chapter": "树与二叉树",
+  "requirement": "综合应用",
+  "summary": "堆及优先队列 ",
+  "knowledge": "设计算法以利用堆的特性解决相关的应用问题。 ",
+  "desc": "利用堆的特性解决问题：堆适合需要反复获取最大/最小值的场景，如优先队列、堆排序、Top K问题等。堆的插入和删除堆顶操作时间复杂度均为O(log n)。",
+  "seq": 290,
+  "page": 189
+ },
+ {
+  "excel_row": 355,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树和森林 ",
+  "knowledge": "树的父结点表示法",
+  "desc": "父结点表示法（双亲表示法）：用一维数组存储树的结点，每个结点含data域和parent域。parent域保存其父结点在数组中的下标，根结点的parent域为负数（或保存结点个数的相反数）。",
+  "seq": 291,
+  "page": 190
+ },
+ {
+  "excel_row": 356,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树和森林 ",
+  "knowledge": "树的孩子结点表示法",
+  "desc": "孩子结点表示法：每个结点的所有孩子构成一个单链表，链表头指针保存在数组中。便于查找某结点的所有孩子，但查找父结点不方便。",
+  "seq": 292,
+  "page": 191
+ },
+ {
+  "excel_row": 357,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树和森林 ",
+  "knowledge": "树的父结点-孩子结点表示法",
+  "desc": "父结点-孩子结点表示法：将父结点表示法与孩子结点表示法结合，既保存父结点信息，又保存孩子链表头指针。既能方便查找父结点，也能方便查找孩子结点。",
+  "seq": 293,
+  "page": 192
+ },
+ {
+  "excel_row": 358,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树和森林 ",
+  "knowledge": "树的孩子-兄弟表示法",
+  "desc": "孩子-兄弟表示法（二叉链表表示法）：每个结点设左右两个指针域，左指针指向第一个孩子结点，右指针指向其下一个兄弟结点。结构与二叉链表相似，但指针含义不同。",
+  "seq": 294,
+  "page": 192
+ },
+ {
+  "excel_row": 359,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树和森林 ",
+  "knowledge": "森林 ",
+  "desc": "森林是由m（m≥0）棵互不相交的树构成的集合。森林中各树的根之间是兄弟关系。",
+  "seq": 295,
+  "page": 166
+ },
+ {
+  "excel_row": 360,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树和森林 ",
+  "knowledge": "树",
+  "desc": "树是由一个或以上结点组成的有限集合，有一个根结点，其余结点划分为若干不相交的子树。树是层次结构，n个结点的树有n-1条边。",
+  "seq": 296,
+  "page": 164
+ },
+ {
+  "excel_row": 361,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "树和森林 ",
+  "knowledge": "森林的遍历。 ",
+  "desc": "森林的遍历有先序遍历和后序遍历两种。先序遍历：按树的排列次序依次先序遍历各棵树。后序遍历：按树的排列次序依次后序遍历各棵树。森林先序遍历对应二叉树先序遍历，森林后序遍历对应二叉树中序遍历。",
+  "seq": 297,
+  "page": 196
+ },
+ {
+  "excel_row": 362,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树和森林 ",
+  "knowledge": "树和森林之间的关系",
+  "desc": "树和森林与二叉树的关系：通过孩子-兄弟表示法，树可以转换为对应的二叉树（根无右子树），森林也可以转换为二叉树。转换基础是二叉链表结构，同一二叉链表可解释为树或二叉树。",
+  "seq": 298,
+  "page": 193
+ },
+ {
+  "excel_row": 363,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树和森林 ",
+  "knowledge": "树和森林与二叉树之间的相互转换",
+  "desc": "森林转二叉树：第一棵树的根为二叉树根，其子树转为左子树；其余树转为右子树。二叉树转森林：根为第一棵树根，左子树转为第一棵树的子树，右子树转为其他树。树转二叉树后根无右子树。",
+  "seq": 299,
+  "page": 193
+ },
+ {
+  "excel_row": 364,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "树和森林 ",
+  "knowledge": "树和森林的遍历与二叉树遍历的关系。 ",
+  "desc": "树的先序遍历等于对应二叉树的先序遍历；树的后序遍历等于对应二叉树的中序遍历。森林的先序遍历等于对应二叉树的先序遍历；森林的后序遍历等于对应二叉树的中序遍历。",
+  "seq": 300,
+  "page": 196
+ },
+ {
+  "excel_row": 365,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "树和森林 ",
+  "knowledge": "树和森林遍历的实现",
+  "desc": "树和森林的遍历通过孩子-兄弟表示法转换为二叉树后实现。先序遍历树即先访问根再依次遍历各子树；后序遍历树即先依次遍历各子树再访问根。森林遍历按次序逐棵树遍历。",
+  "seq": 301,
+  "page": 195
+ },
+ {
+  "excel_row": 366,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "树和森林 ",
+  "knowledge": "树和森林的其他相关算法的实现。 ",
+  "desc": "树和森林的其他算法基于孩子-兄弟表示法实现。利用树与二叉树的转换关系，可将树/森林的操作转化为在对应二叉树上的操作，完成后再还原。",
+  "seq": 302,
+  "page": 195
+ },
+ {
+  "excel_row": 367,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "定长编码",
+  "desc": "定长编码是指所有字符的编码长度都相等的编码方式，如ASCII码用8位表示一个字符，Unicode用16位。处理简单效率高，但译文长度取决于原文长度，不够灵活。",
+  "seq": 303,
+  "page": 197
+ },
+ {
+  "excel_row": 368,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "变长编码",
+  "desc": "变长编码是指不同字符的编码长度不同的编码方式。原则是出现次数多的字符用较短编码，出现次数少的用较长编码，以缩短译文总长度。哈夫曼编码是一种最优变长编码。",
+  "seq": 304,
+  "page": 197
+ },
+ {
+  "excel_row": 369,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "编码长度",
+  "desc": "编码长度是指表示一个字符所需的二进制位数。定长编码中所有字符编码长度相同，变长编码中各字符编码长度不同。",
+  "seq": 305,
+  "page": 197
+ },
+ {
+  "excel_row": 370,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "前缀特性",
+  "desc": "前缀特性是指在编码方案中，任何一个字符的编码都不是其他字符编码的前缀。具有前缀特性的编码能保证译码的正确性和唯一性。在编码树中，字符只能出现在叶结点。",
+  "seq": 306,
+  "page": 197
+ },
+ {
+  "excel_row": 371,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "编码",
+  "desc": "编码是信息从一种形式转换为另一种形式的过程。在数据压缩中，将字符映射为二进制串。原文是转换前的文本，译文是转换后的结果。",
+  "seq": 307,
+  "page": 197
+ },
+ {
+  "excel_row": 372,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "译码 ",
+  "desc": "译码是编码的逆过程，将二进制编码串还原为原始字符。在哈夫曼树中，从根开始按编码位选择左（0）右（1）分支，到达叶结点即得到对应字符。",
+  "seq": 308,
+  "page": 201
+ },
+ {
+  "excel_row": 373,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "字符的权",
+  "desc": "字符的权（权值）是指该字符在文本中出现的频率或次数，用于构造哈夫曼树。权值越大的字符，在哈夫曼树中应越靠近根，编码越短。",
+  "seq": 309,
+  "page": 197
+ },
+ {
+  "excel_row": 374,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "编码树",
+  "desc": "编码树是用二叉树表示编码方案的结构。从根到叶结点的路径上标注的0/1组成该叶结点对应字符的编码。满足前缀特性的编码方案中，字符只能出现在叶结点。",
+  "seq": 310,
+  "page": 198
+ },
+ {
+  "excel_row": 375,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "哈夫曼编码",
+  "desc": "哈夫曼编码是在哈夫曼树中，左分支标0、右分支标1，从根到叶结点路径上的0/1序列即为该叶结点对应字符的编码。它满足前缀特性且总码长最短。",
+  "seq": 311,
+  "page": 200
+ },
+ {
+  "excel_row": 376,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "哈夫曼树",
+  "desc": "哈夫曼树（最优二叉树）是给定n个权值作为叶结点，构造出WPL最小的二叉树。构造方法：每次选两个权值最小的树合并为新树，新树根权值为两子树根权值之和，重复直到只剩一棵树。",
+  "seq": 312,
+  "page": 199
+ },
+ {
+  "excel_row": 377,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "叶结点的带权路径长度",
+  "desc": "叶结点的带权路径长度是指叶结点的权值乘以其到根结点的路径长度（边数）。",
+  "seq": 313,
+  "page": 198
+ },
+ {
+  "excel_row": 378,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "二叉树的外部带权路径长度（WPL）",
+  "desc": "二叉树的外部带权路径长度（WPL）是树中所有叶结点的带权路径长度之和：WPL=Σw_k·l_k，其中w_k为第k个叶结点的权值，l_k为其路径长度。哈夫曼树的WPL最小。",
+  "seq": 314,
+  "page": 198
+ },
+ {
+  "excel_row": 379,
+  "chapter": "树与二叉树",
+  "requirement": "识记",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "带权平均码长。 ",
+  "desc": "带权平均码长是译文总位数除以原文字符总数，即WPL/总字符数。使用变长编码时，带权平均码长通常短于定长编码的码长。",
+  "seq": 315,
+  "page": 201
+ },
+ {
+  "excel_row": 380,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "具有前缀特性的编码方案",
+  "desc": "具有前缀特性的编码方案保证任何字符编码都不是其他字符编码的前缀，从而译码时不会产生歧义。在对应的编码树中，字符只能出现在叶结点，不能出现在分支结点。",
+  "seq": 316,
+  "page": 197
+ },
+ {
+  "excel_row": 381,
+  "chapter": "树与二叉树",
+  "requirement": "领会",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "哈夫曼编码及哈夫曼树的不唯一性。 ",
+  "desc": "哈夫曼树和哈夫曼编码不是唯一的。选择权值最小的两棵树时，若权值相等可任意选择；合并时左右子树可互换；左分支标0右分支标1也可反过来。但不同哈夫曼树的WPL相同。",
+  "seq": 317,
+  "page": 200
+ },
+ {
+  "excel_row": 382,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "验证编码方案具有前缀特性",
+  "desc": "验证编码方案具有前缀特性的方法：在编码树中检查字符是否都出现在叶结点。若某字符出现在分支结点，则其编码必是其子孙结点编码的前缀，不满足前缀特性。",
+  "seq": 318,
+  "page": 198
+ },
+ {
+  "excel_row": 383,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "哈夫曼树的构造",
+  "desc": "哈夫曼树构造步骤：(1)将n个权值各作为单结点树放入集合F；(2)选F中两棵权值最小的树作为左右子树合并，新树根权值为两者之和；(3)从F中删除这两棵树，加入新树；(4)重复(2)(3)直到F中只剩一棵树。",
+  "seq": 319,
+  "page": 199
+ },
+ {
+  "excel_row": 384,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "哈夫曼编码的生成",
+  "desc": "哈夫曼编码生成：构造好哈夫曼树后，在分支结点左分支标0、右分支标1，从根到每个叶结点路径上的0/1串即为该叶结点对应字符的哈夫曼编码。",
+  "seq": 320,
+  "page": 200
+ },
+ {
+  "excel_row": 385,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "译码 ",
+  "desc": "译码过程：从哈夫曼树的根开始，逐位扫描编码，遇到0走左分支，遇到1走右分支。当到达叶结点时，该叶结点保存的字符即为译码结果。重复直到编码全部扫描完毕。",
+  "seq": 321,
+  "page": 201
+ },
+ {
+  "excel_row": 386,
+  "chapter": "树与二叉树",
+  "requirement": "简单应用",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "树的WPL计算。",
+  "desc": "WPL计算方法：对每个叶结点，用其权值乘以到根的路径长度（边数），然后将所有叶结点的带权路径长度相加，即WPL=Σw_k·l_k。",
+  "seq": 322,
+  "page": 198
+ },
+ {
+  "excel_row": 387,
+  "chapter": "树与二叉树",
+  "requirement": "综合应用",
+  "summary": "哈夫曼树及哈夫曼编码",
+  "knowledge": "借助哈夫曼树及哈夫曼编码的思想来解决具体问题。 ",
+  "desc": "哈夫曼树的应用：利用哈夫曼树和哈夫曼编码实现数据压缩。高频字符用短编码，低频字符用长编码，使总码长最短。也可用于决策树、最优判断问题等。",
+  "seq": 323,
+  "page": 201
+ },
+ {
+  "excel_row": 388,
+  "chapter": "树与二叉树",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "树和森林及二叉树的基本概念和存储方式",
+  "desc": "本章重点：树和森林的基本概念（根、子树、度、深度、高度、路径等）及存储方式（父结点表示法、孩子表示法、孩子-兄弟表示法）。二叉树的概念、性质及顺序存储和链式存储方式。",
+  "seq": 324,
+  "page": 201
+ },
+ {
+  "excel_row": 389,
+  "chapter": "树与二叉树",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "树和森林与二叉树之间的相互转换",
+  "desc": "本章重点：树、森林与二叉树之间的相互转换。通过孩子-兄弟表示法，树可转换为二叉树（根无右子树），森林可转换为二叉树。转换规则是递归的，可相互还原。",
+  "seq": 325,
+  "page": 193
+ },
+ {
+  "excel_row": 390,
+  "chapter": "树与二叉树",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "二叉树的基本性质",
+  "desc": "本章重点：二叉树的四个基本性质：(1)第i层最多2^i个结点；(2)高度h的二叉树最多2^h-1个结点；(3)n0=n2+1；(4)n个结点的完全二叉树高度为⌊log2(n)⌋+1。",
+  "seq": 326,
+  "page": 168
+ },
+ {
+  "excel_row": 391,
+  "chapter": "树与二叉树",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "基于二叉链表的递归程序的实现",
+  "desc": "本章重点：基于二叉链表的递归程序实现。利用二叉树的递归结构，递归实现遍历（先序、中序、后序）、求叶结点数、求高度等操作。递归出口为空树。",
+  "seq": 327,
+  "page": 176
+ },
+ {
+  "excel_row": 392,
+  "chapter": "树与二叉树",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "堆的概念及基本操作的实现",
+  "desc": "本章重点：堆的概念（完全二叉树、父子结点有序性）及基本操作：建堆（自下而上ShiftDown）、插入（向上调整）、删除堆顶（向下调整）。时间复杂度均为O(log n)。",
+  "seq": 328,
+  "page": 183
+ },
+ {
+  "excel_row": 393,
+  "chapter": "树与二叉树",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "树和森林及二叉树的遍历",
+  "desc": "本章重点：二叉树的三种递归遍历（先序、中序、后序）及层序遍历。树的先序/后序遍历，森林的先序/后序遍历。遍历是二叉树各种操作的基础。",
+  "seq": 329,
+  "page": 174
+ },
+ {
+  "excel_row": 394,
+  "chapter": "树与二叉树",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "哈夫曼树及哈夫曼编码的构造。 ",
+  "desc": "本章重点：哈夫曼树的构造（每次选两个最小权值树合并）及哈夫曼编码的生成（左0右1，根到叶路径为编码）。哈夫曼树WPL最小，编码具有前缀特性。",
+  "seq": 330,
+  "page": 199
+ },
+ {
+  "excel_row": 395,
+  "chapter": "树与二叉树",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "树和森林与二叉树之间的相互转换",
+  "desc": "本章难点：树和森林与二叉树之间的相互转换规则。森林转二叉树：第一棵树为根及其左子树，其余树为右子树。需要理解孩子-兄弟表示法作为转换的桥梁。",
+  "seq": 331,
+  "page": 193
+ },
+ {
+  "excel_row": 396,
+  "chapter": "树与二叉树",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "基于二叉链表的递归程序的实现",
+  "desc": "本章难点：基于二叉链表的递归程序实现。需要理解递归思想，将问题分解为对左右子树的子问题。注意递归出口为空树的处理，以及非递归遍历中栈的使用。",
+  "seq": 332,
+  "page": 176
+ },
+ {
+  "excel_row": 397,
+  "chapter": "树与二叉树",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "堆基本操作的实现",
+  "desc": "本章难点：堆基本操作的实现。建堆时自下而上ShiftDown的过程，插入时向上调整，删除堆顶时向下调整。需要理解堆的有序性及调整过程中交换的方向。",
+  "seq": 333,
+  "page": 186
+ },
+ {
+  "excel_row": 398,
+  "chapter": "树与二叉树",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "哈夫曼树及哈夫曼编码的构造。",
+  "desc": "本章难点：哈夫曼树的构造过程及哈夫曼编码的生成。每次选两个最小权值合并的步骤，以及从根到叶路径生成编码的方法。理解WPL的计算及最优性。",
+  "seq": 334,
+  "page": 199
+ },
+ {
+  "excel_row": 399,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "图",
+  "desc": "图（graph）由顶点和边组成，一般地，用G=(V,E)来表示，其中V表示顶点集，是一个有限非空集合；E表示边集，E中的每条边都是V中某一对顶点的连接。图结构是一种非线性结构，元素之间的关系可以看成多对多的，图中任意两个不同顶点之间允许有边但不能超过一条。",
+  "seq": 335,
+  "page": 207
+ },
+ {
+  "excel_row": 400,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "子图",
+  "desc": "若两个图G=(V,E)和G'=(V',E')满足条件V'⊆V，E'⊆E，且E'中边依附的顶点均属于V'，则称G'为G的子图。一个图G的子图是指由图G中选出其顶点集的一个子集V'以及仅与V'中顶点相关联的一些边所构成的图。图本身也是它自身的子图。",
+  "seq": 336,
+  "page": 210
+ },
+ {
+  "excel_row": 401,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "边",
+  "desc": "边是图中顶点之间的连接，当顶点分别是u和v时，连接这两个顶点的边可以表示为一个二元组(u,v)，有时也将边称为顶点的偶对。边可以是无向边（不限定方向）或有向边（限定方向，又称弧）。",
+  "seq": 337,
+  "page": 208
+ },
+ {
+  "excel_row": 402,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "顶点",
+  "desc": "顶点是图的基本构成元素，图由顶点和边组成。顶点集V是一个有限非空集合。图中两个顶点之间允许有边连接，顶点可以带有标号以标识其名称。",
+  "seq": 338,
+  "page": 207
+ },
+ {
+  "excel_row": 403,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "边集",
+  "desc": "E表示边集，E中的每条边都是V中某一对顶点的连接。在图G=(V,E)中，边的总数记为|E|。边集可以是无向边的集合或有向边（弧）的集合。",
+  "seq": 339,
+  "page": 208
+ },
+ {
+  "excel_row": 404,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "顶点集",
+  "desc": "V表示顶点集，是一个有限非空集合。在图G=(V,E)中，顶点的总数记为|V|。顶点集包含图中的所有顶点，可以用一维数组保存各顶点信息。",
+  "seq": 340,
+  "page": 207
+ },
+ {
+  "excel_row": 405,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "稀疏图",
+  "desc": "如果图中边的数目较少（相对于顶点数来说），则图称为稀疏图。当图中边数的数量级不高于顶点数的数量级时，就可以认为图是稀疏图。稀疏图适合用邻接表存储。",
+  "seq": 341,
+  "page": 208
+ },
+ {
+  "excel_row": 406,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "密集图",
+  "desc": "边数较多的图称为密集图或稠密图。至于边数多到多少是密集图并没有严格的界定。稠密图适合使用普里姆算法求最小生成树，其邻接矩阵不会造成过多空间浪费。",
+  "seq": 342,
+  "page": 208
+ },
+ {
+  "excel_row": 407,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "有向边",
+  "desc": "当图中的边限定为从一个顶点指向另一个顶点时，称为有向边，或称为弧（arc）。组成有向边的顶点二元组是有序的，有向边(u,v)表示从顶点u指向顶点v的边。",
+  "seq": 343,
+  "page": 208
+ },
+ {
+  "excel_row": 408,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "弧头",
+  "desc": "对于有向边(u,v)，v称为弧头（head），即箭头指向的顶点。有向边的弧头是有向边所指向的那个顶点。",
+  "seq": 344,
+  "page": 208
+ },
+ {
+  "excel_row": 409,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "弧尾",
+  "desc": "对于有向边(u,v)，u称为弧尾（tail），即箭头出发的顶点。有向边的弧尾是有向边的起点，有向边从弧尾指向弧头。在有向图中，以某顶点为弧尾的弧称为该顶点的出边。",
+  "seq": 345,
+  "page": 208
+ },
+ {
+  "excel_row": 410,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "无向边",
+  "desc": "不限定方向的边称为无向边。实际上，一条无向边可以看成两条方向相反的有向边。组成无向边的顶点二元组是无序的，(u,v)与(v,u)等价。",
+  "seq": 346,
+  "page": 208
+ },
+ {
+  "excel_row": 411,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "有向图",
+  "desc": "含有有向边的图称为有向图（directed graph）。如果一个图中既含有有向边又含有无向边，可以将无向边表示为一对方向相反的有向边。提到有向图，则表明其中所含的边全部都是有向边。",
+  "seq": 347,
+  "page": 208
+ },
+ {
+  "excel_row": 412,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "无向图",
+  "desc": "如果图中的边都是无向边，则图称为无向图（undirected graph）。无向图中边没有方向性，邻接矩阵是对称矩阵。",
+  "seq": 348,
+  "page": 208
+ },
+ {
+  "excel_row": 413,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "带权图",
+  "desc": "在有些应用中，给边赋予一个非负的数值，这个非负数值称为边的权，相应的图称为带权图（weighted graph）或加权图，有些教材称之为网（network）。权值可以根据需要自行定义其代表的意义。",
+  "seq": 349,
+  "page": 208
+ },
+ {
+  "excel_row": 414,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "邻接点",
+  "desc": "若无向图G中含有边(u,v)，则u和v互为邻接（adjacent）点。对于有向图中的有向边(u,v)，称顶点v是顶点u的邻接点，即u邻接到v，或v邻接自u。",
+  "seq": 350,
+  "page": 208
+ },
+ {
+  "excel_row": 415,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "关联",
+  "desc": "边(u,v)称为与顶点u和v相关联（incident），也可以说边(u,v)依附于顶点u和v。在无向图中，与顶点v相关联的边的数目称为顶点的度。",
+  "seq": 351,
+  "page": 208
+ },
+ {
+  "excel_row": 416,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "边的权",
+  "desc": "在有些应用中，为了表明图中边的某些特性，往往给边赋予一个非负的数值，这个非负数值称为边的权（weight）。权值可以表示距离、成本、时间等实际意义。",
+  "seq": 352,
+  "page": 208
+ },
+ {
+  "excel_row": 417,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "顶点的度",
+  "desc": "在无向图中，与顶点v相关联的边的数目称为顶点的度（degree）。在有向图中，顶点的度分为出度和入度，一个顶点的出度与入度之和称为该顶点的度。",
+  "seq": 353,
+  "page": 209
+ },
+ {
+  "excel_row": 418,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "顶点的入度",
+  "desc": "在有向图中，以某顶点为弧头的弧称为该顶点的入边，入边的数目称为该顶点的入度。所有顶点的入度之和等于图中所含的边数。",
+  "seq": 354,
+  "page": 209
+ },
+ {
+  "excel_row": 419,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "顶点 的出度",
+  "desc": "在有向图中，以某顶点为弧尾的弧称为该顶点的出边，出边的数目称为该顶点的出度。所有顶点的出度之和等于图中所含的边数。",
+  "seq": 355,
+  "page": 209
+ },
+ {
+  "excel_row": 420,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "完全图",
+  "desc": "在有几个顶点的无向图中，边数最多可达n(n-1)/2；有向图中边数最多为n(n-1)。包含所有可能边的图称为完全图（complete graph）。在完全图中，各顶点的度均达到最大。",
+  "seq": 356,
+  "page": 209
+ },
+ {
+  "excel_row": 421,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "路径",
+  "desc": "在图G=(V,E)中，如果(v0,v1),(v1,v2),...,(vm-2,vm-1)都是E中的边，则顶点序列(v0,v1,...,vm-1)称为从顶点v0到顶点vm-1的路径（path）。",
+  "seq": 357,
+  "page": 210
+ },
+ {
+  "excel_row": 422,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "有向路径",
+  "desc": "若图G是有向图，则路径也要求是有向的，且有向边必须是方向一致的，即有向路径(v0,v1,...,vm-1)是由E中的弧(v0,v1),(v1,v2),...,(vm-2,vm-1)组成的。",
+  "seq": 358,
+  "page": 210
+ },
+ {
+  "excel_row": 423,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "简单路径",
+  "desc": "路径(v0,v1,...,vm-1)中包含的边或弧的数目m称为路径长度。如果路径上各顶点均不同，则称此路径为简单路径（simple path）。",
+  "seq": 359,
+  "page": 210
+ },
+ {
+  "excel_row": 424,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "回路",
+  "desc": "第一个顶点和最后一个顶点相同的路径称为回路（cycle），也称为环。不带回路的图称为无环图，不带回路的有向图称为有向无环图（DAG）。回路是图中重要的概念，拓扑排序的前提就是有向图中不存在回路。",
+  "seq": 360,
+  "page": 210
+ },
+ {
+  "excel_row": 425,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "简单回路",
+  "desc": "如果一个回路中除第一个顶点和最后一个顶点以外，其余顶点均不相同，则称为简单回路（simple cycle）或简单环。",
+  "seq": 361,
+  "page": 210
+ },
+ {
+  "excel_row": 426,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "路径长度",
+  "desc": "路径(v0,v1,...,vm-1)中包含的边或弧的数目m称为路径长度。在带权图中，路径长度定义为路径上各边权值之和。",
+  "seq": 362,
+  "page": 210
+ },
+ {
+  "excel_row": 427,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "有向无环图",
+  "desc": "不带回路的有向图称为有向无环图（Directed Acyclic Graph，DAG）。有向无环图可用来表示有先后关系的事件集合，其两个重要应用是拓扑排序和关键路径。",
+  "seq": 363,
+  "page": 210
+ },
+ {
+  "excel_row": 428,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "连通图",
+  "desc": "对于无向图G，如果顶点u和顶点v之间有路径，则称这两个顶点是连通的；如果无向图G中任意一个顶点到其他任意顶点都至少存在一条路径，则称图G为连通图（connected graph）。",
+  "seq": 364,
+  "page": 211
+ },
+ {
+  "excel_row": 429,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "连通分量",
+  "desc": "无向图中的极大连通子图称为连通分量（connected component）。一个非连通图可以有多个连通分量，连通图的连通分量个数为1。",
+  "seq": 365,
+  "page": 211
+ },
+ {
+  "excel_row": 430,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "强连通图",
+  "desc": "在有向图G中，如果每对顶点u与v之间均有从u到v的有向路径，则称G为强连通图（strongly connected graph）。有向图的最大强连通子图称为强连通分量。",
+  "seq": 366,
+  "page": 211
+ },
+ {
+  "excel_row": 431,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "弱连通图。 ",
+  "desc": "如果对于有向图中每对顶点u和v，存在顶点序列使得(u,vi)或(vi,u)等边交替存在，则称图G为弱连通图（weakly connected graph）。弱连通图是指将有向图视为无向图后是连通的，但本身不是强连通的。",
+  "seq": 367,
+  "page": 211
+ },
+ {
+  "excel_row": 432,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "顶点与边的关联性",
+  "desc": "边与顶点的关联性是指边依附于顶点的关系。在图中，每条边都关联两个顶点，边(u,v)与顶点u和v相关联。在无向图中，顶点的度数等于与其相关联的边数。理解关联性是理解图结构中顶点与边关系的基础。",
+  "seq": 368,
+  "page": 208
+ },
+ {
+  "excel_row": 433,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "邻接的含义",
+  "desc": "邻接是指两个顶点之间有边相连的关系。若无向图中有边(u,v)，则u和v互为邻接点。对于有向图，有向边(u,v)表示u邻接到v或v邻接自u。邻接关系反映了顶点之间的直接联系。",
+  "seq": 369,
+  "page": 208
+ },
+ {
+  "excel_row": 434,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "边与顶点的度的关系",
+  "desc": "无向图中所有顶点度数之和等于边数的两倍，即Σdeg(vi)=2e。有向图中所有顶点的出度之和等于入度之和，并且等于图中所含的边数。这一关系可用于验证图中顶点度数与边数的对应关系。",
+  "seq": 370,
+  "page": 209
+ },
+ {
+  "excel_row": 435,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "有向路径。 ",
+  "desc": "有向路径是指在有向图中方向一致的路径。有向路径上的有向边方向必须一致，即每条弧都从前一个顶点指向后一个顶点。若边的方向不一致，则不能构成有向路径。",
+  "seq": 371,
+  "page": 210
+ },
+ {
+  "excel_row": 436,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "与图的特性相关的简单应用。 ",
+  "desc": "利用图的基本概念可以解决简单应用问题，如根据顶点数和边数判断图的性质、计算连通分量个数等。例如：设无向图G含有10个顶点和6条边，则G中连通分量的个数最多可能是7个（4个顶点组成完全图，其余6个为孤立顶点），最少为1个。",
+  "seq": 372,
+  "page": 211
+ },
+ {
+  "excel_row": 437,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "邻接矩阵",
+  "desc": "图的邻接矩阵（adjacency matrix）是一个n阶矩阵，矩阵元素表示图中各顶点之间的邻接关系。如果从vi到vj存在一条边，则邻接矩阵中i行j列的元素值为1（或权值），否则值为0（或∞）。邻接矩阵的存储空间为O(n²)。",
+  "seq": 373,
+  "page": 212
+ },
+ {
+  "excel_row": 438,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "邻接表",
+  "desc": "邻接表（adjacency list）是图的链式存储表示方法，它使用单链表存储图中顶点的邻接点，每个顶点的所有邻接点存储在一个单链表中。使用一个数组保存这些单链表的表头。邻接表由一个一维数组和n个链表组成，空间复杂度为O(n+e)。",
+  "seq": 374,
+  "page": 213
+ },
+ {
+  "excel_row": 439,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "逆邻接表",
+  "desc": "对于有向图，如果将所有有向弧的方向转向，则得到的新图的邻接表称为原图的逆邻接表。使用逆邻接表求顶点入度的过程类似于在邻接表中求出度，非常方便。",
+  "seq": 375,
+  "page": 214
+ },
+ {
+  "excel_row": 440,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "表结点。 ",
+  "desc": "邻接点表的表结点是邻接表中单链表的结点，每个结点都有两个域：一个是顶点域，存储邻接顶点在数组中的下标；另一个是指针域，指向下一个邻接顶点。对于带权图，还需增加一个权值域。",
+  "seq": 376,
+  "page": 214
+ },
+ {
+  "excel_row": 441,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "邻接矩阵",
+  "desc": "邻接矩阵的特点：无向图的邻接矩阵是对称矩阵，可压缩存储为下三角（或上三角）；有向图的邻接矩阵不保证对称。利用邻接矩阵可方便判断两顶点间是否有边，也容易求得各顶点的度（无向图：行或列非零元素个数；有向图：行非零为出度，列非零为入度）。空间复杂度O(n²)。",
+  "seq": 377,
+  "page": 212
+ },
+ {
+  "excel_row": 442,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "邻接表",
+  "desc": "邻接表由一个一维数组（表头结点表）和n个单链表组成。无向图的邻接表中表结点总数为2e（每条边出现两次）；有向图中表结点总数为e。在邻接表中求无向图顶点的度很方便（单链表长度），求有向图顶点的出度方便，但求入度需遍历所有链表。空间复杂度O(n+e)。",
+  "seq": 378,
+  "page": 213
+ },
+ {
+  "excel_row": 443,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "逆邻接表与图的对应关系。 ",
+  "desc": "逆邻接表是将有向图所有有向弧方向反转后得到的邻接表。在逆邻接表中，数组下标为i的元素指向的单链表中结点的个数即为顶点vi的入度。使用逆邻接表求入度类似于在邻接表中求出度，非常方便。",
+  "seq": 379,
+  "page": 214
+ },
+ {
+  "excel_row": 444,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "根据图的存储结构实现图的基本操作",
+  "desc": "在邻接矩阵存储结构下，可以实现图的各种基本操作，包括创建图CreateGraph、输出图信息PrintGraph、返回边的权值GetWeight、查找第一个邻接点FirstNeighbor、查找下一个邻接点NextNeighbor、返回顶点数getNumVertices、返回边数getNumEdges等。",
+  "seq": 380,
+  "page": 215
+ },
+ {
+  "excel_row": 445,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "根据邻接矩阵",
+  "desc": "根据邻接矩阵可以方便地获取图的基本信息：通过检查矩阵元素可判断两顶点间是否存在边；通过统计一行（或一列）中非零元素个数可得到顶点的出度或入度；通过统计矩阵中所有非零元素可得到边数。邻接矩阵适合稠密图。",
+  "seq": 381,
+  "page": 216
+ },
+ {
+  "excel_row": 446,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "邻接表",
+  "desc": "根据邻接表可以获取图的基本信息：每个顶点对应的单链表长度即为该顶点的出度（有向图）或度（无向图）；遍历所有单链表可统计边数。邻接表适合稀疏图，节省存储空间，但查找两顶点间是否有边需遍历单链表。",
+  "seq": 382,
+  "page": 213
+ },
+ {
+  "excel_row": 447,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "逆邻接表获取图的基本信息。 ",
+  "desc": "根据逆邻接表可以方便地获取有向图各顶点的入度信息：在逆邻接表中，数组下标为i的元素指向的单链表中结点的个数即为顶点vi的入度。这弥补了邻接表中求入度不方便的不足。",
+  "seq": 383,
+  "page": 215
+ },
+ {
+  "excel_row": 448,
+  "chapter": "图 结 构",
+  "requirement": "综合应用",
+  "summary": "图的存储结构及基本操作的实现",
+  "knowledge": "针对具体应用问题，选择图的存储结构并设计算法来解决问题。 ",
+  "desc": "针对具体应用问题选择图的存储结构时需考虑：若图为稠密图（边数接近n²），选邻接矩阵更合适，存储空间O(n²)可接受，且查找边方便；若图为稀疏图（边数远小于n²），选邻接表更节省空间，为O(n+e)。需综合考虑操作频率和图的规模。",
+  "seq": 384,
+  "page": 212
+ },
+ {
+  "excel_row": 449,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的搜索 ",
+  "knowledge": "图的搜索",
+  "desc": "给定一个连通图G=(V,E)，从图中的某个顶点出发，经过一定的路线，访问图中的所有顶点，使每个顶点被访问且只访问一次，这一过程称为图的搜索（traversal）。图的搜索是指顶点的遍历。",
+  "seq": 385,
+  "page": 220
+ },
+ {
+  "excel_row": 450,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的搜索 ",
+  "knowledge": "深度优先搜索",
+  "desc": "深度优先搜索（DFS）类似于树的先序遍历。从起始顶点出发，访问当前顶点后，选择其未被访问的邻接点继续深入，在不能再向前时回退（回溯），直到所有顶点都被访问。DFS是一个递归过程，使用栈保存访问顺序。",
+  "seq": 386,
+  "page": 221
+ },
+ {
+  "excel_row": 451,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的搜索 ",
+  "knowledge": "广度优先搜索。 ",
+  "desc": "广度优先搜索（BFS）又称为宽度优先搜索，类似于树的层序遍历。从起始顶点v开始，先访问v，然后访问与v相邻接的所有未访问顶点，再依次访问这些顶点的邻接点，由近及远逐层进行。使用队列作为辅助存储结构。",
+  "seq": 387,
+  "page": 224
+ },
+ {
+  "excel_row": 452,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的搜索 ",
+  "knowledge": "图搜索的特性",
+  "desc": "图搜索与树遍历的区别：(1)树遍历一般从根开始，图的搜索可从任一顶点出发；(2)图可能包含回路，需用访问标志数组防止重复访问；(3)图可能不连通，需从不同连通分量分别开始遍历。",
+  "seq": 388,
+  "page": 220
+ },
+ {
+  "excel_row": 453,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的搜索 ",
+  "knowledge": "图的搜索序列",
+  "desc": "图的搜索序列即遍历过程中顶点被访问的顺序。DFS和BFS的搜索序列都可能不唯一，这取决于邻接表中邻接点的存储顺序及选择算法，也取决于起始顶点的选择。当邻接表及选择算法确定后，遍历顺序就确定了。",
+  "seq": 389,
+  "page": 222
+ },
+ {
+  "excel_row": 454,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的搜索 ",
+  "knowledge": "图搜索时使用的辅助数据结构。 ",
+  "desc": "图搜索时使用的辅助数据结构包括：(1)访问标志数组visited[]，标记顶点是否已访问，防止重复访问；(2)深度优先搜索使用栈（系统栈或递归栈）保存访问顺序以支持回溯；(3)广度优先搜索使用队列保存待访问的顶点。",
+  "seq": 390,
+  "page": 220
+ },
+ {
+  "excel_row": 455,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的搜索 ",
+  "knowledge": "实现图的搜索算法",
+  "desc": "实现图的搜索算法：DFS通过递归函数DFS1实现，访问顶点后将其标记，递归访问未访问的邻接点，主函数DFS遍历所有顶点处理非连通图。BFS通过队列实现，顶点入队后逐个出队访问，将未访问邻接点入队。时间复杂度：邻接矩阵O(n²)，邻接表O(n+e)。",
+  "seq": 391,
+  "page": 223
+ },
+ {
+  "excel_row": 456,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的搜索 ",
+  "knowledge": "基于图搜索思想的算法的实现。 ",
+  "desc": "基于图搜索思想可实现多种算法，如利用DFS求连通分量、利用BFS求最短路径等。当图不连通时，一次DFS或BFS只能访问一个连通分量，需反复调用直到所有顶点都被访问。每次调用得到一个连通分量。",
+  "seq": 392,
+  "page": 223
+ },
+ {
+  "excel_row": 457,
+  "chapter": "图 结 构",
+  "requirement": "综合应用",
+  "summary": "图的搜索 ",
+  "knowledge": "基于图搜索思想，设计算法解决相关问题。 ",
+  "desc": "基于图搜索思想设计算法解决相关问题：可利用DFS或BFS的遍历框架，在访问顶点时加入特定处理逻辑来解决问题。如判断图是否连通、求连通分量个数、判断两顶点间是否存在路径等。需根据问题特点选择DFS或BFS策略。",
+  "seq": 393,
+  "page": 223
+ },
+ {
+  "excel_row": 458,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的生成树 ",
+  "knowledge": "生成树",
+  "desc": "设G=(V,E)是一个连通的无向图，包含图中全部顶点的极小连通子图称为图的生成树。极小连通子图是指含有图中所有顶点并使图仍保持连通性的最小子图。生成树包含全部n个顶点和n-1条边。",
+  "seq": 394,
+  "page": 226
+ },
+ {
+  "excel_row": 459,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的生成树 ",
+  "knowledge": "深度优先生成树",
+  "desc": "进行深度优先搜索时得到的生成树称为深度优先生成树。从连通图中任一顶点出发，按照深度优先搜索策略访问全部顶点，遍历过程中所经过的边集即构成一棵深度优先生成树。深度优先生成树可能不唯一。",
+  "seq": 395,
+  "page": 227
+ },
+ {
+  "excel_row": 460,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的生成树 ",
+  "knowledge": "广度优先生成树",
+  "desc": "进行广度优先搜索时得到的生成树称为广度优先生成树。从连通图中任一顶点出发，按照广度优先搜索策略访问全部顶点，遍历过程中所经过的边集即构成一棵广度优先生成树。广度优先生成树也可能不唯一。",
+  "seq": 396,
+  "page": 227
+ },
+ {
+  "excel_row": 461,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "图的生成树 ",
+  "knowledge": "最小生成树。 ",
+  "desc": "将边的权值之和最小的生成树称为最小代价生成树（Minimum-cost Spanning Tree，MST），简称为最小生成树。MST包含图的所有顶点，边子集保证图连通且权值之和最小。它是带权无向连通图的一个重要结构。",
+  "seq": 397,
+  "page": 228
+ },
+ {
+  "excel_row": 462,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的生成树 ",
+  "knowledge": "生成树的特性",
+  "desc": "生成树的特性：(1)包含图中全部n个顶点；(2)含有的边数为n-1条；(3)没有回路；(4)任意增加一条边必形成回路；(5)去掉任意一条边则破坏连通性。若图不连通，则得到的是生成森林。",
+  "seq": 398,
+  "page": 227
+ },
+ {
+  "excel_row": 463,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的生成树 ",
+  "knowledge": "最小生成树的特性",
+  "desc": "最小生成树的特性：(1)含有图中所有n个顶点；(2)没有回路；(3)含有的边数为n-1；(4)在所有连通子图中边权值之和最小；(5)去掉一条边换为另一条不在MST中的边，权值总和不会更小。",
+  "seq": 399,
+  "page": 228
+ },
+ {
+  "excel_row": 464,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的生成树 ",
+  "knowledge": "普里姆算法的求解策略",
+  "desc": "普里姆（Prim）算法的求解策略：从图中任选一个初始顶点开始，定义集合U（已加入MST的顶点）和T（MST的边集）。每次从一个端点在U中、另一个端点在V-U中的边里选择权值最小的边，将新顶点加入U，边加入T，直到U=V。算法共需n-1步，时间复杂度O(n²)，适合稠密图。",
+  "seq": 400,
+  "page": 228
+ },
+ {
+  "excel_row": 465,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的生成树 ",
+  "knowledge": "克鲁斯卡尔算法的 求解策略",
+  "desc": "克鲁斯卡尔（Kruskal）算法的求解策略：初始时将所有边按权值不减的顺序排序，将所有顶点加入生成树但不包含任何边。依次选择权值最小的边，若该边的两个端点不在同一个连通分量上，则将该边加入生成树并合并两个连通分量；否则舍弃。直到生成树中含n-1条边。时间复杂度O(eloge)，适合稀疏图。",
+  "seq": 401,
+  "page": 232
+ },
+ {
+  "excel_row": 466,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "图的生成树 ",
+  "knowledge": "最小生成树代价的计算。 ",
+  "desc": "最小生成树代价的计算：最小生成树的代价即MST中所有边的权值之和。在普里姆算法中，每选中一条边就将其权值累加到totalcost中；在克鲁斯卡尔算法中同样累加选中边的权值。最终得到的总和即为最小生成树的代价。",
+  "seq": 402,
+  "page": 230
+ },
+ {
+  "excel_row": 467,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的生成树 ",
+  "knowledge": "求图的生成树",
+  "desc": "求图的生成树可借助图的搜索算法：从连通图中任一顶点出发，按深度优先或广度优先策略访问全部顶点，遍历过程中所经过的边集即构成一棵生成树。深度优先得到深度优先生成树，广度优先得到广度优先生成树。",
+  "seq": 403,
+  "page": 227
+ },
+ {
+  "excel_row": 468,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的生成树 ",
+  "knowledge": "根据普里姆算法求图的最小生成树",
+  "desc": "根据普里姆算法求图的最小生成树的步骤：(1)初始化T=∅，U={v0}；(2)在一个端点在U、另一端点在V-U的边中选权最小的边(vi,vj)，将vj加入U，边加入T；(3)重复步骤(2)直到U=V。使用辅助数组closedge记录候选边的最小权值。",
+  "seq": 404,
+  "page": 229
+ },
+ {
+  "excel_row": 469,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的生成树 ",
+  "knowledge": "普里姆算法的实现",
+  "desc": "普里姆算法的实现：使用辅助数组closedge[vtxnum]，每个元素含vex和lowcost两个域。每轮循环从lowcost非零的元素中选最小者对应的顶点k加入U，然后更新V-U中各顶点的lowcost值。算法共进行n-1轮选边，时间复杂度O(n²)。",
+  "seq": 405,
+  "page": 231
+ },
+ {
+  "excel_row": 470,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的生成树 ",
+  "knowledge": "根据克鲁斯卡尔算法求图的最小生成树",
+  "desc": "根据克鲁斯卡尔算法求图的最小生成树的步骤：(1)将所有边按权值从小到大排序；(2)初始化所有顶点各自为一个连通分量；(3)依次取权值最小的边，若两端点在不同连通分量则加入T并合并连通分量；(4)直到T中有n-1条边。",
+  "seq": 406,
+  "page": 233
+ },
+ {
+  "excel_row": 471,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "图的生成树 ",
+  "knowledge": "克鲁斯卡尔算法的实现。 ",
+  "desc": "克鲁斯卡尔算法的实现：先调用edgeSort对边按权值排序，然后使用flag数组标记各顶点所属连通分量。依次检查排序后的边，若两端点flag值不同则选中该边并合并连通分量（将flag统一）。时间复杂度O(eloge)，适合稀疏图。",
+  "seq": 407,
+  "page": 234
+ },
+ {
+  "excel_row": 472,
+  "chapter": "图 结 构",
+  "requirement": "综合应用",
+  "summary": "图的生成树 ",
+  "knowledge": "基于求图生成树的算法策略，设计算法解决相关问题。 ",
+  "desc": "基于求图生成树的算法策略设计算法解决相关问题：利用MST的贪心思想（每次选最小代价边），可解决如最小代价布线、网络建设等优化问题。根据图的稠密程度选择Prim或Kruskal算法，Prim适合稠密图O(n²)，Kruskal适合稀疏图O(eloge)。",
+  "seq": 408,
+  "page": 228
+ },
+ {
+  "excel_row": 473,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "AOV网",
+  "desc": "在有向图中，以顶点表示活动，有向边表示活动之间的优先关系，这样的有向图称为顶点表示活动的网络（Activity On Vertex network），简称为AOV网。AOV网中不允许出现回路，必须是有向无环图。",
+  "seq": 409,
+  "page": 237
+ },
+ {
+  "excel_row": 474,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "源点",
+  "desc": "在AOE网中，入度为0的点称为起始点或源点。一个工程只有一个开始点，通常AOE网中只有一个源点。源点的最早开始时间为0。",
+  "seq": 410,
+  "page": 242
+ },
+ {
+  "excel_row": 475,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "汇点",
+  "desc": "在AOE网中，出度为0的点称为结束点或汇点。一个工程只有一个完成点，通常AOE网中只有一个汇点。汇点的最早开始时间等于整个工程的完成时间。",
+  "seq": 411,
+  "page": 242
+ },
+ {
+  "excel_row": 476,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "前驱",
+  "desc": "在AOV网中，若从顶点vi到vj有一条有向路径，则称vi是vj的前驱。前驱活动必须在后继活动开始之前结束。",
+  "seq": 412,
+  "page": 237
+ },
+ {
+  "excel_row": 477,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "后继 ",
+  "desc": "在AOV网中，若从顶点vi到vj有一条有向路径，则称vj是vi的后继。后继活动必须在前驱活动结束之后才能开始。",
+  "seq": 413,
+  "page": 237
+ },
+ {
+  "excel_row": 478,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "直接前驱",
+  "desc": "若(vi,vj)是AOV网中的一条弧，则称vi是vj的直接前驱。直接前驱是指有直接弧指向的前驱顶点。",
+  "seq": 414,
+  "page": 237
+ },
+ {
+  "excel_row": 479,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "直接后继",
+  "desc": "若(vi,vj)是AOV网中的一条弧，则称vj是vi的直接后继。直接后继是指有直接弧从其出发的后继顶点。",
+  "seq": 415,
+  "page": 237
+ },
+ {
+  "excel_row": 480,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "活动",
+  "desc": "在工程管理中，大的工程往往分解成若干个子工程，这些子工程被称为活动（activity）。当所有的活动都完成时，整个工程即告结束。在AOE网中，用弧表示活动，边上的权值表示活动持续的时间。",
+  "seq": 416,
+  "page": 237
+ },
+ {
+  "excel_row": 481,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "拓扑排序 ",
+  "desc": "求有向无环图拓扑序列的过程称为拓扑排序。在拓扑序列中，每个顶点都排在它的所有后继顶点之前。如果有向图中存在回路，则不能给出拓扑序列。",
+  "seq": 417,
+  "page": 237
+ },
+ {
+  "excel_row": 482,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "拓扑序列",
+  "desc": "有向无环图G=(V,E)的拓扑序列是G中顶点的一个线性序列，满足：对于G中的所有顶点v和w，如果(v,w)∈E，则在线性序列中v排在w之前。拓扑序列可能不唯一。",
+  "seq": 418,
+  "page": 237
+ },
+ {
+  "excel_row": 483,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "入度值表",
+  "desc": "入度值表是记录AOV网中各顶点入度的一维数组，用于拓扑排序。初始化时填入各顶点的入度。每当输出一个顶点时，将其所有直接后继顶点的入度减1。入度为0的顶点可以输出。",
+  "seq": 419,
+  "page": 239
+ },
+ {
+  "excel_row": 484,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "关键路径",
+  "desc": "将从源点到汇点具有最大长度的路径称为关键路径。关键路径的长度即该路径上所有活动持续时间之和，也就是完成整个工程所需的最少时间。求关键路径是带权有向无环图的重要应用。",
+  "seq": 420,
+  "page": 242
+ },
+ {
+  "excel_row": 485,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "关键活动",
+  "desc": "关键路径上的所有活动称为关键活动。关键活动的最早开始时间和最迟开始时间相等，即时间余量为0。关键活动的推延将直接导致整个工程的推延。",
+  "seq": 421,
+  "page": 243
+ },
+ {
+  "excel_row": 486,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "事件",
+  "desc": "在AOE网中，用顶点表示事件，用弧表示活动，边上的权值表示活动持续的时间。事件的最早开始时间和最迟开始时间是计算活动最早和最迟开始时间的基础。",
+  "seq": 422,
+  "page": 242
+ },
+ {
+  "excel_row": 487,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "最早开始时间",
+  "desc": "在AOE网中，从源点到任意顶点vk的最长路径长度称为事件vk的最早开始时间，记为ve(k)。它决定了所有以vk为尾的弧所表示活动的最早开始时间。ve按拓扑序列从前向后递推计算。",
+  "seq": 423,
+  "page": 242
+ },
+ {
+  "excel_row": 488,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "最迟开始时间",
+  "desc": "在不推迟整个工程完成的前提下，活动ak最迟必须开始进行的时间称作活动ak的最迟开始时间，记为l(k)。事件的最迟开始时间记为vl(k)，按逆拓扑序列从后向前递推计算。",
+  "seq": 424,
+  "page": 243
+ },
+ {
+  "excel_row": 489,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "时间余量 ",
+  "desc": "活动ak的最迟开始时间l(k)与最早开始时间e(k)之差l(k)-e(k)表示完成活动ak的时间余量。活动的实际开始时间可以在e(k)到l(k)之间任意调整而不影响整个工程的完成时间。时间余量为0的活动是关键活动。",
+  "seq": 425,
+  "page": 243
+ },
+ {
+  "excel_row": 490,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "活动的持续时间。 ",
+  "desc": "活动的持续时间即完成该活动所需的时间，在AOE网中表示为弧上的权值。设活动ak由弧<vj,vk>表示，其持续时间记为dut(j,k)。活动的最早开始时间和最迟开始时间均与持续时间相关。",
+  "seq": 426,
+  "page": 242
+ },
+ {
+  "excel_row": 491,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "拓扑排序的过程",
+  "desc": "拓扑排序的过程：(1)初始化记录所有顶点的入度；(2)选择一个入度为0（没有前驱）的顶点并输出；(3)从图中删除该顶点和以它为尾的所有弧，即将其所有直接后继的入度减1；(4)重复(2)(3)直到输出全部顶点（排序完成）或找不到入度为0的顶点（说明有回路）。",
+  "seq": 427,
+  "page": 238
+ },
+ {
+  "excel_row": 492,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "组成关键路径的关键活动",
+  "desc": "组成关键路径的关键活动是指时间余量为0（即l(k)=e(k)）的活动。关键路径上的所有活动都是关键活动。若有多个关键路径，则需同时缩短所有关键路径的长度才能缩短整个工程工期。",
+  "seq": 428,
+  "page": 243
+ },
+ {
+  "excel_row": 493,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "求解关键路径。 ",
+  "desc": "求解关键路径的算法步骤：(1)建立AOE网的存储结构；(2)从源点出发按拓扑序列求各事件最早开始时间ve(i)；(3)从汇点出发按逆拓扑序列求各事件最迟开始时间vl(i)；(4)根据ve和vl求各活动的最早开始时间e和最迟开始时间l；(5)e=l的活动为关键活动，构成关键路径。",
+  "seq": 429,
+  "page": 243
+ },
+ {
+  "excel_row": 494,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "判断有向图中是否存在环",
+  "desc": "判断有向图中是否存在环的方法：对有向图进行拓扑排序。若拓扑排序能够输出全部顶点，则说明图中不存在环，是有向无环图；若还没有输出全部顶点但已找不到入度为0的顶点，则说明图中含有回路（环）。",
+  "seq": 430,
+  "page": 239
+ },
+ {
+  "excel_row": 495,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "求有向无环图的拓扑序列",
+  "desc": "求有向无环图的拓扑序列：先建立各顶点的入度表，反复选择入度为0的顶点输出，然后将其所有直接后继的入度减1，直到所有顶点都输出。当有多个入度为0的顶点时，选择任意一个都可以，因此拓扑序列可能不唯一。",
+  "seq": 431,
+  "page": 239
+ },
+ {
+  "excel_row": 496,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "有向无环图及其应用 ",
+  "knowledge": "求关键路径。 ",
+  "desc": "求关键路径的步骤：先按拓扑序列求出各事件的最早开始时间ve，再按逆拓扑序列求出各事件的最迟开始时间vl，然后计算各活动的最早开始时间e=ve(j)和最迟开始时间l=vl(k)-dut(j,k)，最后找出e=l的关键活动，这些活动组成的从源点到汇点的最长路径即为关键路径。",
+  "seq": 432,
+  "page": 243
+ },
+ {
+  "excel_row": 497,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "最短路径",
+  "knowledge": "源点",
+  "desc": "在最短路径问题中，路径的开始顶点称为源点。在单源最短路径问题中，从某个给定源点到图中其他各顶点的最短路径。在AOE网中，源点指入度为0的事件点。",
+  "seq": 433,
+  "page": 246
+ },
+ {
+  "excel_row": 498,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "最短路径",
+  "knowledge": "终点",
+  "desc": "在最短路径问题中，路径的目的顶点称为终点。给定图中的两个顶点A和B，B即为终点，求从源点A到终点B的最短路径。",
+  "seq": 434,
+  "page": 246
+ },
+ {
+  "excel_row": 499,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "最短路径",
+  "knowledge": "带权图中的路径长度",
+  "desc": "对于带权图，两个顶点之间的路径长度定义为两顶点间路径上各边的权值之和。路径长度不再是边的数目，而是权值的累加和。",
+  "seq": 435,
+  "page": 246
+ },
+ {
+  "excel_row": 500,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "最短路径",
+  "knowledge": "单源最短路径",
+  "desc": "将求从某个源点到图中其他各顶点的最短路径的问题称为单源最短路径（single-source shortest path）问题。即已知图G=(V,E)，找出从某个给定源点v0∈V到V中其他任一顶点的最短路径。",
+  "seq": 436,
+  "page": 247
+ },
+ {
+  "excel_row": 501,
+  "chapter": "图 结 构",
+  "requirement": "识记",
+  "summary": "最短路径",
+  "knowledge": "所有点对间的最短路径。 ",
+  "desc": "所有点对间的最短路径是指求图中任意两个顶点之间的最短路径。可以通过将迪杰斯特拉算法对每个顶点分别执行一次来求得，也可以使用弗洛伊德（Floyd）算法一次性求得所有点对间的最短路径。",
+  "seq": 437,
+  "page": 249
+ },
+ {
+  "excel_row": 502,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "最短路径",
+  "knowledge": "迪杰斯特拉算法的求解过程",
+  "desc": "迪杰斯特拉（Dijkstra）算法的求解过程：将顶点分为集合S（已求得最短路径）和V-S（未确定）。初始S={源点}，dist[i]为源点到各顶点的直接边权值。每次从V-S中选dist最小的顶点u加入S，然后用u作为中间点更新V-S中各顶点的dist值。重复直到所有顶点加入S。时间复杂度O(n²)。",
+  "seq": 438,
+  "page": 247
+ },
+ {
+  "excel_row": 503,
+  "chapter": "图 结 构",
+  "requirement": "领会",
+  "summary": "最短路径",
+  "knowledge": "弗洛伊德算法的求解过程。 ",
+  "desc": "弗洛伊德（Floyd）算法的求解过程：设A(k)[i][j]表示从vi到vj中间顶点序号不大于k的最短路径长度。初始A(0)[i][j]=cost[i][j]（邻接矩阵）。对每个k，判断A(i-1)[i][k]+A(i-1)[k][j]是否小于A(i-1)[i][j]，若是则更新。三重循环，最终A(n)[i][j]即为所有点对间的最短路径。时间复杂度O(n³)。",
+  "seq": 439,
+  "page": 250
+ },
+ {
+  "excel_row": 504,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "最短路径",
+  "knowledge": "使用迪杰斯特拉算法求图的单源最短路径",
+  "desc": "使用迪杰斯特拉算法求单源最短路径：初始化dist数组为源点到各顶点的直接边权值，S={源点}。反复从V-S中选dist最小的顶点加入S，并以该顶点为中间点更新其余顶点的dist值（若dist[u]+cost[u][v]<dist[v]则更新）。直到所有可达顶点都加入S。",
+  "seq": 440,
+  "page": 248
+ },
+ {
+  "excel_row": 505,
+  "chapter": "图 结 构",
+  "requirement": "简单应用",
+  "summary": "最短路径",
+  "knowledge": "使用弗洛伊德算法求图所有点对 间的最短路径。 ",
+  "desc": "使用弗洛伊德算法求所有点对间的最短路径：以邻接矩阵cost为初始矩阵A(0)。依次以每个顶点k为中间顶点，对每对(i,j)判断经过k是否能缩短路径：若A[i][k]+A[k][j]<A[i][j]，则A[i][j]=A[i][k]+A[k][j]。最终矩阵中每对顶点间的值即为最短路径长度。",
+  "seq": 441,
+  "page": 251
+ },
+ {
+  "excel_row": 506,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "图的基本概念",
+  "desc": "图的基本概念是本章重点，包括：图的定义（G=(V,E)，V为有限非空顶点集，E为边集）、图的分类（有向图/无向图/带权图）、顶点与边的关系（邻接、关联、度/入度/出度）、路径与回路（简单路径、回路、简单回路）、连通性（连通图、连通分量、强连通图）等。",
+  "seq": 442,
+  "page": 207
+ },
+ {
+  "excel_row": 507,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "图的邻接矩阵",
+  "desc": "图的邻接矩阵是本章重点存储结构之一：用n阶矩阵表示图中各顶点间的邻接关系，有边处为1（或权值），无边处为0（或∞）。无向图邻接矩阵对称，有向图不一定对称。可方便判断边的存在和求顶点的度，空间复杂度O(n²)，适合稠密图。",
+  "seq": 443,
+  "page": 212
+ },
+ {
+  "excel_row": 508,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "邻接表及逆邻接表存储结构",
+  "desc": "邻接表及逆邻接表是本章重点的链式存储结构：邻接表由顶点数组和各顶点的邻接点单链表组成，空间复杂度O(n+e)，适合稀疏图。逆邻接表将弧方向反转，便于求顶点的入度。两者结合可方便地求出顶点的出度和入度。",
+  "seq": 444,
+  "page": 213
+ },
+ {
+  "excel_row": 509,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "图的基本操作的实现",
+  "desc": "图的基本操作的实现是本章重点：在邻接矩阵存储结构下实现创建图、输出图信息、查询边的权值、查找第一个邻接点和下一个邻接点、获取顶点数和边数等操作。关键在于通过邻接矩阵行/列扫描来定位邻接点。",
+  "seq": 445,
+  "page": 215
+ },
+ {
+  "excel_row": 510,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "图的深度优先搜索和广度优先搜索遍历算法",
+  "desc": "图的深度优先搜索和广度优先搜索遍历算法是本章重点：DFS类似先序遍历，用栈（递归）实现，尽可能深入后回溯；BFS类似层序遍历，用队列实现，由近及远逐层访问。两者时间复杂度均为O(n²)（邻接矩阵）或O(n+e)（邻接表）。",
+  "seq": 446,
+  "page": 221
+ },
+ {
+  "excel_row": 511,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "图的生成树概念及求带权图的最小生成树的算法",
+  "desc": "图的生成树概念及求带权图最小生成树的算法是本章重点：生成树是连通图的极小连通子图（n个顶点n-1条边）。最小生成树是权值之和最小的生成树，由Prim算法（适合稠密图，O(n²)）和Kruskal算法（适合稀疏图，O(eloge)）求解。",
+  "seq": 447,
+  "page": 226
+ },
+ {
+  "excel_row": 512,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "有向无环图的概念",
+  "desc": "有向无环图（DAG）的概念是本章重点：不存在回路的有向图称为有向无环图。DAG可用于描述工程中各子工程的先后关系，表示为AOV网（顶点表示活动）和AOE网（边表示活动）。DAG是拓扑排序和关键路径算法的基础。",
+  "seq": 448,
+  "page": 236
+ },
+ {
+  "excel_row": 513,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "求有向无环图的拓扑排序算法",
+  "desc": "求有向无环图的拓扑排序算法是本章重点：基于BFS策略——反复选入度为0的顶点输出并删除其出边（后继入度减1），直到全部输出或发现环。也可基于DFS策略——在DFS中顶点所有邻接点都输出后才输出该顶点，再逆序即为拓扑序列。",
+  "seq": 449,
+  "page": 237
+ },
+ {
+  "excel_row": 514,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "求图的关键路径算法 ",
+  "desc": "求图的关键路径算法是本章重点：在AOE网中，先按拓扑序列求各事件最早开始时间ve（向前递推取max），再按逆拓扑序列求各事件最迟开始时间vl（向后递推取min），然后计算各活动的e和l，e=l的活动为关键活动，组成关键路径。关键路径长度为工程最短工期。",
+  "seq": 450,
+  "page": 242
+ },
+ {
+  "excel_row": 515,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "迪杰斯特拉算法",
+  "desc": "迪杰斯特拉（Dijkstra）算法是本章重点：按路径长度不减的次序产生从源点到各顶点的最短路径。将顶点分为S（已确定最短路径）和V-S，每次从V-S中选dist最小的加入S，并更新其余顶点的dist。时间复杂度O(n²)。",
+  "seq": 451,
+  "page": 247
+ },
+ {
+  "excel_row": 516,
+  "chapter": "图 结 构",
+  "requirement": "本章重点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "弗洛伊德算法。",
+  "desc": "弗洛伊德（Floyd）算法是本章重点：通过三重循环，逐次允许以顶点k为中间点，比较A[i][k]+A[k][j]与A[i][j]的大小，取较小值更新。最终矩阵A中保存了所有点对间的最短路径长度。算法简洁优雅，时间复杂度O(n³)，适合求所有点对间的最短路径。",
+  "seq": 452,
+  "page": 249
+ },
+ {
+  "excel_row": 517,
+  "chapter": "图 结 构",
+  "requirement": "本章难点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "图的各经典算法的求解过程",
+  "desc": "图的各经典算法的求解过程是本章难点：包括DFS和BFS的遍历过程、生成树和最小生成树的构造过程（Prim选边策略、Kruskal排序选边合并连通分量）、拓扑排序过程（入度表维护）、关键路径求解过程（ve/vl双向递推）、Dijkstra最短路径过程（S集合扩展和dist更新）、Floyd算法过程（中间点递推）。需理解每个算法每一步的操作依据。",
+  "seq": 453,
+  "page": 252
+ },
+ {
+  "excel_row": 518,
+  "chapter": "图 结 构",
+  "requirement": "本章难点",
+  "summary": "图的基本概念与基本操作",
+  "knowledge": "实现及时间复杂度分析。",
+  "desc": "各算法的实现及时间复杂度分析是本章难点：DFS/BFS在邻接矩阵下为O(n²)、邻接表下为O(n+e)；Prim算法O(n²)适合稠密图；Kruskal算法O(eloge)适合稀疏图；Dijkstra算法O(n²)；Floyd算法O(n³)；拓扑排序和关键路径均为O(n+e)。需根据问题规模和图的特性选择合适算法。",
+  "seq": 454,
+  "page": 252
+ },
+ {
+  "excel_row": 519,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "排序",
+  "desc": "排序(sorting)是将一组记录按照其关键字的值重排，使其关键字域的值具有非递减或非递增顺序的过程。即给定一组记录r1...rn，将其排成满足ks1≤ks2≤...≤ksn或ks1≥ks2≥...≥ksn的序列。",
+  "seq": 455,
+  "page": 256
+ },
+ {
+  "excel_row": 520,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "关键字 ",
+  "desc": "关键字是记录内用来存放排序依据的特殊域，其类型必须是可比较的（如字符型或数值型）。记录的排列次序由关键字的排列次序决定，在排序算法中关键字也称为排序码。",
+  "seq": 456,
+  "page": 255
+ },
+ {
+  "excel_row": 521,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "主关键字",
+  "desc": "主关键字是能唯一标识记录的关键字，其值不允许重复。主关键字值一旦确定即对应唯一一条记录，主关键字与记录一一对应。按主关键字排序结果唯一。",
+  "seq": 457,
+  "page": 256
+ },
+ {
+  "excel_row": 522,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "次关键字",
+  "desc": "次关键字是除主关键字外的其余关键字，其值可以有相同。按次关键字排序时，由于允许多个记录关键字值相同，排序结果可能不唯一。",
+  "seq": 458,
+  "page": 256
+ },
+ {
+  "excel_row": 523,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "升序 ",
+  "desc": "经过排序的数据，若关键字值依从小到大的顺序排列，则称为升序。一般不特别指明时，排序算法将数据按升序排列。",
+  "seq": 459,
+  "page": 256
+ },
+ {
+  "excel_row": 524,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "降序",
+  "desc": "经过排序的数据，若关键字值依从大到小的顺序排列，则称为降序。降序与升序方向相反，使用最小堆可得到降序排序结果。",
+  "seq": 460,
+  "page": 256
+ },
+ {
+  "excel_row": 525,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "逆序对",
+  "desc": "当两个记录中关键字的大小次序与记录的相对次序不一致时，称这两个记录是逆序的(inversion)。排序本质上就是不断调整逆序数据对的过程。",
+  "seq": 461,
+  "page": 256
+ },
+ {
+  "excel_row": 526,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "内部排序",
+  "desc": "当待排序数据量不大，全部数据都可放入内存，排序操作完全在内存中进行时，称为内部排序(internal sorting)。因不涉及内外存数据交换，排序速度较快。",
+  "seq": 462,
+  "page": 256
+ },
+ {
+  "excel_row": 527,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "外排序",
+  "desc": "当待排序数据量大，全部数据不能同时放入内存，需借助外存分批完成排序时，称为外部排序(external sorting)。排序注重减少内外存数据交换次数。",
+  "seq": 463,
+  "page": 256
+ },
+ {
+  "excel_row": 528,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "稳定排序",
+  "desc": "具有相等关键字的两个记录，排序前位于后者之前，排序后仍位于后者之前，即不改变相等关键字记录的相对次序，称为稳定排序(stable)；反之则不稳定。",
+  "seq": 464,
+  "page": 256
+ },
+ {
+  "excel_row": 529,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "交换次数",
+  "desc": "交换次数是排序算法中记录交换（数据移动）的次数，是衡量时间开销的主要指标之一。每交换一次意味着数据移动。",
+  "seq": 465,
+  "page": 257
+ },
+ {
+  "excel_row": 530,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "排序的基本概念 ",
+  "knowledge": "比较次数。 ",
+  "desc": "比较次数是排序算法执行过程中关键字之间进行大小比较的次数，是衡量排序时间复杂度的核心指标，与交换次数共同决定算法效率。",
+  "seq": 466,
+  "page": 257
+ },
+ {
+  "excel_row": 531,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "排序的基本概念 ",
+  "knowledge": "稳定的含义",
+  "desc": "稳定排序指相等关键字记录排序前后相对次序不变。直接插入排序、起泡排序、归并排序、基数排序是稳定的；希尔排序、快速排序、堆排序、简单选择排序不稳定。",
+  "seq": 467,
+  "page": 290
+ },
+ {
+  "excel_row": 532,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "排序的基本概念 ",
+  "knowledge": "评价排序算法的标准",
+  "desc": "评价排序算法主要看时间复杂度（最优、最差、平均）和空间复杂度。时间开销主要统计关键字比较次数和记录交换次数；空间开销指排序过程所需额外空间。",
+  "seq": 468,
+  "page": 257
+ },
+ {
+  "excel_row": 533,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "排序的基本概念 ",
+  "knowledge": "数据的初始排列",
+  "desc": "数据的初始排列次序不同，排序所需的比较及移动次数不同。最少情形为最优时间复杂度，最多情形为最差时间复杂度，平均情形为平均时间复杂度。",
+  "seq": 469,
+  "page": 257
+ },
+ {
+  "excel_row": 534,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "排序的基本概念 ",
+  "knowledge": "排序中的主要操作。 ",
+  "desc": "排序算法的主要操作包括关键字的比较及记录的交换（意味着数据移动）。时间开销主要统计这两项操作执行的次数。",
+  "seq": 470,
+  "page": 257
+ },
+ {
+  "excel_row": 535,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "插入排序 ",
+  "knowledge": "直接插入排序",
+  "desc": "直接插入排序是插入排序的基本形式，基本操作为将一个待排序元素插入到前面已有序的子序列中，形成更长的有序子序列。初始第一个元素自然有序。",
+  "seq": 471,
+  "page": 257
+ },
+ {
+  "excel_row": 536,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "插入排序 ",
+  "knowledge": "有序子段",
+  "desc": "有序子段是插入排序中前面部分已经排好序的子序列。初始仅含第一个元素，每趟排序增加一个元素，n-1趟后包含全部元素。",
+  "seq": 472,
+  "page": 257
+ },
+ {
+  "excel_row": 537,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "插入排序 ",
+  "knowledge": "待排序元素",
+  "desc": "待排序元素是插入排序中尚未进入有序子段、等待被取出插入到前面有序子序列中的元素，位于数组后半部分的U区域中。",
+  "seq": 473,
+  "page": 257
+ },
+ {
+  "excel_row": 538,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "插入排序 ",
+  "knowledge": "希尔排序",
+  "desc": "希尔排序(Shell sort)又称缩小增量排序，由D.L.Shell于1959年提出，是直接插入排序的改进。按增量分组对各组进行直接插入排序，增量递减至1。",
+  "seq": 474,
+  "page": 260
+ },
+ {
+  "excel_row": 539,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "插入排序 ",
+  "knowledge": "增量",
+  "desc": "增量d是希尔排序中分组的间隔数。相距等间隔d的元素归入同一组，各趟d值递减，最后一趟d=1即对全部数据直接插入排序。",
+  "seq": 475,
+  "page": 260
+ },
+ {
+  "excel_row": 540,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "插入排序 ",
+  "knowledge": "增量序列。 ",
+  "desc": "增量序列是希尔排序各趟所选用的d值构成的递减序列，最后一项必为1。常见取法如d0=n, d(i+1)=floor(di/2)等。增量间最好无倍数关系。",
+  "seq": 476,
+  "page": 260
+ },
+ {
+  "excel_row": 541,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "插入排序 ",
+  "knowledge": "直接插入排序的基本思想",
+  "desc": "直接插入排序基本思想：初始第一个元素形成有序子序列，从第二个元素起依次取出待排序元素，从后向前与有序子序列元素比较，逆序则交换，直到找到合适位置插入。",
+  "seq": 477,
+  "page": 257
+ },
+ {
+  "excel_row": 542,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "插入排序 ",
+  "knowledge": "特性及复杂度分析，希尔排序算法的基本思想",
+  "desc": "直接插入排序时间复杂度O(n²)（最优O(n)、最差O(n²)），空间O(1)，稳定。希尔排序利用直接插入排序在数据量小和基本有序时性能好的特点，先分组短段排序再长段排序。",
+  "seq": 478,
+  "page": 259
+ },
+ {
+  "excel_row": 543,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "插入排序 ",
+  "knowledge": "特性及复杂度分析",
+  "desc": "希尔排序数据移动步幅较大，改善了直接插入排序效率，但因不相邻元素间移动而丢失稳定性，即希尔排序不稳定。其效率分析较复杂，至今仍在研究中。",
+  "seq": 479,
+  "page": 263
+ },
+ {
+  "excel_row": 544,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "插入排序 ",
+  "knowledge": "组内排序",
+  "desc": "组内排序指希尔排序中，按增量将数据分成若干组后，对每组内的元素分别进行直接插入排序，调整组内逆序对，提高整体有序性。",
+  "seq": 480,
+  "page": 260
+ },
+ {
+  "excel_row": 545,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "插入排序 ",
+  "knowledge": "希尔排序与直接插入排序的相关性。 ",
+  "desc": "希尔排序利用直接插入排序两个优点：数据量小时性能好、数据基本有序时性能好。先分短组排序（利用数据量少），再扩成长段基本有序排序（利用基本有序）。",
+  "seq": 481,
+  "page": 260
+ },
+ {
+  "excel_row": 546,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "插入排序 ",
+  "knowledge": "灵活运用直接插入排序和希尔排序算法",
+  "desc": "能根据给定数据序列，手动模拟直接插入排序每趟结果（下划线标记有序子段），以及希尔排序按给定增量序列每趟分组排序的结果。",
+  "seq": 482,
+  "page": 258
+ },
+ {
+  "excel_row": 547,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "插入排序 ",
+  "knowledge": "能够实现直接插入排序和希尔排序 算法。 ",
+  "desc": "能够编写insertSort直接插入排序和ShellSort希尔排序算法代码，包括相邻交换版本和后移临时变量版本，以及希尔排序的分组插入修改。",
+  "seq": 483,
+  "page": 258
+ },
+ {
+  "excel_row": 548,
+  "chapter": "内部排序",
+  "requirement": "综合应用",
+  "summary": "插入排序 ",
+  "knowledge": "能够运用插入排序的思想设计算法来解决应用问题。 ",
+  "desc": "能够运用插入排序「边比较边移动寻找插入位置」的思想，设计并实现解决其他数据排序相关的实际应用问题。",
+  "seq": 484,
+  "page": 257
+ },
+ {
+  "excel_row": 549,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "交换排序 ",
+  "knowledge": "起泡排序",
+  "desc": "起泡排序(bubble sort)也称冒泡排序，基本思想是扫描数组依次比较相邻两个元素，若逆序则交换，每趟将本趟最大值「起泡「到最终位置。",
+  "seq": 485,
+  "page": 263
+ },
+ {
+  "excel_row": 550,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "交换排序 ",
+  "knowledge": "快速排序",
+  "desc": "快速排序(quick sort)由C.A.R.Hoare于1962年提出，基于分治思想。选枢轴将数据划分为小于枢轴和大于枢轴两部分，递归排序两部分。",
+  "seq": 486,
+  "page": 267
+ },
+ {
+  "excel_row": 551,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "交换排序 ",
+  "knowledge": "枢轴",
+  "desc": "枢轴(pivot)是快速排序中选择的基准元素。将小于枢轴的数据分一组、大于枢轴的数据分一组，枢轴所在位置即为其最终排序位置。",
+  "seq": 487,
+  "page": 267
+ },
+ {
+  "excel_row": 552,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "交换排序 ",
+  "knowledge": "整体有序",
+  "desc": "整体有序指快速排序划分后，一组中的所有数据值全部小于另一组中的所有数据值。因此两个子段可独立进行排序。",
+  "seq": 488,
+  "page": 268
+ },
+ {
+  "excel_row": 553,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "交换排序 ",
+  "knowledge": "划分",
+  "desc": "划分是快速排序中将一个大数据段按枢轴分解为两个更小数据段的过程。每次划分使枢轴到达最终位置，左右子段可递归排序。",
+  "seq": 489,
+  "page": 267
+ },
+ {
+  "excel_row": 554,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "交换排序 ",
+  "knowledge": "三元取中方法。 ",
+  "desc": "三元取中方法是在待排序段最左、中间、最右三个位置的元素中选择中间值作为枢轴，保证划分后两部分都不为空，避免最差情况。",
+  "seq": 490,
+  "page": 273
+ },
+ {
+  "excel_row": 555,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "交换排序 ",
+  "knowledge": "起泡排序的基本思想",
+  "desc": "起泡排序基本思想：从前向后扫描数组，依次比较相邻元素，逆序则交换，每趟将最大值移到数组末尾。n个元素需n-1趟，可设置标志位提前终止。",
+  "seq": 491,
+  "page": 263
+ },
+ {
+  "excel_row": 556,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "交换排序 ",
+  "knowledge": "特性及复杂度分析",
+  "desc": "起泡排序比较次数固定为n(n-1)/2，时间复杂度O(n²)（最优/最差/平均相同），空间O(1)，稳定。改进版最优情况（已有序）仅一趟O(n)。",
+  "seq": 492,
+  "page": 267
+ },
+ {
+  "excel_row": 557,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "交换排序 ",
+  "knowledge": "快速排序的基本思想",
+  "desc": "快速排序基本思想：选枢轴元素，将小于枢轴的放左边、大于枢轴的放右边，枢轴归位，再递归对左右两子段分别快排，直到子段长度为1。",
+  "seq": 493,
+  "page": 267
+ },
+ {
+  "excel_row": 558,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "交换排序 ",
+  "knowledge": "特性及复杂度分析",
+  "desc": "快速排序最好情况O(nlogn)（等分），最差O(n²)（已有序选首元素为枢轴），平均O(nlogn)，不稳定，需栈辅助空间最坏O(n)。",
+  "seq": 494,
+  "page": 273
+ },
+ {
+  "excel_row": 559,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "交换排序 ",
+  "knowledge": "枢轴的选择方法",
+  "desc": "枢轴可选择第一个元素（简单但可能最差），或采用三元取中方法在最左、中间、最右元素中选中间值作为枢轴以提高效率。",
+  "seq": 495,
+  "page": 273
+ },
+ {
+  "excel_row": 560,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "交换排序 ",
+  "knowledge": "枢轴对快速排序效率的影响",
+  "desc": "枢轴选择直接影响快排效率：若每次将数据等分则效率最高O(nlogn)；若枢轴是最小值/最大值则一个子段为空，效率最低O(n²)。数据有序时选首元素为枢轴会最差。",
+  "seq": 496,
+  "page": 273
+ },
+ {
+  "excel_row": 561,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "交换排序 ",
+  "knowledge": "分治思想。 ",
+  "desc": "分治思想是将大的难解问题分解为若干小问题，逐步缩减问题尺度，小问题求解后整合得到原问题解。即「大而化小，分而治之「。",
+  "seq": 497,
+  "page": 267
+ },
+ {
+  "excel_row": 562,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "交换排序 ",
+  "knowledge": "灵活运用起泡排序和快速排序算法",
+  "desc": "能根据数据手动模拟起泡排序每趟结果（从后向前或从前向后扫描），以及快速排序一趟划分过程和递归排序全过程。",
+  "seq": 498,
+  "page": 264
+ },
+ {
+  "excel_row": 563,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "交换排序 ",
+  "knowledge": "能够实现起泡排序和快速排序算法。 ",
+  "desc": "能够编写bubbleSort起泡排序（含改进版flag标志和right界限）和QuickSort快速排序（含partition划分函数递归调用）代码。",
+  "seq": 499,
+  "page": 270
+ },
+ {
+  "excel_row": 564,
+  "chapter": "内部排序",
+  "requirement": "综合应用",
+  "summary": "交换排序 ",
+  "knowledge": "能够运用交换排序的思想设计算法来解决应用问题。",
+  "desc": "能够运用交换排序「寻找逆序对并直接交换相邻元素」的思想设计并实现解决其他数据排序相关的实际应用问题。",
+  "seq": 500,
+  "page": 263
+ },
+ {
+  "excel_row": 565,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "选择排序",
+  "knowledge": "直接选择排序",
+  "desc": "直接选择排序（简单选择排序）每趟从待排序部分中选出关键字最小的记录，与该趟第一个位置的元素交换，n-1趟完成排序。",
+  "seq": 501,
+  "page": 273
+ },
+ {
+  "excel_row": 566,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "选择排序",
+  "knowledge": "堆排序",
+  "desc": "堆排序(heapsort)借助堆结构进行选择排序。建最大堆后每次输出堆顶（最大值）到末尾，再将剩余元素调整为新堆，重复n-1趟得升序。",
+  "seq": 502,
+  "page": 275
+ },
+ {
+  "excel_row": 567,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "选择排序",
+  "knowledge": "初始堆。 ",
+  "desc": "初始堆（建堆）是将无序数据序列按堆的要求进行调整。从最后一个分支结点开始向前，逐个向下调整使其满足堆性质。",
+  "seq": 503,
+  "page": 276
+ },
+ {
+  "excel_row": 568,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "选择排序",
+  "knowledge": "直接选择排序的基本思想",
+  "desc": "直接选择排序基本思想：第i趟从未排序的n-i+1个元素中扫描找到最小值，记录其位置，将其与第i个位置元素交换。比较次数与初始状态无关。",
+  "seq": 504,
+  "page": 273
+ },
+ {
+  "excel_row": 569,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "选择排序",
+  "knowledge": "特性及复杂度分析",
+  "desc": "简单选择排序比较次数固定为n(n-1)/2，时间复杂度O(n²)，交换次数最多n-1次（最少0次），空间O(1)。因不相邻元素交换故不稳定。",
+  "seq": 505,
+  "page": 275
+ },
+ {
+  "excel_row": 570,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "选择排序",
+  "knowledge": "堆排序的基本思想",
+  "desc": "堆排序基本思想：利用最大堆堆顶为最大值的特性，输出堆顶元素与末尾交换，堆大小减1后对根结点向下调整（整堆），重复直到全部输出。最大堆得升序。",
+  "seq": 506,
+  "page": 275
+ },
+ {
+  "excel_row": 571,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "选择排序",
+  "knowledge": "特性及复杂度分析。 ",
+  "desc": "堆排序最佳、平均、最差时间复杂度均为O(nlogn)，不受初始数据有序性影响，空间O(1)，不稳定。任何情况都要求效率稳定时可选堆排序。",
+  "seq": 507,
+  "page": 279
+ },
+ {
+  "excel_row": 572,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "选择排序",
+  "knowledge": "灵活运用直接选择排序和堆排序算法",
+  "desc": "能手动模拟直接选择排序每趟找最小值并交换的完整过程，以及堆排序中建堆、输出堆顶、向下整堆的完整过程。",
+  "seq": 508,
+  "page": 275
+ },
+ {
+  "excel_row": 573,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "选择排序",
+  "knowledge": "能够实现直接选择排序和堆排序 算法。 ",
+  "desc": "能够编写SmpSelSort简单选择排序和HeapSort堆排序代码，包括ShiftDown堆调整函数和建堆循环。",
+  "seq": 509,
+  "page": 277
+ },
+ {
+  "excel_row": 574,
+  "chapter": "内部排序",
+  "requirement": "综合应用",
+  "summary": "选择排序",
+  "knowledge": "能够运用选择排序的思想设计算法来解决应用问题。 ",
+  "desc": "能够运用选择排序「每趟选择最值放到最终位置」的思想设计并实现解决其他数据排序相关的实际应用问题。",
+  "seq": 510,
+  "page": 273
+ },
+ {
+  "excel_row": 575,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "归并排序",
+  "knowledge": "合并 ",
+  "desc": "合并（归并merge）是将若干个有序序列合并为一个有序序列的操作。两个有序序列的合并称二路归并，需一个等长辅助数组。",
+  "seq": 511,
+  "page": 280
+ },
+ {
+  "excel_row": 576,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "归并排序",
+  "knowledge": "有序段",
+  "desc": "有序段是归并操作中参与合并的已有序的子序列，也称归并段或顺串。初始时每个元素可看成长度为1的有序段。",
+  "seq": 512,
+  "page": 280
+ },
+ {
+  "excel_row": 577,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "归并排序",
+  "knowledge": "归并段",
+  "desc": "归并段即有序段，是归并排序中参与二路归并的有序子序列。归并排序反复归并有序段直到全部数据成为一个有序序列。",
+  "seq": 513,
+  "page": 280
+ },
+ {
+  "excel_row": 578,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "归并排序",
+  "knowledge": "归并排序。 ",
+  "desc": "归并排序(merging sort)借助二路归并操作完成排序，分非递归（两两归并长度倍增）和递归（中分排序再归并）两种实现。",
+  "seq": 514,
+  "page": 280
+ },
+ {
+  "excel_row": 579,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "归并排序",
+  "knowledge": "非递归实现的归并排序的基本思想",
+  "desc": "非递归归并排序：初始每个元素为长度1的有序段，逐趟将相邻两个有序段两两归并，有序段长度倍增，直到所有元素在一个有序序列中。",
+  "seq": 515,
+  "page": 282
+ },
+ {
+  "excel_row": 580,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "归并排序",
+  "knowledge": "特性及复杂度分析",
+  "desc": "归并排序每次二分数组共logn趟，每趟扫描全部n个元素，总时间复杂度O(nlogn)（最佳/最差/平均相同）。需等长辅助数组，空间O(n)。",
+  "seq": 516,
+  "page": 285
+ },
+ {
+  "excel_row": 581,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "归并排序",
+  "knowledge": "递归实现的归并排序的 基本思想",
+  "desc": "递归归并排序：以待排序数据中间位置为界将序列一分为二，递归对前后两半分别排序，再调用merge将两个有序子序列归并为一个。",
+  "seq": 517,
+  "page": 283
+ },
+ {
+  "excel_row": 582,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "归并排序",
+  "knowledge": "特性及复杂度分析。 ",
+  "desc": "递归归并排序时间复杂度O(nlogn)（三种情况相同），需辅助数组O(n)，需在原数组和工作数组间复制数据。归并排序是稳定的。",
+  "seq": 518,
+  "page": 285
+ },
+ {
+  "excel_row": 583,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "归并排序",
+  "knowledge": "灵活运用归并排序算法",
+  "desc": "能手动模拟非递归二路归并每趟两两合并的完整过程，以及递归归并划分到长度1后再逐层归并的完整排序过程。",
+  "seq": 519,
+  "page": 282
+ },
+ {
+  "excel_row": 584,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "归并排序",
+  "knowledge": "能够实现归并排序算法。 ",
+  "desc": "能够编写merge两个相邻有序段归并函数和mSort非递归/递归两种方式实现的完整归并排序算法代码。",
+  "seq": 520,
+  "page": 281
+ },
+ {
+  "excel_row": 585,
+  "chapter": "内部排序",
+  "requirement": "综合应用",
+  "summary": "归并排序",
+  "knowledge": "能够运用归并排序的思想设计算法来解决应用问题。 ",
+  "desc": "能够运用归并排序「分治+有序段两两合并」的思想设计并实现解决其他数据排序相关的实际应用问题。",
+  "seq": 521,
+  "page": 280
+ },
+ {
+  "excel_row": 586,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "分配排序",
+  "knowledge": "盒子排序",
+  "desc": "盒子排序利用数组下标作为「盒子「，扫描数据统计各值出现次数存入count数组，再按顺序输出下标值完成排序。时间O(n)，空间O(m)。",
+  "seq": 522,
+  "page": 285
+ },
+ {
+  "excel_row": 587,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "分配排序",
+  "knowledge": "基数排序",
+  "desc": "基数排序是分配排序的一种，将关键字拆分为若干子关键字，从最低位到最高位逐位进行「分配「和「收集「操作，无需关键字间比较。",
+  "seq": 523,
+  "page": 287
+ },
+ {
+  "excel_row": 588,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "分配排序",
+  "knowledge": "分配",
+  "desc": "分配是基数排序中按当前位关键字值，将数据放入对应编号盒子的过程。如按个位数分配，个位数为r的放入编号r的盒子。",
+  "seq": 524,
+  "page": 287
+ },
+ {
+  "excel_row": 589,
+  "chapter": "内部排序",
+  "requirement": "识记",
+  "summary": "分配排序",
+  "knowledge": "收集。 ",
+  "desc": "收集是基数排序中按盒子编号从0到r-1依次将各盒子中的关键字按放入次序取出，重新连成一个序列的过程。",
+  "seq": 525,
+  "page": 287
+ },
+ {
+  "excel_row": 590,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "分配排序",
+  "knowledge": "基数排序的基本思想",
+  "desc": "基数排序基本思想：将关键字拆分为子关键字（如个位、十位），设置r个盒子，从最低位开始逐位进行分配（按当前位放入盒子）和收集（按编号取出），重复d趟后得有序序列。",
+  "seq": 526,
+  "page": 287
+ },
+ {
+  "excel_row": 591,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "分配排序",
+  "knowledge": "特性及复杂度分析。 ",
+  "desc": "基数排序进行d趟分配收集，每趟处理n个元素，时间复杂度O(d*n)为线性级，空间O(n)，是稳定排序。d和r固定时不随n变化。",
+  "seq": 527,
+  "page": 287
+ },
+ {
+  "excel_row": 592,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "分配排序",
+  "knowledge": "灵活运用基数排序算法",
+  "desc": "能手动模拟基数排序按个位分配收集、再按十位分配收集的完整过程，并写出每趟分配收集后的关键字序列结果。",
+  "seq": 528,
+  "page": 287
+ },
+ {
+  "excel_row": 593,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "分配排序",
+  "knowledge": "能够实现基数排序算法。 ",
+  "desc": "能够编写RadixSort基数排序算法代码，包括count计数数组、计算下标范围、从后向前放置到辅助数组等步骤。",
+  "seq": 529,
+  "page": 289
+ },
+ {
+  "excel_row": 594,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "有关内部排序算法的比较",
+  "knowledge": "各排序算法适用的条件",
+  "desc": "平均效率快速排序最好，归并次之，堆排序再次；最差情况堆排序和归并排序优于快排；数据少或基本有序时直接插入排序最佳；基数排序适合d*n线性场景。",
+  "seq": 530,
+  "page": 290
+ },
+ {
+  "excel_row": 595,
+  "chapter": "内部排序",
+  "requirement": "领会",
+  "summary": "有关内部排序算法的比较",
+  "knowledge": "各排序算法的特性。 ",
+  "desc": "直接插入/起泡O(n²)稳定；简单选择O(n²)不稳定；希尔不稳定；快排平均O(nlogn)最差O(n²)不稳定；归并O(nlogn)稳定；堆O(nlogn)不稳定；基数O(dn)稳定。",
+  "seq": 531,
+  "page": 290
+ },
+ {
+  "excel_row": 596,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "有关内部排序算法的比较",
+  "knowledge": "根据不同条件选择合适的排序算法",
+  "desc": "根据条件选择：日常大量排序选平均复杂度好的（快排）；任何情况要求高效选堆/归并；数据基本有序或n小选插入排序；要求稳定选归并/基数。",
+  "seq": 532,
+  "page": 290
+ },
+ {
+  "excel_row": 597,
+  "chapter": "内部排序",
+  "requirement": "简单应用",
+  "summary": "有关内部排序算法的比较",
+  "knowledge": "从排序结果推测所采用的排序算法。 ",
+  "desc": "根据一趟排序结果特征反推算法：选择/起泡第一趟最值到端点；快排一趟后有枢轴分割；希尔一趟后各组内有序；据此排除不可能选项。",
+  "seq": 533,
+  "page": 291
+ },
+ {
+  "excel_row": 598,
+  "chapter": "内部排序",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "排序的基本概念",
+  "desc": "排序定义、关键字（主/次）、升序降序、逆序对、内排序与外排序、稳定排序含义、评价标准（比较次数、交换次数、时间/空间复杂度）。",
+  "seq": 534,
+  "page": 255
+ },
+ {
+  "excel_row": 599,
+  "chapter": "内部排序",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "各排序算法的基本思想",
+  "desc": "插入排序（直接插入、希尔）、交换排序（起泡、快速）、选择排序（简单选择、堆）、归并排序、分配排序（盒子、基数）各类算法的核心思想。",
+  "seq": 535,
+  "page": 255
+ },
+ {
+  "excel_row": 600,
+  "chapter": "内部排序",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "排序过程及其特性",
+  "desc": "各算法每趟操作特点：插入排序扩大有序子段；起泡每趟最值到位；快排枢轴归位；选择每趟选最值；堆排序输出堆顶；归并两两合并；基数逐位分配收集。",
+  "seq": 536,
+  "page": 290
+ },
+ {
+  "excel_row": 601,
+  "chapter": "内部排序",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "各排序算法的实现及复杂度分析",
+  "desc": "各算法代码实现及复杂度：直接插入O(n²)稳定；快排平均O(nlogn)不稳定；堆O(nlogn)不稳定；归并O(nlogn)稳定空间O(n)；基数O(dn)稳定。",
+  "seq": 537,
+  "page": 290
+ },
+ {
+  "excel_row": 602,
+  "chapter": "内部排序",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "各种排序算法的比较及使用条件。 ",
+  "desc": "各排序算法比较：时间复杂度（最优/平均/最差）、空间复杂度、稳定性、适用条件。理论下界O(nlogn)。实际常组合使用多种算法。",
+  "seq": 538,
+  "page": 290
+ },
+ {
+  "excel_row": 603,
+  "chapter": "内部排序",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "各排序算法的实现",
+  "desc": "各排序算法的具体实现细节：快排partition划分过程、堆排序建堆与向下调整ShiftDown、希尔排序分组插入修改、基数排序计数分配收集。",
+  "seq": 539,
+  "page": 290
+ },
+ {
+  "excel_row": 604,
+  "chapter": "内部排序",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "特点及相互比较。",
+  "desc": "各排序算法特点及相互比较：时间/空间复杂度对比表、稳定性归类（稳定：插入/起泡/归并/基数；不稳定：希尔/快排/堆/选择）、适用场景区分。",
+  "seq": 540,
+  "page": 290
+ },
+ {
+  "excel_row": 605,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "查找 ",
+  "desc": "查找（检索）是给定一个具体目标，在数据集中搜索寻找与目标相符合对象的过程。主要操作是关键字之间的比较，查找效率指比较次数的多少。",
+  "seq": 541,
+  "page": 295
+ },
+ {
+  "excel_row": 606,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "单值查找",
+  "desc": "单值查找是给定一个具体的值，查找与该值相等的对象。本章主要讨论单值查找方法，适当修改后可适用于范围查找。",
+  "seq": 542,
+  "page": 295
+ },
+ {
+  "excel_row": 607,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "范围查找",
+  "desc": "范围查找是给定一个值的区间，查找其值位于该区间内的所有对象。单值查找方法经适当修改后可用于范围查找。",
+  "seq": 543,
+  "page": 295
+ },
+ {
+  "excel_row": 608,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "查找表",
+  "desc": "查找表（查找池）是查找过程所完成的数据集，可以是数组、链表或树。表中数据项也称记录，每个记录至少含一个关键字。",
+  "seq": 544,
+  "page": 295
+ },
+ {
+  "excel_row": 609,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "成功查找",
+  "desc": "成功查找指在查找表中找到了关键字值等于给定目标值K的记录，使得该记录的关键字key恰好等于目标值K。",
+  "seq": 545,
+  "page": 296
+ },
+ {
+  "excel_row": 610,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "不成功查找",
+  "desc": "不成功查找（查找失败）指在查找表中找不到关键字值等于给定目标值K的记录，即查找表中不存在该目标记录。",
+  "seq": 546,
+  "page": 296
+ },
+ {
+  "excel_row": 611,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "外部查找",
+  "desc": "外部查找是当数据量非常大、需要借助外存存储数据时进行的查找，此时全部数据不能同时全部存放在内存当中。",
+  "seq": 547,
+  "page": 296
+ },
+ {
+  "excel_row": 612,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "内部查找",
+  "desc": "内部查找是当全部数据可以同时存放在内存中时进行的查找，本章讨论的各种查找方法均针对内部查找应用场景。",
+  "seq": 548,
+  "page": 296
+ },
+ {
+  "excel_row": 613,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "查找的基本概念 ",
+  "knowledge": "平均查找长度。 ",
+  "desc": "平均查找长度ASL=ΣPi*Ci，其中Pi为查找第i个记录的概率，Ci为比较次数。等概率时Pi=1/n，ASL=ΣCi/n，是衡量查找效率的标准。",
+  "seq": 549,
+  "page": 297
+ },
+ {
+  "excel_row": 614,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "查找的基本概念 ",
+  "knowledge": "查找算法的适用条件",
+  "desc": "无序表用顺序查找；有序表可用折半查找；数据多用索引顺序（分块）查找；还可用二叉查找树、AVL树、B树等树形结构及哈希方法。",
+  "seq": 550,
+  "page": 296
+ },
+ {
+  "excel_row": 615,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "查找的基本概念 ",
+  "knowledge": "查找长度的含义。 ",
+  "desc": "查找长度指查找过程中关键字与目标进行比较的次数。最好1次即可找到，最坏可能需n次。平均查找长度是其统计平均。",
+  "seq": 551,
+  "page": 297
+ },
+ {
+  "excel_row": 616,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "顺序表的查找 ",
+  "knowledge": "顺序表",
+  "desc": "顺序表是数据存储在数组中形成的表。按关键字无序为无序表，按关键字有序为有序表。数组还需记录实际元素个数。",
+  "seq": 552,
+  "page": 297
+ },
+ {
+  "excel_row": 617,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "顺序表的查找 ",
+  "knowledge": "顺序查找方法",
+  "desc": "顺序查找（线性查找）从顺序表头开始，用给定目标与各记录关键字逐个比较，直到找到或比较到表尾。不要求数据有序，空间O(1)。",
+  "seq": 553,
+  "page": 297
+ },
+ {
+  "excel_row": 618,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "顺序表的查找 ",
+  "knowledge": "折半查找方法",
+  "desc": "折半查找（二分查找）适用于有序表，从中间元素开始比较，根据大小关系舍弃一半区间，每次将候选区间缩小一半直到找到或区间为空。",
+  "seq": 554,
+  "page": 299
+ },
+ {
+  "excel_row": 619,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "顺序表的查找 ",
+  "knowledge": "折半查找判定树",
+  "desc": "折半查找判定树是描述折半查找过程的二叉树。查找时比较的关键字序列恰在根到目标结点的路径上，比较次数为该路径结点数。",
+  "seq": 555,
+  "page": 302
+ },
+ {
+  "excel_row": 620,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "顺序表的查找 ",
+  "knowledge": "索引",
+  "desc": "索引是分块查找中由每块最大关键字和该块存储位置指针组成的索引项，保存在索引表中。因块间整体有序，索引表也是有序表。",
+  "seq": 556,
+  "page": 304
+ },
+ {
+  "excel_row": 621,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "顺序表的查找 ",
+  "knowledge": "索引顺序查找",
+  "desc": "索引顺序查找（分块查找）先查索引表确定目标可能在哪个块，再在该块内进行查找。索引表可折半查找，块内通常顺序查找。",
+  "seq": 557,
+  "page": 303
+ },
+ {
+  "excel_row": 622,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "顺序表的查找 ",
+  "knowledge": "分块查找。 ",
+  "desc": "分块查找即索引顺序查找。将数据分成若干块，块间整体有序（前块所有关键字小于后块），块内可无序。先查索引再块内查找。",
+  "seq": 558,
+  "page": 303
+ },
+ {
+  "excel_row": 623,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "顺序表的查找 ",
+  "knowledge": "折半查找方法的适用条件。 ",
+  "desc": "折半查找要求：必须顺序存储（数组），且各记录按关键字有序排列。这两个限制换来高效率O(logn)。不能用于链表。",
+  "seq": 559,
+  "page": 303
+ },
+ {
+  "excel_row": 624,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "顺序表的查找 ",
+  "knowledge": "简单应用：",
+  "desc": "能根据给定有序表手动模拟折半查找过程，写出每次low、mid、high的变化及比较序列，判断查找成功或失败。",
+  "seq": 560,
+  "page": 299
+ },
+ {
+  "excel_row": 625,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "顺序表的查找 ",
+  "knowledge": "计算顺序查找的平均查找长度",
+  "desc": "顺序查找等概率时成功ASL=(n+1)/2，不成功ASL=n，时间复杂度O(n)。可按查找频率从高到低排列记录（自组织线性表）提高效率。",
+  "seq": 561,
+  "page": 298
+ },
+ {
+  "excel_row": 626,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "顺序表的查找 ",
+  "knowledge": "计算折半查找的平均查找长度",
+  "desc": "折半查找可用判定树分析，成功ASL约为log2(n+1)，时间复杂度O(logn)。不成功也约为树高logn。n=1000时ASL不超过10。",
+  "seq": 562,
+  "page": 303
+ },
+ {
+  "excel_row": 627,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "顺序表的查找 ",
+  "knowledge": "分块查找块数和块大小的最优配置。 ",
+  "desc": "分块查找设总记录数n，每块s个、b=ceil(n/s)块。两部分都顺序查找时ASL=(b+1)/2+(s+1)/2，当s=√n即b=s时ASL最小。",
+  "seq": 563,
+  "page": 304
+ },
+ {
+  "excel_row": 628,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "树形结构的查找 ",
+  "knowledge": "二叉查找树",
+  "desc": "二叉查找树(BST)或为空树，或满足：左子树所有结点关键字小于根，右子树所有结点关键字大于根，且左右子树也都是二叉查找树。中序遍历得有序序列。",
+  "seq": 564,
+  "page": 305
+ },
+ {
+  "excel_row": 629,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "树形结构的查找 ",
+  "knowledge": "二叉查找树的特性",
+  "desc": "二叉查找树特性：左<根<右；中序遍历得递增有序序列；查找从根沿一条路径进行，比较序列为路径上的关键字；同一组关键字插入次序不同树形不同。",
+  "seq": 565,
+  "page": 305
+ },
+ {
+  "excel_row": 630,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "树形结构的查找 ",
+  "knowledge": "查找过程中关键字比较序列",
+  "desc": "查找过程中与目标比较的关键字构成一个序列，这些结点恰在从根到目标结点的路径上。序列长度不大于树的高度。",
+  "seq": 566,
+  "page": 306
+ },
+ {
+  "excel_row": 631,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "树形结构的查找 ",
+  "knowledge": "AVL树",
+  "desc": "AVL树是满足平衡条件的二叉查找树：左右子树都是AVL树，且左右子树高度差的绝对值不超过1。也称平衡二叉树，由Adelson-Velskii和Landis于1962年提出。",
+  "seq": 567,
+  "page": 312
+ },
+ {
+  "excel_row": 632,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "树形结构的查找 ",
+  "knowledge": "平衡因子",
+  "desc": "平衡因子定义为结点左子树高度减去右子树高度。AVL树中所有结点的平衡因子绝对值不大于1（介于-1和1之间），否则失平衡。",
+  "seq": 568,
+  "page": 312
+ },
+ {
+  "excel_row": 633,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "树形结构的查找 ",
+  "knowledge": "B 树 。 ",
+  "desc": "B树是m阶多路平衡查找树：每个结点至多m棵子树，根至少2棵，非根结点至少ceil(m/2)棵子树，所有叶结点在同一层。结点可含多个关键字。",
+  "seq": 569,
+  "page": 317
+ },
+ {
+  "excel_row": 634,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "二叉查找树基本操作的过程",
+  "desc": "BST基本操作：查找从根比较走左/右子树直到相等或空指针；插入在查找失败的空指针处插入新叶；删除分叶结点、单子树、双子树三种情况处理。",
+  "seq": 570,
+  "page": 306
+ },
+ {
+  "excel_row": 635,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "初始数据生成二叉查找树的树形",
+  "desc": "同一组关键字以不同次序插入会生成不同树形。递增/递减插入退化为单链形式（类似顺序表），平衡插入则树较矮。树形由插入次序决定。",
+  "seq": 571,
+  "page": 310
+ },
+ {
+  "excel_row": 636,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "二叉查找树的树 形与查找效率的关系",
+  "desc": "BST树高决定最大比较次数和平均查找长度。平衡树ASL小O(logn)，退化单链ASL=(n+1)/2=O(n)。随机插入一般较均衡。",
+  "seq": 572,
+  "page": 311
+ },
+ {
+  "excel_row": 637,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "二叉查找树的插入",
+  "desc": "BST插入：新结点从根开始比较，小于根走左子树，大于走右子树，直到空指针处插入新叶结点。插入位置即查找失败时的空指针位置。",
+  "seq": 573,
+  "page": 307
+ },
+ {
+  "excel_row": 638,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "查找和删除",
+  "desc": "BST删除：叶结点直接删；单子树结点让子树接父结点；双子树结点用其中序直接前驱（左子树最大值）或直接后继（右子树最小值）顶替，再删该顶替结点。",
+  "seq": 574,
+  "page": 309
+ },
+ {
+  "excel_row": 639,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "B树的查找",
+  "desc": "B树查找从根结点开始，在结点内比较关键字，根据大小关系沿指针进入对应子树，直到叶结点找到关键字或遇到空指针。结点内可用顺序或折半查找。",
+  "seq": 575,
+  "page": 318
+ },
+ {
+  "excel_row": 640,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "B树的插入",
+  "desc": "B树插入先通过查找找到叶结点位置插入。若结点关键字数超过m-1则分裂：分两个结点，中间关键字提升到父结点，父结点可能继续分裂。",
+  "seq": 576,
+  "page": 318
+ },
+ {
+  "excel_row": 641,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "树形结构的查找 ",
+  "knowledge": "B树中结点的分裂过程。",
+  "desc": "B树结点分裂：结点关键字超限后分裂为两个结点，分别含最小和最大关键字，中间关键字提升到父结点。若父结点也超限则递归分裂，最坏到根分裂使树高+1。",
+  "seq": 577,
+  "page": 319
+ },
+ {
+  "excel_row": 642,
+  "chapter": "查找",
+  "requirement": "简单应用",
+  "summary": "树形结构的查找 ",
+  "knowledge": "实现二叉查找树的基本操作",
+  "desc": "能够编写二叉查找树BST的查找（递归与非递归实现）、插入BstInsert、删除结点等基本操作的算法代码。",
+  "seq": 578,
+  "page": 306
+ },
+ {
+  "excel_row": 643,
+  "chapter": "查找",
+  "requirement": "简单应用",
+  "summary": "树形结构的查找 ",
+  "knowledge": "AVL 树的旋转",
+  "desc": "AVL树旋转恢复平衡：RR型左单旋转、LL型右单旋转、RL型双旋转（先右后左）、LR型双旋转（先左后右）。一次插入最多一次旋转调整。",
+  "seq": 579,
+  "page": 313
+ },
+ {
+  "excel_row": 644,
+  "chapter": "查找",
+  "requirement": "简单应用",
+  "summary": "树形结构的查找 ",
+  "knowledge": "树形查找效率的分析。",
+  "desc": "BST随机插入平均O(logn)；AVL树保证平衡高度O(logn)；B树为多路平衡树高度对数级，适合外存大规模数据查找。",
+  "seq": 580,
+  "page": 312
+ },
+ {
+  "excel_row": 645,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "哈希表",
+  "desc": "哈希表（散列表）是通过哈希函数将关键字映射到数组位置进行存储的结构。哈希表中的一个位置称为一个槽。哈希方法既是查找方法也是数据保存方法。",
+  "seq": 581,
+  "page": 320
+ },
+ {
+  "excel_row": 646,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "哈希函数",
+  "desc": "哈希函数H是将关键字值映射为数组下标的函数，H(K)=L。它以关键字为自变量，得到哈希表地址。设计原则：算法简单、均匀分布减少冲突。",
+  "seq": 582,
+  "page": 320
+ },
+ {
+  "excel_row": 647,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "完美哈希函数",
+  "desc": "完美哈希函数是没有冲突的哈希函数。当不能预先知道全体关键字集合时，构造的哈希函数通常不是完美哈希函数。",
+  "seq": 583,
+  "page": 321
+ },
+ {
+  "excel_row": 648,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "哈希方法",
+  "desc": "哈希方法（散列方法）根据记录关键字值，通过哈希函数直接计算记录在数组中的存储位置，查询时也用同样策略计算地址。尽可能减少关键字间比较。",
+  "seq": 584,
+  "page": 320
+ },
+ {
+  "excel_row": 649,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "哈希地址",
+  "desc": "哈希地址（哈希值）是哈希函数计算得到的结果L，对应哈希表中的数组下标位置，且L不能超过哈希表的大小m。",
+  "seq": 585,
+  "page": 321
+ },
+ {
+  "excel_row": 650,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "冲突",
+  "desc": "冲突指两个不同关键字k1≠k2经哈希函数得到相同地址H(k1)=H(k2)=L的现象。冲突不可避免，需设计解决冲突的方法。",
+  "seq": 586,
+  "page": 321
+ },
+ {
+  "excel_row": 651,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "基本聚集",
+  "desc": "基本聚集是线性探测法解决冲突时，每解决一次冲突就使连续关键字簇（簇）变长的现象。线性探测还可能使非同义词的簇连接起来。",
+  "seq": 587,
+  "page": 328
+ },
+ {
+  "excel_row": 652,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "二级聚集",
+  "desc": "二级聚集是二次探测法中，虽跳跃式探测不易形成基本聚集，但同义词访问相同的探查位置序列仍会形成的聚集，也会增大查找失败ASL。",
+  "seq": 588,
+  "page": 328
+ },
+ {
+  "excel_row": 653,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "同义词表",
+  "desc": "同义词表是链地址法中，哈希到同一地址位置的所有关键字组成的单链表。发生冲突的记录都保存在该链表中，查找时在链表中顺序查找。",
+  "seq": 589,
+  "page": 326
+ },
+ {
+  "excel_row": 654,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "查找成功的平均查找长度",
+  "desc": "查找成功的平均查找长度ASL成功是各关键字查找成功时所需比较次数的平均值，等于各关键字放置时探查次数的平均。",
+  "seq": 590,
+  "page": 327
+ },
+ {
+  "excel_row": 655,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "查找失败的平均查找长度",
+  "desc": "查找失败的平均查找长度ASL失败是按等概率考虑各地址查找失败时所需比较次数的平均值，与簇的长度直接相关。",
+  "seq": 591,
+  "page": 327
+ },
+ {
+  "excel_row": 656,
+  "chapter": "查找",
+  "requirement": "识记",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "装填因子。 ",
+  "desc": "装填因子α=哈希表中已有记录数/哈希表长度。α小则冲突少，α大则冲突多。开放地址法中0≤α≤1，平均查找长度仅依赖α。",
+  "seq": 592,
+  "page": 328
+ },
+ {
+  "excel_row": 657,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "直接定址法",
+  "desc": "直接定址法哈希函数H(k)=k或H(k)=a*k+b（a,b为常数），是关键字的线性函数。计算最简单、冲突最少，适合关键字分布连续的情况。",
+  "seq": 593,
+  "page": 322
+ },
+ {
+  "excel_row": 658,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "平方取中法",
+  "desc": "平方取中法将关键字值自乘，取乘积中间几位作为哈希地址。中间几位既能反映原数低位也能反映高位信息，使分布均匀。",
+  "seq": 594,
+  "page": 322
+ },
+ {
+  "excel_row": 659,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "折叠法",
+  "desc": "折叠法将位数较多的关键字分割为位数相等的几段，各段叠加（求和并舍去进位）所得结果作为哈希地址。可间隔反转分段再相加。",
+  "seq": 595,
+  "page": 323
+ },
+ {
+  "excel_row": 660,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "基数转换法",
+  "desc": "基数转换法将关键字值先看成另一种进制的数，再转换回原进制，选其中几位作为哈希地址。通常要求两个基数互素且新基数比原基数大。",
+  "seq": 596,
+  "page": 323
+ },
+ {
+  "excel_row": 661,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "除留余数法",
+  "desc": "除留余数法H(k)=k mod p，其中p为小于等于表长m的正整数。理论证明p应取≤m的最大素数，以使哈希地址均匀分布。",
+  "seq": 597,
+  "page": 324
+ },
+ {
+  "excel_row": 662,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "开放地址法",
+  "desc": "开放地址法（闭哈希法）：冲突时按某种方法形成探测下一地址的序列，沿序列逐个查找直到找到空闲地址存放。分线性探测法和二次探测法。",
+  "seq": 598,
+  "page": 324
+ },
+ {
+  "excel_row": 663,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "线 性探测法",
+  "desc": "线性探测法求下一地址公式di+1=(di+1) mod m。从基位置依次探查后续位置，到表尾绕回表头。实现简单但易产生基本聚集。",
+  "seq": 599,
+  "page": 325
+ },
+ {
+  "excel_row": 664,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "二次探测法",
+  "desc": "二次探测法探测地址序列为di+i²和di-i²（i=1,2...），以基位置为中心跳跃式双向搜索。不易形成基本聚集，但可能无法遍历所有位置。",
+  "seq": 600,
+  "page": 325
+ },
+ {
+  "excel_row": 665,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "链地址法",
+  "desc": "链地址法（开哈希法）在每个哈希表位置设指针，将哈希到该位置的关键字组成一个单链表（同义词表）。冲突记录都在链表中，查找时顺序查找链表。",
+  "seq": 601,
+  "page": 326
+ },
+ {
+  "excel_row": 666,
+  "chapter": "查找",
+  "requirement": "领会",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "影响哈希方法效率的因素。 ",
+  "desc": "影响哈希效率的因素：哈希函数的均匀性（计算简单且分布均匀）、装填因子α（α越大冲突越多）、解决冲突的方法（线性/二次探测/链地址）。",
+  "seq": 602,
+  "page": 328
+ },
+ {
+  "excel_row": 667,
+  "chapter": "查找",
+  "requirement": "简单应用",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "设计哈希函数",
+  "desc": "根据关键字特点选择合适哈希函数：连续分布用直接定址法；位数长用平方取中法或折叠法；通用用除留余数法（p取最大素数）。要求均匀分布。",
+  "seq": 603,
+  "page": 322
+ },
+ {
+  "excel_row": 668,
+  "chapter": "查找",
+  "requirement": "简单应用",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "建立哈希表",
+  "desc": "建立哈希表：对每个关键字计算哈希地址，无冲突直接放入；有冲突按所选方法（线性探测/二次探测/链地址）找到存放位置填入。",
+  "seq": 604,
+  "page": 325
+ },
+ {
+  "excel_row": 669,
+  "chapter": "查找",
+  "requirement": "简单应用",
+  "summary": "哈希表及其查找 ",
+  "knowledge": "解决冲突。 ",
+  "desc": "解决冲突：开放地址法探测下一空闲地址（线性依次探测或二次跳跃探测）；链地址法将同义词挂到同一单链表中。",
+  "seq": 605,
+  "page": 324
+ },
+ {
+  "excel_row": 670,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "顺序查找方法",
+  "desc": "顺序查找从表头逐个比较，成功ASL=(n+1)/2，不成功ASL=n，时间O(n)，空间O(1)。不要求数据有序，可用于链表。",
+  "seq": 606,
+  "page": 297
+ },
+ {
+  "excel_row": 671,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "折半查找方法",
+  "desc": "折半查找从中间开始每次缩半，ASL≈log2(n+1)，O(logn)。要求顺序存储且有序。可用判定树分析查找过程。",
+  "seq": 607,
+  "page": 299
+ },
+ {
+  "excel_row": 672,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "分块查找方法",
+  "desc": "分块查找将数据分块、块间整体有序，先查索引表确定块再块内查找。b=√n时ASL最优。是顺序与折半的折中。",
+  "seq": 608,
+  "page": 303
+ },
+ {
+  "excel_row": 673,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "索引查找方法",
+  "desc": "索引查找即分块查找。建立索引表（每块最大关键字+位置指针），先折半或顺序查索引定位块，再块内顺序查找。",
+  "seq": 609,
+  "page": 303
+ },
+ {
+  "excel_row": 674,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "二叉查找树的插入",
+  "desc": "BST插入从根比较，小于根走左、大于走右，直到空指针处插入新叶结点，成为新叶。插入过程与查找失败路径相同。",
+  "seq": 610,
+  "page": 307
+ },
+ {
+  "excel_row": 675,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "删除及查找",
+  "desc": "BST查找沿根到叶一条路径比较；删除分叶结点（直接删）、单子树（子树接父）、双子树（用中序前驱/后继顶替再删该顶替结点）三种情况。",
+  "seq": 611,
+  "page": 306
+ },
+ {
+  "excel_row": 676,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "B树的插入和查找",
+  "desc": "B树查找从根沿指针到叶结点；插入在叶结点进行，超限时结点分裂、中间关键字提升到父结点，可能递归到根使树增高。",
+  "seq": 612,
+  "page": 318
+ },
+ {
+  "excel_row": 677,
+  "chapter": "查找",
+  "requirement": "本章重点",
+  "summary": "",
+  "knowledge": "哈希方法。 ",
+  "desc": "哈希方法通过哈希函数直接计算地址，理想情况无需比较。实际有冲突，用开放地址法或链地址法解决。ASL仅与装填因子α有关。",
+  "seq": 613,
+  "page": 320
+ },
+ {
+  "excel_row": 678,
+  "chapter": "查找",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "二叉查找树的删除",
+  "desc": "BST删除难点在双子树情况：需选其中序直接前驱（左子树最大值，无右孩子）或直接后继（右子树最小值，无左孩子）顶替，再归结为度0或1的删除。",
+  "seq": 614,
+  "page": 309
+ },
+ {
+  "excel_row": 679,
+  "chapter": "查找",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "B树的插入",
+  "desc": "B树插入难点在结点分裂：叶结点关键字超限后分裂为两个，中间关键字提升到父结点，父结点可能继续分裂，最坏一直到根。",
+  "seq": 615,
+  "page": 318
+ },
+ {
+  "excel_row": 680,
+  "chapter": "查找",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "哈希函数的设计",
+  "desc": "哈希函数设计需在算法简单（计算快）和均匀分布（少冲突）间折中，考虑关键字长度、分布、表大小、查找频率等因素。",
+  "seq": 616,
+  "page": 322
+ },
+ {
+  "excel_row": 681,
+  "chapter": "查找",
+  "requirement": "本章难点",
+  "summary": "",
+  "knowledge": "冲突解决方法。",
+  "desc": "冲突解决方法两大类：开放地址法（线性探测依次探查、二次探测跳跃探查）和链地址法（同义词组成单链表）。各有优缺点和ASL公式。",
+  "seq": 617,
+  "page": 324
+ },
+ {
+  "excel_row": 682,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 683,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 684,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 685,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 686,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 687,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 688,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 689,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 690,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 691,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 692,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 693,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 694,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 695,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 696,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 697,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 698,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 699,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 700,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 701,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 702,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 703,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 704,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 705,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 706,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 707,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 708,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 709,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 710,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 711,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 712,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 713,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 714,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 715,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 716,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 717,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 718,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 719,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 720,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 721,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 722,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 723,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 724,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 725,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 726,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 727,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 728,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 729,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 730,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 731,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 732,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 733,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 734,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 735,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 736,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 737,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 738,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 739,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 740,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 741,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 742,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 743,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 744,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 745,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 746,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 747,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 748,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 749,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ },
+ {
+  "excel_row": 750,
+  "chapter": "",
+  "requirement": "",
+  "summary": "",
+  "knowledge": "",
+  "desc": "",
+  "seq": null,
+  "page": null
+ }
+]
